@@ -35,4 +35,4 @@ Allow: /
 User-agent: Applebot
 Allow: /
 
-Sitemap: https://thecamellia.grok.me/sitemap.xml
+Sitemap: https://thecamellia-sontra.vercel.app/sitemap.xml

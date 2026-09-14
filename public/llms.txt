@@ -6,12 +6,12 @@ The Camellia Sơn Trà – Đà Nẵng tọa lạc giao lộ Lê Văn Lương �
 
 ## Trang chính
 
-- [Trang chủ](https://thecamellia.grok.me/): tổng quan dự án, vị trí, tiện ích, loại căn
-- [Căn hộ](https://thecamellia.grok.me/can-ho): Studio, 1PN+1, 2PN, 3PN, Duplex, tầm view 360
-- [Khám phá 360](https://thecamellia.grok.me/kham-pha): tour ảo PanaMotion — tòa nhà, căn hộ, tầm view
-- [Tiện ích](https://thecamellia.grok.me/tien-ich): 42 tiện ích Wellness · Nature · Community
-- [Tin tức](https://thecamellia.grok.me/tin-tuc): Premier Launch 12.09.2026 — 159 giao dịch, gần 400 khách
-- [Liên hệ](https://thecamellia.grok.me/lien-he): nhận bảng giá
+- [Trang chủ](https://thecamellia-sontra.vercel.app/): tổng quan dự án, vị trí, tiện ích, loại căn
+- [Căn hộ](https://thecamellia-sontra.vercel.app/can-ho): Studio, 1PN+1, 2PN, 3PN, Duplex, tầm view 360
+- [Khám phá 360](https://thecamellia-sontra.vercel.app/kham-pha): tour ảo PanaMotion — tòa nhà, căn hộ, tầm view
+- [Tiện ích](https://thecamellia-sontra.vercel.app/tien-ich): 42 tiện ích Wellness · Nature · Community
+- [Tin tức](https://thecamellia-sontra.vercel.app/tin-tuc): Premier Launch 12.09.2026 — 159 giao dịch, gần 400 khách
+- [Liên hệ](https://thecamellia-sontra.vercel.app/lien-he): nhận bảng giá
 
 ## Liên hệ tư vấn
 
