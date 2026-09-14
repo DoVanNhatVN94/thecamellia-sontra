@@ -1,0 +1,221 @@
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ImgHTMLAttributes,
+} from "react";
+import {
+  clearOverrides,
+  compressImage,
+  deleteOverride,
+  loadHidden,
+  loadOverrides,
+  saveHidden,
+  saveOverride,
+} from "@/lib/image-studio";
+import { cn } from "@/lib/utils";
+
+type Api = {
+  ready: boolean;
+  hidden: Set<string>;
+  overridden: Set<string>;
+  resolve: (slotId: string | undefined, fallback: string) => string;
+  isHidden: (slotId: string) => boolean;
+  replace: (slotId: string, file: File) => Promise<void>;
+  hide: (slotId: string, value: boolean) => void;
+  reset: (slotId: string) => Promise<void>;
+  resetAll: () => Promise<void>;
+};
+
+const ImageSrcContext = createContext<Api | null>(null);
+
+export function ImageSrcProvider({ children }: { children: React.ReactNode }) {
+  const [ready, setReady] = useState(false);
+  const [urls, setUrls] = useState<Record<string, string>>({});
+  const [hidden, setHidden] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    let live = true;
+    const created: string[] = [];
+    void (async () => {
+      try {
+        const blobs = await loadOverrides();
+        const next: Record<string, string> = {};
+        for (const [key, blob] of Object.entries(blobs)) {
+          const url = URL.createObjectURL(blob);
+          created.push(url);
+          next[key] = url;
+        }
+        if (!live) {
+          created.forEach((u) => URL.revokeObjectURL(u));
+          return;
+        }
+        setUrls(next);
+        setHidden(new Set(loadHidden()));
+      } catch {
+        /* private mode / no IDB */
+      } finally {
+        if (live) setReady(true);
+      }
+    })();
+    return () => {
+      live = false;
+      created.forEach((u) => URL.revokeObjectURL(u));
+    };
+  }, []);
+
+  const resolve = useCallback(
+    (slotId: string | undefined, fallback: string) => {
+      if (slotId && urls[slotId]) return urls[slotId];
+      return fallback;
+    },
+    [urls],
+  );
+
+  const isHidden = useCallback((slotId: string) => hidden.has(slotId), [hidden]);
+
+  const replace = useCallback(async (slotId: string, file: File) => {
+    const blob = await compressImage(file);
+    await saveOverride(slotId, blob);
+    const url = URL.createObjectURL(blob);
+    setUrls((prev) => {
+      if (prev[slotId]) URL.revokeObjectURL(prev[slotId]);
+      return { ...prev, [slotId]: url };
+    });
+  }, []);
+
+  const hide = useCallback((slotId: string, value: boolean) => {
+    setHidden((prev) => {
+      const next = new Set(prev);
+      if (value) next.add(slotId);
+      else next.delete(slotId);
+      saveHidden([...next]);
+      return next;
+    });
+  }, []);
+
+  const reset = useCallback(async (slotId: string) => {
+    await deleteOverride(slotId);
+    setUrls((prev) => {
+      if (prev[slotId]) URL.revokeObjectURL(prev[slotId]);
+      const next = { ...prev };
+      delete next[slotId];
+      return next;
+    });
+    hide(slotId, false);
+  }, [hide]);
+
+  const resetAll = useCallback(async () => {
+    await clearOverrides();
+    setUrls((prev) => {
+      Object.values(prev).forEach((u) => URL.revokeObjectURL(u));
+      return {};
+    });
+    setHidden(new Set());
+    saveHidden([]);
+  }, []);
+
+  const value = useMemo<Api>(
+    () => ({
+      ready,
+      hidden,
+      overridden: new Set(Object.keys(urls)),
+      resolve,
+      isHidden,
+      replace,
+      hide,
+      reset,
+      resetAll,
+    }),
+    [ready, hidden, urls, resolve, isHidden, replace, hide, reset, resetAll],
+  );
+
+  return <ImageSrcContext.Provider value={value}>{children}</ImageSrcContext.Provider>;
+}
+
+export function useImageSrc() {
+  const ctx = useContext(ImageSrcContext);
+  if (!ctx) {
+    return {
+      ready: true,
+      hidden: new Set<string>(),
+      overridden: new Set<string>(),
+      resolve: (_id: string | undefined, fallback: string) => fallback,
+      isHidden: () => false,
+      replace: async () => {},
+      hide: () => {},
+      reset: async () => {},
+      resetAll: async () => {},
+    } satisfies Api;
+  }
+  return ctx;
+}
+
+export function useSlotSrc(slotId: string | undefined, fallback: string) {
+  const { resolve } = useImageSrc();
+  return resolve(slotId, fallback);
+}
+
+export function useVisibleSlides<T>(
+  galleryId: string,
+  slides: T[],
+  srcOf: (slide: T) => string,
+): { slide: T; index: number; src: string }[] {
+  const { isHidden, resolve } = useImageSrc();
+  return slides
+    .map((slide, index) => ({ slide, index, src: resolve(`${galleryId}:${index}`, srcOf(slide)) }))
+    .filter(({ index }) => !isHidden(`${galleryId}:${index}`));
+}
+
+type SmartProps = ImgHTMLAttributes<HTMLImageElement> & { slot?: string };
+
+export function SmartImg({
+  slot,
+  src,
+  className,
+  alt,
+  onError,
+  loading = "lazy",
+  decoding = "async",
+  ...rest
+}: SmartProps) {
+  const resolved = useSlotSrc(slot, typeof src === "string" ? src : "");
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    setFailed(false);
+  }, [resolved]);
+
+  if (!resolved || failed) {
+    return (
+      <span
+        className={cn(
+          "grid place-items-center bg-sand text-center text-xs text-muted",
+          className,
+        )}
+        role="img"
+        aria-label={alt || "Đang cập nhật hình"}
+      >
+        Đang cập nhật hình
+      </span>
+    );
+  }
+
+  return (
+    <img
+      {...rest}
+      src={resolved}
+      alt={alt}
+      loading={loading}
+      decoding={decoding}
+      className={cn("bg-sand", className)}
+      onError={(e) => {
+        setFailed(true);
+        onError?.(e);
+      }}
+    />
+  );
+}
