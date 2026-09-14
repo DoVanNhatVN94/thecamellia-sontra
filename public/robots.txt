@@ -3,7 +3,6 @@ Allow: /
 Disallow: /sua-anh
 Disallow: /embed
 Disallow: /api
-Disallow: /__grok/
 
 User-agent: Googlebot
 Allow: /
