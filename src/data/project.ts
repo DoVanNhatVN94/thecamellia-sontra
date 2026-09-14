@@ -250,7 +250,7 @@ export const NEWS: NewsArticle[] = [
     title: "Premier Launch: gần 400 khách hiện diện, 159 giao dịch thành công",
     excerpt:
       "12.09.2026 The Camellia Sơn Trà – Đà Nẵng mở bán chính thức. Gần 400 khách hàng và đối tác, 159 giao dịch thành công — Life Within, nơi chốn thuộc về.",
-    image: "/images/news-event-card.webp",
+    image: "/images/news-event-card-og.jpg",
     gallery: [
       "/images/news-event-01.webp",
       "/images/news-event-02.webp",

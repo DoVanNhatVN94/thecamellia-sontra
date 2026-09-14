@@ -2,7 +2,7 @@ import { NEWS, PROJECT, UNIT_TYPES } from "@/data/project";
 
 /** Public origin. Override with VITE_SITE_URL when using a custom domain. */
 export const SITE_ORIGIN = String(
-  import.meta.env.VITE_SITE_URL ?? "https://thecamellia.grok.me",
+  import.meta.env.VITE_SITE_URL ?? "https://thecamellia-sontra.vercel.app",
 ).replace(/\/$/, "");
 
 export const SITE = {
@@ -111,13 +111,6 @@ export const PAGES = {
     path: "/can-ho",
     keywords: "mặt bằng The Camellia, căn hộ studio Sơn Trà, tầm view 360 The Camellia, căn 2 phòng ngủ Đà Nẵng",
   },
-  tour: {
-    title: "Khám phá tour 360 The Camellia Sơn Trà",
-    description:
-      "Tour ảo 360° The Camellia Sơn Trà do PanaMotion thực hiện: xoay tòa nhà, không gian căn hộ và tầm view biển — rừng Đà Nẵng.",
-    path: "/kham-pha",
-    keywords: "tour 360 The Camellia, khám phá The Camellia Sơn Trà, PanaMotion Camellia, căn hộ 360 Đà Nẵng",
-  },
   amenities: {
     title: "Tiện ích 42 hạng mục — Wellness, Nature, Community",
     description:
@@ -128,7 +121,7 @@ export const PAGES = {
   news: {
     title: "Tin tức dự án",
     description:
-      "Cập nhật The Camellia Sơn Trà: Premier Launch 12.09.2026, 159 giao dịch, sự kiện MBLAND và quỹ căn hộ biển kề rừng tại Đà Nẵng.",
+      "Cập nhật The Camellia Sơn Trà: sự kiện ra mắt MBLAND, CEO Meeting, pháp lý sở hữu lâu dài và quỹ căn hộ biển kề rừng tại Đà Nẵng.",
     path: "/tin-tuc",
     keywords: "tin tức The Camellia, MBLAND Đà Nẵng, ra mắt The Camellia Sơn Trà",
   },
@@ -285,7 +278,6 @@ export function jsonLdGraph(nodes: object[], origin = SITE_ORIGIN) {
 export const SITEMAP_PATHS = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/can-ho", priority: "0.9", changefreq: "weekly" },
-  { path: "/kham-pha", priority: "0.9", changefreq: "monthly" },
   { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },

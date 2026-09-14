@@ -16,11 +16,12 @@ import {
   PolicySection,
   StorySection,
   UnderstandSection,
-  TourPreview,
   UnitsPreview,
 } from "@/components/sections/home-sections";
+import { PAGES, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
+  head: () => pageHead(PAGES.home),
   component: Home,
 });
 
@@ -37,7 +38,6 @@ function Home() {
       <AmenitiesPreview />
       <InteriorGallery />
       <UnitsPreview />
-      <TourPreview />
       <PolicySection />
       <LegalSection />
       <FaqSection />

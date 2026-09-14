@@ -3,10 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { MediaCache } from "@/components/media-cache";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { ImageSrcProvider } from "@/lib/image-src";
-import { PAGES, pageHead } from "@/lib/seo";
 import appCss from "../styles.css?url";
-
-const defaults = pageHead(PAGES.home);
 
 export const Route = createRootRoute({
   head: () => ({
@@ -17,7 +14,6 @@ export const Route = createRootRoute({
       { name: "msapplication-TileColor", content: "#A84424" },
       { name: "apple-mobile-web-app-title", content: "The Camellia" },
       { name: "application-name", content: "The Camellia Sơn Trà" },
-      ...defaults.meta,
     ],
     links: [
       { rel: "icon", type: "image/png", href: "/favicon.png" },
@@ -60,7 +56,6 @@ export const Route = createRootRoute({
         type: "font/woff2",
         crossOrigin: "anonymous",
       },
-      ...defaults.links,
     ],
   }),
   notFoundComponent: NotFound,

@@ -100,7 +100,8 @@ export function publicAppHost(hostHeader) {
     .toLowerCase();
   if (!host || !/^[a-z0-9.-]+$/.test(host) || !host.includes(".")) return "";
   if (/^\d{1,3}(?:\.\d{1,3}){3}$/.test(host)) return "";
-  if (isVercelSystemHost(host)) return "";
+  // Allow *.vercel.app so Facebook/Google get og:image on self-hosted deploys.
+  if (host === "vercel.app" || host === "vercel.com" || host.endsWith(".vercel.com")) return "";
   return host;
 }
 
@@ -432,7 +433,13 @@ export function injectGrokPwaHead(html, ctx = {}) {
     host,
     documentTitle,
   );
-  let next = stripShareMetaTags(html);
+  // App-authored SEO (pageHead emits og:url / og:site_name). Keep those tags.
+  // Grok share-card overwrite is only for docs that do not already declare OG URL.
+  const hasAppSeo =
+    /(?:property|name)\s*=\s*["']og:url["']/i.test(html) ||
+    /(?:property|name)\s*=\s*["']og:site_name["']/i.test(html);
+
+  let next = hasAppSeo ? html : stripShareMetaTags(html);
 
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
@@ -442,10 +449,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  if (!hasAppSeo) {
+    next = insertAfterHeadOpen(
+      next,
+      grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
+    );
+  }
 
   if (!next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));
