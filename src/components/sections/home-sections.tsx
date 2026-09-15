@@ -57,6 +57,7 @@ export function StorySection() {
               slot="story:main"
               alt="Flycam tổng thể The Camellia Sơn Trà"
               className="img-reveal aspect-4/3 w-[88%] rounded-xl"
+              sizes="(max-width: 1024px) 88vw, 520px"
             />
             <ParallaxImage
               src="/images/brochure-02.webp"
@@ -65,6 +66,7 @@ export function StorySection() {
               className="absolute right-0 bottom-0 w-[58%] rounded-xl shadow-border"
               imgClassName="aspect-4/3"
               speed={0.12}
+              sizes="(max-width: 1024px) 58vw, 340px"
             />
             <SmartImg
               src="/images/camellia.webp"
@@ -112,6 +114,7 @@ export function FactsSection() {
         alt=""
         className="absolute inset-0 size-full opacity-40"
         speed={0.18}
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-ink/70" />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
@@ -213,6 +216,7 @@ export function ArchitectureSection() {
             className="aspect-4/3 rounded-xl"
             interval={4200}
             lightbox
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
         </Reveal>
         <Reveal delay={120}>

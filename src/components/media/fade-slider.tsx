@@ -22,6 +22,8 @@ type Props = {
   lightbox?: boolean;
   priority?: boolean;
   galleryId?: string;
+  /** Hint for responsive candidates from SmartImg companions. */
+  sizes?: string;
 };
 
 function isNear(i: number, index: number, count: number) {
@@ -41,6 +43,7 @@ export function FadeSlider({
   lightbox = false,
   priority = false,
   galleryId,
+  sizes = "100vw",
 }: Props) {
   const root = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(0);
@@ -166,6 +169,7 @@ export function FadeSlider({
                     alt={slide.alt}
                     fetchPriority={priority && i === 0 ? "high" : "auto"}
                     decoding="async"
+                    sizes={sizes}
                     className="size-full object-cover"
                   />
                 )
@@ -177,6 +181,7 @@ export function FadeSlider({
                   loading={priority && i === 0 ? "eager" : "lazy"}
                   fetchPriority={priority && i === 0 ? "high" : "auto"}
                   decoding="async"
+                  sizes={sizes}
                   onClick={() => {
                     if (lightbox) setOpen(true);
                   }}
