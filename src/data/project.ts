@@ -256,7 +256,6 @@ export const NEWS: NewsArticle[] = [
       "/images/news-tien-do-01b.webp",
       "/images/news-tien-do-02b.webp",
       "/images/news-tien-do-03b.webp",
-      "/images/news-tien-do-04b.webp",
     ],
     body: [
       {
