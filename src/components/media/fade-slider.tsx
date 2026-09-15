@@ -93,17 +93,48 @@ export function FadeSlider({
   }, []);
 
   useEffect(() => {
-    if (!inView) return;
-    const conn = (
-      navigator as Navigator & {
-        connection?: { saveData?: boolean; effectiveType?: string };
+    if (!inView) {
+      setAllowVideo(false);
+      return;
+    }
+
+    // Video only from md+ (768px); mobile stays on poster/image for LCP.
+    const mqMd = window.matchMedia("(min-width: 768px)");
+    const mqReduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: number | undefined;
+
+    const evaluate = () => {
+      const conn = (
+        navigator as Navigator & {
+          connection?: { saveData?: boolean; effectiveType?: string };
+        }
+      ).connection;
+      const saveData = !!conn?.saveData;
+      const slow =
+        conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g";
+      const ok = mqMd.matches && !mqReduce.matches && !saveData && !slow;
+
+      if (timer !== undefined) {
+        window.clearTimeout(timer);
+        timer = undefined;
       }
-    ).connection;
-    if (conn?.saveData) return;
-    if (conn?.effectiveType === "slow-2g" || conn?.effectiveType === "2g") return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = window.setTimeout(() => setAllowVideo(true), 1800);
-    return () => window.clearTimeout(t);
+
+      if (!ok) {
+        setAllowVideo(false);
+        return;
+      }
+
+      timer = window.setTimeout(() => setAllowVideo(true), 1800);
+    };
+
+    evaluate();
+    mqMd.addEventListener("change", evaluate);
+    mqReduce.addEventListener("change", evaluate);
+    return () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+      mqMd.removeEventListener("change", evaluate);
+      mqReduce.removeEventListener("change", evaluate);
+    };
   }, [inView]);
 
   useEffect(() => {

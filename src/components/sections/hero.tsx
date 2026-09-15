@@ -28,7 +28,7 @@ export function Hero() {
         <p className="stagger-item mt-4 max-w-3xl font-display text-xl leading-tight text-paper/90 sm:text-3xl">
           {PROJECT.tagline}
         </p>
-        <p className="stagger-item mt-4 max-w-xl font-display text-lg italic text-paper/75 sm:text-2xl">
+        <p className="stagger-item mt-4 max-w-xl font-display text-lg text-paper/75 sm:text-2xl md:italic">
           {PROJECT.slogan}
         </p>
         <p className="stagger-item mt-6 max-w-lg text-sm leading-relaxed text-paper/75 sm:text-base">
