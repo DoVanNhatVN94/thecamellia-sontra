@@ -43,7 +43,7 @@ export function Header() {
               item.to !== "/" &&
               (pathname === item.to || pathname.startsWith(`${item.to}/`));
             const cls = cn(
-              "text-[0.72rem] font-medium tracking-[0.16em] uppercase transition-opacity duration-150",
+              "inline-flex min-h-11 items-center py-2 text-[0.72rem] font-medium tracking-[0.16em] uppercase transition-opacity duration-150",
               active ? "opacity-100" : "opacity-80 hover:opacity-100",
             );
             return item.href.startsWith("/#") ? (
@@ -65,7 +65,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${PROJECT.hotlineTel}`}
-            className="hidden items-center gap-2 pr-1 text-sm md:inline-flex"
+            className="hidden min-h-11 items-center gap-2 py-2 pr-1 text-sm md:inline-flex"
           >
             <Phone className="size-3.5" />
             <span className="font-num tracking-wide">{PROJECT.hotlineDisplay}</span>
@@ -96,7 +96,7 @@ export function Header() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="flex h-12 items-center border-b border-paper/10 text-sm tracking-[0.14em] uppercase"
+                  className="flex min-h-12 items-center border-b border-paper/10 py-3 text-sm tracking-[0.14em] uppercase"
                 >
                   {item.label}
                 </a>
@@ -105,7 +105,7 @@ export function Header() {
                   key={item.label}
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="flex h-12 items-center border-b border-paper/10 text-sm tracking-[0.14em] uppercase"
+                  className="flex min-h-12 items-center border-b border-paper/10 py-3 text-sm tracking-[0.14em] uppercase"
                 >
                   {item.label}
                 </Link>
