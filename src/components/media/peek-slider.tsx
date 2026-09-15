@@ -162,7 +162,7 @@ export function PeekSlider({
         })}
       </div>
       <div className="mt-4 flex items-center justify-between">
-        <div className="flex gap-2">
+        <div className="flex items-center gap-1">
           {items.map((s, i) => (
             <button
               key={`${s.src}-p-${s.origin}`}
@@ -173,11 +173,15 @@ export function PeekSlider({
                 if (!el) return;
                 el.scrollTo({ left: i * cardWidth(), behavior: "smooth" });
               }}
-              className={cn(
-                "h-1 rounded-full transition-[width,background-color] duration-300",
-                i === index ? "w-8 bg-terracotta" : "w-3 bg-stone",
-              )}
-            />
+              className="flex min-h-11 min-w-11 items-center justify-center"
+            >
+              <span
+                className={cn(
+                  "h-1 rounded-full transition-[width,background-color] duration-300",
+                  i === index ? "w-8 bg-terracotta" : "w-3 bg-stone",
+                )}
+              />
+            </button>
           ))}
         </div>
         <div className="hidden gap-2 sm:flex">

@@ -51,8 +51,8 @@ export function Hero() {
       </div>
       <a
         href="#du-an"
-        className="scroll-hint absolute bottom-6 left-1/2 z-10 hidden -translate-x-1/2 text-paper/70 sm:block"
-        aria-label="Cuộn xuống"
+        className="scroll-hint absolute bottom-6 left-1/2 z-10 hidden min-h-11 min-w-11 -translate-x-1/2 items-center justify-center text-paper/70 sm:flex"
+        aria-label="Xuống nội dung"
       >
         <ChevronDown className="size-6" />
       </a>

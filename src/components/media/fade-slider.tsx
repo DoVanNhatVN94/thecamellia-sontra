@@ -161,7 +161,14 @@ export function FadeSlider({
                       if (!el) return;
                       void el.play().catch(() => {});
                     }}
-                  />
+                  >
+                    <track
+                      kind="captions"
+                      src="/captions/ambient-empty.vtt"
+                      srcLang="vi"
+                      label="Tiếng Việt"
+                    />
+                  </video>
                 ) : (
                   <SmartImg
                     slot={galleryId ? `${galleryId}:${slide.origin}` : undefined}
@@ -232,18 +239,22 @@ export function FadeSlider({
       ) : null}
 
       {showDots && count > 1 ? (
-        <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-2">
+        <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-1">
           {items.map((s, i) => (
             <button
               key={`${s.src}-dot-${s.origin}`}
               type="button"
               aria-label={`Slide ${i + 1}`}
               onClick={() => setIndex(i)}
-              className={cn(
-                "h-1 rounded-full transition-[width,background-color] duration-300",
-                i === index ? "w-8 bg-paper" : "w-3 bg-paper/40",
-              )}
-            />
+              className="flex min-h-11 min-w-11 items-center justify-center"
+            >
+              <span
+                className={cn(
+                  "h-1 rounded-full transition-[width,background-color] duration-300",
+                  i === index ? "w-8 bg-paper" : "w-3 bg-paper/40",
+                )}
+              />
+            </button>
           ))}
         </div>
       ) : null}
