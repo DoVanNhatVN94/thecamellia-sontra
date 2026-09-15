@@ -71,6 +71,9 @@ export function StorySection() {
             <SmartImg
               src="/images/camellia.webp"
               alt=""
+              width={128}
+              height={186}
+              sizes="128px"
               loading="lazy"
               decoding="async"
               className="camellia-float pointer-events-none absolute -bottom-4 -left-3 w-24 !bg-transparent outline-none sm:w-32"
