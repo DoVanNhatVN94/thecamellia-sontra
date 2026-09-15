@@ -15,7 +15,7 @@ export function Footer() {
           </p>
         </div>
         <div className="md:col-span-3">
-          <p className="kicker text-paper/90">Dự án</p>
+          <p className="kicker text-paper">Dự án</p>
           <ul className="mt-4 space-y-1 text-sm text-paper/85">
             <li>
               <Link to="/" className="inline-flex min-h-11 items-center py-1.5 hover:text-paper">
@@ -50,7 +50,7 @@ export function Footer() {
           </ul>
         </div>
         <div className="md:col-span-4">
-          <p className="kicker text-paper/90">Liên hệ tư vấn</p>
+          <p className="kicker text-paper">Liên hệ tư vấn</p>
           <ul className="mt-4 space-y-1 text-sm text-paper/85">
             <li className="flex min-h-11 items-start gap-2.5 py-1.5">
               <MapPin className="mt-0.5 size-4 shrink-0" />
@@ -75,7 +75,7 @@ export function Footer() {
               </a>
             </li>
           </ul>
-          <p className="mt-5 text-xs leading-relaxed text-paper/70">
+          <p className="mt-5 text-xs leading-relaxed text-paper/80">
             Chủ đầu tư: {PROJECT.developer}
             <br />
             Phát triển dự án: {PROJECT.operator} · Kinh doanh: {PROJECT.sales}
@@ -83,7 +83,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-paper/10">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-[11px] text-paper/65 sm:flex-row sm:justify-between sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-[11px] text-paper/75 sm:flex-row sm:justify-between sm:px-6">
           <p>Trang tư vấn bán hàng. Thông tin tham khảo từ chủ đầu tư, có thể thay đổi.</p>
           <p>
             <span>© {new Date().getFullYear()} The Camellia Sơn Trà</span>

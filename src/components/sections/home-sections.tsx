@@ -87,7 +87,7 @@ export function ExteriorSlider() {
     <section className="bg-ink py-8 sm:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <Reveal>
-          <p className="kicker text-paper/70">Thư viện phối cảnh</p>
+          <p className="kicker text-paper">Thư viện phối cảnh</p>
           <h2 className="mt-3 mb-6 font-display text-3xl text-paper sm:text-4xl">
             Tòa tháp trong từng khoảnh khắc
           </h2>
@@ -119,7 +119,7 @@ export function FactsSection() {
       <div className="absolute inset-0 bg-ink/70" />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <Reveal>
-          <p className="kicker text-paper/70">Thông tin dự án</p>
+          <p className="kicker text-paper">Thông tin dự án</p>
           <h2 className="mt-3 font-display text-3xl sm:text-4xl">Một tòa tháp, một biểu tượng</h2>
         </Reveal>
         <dl className="mt-10 grid grid-cols-2 items-stretch gap-px overflow-hidden rounded-xl bg-paper/10 sm:grid-cols-3">
@@ -129,7 +129,7 @@ export function FactsSection() {
               delay={i * 70}
               className="flex h-full min-h-[8.75rem] flex-col justify-center bg-ink/85 p-5 sm:min-h-[9.75rem] sm:p-6"
             >
-              <dt className="text-[0.65rem] tracking-[0.16em] uppercase text-paper/70">
+              <dt className="text-[0.65rem] tracking-[0.16em] uppercase text-paper/90">
                 {f.label}
               </dt>
               <dd className="mt-2 font-num text-xl leading-snug sm:text-2xl">{f.value}</dd>
@@ -220,7 +220,7 @@ export function ArchitectureSection() {
           />
         </Reveal>
         <Reveal delay={120}>
-          <p className="kicker text-paper/70">Kiến trúc biểu tượng</p>
+          <p className="kicker text-paper">Kiến trúc biểu tượng</p>
           <h2 className="mt-3 font-display text-3xl sm:text-5xl">
             Cảm hứng Sơn Trà trên mặt đứng
           </h2>
@@ -400,7 +400,7 @@ export function TourPreview() {
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-xl">
-              <p className="kicker text-paper/70">Tour 360°</p>
+              <p className="kicker text-paper">Tour 360°</p>
               <h2 className="mt-3 font-display text-3xl sm:text-5xl">Khám phá dự án</h2>
               <p className="mt-3 text-sm leading-relaxed text-paper/75">
                 Xoay tòa nhà, vào căn hộ và tầm view biển — rừng. Bấm 360° để tải
@@ -560,7 +560,7 @@ export function CtaBand() {
     <section id="lien-he" className="scroll-mt-24 bg-ink text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
         <Reveal>
-          <p className="kicker text-paper/70">Đăng ký nhận thông tin</p>
+          <p className="kicker text-paper">Đăng ký nhận thông tin</p>
           <h2 className="mt-3 font-display text-3xl sm:text-5xl">
             Nhận bảng giá và mặt bằng
           </h2>
