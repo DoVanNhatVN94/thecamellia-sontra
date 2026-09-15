@@ -245,6 +245,43 @@ export type NewsArticle = {
 
 export const NEWS: NewsArticle[] = [
   {
+    slug: "tien-do-thi-cong-minh-chung-cam-ket",
+    date: "15.09.2026",
+    title: "Tiến độ thi công — minh chứng rõ ràng nhất cho một cam kết",
+    excerpt:
+      "The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang thi công phần thân — đúng tiến độ cam kết. Hình ảnh công trường thực tế, không phối cảnh.",
+    image: "/images/news-tien-do-card-og.jpg",
+    gallery: [
+      "/images/news-tien-do-01.webp",
+      "/images/news-tien-do-02.webp",
+      "/images/news-tien-do-03.webp",
+      "/images/news-tien-do-04.webp",
+    ],
+    body: [
+      {
+        text: "Giữa hàng loạt lời hứa hẹn trên thị trường bất động sản, có một loại bằng chứng không thể làm giả: hình ảnh công trường thực tế. Không phối cảnh, không dựng 3D — chỉ là những gì đang thực sự diễn ra mỗi ngày tại công trường.",
+      },
+      {
+        text: "Tính đến thời điểm hiện tại, The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang triển khai thi công phần thân — đúng theo tiến độ đã cam kết với khách hàng ngay từ những ngày đầu công bố dự án.",
+      },
+      {
+        heading: "Mỗi tầng là một bước tới bàn giao",
+        text: "Mỗi tầng được hoàn thiện không chỉ là một cột mốc kỹ thuật, mà còn là một bước tiến gần hơn đến ngày bàn giao — dự kiến Quý I/2028.",
+      },
+      {
+        heading: "Móng - hầm: nền tảng của 25 tầng",
+        text: "Với một dự án cao 25 tầng, việc hoàn thiện chắc chắn phần móng - hầm ngay từ giai đoạn đầu là nền tảng quan trọng nhất, quyết định sự vững chắc và an toàn của toàn bộ công trình về sau.",
+      },
+      {
+        text: "Với những khách hàng đang trong giai đoạn tìm hiểu và cân nhắc, tiến độ thi công thực tế luôn là một trong những yếu tố đáng tin cậy nhất để đánh giá năng lực triển khai của chủ đầu tư — quan trọng không kém gì vị trí hay chính sách bán hàng.",
+      },
+      {
+        heading: "Theo dõi & nhận tư vấn",
+        text: "Hotline / Zalo 0934 885 108. Email: dovannhatdn94@gmail.com. Inbox để được cập nhật tiến độ và rà soát giỏ hàng theo nhu cầu.",
+      },
+    ],
+  },
+  {
     slug: "su-kien-mo-ban-chinh-thuc-12-09-2026",
     date: "12.09.2026",
     title: "Premier Launch: gần 400 khách hiện diện, 159 giao dịch thành công",
