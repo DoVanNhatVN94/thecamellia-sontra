@@ -3,6 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { MediaCache } from "@/components/media-cache";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { ImageSrcProvider } from "@/lib/image-src";
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -65,6 +66,7 @@ export const Route = createRootRoute({
           </AuthProvider>
         </ImageSrcProvider>
         <Scripts />
+        <Analytics />
       </body>
     </html>
   ),
