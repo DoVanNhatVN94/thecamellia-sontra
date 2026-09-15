@@ -42,6 +42,11 @@ export function Footer() {
                 Tin tức
               </Link>
             </li>
+            <li>
+              <Link to="/lien-he" className="hover:text-paper">
+                Liên hệ
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="md:col-span-4">
@@ -80,10 +85,7 @@ export function Footer() {
       <div className="border-t border-paper/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-[11px] text-paper/45 sm:flex-row sm:justify-between sm:px-6">
           <p>Trang tư vấn bán hàng. Thông tin tham khảo từ chủ đầu tư, có thể thay đổi.</p>
-          <p className="flex gap-4">
-            <Link to="/sua-anh" className="hover:text-paper">
-              Sửa ảnh
-            </Link>
+          <p>
             <span>© {new Date().getFullYear()} The Camellia Sơn Trà</span>
           </p>
         </div>
