@@ -93,10 +93,6 @@ function ArticlePage() {
             slides={article.gallery.map((src) => ({
               src,
               alt: article.title,
-              fit:
-                (article.poster && src === article.poster) || src.includes("-04b.")
-                  ? ("contain" as const)
-                  : undefined,
             }))}
           />
         </div>
