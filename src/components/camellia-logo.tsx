@@ -54,8 +54,8 @@ export function CamelliaWordmark({
     <img
       src={src}
       alt="The Camellia Sơn Trà · Đà Nẵng"
-      width={compact ? 200 : 220}
-      height={compact ? 64 : 81}
+      width={compact ? 258 : 220}
+      height={compact ? 80 : 81}
       decoding="async"
       fetchPriority={compact ? "high" : "auto"}
       className={cn(compact ? "h-9 w-auto sm:h-10" : "h-12 w-auto sm:h-14", className)}

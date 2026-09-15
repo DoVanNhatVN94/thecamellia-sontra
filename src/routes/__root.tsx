@@ -6,6 +6,7 @@ import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { ImageSrcProvider } from "@/lib/image-src";
 import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
+import { DeferItalicFonts } from "@/components/perf/defer-italic-fonts";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -67,6 +68,7 @@ export const Route = createRootRoute({
       </head>
       <body>
         <PreviewHostBridge />
+        <DeferItalicFonts />
         <MediaCache />
         <ImageSrcProvider>
           <AuthProvider>
