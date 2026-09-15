@@ -1,8 +1,8 @@
 import { NEWS, PROJECT, UNIT_TYPES } from "@/data/project";
 
-/** Public origin. Override with VITE_SITE_URL when using a custom domain. */
+/** Public origin. Override with VITE_SITE_URL when needed. */
 export const SITE_ORIGIN = String(
-  import.meta.env.VITE_SITE_URL ?? "https://thecamellia-sontra.vercel.app",
+  import.meta.env.VITE_SITE_URL ?? "https://thecamellia-sontra.com",
 ).replace(/\/$/, "");
 
 export const SITE = {
