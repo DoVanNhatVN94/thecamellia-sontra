@@ -16,6 +16,13 @@ export function CountUp({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setN(to);
+      return;
+    }
     const io = new IntersectionObserver(
       ([entry]) => {
         if (!entry?.isIntersecting || started.current) return;

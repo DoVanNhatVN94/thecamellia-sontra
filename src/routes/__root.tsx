@@ -29,12 +29,6 @@ export const Route = createRootRoute({
       },
       {
         rel: "preload",
-        as: "image",
-        href: "/images/hero-aerial.webp",
-        type: "image/webp",
-      },
-      {
-        rel: "preload",
         as: "font",
         href: "/fonts/inter-latin.woff2",
         type: "font/woff2",
