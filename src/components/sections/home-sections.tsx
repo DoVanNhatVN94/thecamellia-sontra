@@ -26,7 +26,7 @@ import { useRegister } from "@/lib/register-store";
 
 export function StorySection() {
   return (
-    <section id="du-an" className="scroll-mt-20 bg-cream">
+    <section id="du-an" className="scroll-mt-24 bg-cream">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
         <Reveal>
           <p className="kicker">Câu chuyện vùng đất</p>
@@ -165,7 +165,7 @@ export function UnderstandSection() {
 
 export function LocationSection() {
   return (
-    <section id="vi-tri" className="scroll-mt-20 bg-cream">
+    <section id="vi-tri" className="scroll-mt-24 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:py-24">
         <Reveal>
           <div className="max-w-2xl">
@@ -246,7 +246,7 @@ export function ArchitectureSection() {
 
 export function AmenitiesPreview() {
   return (
-    <section id="tien-ich" className="cv-auto scroll-mt-20 bg-cream">
+    <section id="tien-ich" className="cv-auto scroll-mt-24 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -313,7 +313,7 @@ export function InteriorGallery() {
 
 export function UnitsPreview() {
   return (
-    <section id="can-ho" className="cv-auto scroll-mt-20 bg-cream">
+    <section id="can-ho" className="cv-auto scroll-mt-24 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -389,7 +389,7 @@ export function UnitsPreview() {
 
 export function TourPreview() {
   return (
-    <section id="kham-pha" className="scroll-mt-20 bg-ink text-paper">
+    <section id="kham-pha" className="scroll-mt-24 bg-ink text-paper">
       <div className="mx-auto max-w-6xl px-4 pt-16 pb-4 sm:px-6 sm:pt-20">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -416,7 +416,7 @@ export function TourPreview() {
 
 export function PolicySection() {
   return (
-    <section id="chinh-sach" className="scroll-mt-20 bg-paper">
+    <section id="chinh-sach" className="scroll-mt-24 bg-paper">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
           <p className="kicker">Chính sách</p>
@@ -472,7 +472,7 @@ export function LegalSection() {
 
 export function FaqSection() {
   return (
-    <section id="faq" className="scroll-mt-20 bg-paper">
+    <section id="faq" className="scroll-mt-24 bg-paper">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
           <p className="kicker">Câu hỏi thường gặp</p>
@@ -524,7 +524,7 @@ export function NewsPreview() {
                 <SmartImg
                   slot={`news:${n.slug}`}
                   src={n.image}
-                  alt=""
+                  alt={n.title}
                   loading="lazy"
                   decoding="async"
                   className="aspect-16/10 w-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -551,7 +551,7 @@ export function PartnerStrip() {
 
 export function CtaBand() {
   return (
-    <section id="lien-he" className="scroll-mt-20 bg-ink text-paper">
+    <section id="lien-he" className="scroll-mt-24 bg-ink text-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
         <Reveal>
           <p className="kicker text-paper/70">Đăng ký nhận thông tin</p>

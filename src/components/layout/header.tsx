@@ -75,7 +75,7 @@ export function Header() {
             className="hidden sm:inline-flex"
             onClick={() => openRegister()}
           >
-            Đăng ký tư vấn
+            Nhận bảng giá
           </Button>
           <button
             type="button"
@@ -113,7 +113,7 @@ export function Header() {
             )}
           </nav>
           <Button className="mt-4 w-full" onClick={() => openRegister()}>
-            Đăng ký tư vấn
+            Nhận bảng giá
           </Button>
         </div>
       ) : null}

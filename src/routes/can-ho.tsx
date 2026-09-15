@@ -76,7 +76,7 @@ function UnitsPage() {
       </PageHero>
 
       <div className="sticky-under-header sticky z-20 border-b border-stone bg-cream/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center gap-3 px-4 py-2 sm:px-6">
+        <div className="mx-auto flex max-w-6xl min-w-0 items-center gap-3 px-4 py-2 sm:px-6">
           <UnitFilterChips active={filter} onSelect={(id) => select(id, true)} />
           <p className="font-num hidden shrink-0 text-sm text-muted md:block">
             {unit.price}
@@ -113,7 +113,7 @@ function UnitsPage() {
             <View360Section />
           </Reveal>
 
-          <article id="mat-bang" className="scroll-mt-32 pb-6 sm:scroll-mt-28">
+          <article id="mat-bang" className="scroll-mt-36 pb-8 sm:scroll-mt-32">
             <div className="max-w-2xl">
               <p className="kicker">{unit.beds}</p>
               <h2 className="mt-2 font-display text-3xl sm:text-5xl">{unit.name}</h2>
