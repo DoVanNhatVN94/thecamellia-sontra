@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCallback, useEffect, useRef, useState, type SyntheticEvent } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Lightbox } from "@/components/media/lightbox";
 import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { cn } from "@/lib/utils";
@@ -8,10 +8,7 @@ export type PeekSlide = {
   src: string;
   alt: string;
   caption?: string;
-  /** Floor plans / diagrams: letterbox in a landscape frame. Photos should omit this. */
   fit?: "cover" | "contain";
-  /** Optional override; otherwise auto-detected from natural size on load. */
-  orientation?: "landscape" | "portrait";
 };
 
 type Props = {
@@ -22,14 +19,6 @@ type Props = {
   lightbox?: boolean;
   galleryId?: string;
 };
-
-type Orientation = "landscape" | "portrait";
-
-function frameClass(fit: PeekSlide["fit"], orientation: Orientation) {
-  if (fit === "contain") return "aspect-video";
-  if (orientation === "portrait") return "aspect-[3/4] max-h-[70vh]";
-  return "aspect-16/10";
-}
 
 export function PeekSlider({
   slides,
@@ -44,7 +33,6 @@ export function PeekSlider({
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
   const [inView, setInView] = useState(true);
-  const [detected, setDetected] = useState<Record<number, Orientation>>({});
   const { resolve, isHidden } = useImageSrc();
   const items = slides
     .map((slide, origin) => ({
@@ -53,24 +41,6 @@ export function PeekSlider({
       displaySrc: resolve(galleryId ? `${galleryId}:${origin}` : undefined, slide.src),
     }))
     .filter((s) => !(galleryId && isHidden(`${galleryId}:${s.origin}`)));
-
-  const orientationOf = useCallback(
-    (s: { origin: number; orientation?: Orientation }): Orientation =>
-      s.orientation ?? detected[s.origin] ?? "landscape",
-    [detected],
-  );
-
-  const onImageLoad = useCallback(
-    (origin: number, override: Orientation | undefined, e: SyntheticEvent<HTMLImageElement>) => {
-      if (override) return;
-      const img = e.currentTarget;
-      if (!img.naturalWidth || !img.naturalHeight) return;
-      const next: Orientation =
-        img.naturalHeight > img.naturalWidth ? "portrait" : "landscape";
-      setDetected((prev) => (prev[origin] === next ? prev : { ...prev, [origin]: next }));
-    },
-    [],
-  );
 
   const cardWidth = useCallback(() => {
     const el = scroller.current;
@@ -136,10 +106,6 @@ export function PeekSlider({
       >
         {items.map((s, i) => {
           const near = i <= 1 || (inView && Math.abs(i - index) <= 1);
-          const orientation = orientationOf(s);
-          const isContain = s.fit === "contain";
-          const isPortrait = !isContain && orientation === "portrait";
-          const aspect = frameClass(s.fit, orientation);
           return (
           <figure
             key={`${s.src}-${s.origin}`}
@@ -151,8 +117,7 @@ export function PeekSlider({
             <div
               className={cn(
                 "overflow-hidden rounded-xl",
-                isContain && "bg-paper",
-                isPortrait && "bg-ink/5",
+                s.fit === "contain" && "bg-paper",
               )}
             >
               {near ? (
@@ -163,7 +128,6 @@ export function PeekSlider({
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
                 sizes="(max-width: 720px) 82vw, 720px"
-                onLoad={(e) => onImageLoad(s.origin, s.orientation, e)}
                 onClick={() => {
                   if (!lightbox) return;
                   setIndex(i);
@@ -171,16 +135,19 @@ export function PeekSlider({
                 }}
                 className={cn(
                   "w-full",
-                  isContain
+                  s.fit === "contain"
                     ? "aspect-video object-contain bg-paper"
-                    : cn(aspect, "object-cover transition-transform duration-700"),
+                    : "aspect-16/10 object-cover transition-transform duration-700",
                   lightbox && "cursor-zoom-in",
-                  lightbox && !isContain && "hover:scale-[1.03]",
+                  lightbox && s.fit !== "contain" && "hover:scale-[1.03]",
                 )}
               />
               ) : (
                 <div
-                  className={cn("w-full bg-sand", aspect)}
+                  className={cn(
+                    "w-full bg-sand",
+                    s.fit === "contain" ? "aspect-video" : "aspect-16/10",
+                  )}
                   aria-hidden
                 />
               )}
