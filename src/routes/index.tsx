@@ -21,7 +21,21 @@ import {
 import { PAGES, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead(PAGES.home),
+  head: () => {
+    const base = pageHead(PAGES.home);
+    return {
+      ...base,
+      links: [
+        ...(base.links ?? []),
+        {
+          rel: "preload",
+          as: "image",
+          href: "/images/hero-aerial.webp",
+          type: "image/webp",
+        },
+      ],
+    };
+  },
   component: Home,
 });
 

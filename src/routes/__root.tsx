@@ -4,6 +4,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { MediaCache } from "@/components/media-cache";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { ImageSrcProvider } from "@/lib/image-src";
+import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -26,12 +27,6 @@ export const Route = createRootRoute({
         rel: "preload",
         as: "image",
         href: "/images/brand/logo-nav-white.webp",
-        type: "image/webp",
-      },
-      {
-        rel: "preload",
-        as: "image",
-        href: "/images/hero-aerial.webp",
         type: "image/webp",
       },
       {
@@ -73,6 +68,7 @@ export const Route = createRootRoute({
         </ImageSrcProvider>
         <Scripts />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   ),

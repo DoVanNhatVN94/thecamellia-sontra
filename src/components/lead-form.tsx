@@ -24,6 +24,7 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
   const [message, setMessage] = useState("");
   const [honey, setHoney] = useState("");
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<{ name?: string; phone?: string }>({});
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
 
@@ -31,17 +32,23 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
     if (defaultUnit) setUnit(defaultUnit);
   }, [defaultUnit]);
 
+  function validate() {
+    const next: { name?: string; phone?: string } = {};
+    const n = name.trim();
+    const p = phone.replace(/\s/g, "");
+    if (n.length < 2) next.name = "Vui lòng nhập họ tên.";
+    if (!p) next.phone = "Vui lòng nhập số điện thoại.";
+    else if (!PHONE_RE.test(p)) next.phone = "Số điện thoại chưa đúng định dạng (vd: 09xxxxxxxx hoặc +84…).";
+    setFieldErrors(next);
+    return { ok: Object.keys(next).length === 0, n, p };
+  }
+
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
-    const n = name.trim();
-    const p = phone.replace(/\s/g, "");
-    if (n.length < 2) {
-      setError("Vui lòng nhập họ tên.");
-      return;
-    }
-    if (!PHONE_RE.test(p)) {
-      setError("Số điện thoại chưa đúng định dạng.");
+    const { ok: valid, n, p } = validate();
+    if (!valid) {
+      setError("Vui lòng kiểm tra các trường bắt buộc.");
       return;
     }
     if (honey) {
@@ -81,10 +88,10 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
     );
   }
 
-  const extraCls = compact ? "hidden" : "hidden sm:grid";
+  const showExtras = !compact;
 
   return (
-    <form onSubmit={submit} className={cn("relative grid gap-3", className)}>
+    <form noValidate onSubmit={submit} className={cn("relative grid gap-3", className)}>
       <div className="h-0 overflow-hidden opacity-0" aria-hidden="true">
         <label htmlFor="lead-company">Công ty</label>
         <input
@@ -96,27 +103,55 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
         />
       </div>
       <div className="grid gap-1.5">
-        <Label htmlFor="lead-name">Họ và tên</Label>
+        <Label htmlFor="lead-name">
+          Họ và tên <span className="text-terracotta">*</span>
+        </Label>
         <Input
           id="lead-name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => {
+            setName(e.target.value);
+            if (fieldErrors.name) setFieldErrors((f) => ({ ...f, name: undefined }));
+          }}
           placeholder="Nguyễn Văn A"
           autoComplete="name"
-          required
+          aria-required="true"
+          aria-invalid={fieldErrors.name ? true : undefined}
+          aria-describedby={fieldErrors.name ? "lead-name-err" : undefined}
         />
+        {fieldErrors.name ? (
+          <p id="lead-name-err" className="text-xs text-terracotta">
+            {fieldErrors.name}
+          </p>
+        ) : null}
       </div>
       <div className="grid gap-1.5">
-        <Label htmlFor="lead-phone">Số điện thoại</Label>
+        <Label htmlFor="lead-phone">
+          Số điện thoại <span className="text-terracotta">*</span>
+        </Label>
         <Input
           id="lead-phone"
           value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          onChange={(e) => {
+            setPhone(e.target.value);
+            if (fieldErrors.phone) setFieldErrors((f) => ({ ...f, phone: undefined }));
+          }}
           placeholder="09xx xxx xxx"
           inputMode="tel"
           autoComplete="tel"
-          required
+          aria-required="true"
+          aria-invalid={fieldErrors.phone ? true : undefined}
+          aria-describedby={fieldErrors.phone ? "lead-phone-err" : "lead-phone-hint"}
         />
+        {fieldErrors.phone ? (
+          <p id="lead-phone-err" className="text-xs text-terracotta">
+            {fieldErrors.phone}
+          </p>
+        ) : (
+          <p id="lead-phone-hint" className="text-[11px] text-muted">
+            Định dạng: 0xxxxxxxxx hoặc +84xxxxxxxxx
+          </p>
+        )}
       </div>
       <div className="grid gap-1.5">
         <Label htmlFor="lead-unit">Loại căn quan tâm</Label>
@@ -134,27 +169,31 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
           ))}
         </select>
       </div>
-      <div className={cn("gap-1.5", extraCls)}>
-        <Label htmlFor="lead-email">Email (không bắt buộc)</Label>
-        <Input
-          id="lead-email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="email@domain.com"
-          autoComplete="email"
-        />
-      </div>
-      <div className={cn("gap-1.5", extraCls)}>
-        <Label htmlFor="lead-msg">Nhu cầu</Label>
-        <Textarea
-          id="lead-msg"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="An cư, đầu tư, xem nhà mẫu…"
-          rows={3}
-        />
-      </div>
+      {showExtras ? (
+        <>
+          <div className="grid gap-1.5">
+            <Label htmlFor="lead-email">Email (không bắt buộc)</Label>
+            <Input
+              id="lead-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="email@domain.com"
+              autoComplete="email"
+            />
+          </div>
+          <div className="grid gap-1.5">
+            <Label htmlFor="lead-msg">Nhu cầu</Label>
+            <Textarea
+              id="lead-msg"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="An cư, đầu tư, xem nhà mẫu…"
+              rows={3}
+            />
+          </div>
+        </>
+      ) : null}
       {error ? (
         <div className="grid gap-2 rounded-md bg-terracotta/10 p-3">
           <p className="text-sm text-terracotta">{error}</p>
