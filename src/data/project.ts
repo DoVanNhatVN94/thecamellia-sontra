@@ -250,12 +250,13 @@ export const NEWS: NewsArticle[] = [
     title: "Tiến độ thi công — minh chứng rõ ràng nhất cho một cam kết",
     excerpt:
       "The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang thi công phần thân — đúng tiến độ cam kết. Hình ảnh công trường thực tế, không phối cảnh.",
-    image: "/images/news-tien-do-card-og.jpg",
+    image: "/images/news-tien-do-card.jpg",
+    poster: "/images/news-tien-do-01b.webp",
     gallery: [
-      "/images/news-tien-do-01.webp",
-      "/images/news-tien-do-02.webp",
-      "/images/news-tien-do-03.webp",
-      "/images/news-tien-do-04.webp",
+      "/images/news-tien-do-01b.webp",
+      "/images/news-tien-do-02b.webp",
+      "/images/news-tien-do-03b.webp",
+      "/images/news-tien-do-04b.webp",
     ],
     body: [
       {

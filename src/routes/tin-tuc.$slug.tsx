@@ -1,6 +1,7 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { PeekSlider } from "@/components/media/peek-slider";
+import { RelatedNews } from "@/components/media/related-news";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { NEWS, PROJECT } from "@/data/project";
@@ -37,7 +38,7 @@ function ArticlePage() {
   const others = NEWS.filter((n) => n.slug !== article.slug);
 
   return (
-    <article className="bg-cream pt-28 pb-20">
+    <article className="bg-cream pt-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6">
         <Breadcrumbs
           items={[{ label: "Tin tức", href: "/tin-tuc" }, { label: article.title }]}
@@ -84,7 +85,7 @@ function ArticlePage() {
       </div>
 
       {article.gallery.length ? (
-        <div className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto mt-16 max-w-6xl px-4 pb-16 sm:px-6">
           <p className="kicker">Hình ảnh</p>
           <h2 className="mt-3 mb-6 font-display text-3xl">Thư viện hình ảnh</h2>
           <PeekSlider
@@ -92,43 +93,20 @@ function ArticlePage() {
             slides={article.gallery.map((src) => ({
               src,
               alt: article.title,
-              fit: article.poster && src === article.poster ? ("contain" as const) : undefined,
+              fit:
+                (article.poster && src === article.poster) || src.includes("-04b.")
+                  ? ("contain" as const)
+                  : undefined,
             }))}
           />
         </div>
       ) : null}
 
       {others.length ? (
-        <div className="mx-auto mt-16 max-w-6xl px-4 sm:px-6">
-          <p className="kicker">Tin khác</p>
-          <h2 className="mt-3 mb-6 font-display text-3xl">Tiếp tục đọc</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {others.map((n) => (
-              <Link
-                key={n.slug}
-                to="/tin-tuc/$slug"
-                params={{ slug: n.slug }}
-                className="group overflow-hidden rounded-xl bg-paper shadow-border"
-              >
-                <SmartImg
-                  slot={`news:${n.slug}`}
-                  src={n.image}
-                  alt={n.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-video w-full object-cover"
-                />
-                <div className="p-5">
-                  <p className="text-xs tracking-[0.16em] uppercase text-muted">{n.date}</p>
-                  <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">
-                    {n.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : null}
+        <RelatedNews articles={others.slice(0, 4)} className="mt-4" />
+      ) : (
+        <div className="pb-20" />
+      )}
     </article>
   );
 }
