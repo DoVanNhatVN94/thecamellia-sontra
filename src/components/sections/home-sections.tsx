@@ -121,13 +121,15 @@ export function FactsSection() {
         </Reveal>
         <dl className="mt-10 grid grid-cols-2 items-stretch gap-px overflow-hidden rounded-xl bg-paper/10 sm:grid-cols-3">
           {FACTS.map((f, i) => (
-            <Reveal key={f.label} delay={i * 70} className="h-full bg-ink/85">
-              <div className="flex h-full min-h-[8.75rem] flex-col justify-center p-5 sm:min-h-[9.75rem] sm:p-6">
-                <dt className="text-[0.65rem] tracking-[0.16em] uppercase text-paper/55">
-                  {f.label}
-                </dt>
-                <dd className="mt-2 font-num text-xl leading-snug sm:text-2xl">{f.value}</dd>
-              </div>
+            <Reveal
+              key={f.label}
+              delay={i * 70}
+              className="flex h-full min-h-[8.75rem] flex-col justify-center bg-ink/85 p-5 sm:min-h-[9.75rem] sm:p-6"
+            >
+              <dt className="text-[0.65rem] tracking-[0.16em] uppercase text-paper/70">
+                {f.label}
+              </dt>
+              <dd className="mt-2 font-num text-xl leading-snug sm:text-2xl">{f.value}</dd>
             </Reveal>
           ))}
         </dl>
@@ -186,13 +188,13 @@ export function LocationSection() {
         </Reveal>
         <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {DISTANCES.map((d, i) => (
-            <Reveal key={d.place} delay={i * 50}>
-              <li className="rounded-lg bg-paper p-4 shadow-border">
+            <li key={d.place}>
+              <Reveal delay={i * 50} className="h-full rounded-lg bg-paper p-4 shadow-border">
                 <p className="font-num text-2xl text-terracotta">{d.time}</p>
                 <p className="mt-1 text-sm font-medium">{d.place}</p>
                 <p className="text-xs text-muted">{d.note}</p>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ul>
       </div>
@@ -452,13 +454,13 @@ export function LegalSection() {
         </Reveal>
         <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {LEGAL_MILESTONES.map((m, i) => (
-            <Reveal key={m.date} delay={i * 80}>
-              <li className="rounded-xl border border-stone p-5">
+            <li key={m.date}>
+              <Reveal delay={i * 80} className="h-full rounded-xl border border-stone p-5">
                 <span className="font-num text-3xl text-stone">0{i + 1}</span>
                 <p className="mt-3 text-xs tracking-widest uppercase text-terracotta">{m.date}</p>
                 <p className="mt-2 text-sm leading-relaxed">{m.title}</p>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ol>
         <p className="mt-6 text-sm text-muted">
