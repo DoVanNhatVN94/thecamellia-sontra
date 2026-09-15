@@ -16,6 +16,7 @@ import {
   saveHidden,
   saveOverride,
 } from "@/lib/image-studio";
+import { companionSrcSet, isBlobUrl } from "@/lib/image-variants";
 import { cn } from "@/lib/utils";
 
 type Api = {
@@ -170,11 +171,18 @@ export function useVisibleSlides<T>(
     .filter(({ index }) => !isHidden(`${galleryId}:${index}`));
 }
 
-type SmartProps = ImgHTMLAttributes<HTMLImageElement> & { slot?: string };
+type SmartProps = ImgHTMLAttributes<HTMLImageElement> & {
+  slot?: string;
+  /** Explicit responsive candidates; also accepts lowercase `srcset`. */
+  srcSet?: string;
+  srcset?: string;
+};
 
 export function SmartImg({
   slot,
   src,
+  srcSet,
+  srcset,
   className,
   alt,
   onError,
@@ -182,8 +190,15 @@ export function SmartImg({
   decoding = "async",
   ...rest
 }: SmartProps) {
-  const resolved = useSlotSrc(slot, typeof src === "string" ? src : "");
+  const fallback = typeof src === "string" ? src : "";
+  const resolved = useSlotSrc(slot, fallback);
   const [failed, setFailed] = useState(false);
+  const overridden = isBlobUrl(resolved);
+  const explicit = srcSet ?? srcset;
+  // Studio blob overrides have no variants — drop srcset so the browser keeps the override.
+  const resolvedSrcSet = overridden
+    ? undefined
+    : explicit ?? companionSrcSet(fallback) ?? companionSrcSet(resolved);
 
   useEffect(() => {
     setFailed(false);
@@ -208,6 +223,7 @@ export function SmartImg({
     <img
       {...rest}
       src={resolved}
+      srcSet={resolvedSrcSet}
       alt={alt}
       loading={loading}
       decoding={decoding}

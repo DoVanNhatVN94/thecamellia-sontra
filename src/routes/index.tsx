@@ -32,6 +32,9 @@ export const Route = createFileRoute("/")({
           as: "image",
           href: "/images/hero-aerial.webp",
           type: "image/webp",
+          imageSrcSet:
+            "/images/hero-aerial-640.webp 640w, /images/hero-aerial.webp 1080w",
+          imageSizes: "100vw",
         },
       ],
     };

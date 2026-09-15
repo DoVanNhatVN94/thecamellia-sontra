@@ -46,6 +46,13 @@ export const Route = createRootRoute({
       {
         rel: "preload",
         as: "font",
+        href: "/fonts/cormorant-latin.woff2",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        as: "font",
         href: "/fonts/cormorant-vietnamese.woff2",
         type: "font/woff2",
         crossOrigin: "anonymous",

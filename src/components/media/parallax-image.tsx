@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useSlotSrc } from "@/lib/image-src";
+import { companionSrcSet, isBlobUrl } from "@/lib/image-variants";
 import { cn } from "@/lib/utils";
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
   speed?: number;
   loading?: "eager" | "lazy";
   slot?: string;
+  sizes?: string;
+  srcSet?: string;
 };
 
 export function ParallaxImage({
@@ -20,11 +23,16 @@ export function ParallaxImage({
   speed = 0.22,
   loading = "lazy",
   slot,
+  sizes,
+  srcSet,
 }: Props) {
   const wrap = useRef<HTMLDivElement>(null);
   const media = useRef<HTMLImageElement>(null);
   const resolved = useSlotSrc(slot, src);
   const [failed, setFailed] = useState(false);
+  const resolvedSrcSet = isBlobUrl(resolved)
+    ? undefined
+    : srcSet ?? companionSrcSet(src) ?? companionSrcSet(resolved);
 
   useEffect(() => {
     setFailed(false);
@@ -62,6 +70,8 @@ export function ParallaxImage({
         <img
           ref={media}
           src={resolved}
+          srcSet={resolvedSrcSet}
+          sizes={resolvedSrcSet ? sizes : undefined}
           alt={alt}
           loading={loading}
           decoding="async"
