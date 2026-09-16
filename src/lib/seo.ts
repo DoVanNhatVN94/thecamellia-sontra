@@ -78,7 +78,11 @@ export function resolveOgDims(input: Pick<SeoInput, "image" | "imageWidth" | "im
 const TITLE_SUFFIX = "The Camellia Sơn Trà";
 
 export function fullTitle(title: string) {
-  return title.includes(TITLE_SUFFIX) ? title : `${title} | ${TITLE_SUFFIX}`;
+  if (title.includes(TITLE_SUFFIX)) return title;
+  const withSuffix = `${title} | ${TITLE_SUFFIX}`;
+  // Keep SERP titles near ~60–70 chars when the raw title is already descriptive.
+  if (withSuffix.length > 70 && title.length >= 48) return title;
+  return withSuffix;
 }
 
 export function pageHead(input: SeoInput) {
@@ -138,21 +142,21 @@ export const DEFAULT_KEYWORDS =
 
 export const PAGES = {
   home: {
-    title: "The Camellia Sơn Trà | Căn hộ biển kề rừng Đà Nẵng, sở hữu lâu dài",
+    title: "The Camellia Sơn Trà | Căn hộ biển kề rừng Đà Nẵng",
     description:
       "The Camellia Sơn Trà – Đà Nẵng: 469 căn hộ biển kề rừng, sổ hồng lâu dài, giá từ 1,98 tỷ. Giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà. Nhận bảng giá.",
     path: "/",
     keywords: DEFAULT_KEYWORDS,
   },
   units: {
-    title: "Loại hình căn hộ Studio đến 3PN và Duplex",
+    title: "Căn hộ Studio đến 3PN & Duplex",
     description:
       "Mặt bằng The Camellia Sơn Trà: Studio 27,8–28,4 m² từ 1,98 tỷ, 1PN+1, 2PN, 3PN và Duplex. Tầm view 360 tầng 5–25. Thông thủy, tim tường, bàn giao hoàn thiện.",
     path: "/can-ho",
     keywords: "mặt bằng The Camellia, căn hộ studio Sơn Trà, tầm view 360 The Camellia, căn 2 phòng ngủ Đà Nẵng",
   },
   amenities: {
-    title: "Tiện ích 42 hạng mục — Wellness, Nature, Community",
+    title: "42 tiện ích Wellness · Nature · Community",
     description:
       "42 tiện ích The Camellia Sơn Trà: hồ bơi, gym, yoga, vườn trên cao, kids club, sảnh chữ V. Xếp lớp theo tầng, không dồn hết ở khối đế.",
     path: "/tien-ich",
@@ -172,7 +176,7 @@ export const PAGES = {
     keywords: "liên hệ The Camellia, hotline The Camellia Sơn Trà, đăng ký bảng giá căn hộ Sơn Trà",
   },
   tour: {
-    title: "Tour 360 The Camellia Sơn Trà — PanaMotion",
+    title: "Tour 360 PanaMotion The Camellia Sơn Trà",
     description:
       "Khám phá The Camellia Sơn Trà bằng tour 360 PanaMotion: xoay tòa nhà, vào căn hộ và tầm view biển – rừng – thành phố tại Sơn Trà, Đà Nẵng.",
     path: "/kham-pha",

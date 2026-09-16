@@ -251,7 +251,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "tien-do-thi-cong-minh-chung-cam-ket",
     date: "15.09.2026",
-    title: "Tiến độ thi công — minh chứng rõ ràng nhất cho một cam kết",
+    title: "Tiến độ thi công — minh chứng cho cam kết bàn giao",
     excerpt:
       "The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang thi công phần thân — đúng tiến độ cam kết. Hình ảnh công trường thực tế, không phối cảnh.",
     image: "/images/news-tien-do-card.jpg",
@@ -288,7 +288,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "su-kien-mo-ban-chinh-thuc-12-09-2026",
     date: "12.09.2026",
-    title: "Premier Launch: gần 400 khách hiện diện, 159 giao dịch thành công",
+    title: "Premier Launch: gần 400 khách, 159 giao dịch thành công",
     excerpt:
       "12.09.2026 The Camellia Sơn Trà – Đà Nẵng mở bán chính thức. Gần 400 khách hàng và đối tác, 159 giao dịch thành công — Life Within, nơi chốn thuộc về.",
     image: "/images/news-event-card-og.jpg",
@@ -370,7 +370,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "chinh-thuc-ra-hang-09-09-2026",
     date: "08.09.2026",
-    title: "Chỉ còn 1 ngày: The Camellia Sơn Trà chính thức ra hàng 09.09.2026",
+    title: "Ra hàng 09.09.2026: The Camellia Sơn Trà chính thức mở bán",
     excerpt:
       "15h00–16h00 ngày 09.09.2026, The Camellia Sơn Trà – Đà Nẵng chính thức ra hàng. DKRA Virgo phân phối. Liên hệ nhận thông tin quỹ căn phù hợp.",
     image: "/images/news-ra-hang-card-og.jpg",
@@ -406,7 +406,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "mbland-ra-mat-du-an-dau-tien-tai-da-nang",
     date: "31.07.2026",
-    title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng, chọn Sơn Trà làm điểm khởi đầu",
+    title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng — Sơn Trà",
     excerpt:
       "Ngày 26.07.2026, MBLAND tổ chức sự kiện giới thiệu The Camellia Sơn Trà – Đà Nẵng, mở đầu hành trình kiến tạo không gian sống chất lượng bên biển.",
     image: "/images/news-launch-og.jpg",
