@@ -32,7 +32,7 @@ export function ImageMarquee({
             key={`${item.src}-${item.origin}-${i}`}
             slot={galleryId ? `${galleryId}:${item.origin}` : undefined}
             src={item.src}
-            alt=""
+            alt={item.alt}
             loading="lazy"
             decoding="async"
             fetchPriority="low"

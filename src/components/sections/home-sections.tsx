@@ -70,7 +70,7 @@ export function StorySection() {
             />
             <SmartImg
               src="/images/camellia.webp"
-              alt=""
+              alt="Hoa trà Camellia — biểu tượng dự án"
               width={128}
               height={186}
               sizes="128px"
@@ -114,7 +114,7 @@ export function FactsSection() {
       <ParallaxImage
         src="/images/hero.webp"
         slot="facts:bg"
-        alt=""
+        alt="Phối cảnh tòa tháp The Camellia Sơn Trà lúc chiều"
         className="absolute inset-0 size-full opacity-40"
         speed={0.18}
         sizes="100vw"
@@ -280,7 +280,7 @@ export function AmenitiesPreview() {
                   <SmartImg
                     slot={`amenity-layer:${layer.id}`}
                     src={layer.image}
-                    alt={layer.title}
+                    alt={layer.alt}
                     loading="lazy"
                     decoding="async"
                     className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-110"

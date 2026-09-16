@@ -164,6 +164,7 @@ export const AMENITY_LAYERS = [
     title: "Wellness",
     kicker: "Chăm sóc sức khỏe",
     image: "/images/yoga-op1.webp",
+    alt: "Yoga studio view Sơn Trà — tiện ích Wellness",
     items: ["Phòng gym", "Phòng yoga", "Spa", "Hồ bơi", "Jacuzzi", "Phòng xông hơi", "Đường chạy bộ", "Sân tập ngoài trời", "Sàn thiền", "Phòng thay đồ"],
   },
   {
@@ -171,6 +172,7 @@ export const AMENITY_LAYERS = [
     title: "Nature",
     kicker: "Kết nối thiên nhiên",
     image: "/images/pool-1.webp",
+    alt: "Hồ bơi The Camellia — tiện ích Nature",
     items: ["Vườn trên cao", "Vườn cảnh quan", "Khu BBQ", "Sân trong nhiệt đới", "Chòi đọc sách", "Đài ngắm hoàng hôn", "Vườn hoa trà", "Mặt nước cảnh quan", "Sân trời", "Mảng xanh đứng"],
   },
   {
@@ -178,6 +180,7 @@ export const AMENITY_LAYERS = [
     title: "Community",
     kicker: "Cộng đồng",
     image: "/images/kids.webp",
+    alt: "Khu vui chơi trẻ em — tiện ích Community",
     items: ["Khu vui chơi trẻ em", "Sảnh tiệc", "Không gian làm việc", "Lounge doanh nhân", "Thư viện", "Hội trường đa năng", "Phòng chiếu phim", "Sky bar", "Phòng họp", "Lounge cư dân"],
   },
   {
@@ -185,6 +188,7 @@ export const AMENITY_LAYERS = [
     title: "Everyday Living",
     kicker: "Sống mỗi ngày",
     image: "/images/amenity-2.webp",
+    alt: "Không gian tiện ích Everyday Living The Camellia",
     items: ["Sảnh đón hình chữ V", "Lễ tân 24/7", "An ninh 24/7", "Hầm để xe", "Shophouse khối đế", "Concierge", "Sạc xe điện", "Hệ thống locker", "Dịch vụ hành chính", "Khu thương mại"],
   },
 ] as const;
