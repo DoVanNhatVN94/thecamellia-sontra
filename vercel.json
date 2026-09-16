@@ -1,9 +1,21 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "thecamellia-sontra.vercel.app" }],
+      "destination": "https://thecamellia-sontra.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "thecamellia-sontra.vercel.app" }],
       "destination": "https://thecamellia-sontra.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.thecamellia-sontra.com" }],
+      "destination": "https://thecamellia-sontra.com/",
       "permanent": true
     },
     {
