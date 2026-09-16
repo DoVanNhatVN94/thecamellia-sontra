@@ -131,6 +131,14 @@ export const PAGES = {
     path: "/lien-he",
     keywords: "liên hệ The Camellia, hotline The Camellia Sơn Trà, đăng ký bảng giá căn hộ Sơn Trà",
   },
+  tour: {
+    title: "Tour 360 The Camellia Sơn Trà — PanaMotion",
+    description:
+      "Khám phá The Camellia Sơn Trà bằng tour 360 PanaMotion: xoay tòa nhà, vào căn hộ và tầm view biển – rừng – thành phố tại Sơn Trà, Đà Nẵng.",
+    path: "/kham-pha",
+    keywords:
+      "tour 360 The Camellia, PanaMotion The Camellia Sơn Trà, khám phá căn hộ 360 Đà Nẵng, virtual tour Sơn Trà",
+  },
 } as const;
 
 export const FAQS = [
@@ -279,6 +287,7 @@ export const SITEMAP_PATHS = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/can-ho", priority: "0.9", changefreq: "weekly" },
   { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
+  { path: "/kham-pha", priority: "0.8", changefreq: "monthly" },
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
   ...NEWS.map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
