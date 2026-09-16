@@ -28,6 +28,7 @@ function AmenitiesPage() {
         kicker="42 tiện ích"
         title="42 tiện ích The Camellia Sơn Trà"
         crumbs={[{ label: "Tiện ích" }]}
+        galleryId="amenity"
         slides={[...photos.slice(0, 4)]}
       >
         Wellness · Nature · Community · Everyday Living — tiện ích xếp lớp theo
@@ -41,7 +42,7 @@ function AmenitiesPage() {
                 <SmartImg
                   slot={`amenity-layer:${layer.id}`}
                   src={layer.image}
-                  alt={layer.title}
+                  alt={layer.alt}
                   loading="lazy"
                   decoding="async"
                   className="img-reveal aspect-4/3 w-full rounded-xl object-cover lg:col-span-2"

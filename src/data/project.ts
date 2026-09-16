@@ -164,6 +164,7 @@ export const AMENITY_LAYERS = [
     title: "Wellness",
     kicker: "Chăm sóc sức khỏe",
     image: "/images/yoga-op1.webp",
+    alt: "Yoga studio view Sơn Trà — tiện ích Wellness",
     items: ["Phòng gym", "Phòng yoga", "Spa", "Hồ bơi", "Jacuzzi", "Phòng xông hơi", "Đường chạy bộ", "Sân tập ngoài trời", "Sàn thiền", "Phòng thay đồ"],
   },
   {
@@ -171,6 +172,7 @@ export const AMENITY_LAYERS = [
     title: "Nature",
     kicker: "Kết nối thiên nhiên",
     image: "/images/pool-1.webp",
+    alt: "Hồ bơi The Camellia — tiện ích Nature",
     items: ["Vườn trên cao", "Vườn cảnh quan", "Khu BBQ", "Sân trong nhiệt đới", "Chòi đọc sách", "Đài ngắm hoàng hôn", "Vườn hoa trà", "Mặt nước cảnh quan", "Sân trời", "Mảng xanh đứng"],
   },
   {
@@ -178,6 +180,7 @@ export const AMENITY_LAYERS = [
     title: "Community",
     kicker: "Cộng đồng",
     image: "/images/kids.webp",
+    alt: "Khu vui chơi trẻ em — tiện ích Community",
     items: ["Khu vui chơi trẻ em", "Sảnh tiệc", "Không gian làm việc", "Lounge doanh nhân", "Thư viện", "Hội trường đa năng", "Phòng chiếu phim", "Sky bar", "Phòng họp", "Lounge cư dân"],
   },
   {
@@ -185,6 +188,7 @@ export const AMENITY_LAYERS = [
     title: "Everyday Living",
     kicker: "Sống mỗi ngày",
     image: "/images/amenity-2.webp",
+    alt: "Không gian tiện ích Everyday Living The Camellia",
     items: ["Sảnh đón hình chữ V", "Lễ tân 24/7", "An ninh 24/7", "Hầm để xe", "Shophouse khối đế", "Concierge", "Sạc xe điện", "Hệ thống locker", "Dịch vụ hành chính", "Khu thương mại"],
   },
 ] as const;
@@ -247,7 +251,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "tien-do-thi-cong-minh-chung-cam-ket",
     date: "15.09.2026",
-    title: "Tiến độ thi công — minh chứng rõ ràng nhất cho một cam kết",
+    title: "Tiến độ thi công — minh chứng cho cam kết bàn giao",
     excerpt:
       "The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang thi công phần thân — đúng tiến độ cam kết. Hình ảnh công trường thực tế, không phối cảnh.",
     image: "/images/news-tien-do-card.jpg",
@@ -284,7 +288,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "su-kien-mo-ban-chinh-thuc-12-09-2026",
     date: "12.09.2026",
-    title: "Premier Launch: gần 400 khách hiện diện, 159 giao dịch thành công",
+    title: "Premier Launch: gần 400 khách, 159 giao dịch thành công",
     excerpt:
       "12.09.2026 The Camellia Sơn Trà – Đà Nẵng mở bán chính thức. Gần 400 khách hàng và đối tác, 159 giao dịch thành công — Life Within, nơi chốn thuộc về.",
     image: "/images/news-event-card-og.jpg",
@@ -334,7 +338,7 @@ export const NEWS: NewsArticle[] = [
     title: "Giỏ hàng đã mở: The Camellia Sơn Trà chính thức ra hàng",
     excerpt:
       "09.09.2026 The Camellia Sơn Trà chính thức ra hàng. DKRA Virgo đồng hành chọn căn theo nhu cầu, loại căn, ngân sách và hướng view.",
-    image: "/images/news-gio-hang-card.webp",
+    image: "/images/news-gio-hang-card-og.jpg",
     poster: "/images/news-gio-hang.webp",
     gallery: [
       "/images/news-gio-hang.webp",
@@ -366,10 +370,10 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "chinh-thuc-ra-hang-09-09-2026",
     date: "08.09.2026",
-    title: "Chỉ còn 1 ngày: The Camellia Sơn Trà chính thức ra hàng 09.09.2026",
+    title: "Ra hàng 09.09.2026: The Camellia Sơn Trà chính thức mở bán",
     excerpt:
       "15h00–16h00 ngày 09.09.2026, The Camellia Sơn Trà – Đà Nẵng chính thức ra hàng. DKRA Virgo phân phối. Liên hệ nhận thông tin quỹ căn phù hợp.",
-    image: "/images/news-ra-hang-card.webp",
+    image: "/images/news-ra-hang-card-og.jpg",
     poster: "/images/news-ra-hang.webp",
     gallery: [
       "/images/news-ra-hang.webp",
@@ -402,10 +406,10 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "mbland-ra-mat-du-an-dau-tien-tai-da-nang",
     date: "31.07.2026",
-    title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng, chọn Sơn Trà làm điểm khởi đầu",
+    title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng — Sơn Trà",
     excerpt:
       "Ngày 26.07.2026, MBLAND tổ chức sự kiện giới thiệu The Camellia Sơn Trà – Đà Nẵng, mở đầu hành trình kiến tạo không gian sống chất lượng bên biển.",
-    image: "/images/news-launch.webp",
+    image: "/images/news-launch-og.jpg",
     gallery: [
       "/images/news-launch.webp",
       "/images/news-launch-2.webp",
@@ -441,7 +445,7 @@ export const NEWS: NewsArticle[] = [
     title: "CEO Meeting The Camellia Sơn Trà",
     excerpt:
       "Ngày 07.07.2026, CEO Meeting diễn ra với sự tham dự của WELAND cùng các CEO và đối tác chiến lược, lần đầu hé lộ hình ảnh dự án.",
-    image: "/images/news-ceo-1.webp",
+    image: "/images/news-ceo-1-og.jpg",
     gallery: [
       "/images/news-ceo-1.webp",
       "/images/news-ceo-2.webp",
@@ -472,7 +476,7 @@ export const NEWS: NewsArticle[] = [
     title: "Căn hộ biển sở hữu lâu dài — quỹ hàng giới hạn tại Sơn Trà",
     excerpt:
       "The Camellia là một trong số ít căn hộ biển kề rừng được sở hữu lâu dài tại Sơn Trà, nơi quỹ đất ven biển ngày càng khan hiếm.",
-    image: "/images/news-tt03.webp",
+    image: "/images/news-tt03-og.jpg",
     gallery: [
       "/images/news-tt03.webp",
       "/images/news-tt04.webp",

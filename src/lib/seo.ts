@@ -32,6 +32,11 @@ export type SeoInput = {
   description: string;
   path: string;
   image?: string;
+  /** Override OG image pixel size when known. */
+  imageWidth?: number;
+  imageHeight?: number;
+  /** Override og:image:alt (articles default to title). */
+  imageAlt?: string;
   type?: "website" | "article";
   keywords?: string;
   noindex?: boolean;
@@ -39,16 +44,55 @@ export type SeoInput = {
   modifiedTime?: string;
 };
 
+/** Known OG asset dimensions (path relative to site root). Default og.jpg is 1200×630. */
+export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  "/og.jpg": { width: 1200, height: 630 },
+  "/images/news-tien-do-card.jpg": { width: 1200, height: 900 },
+  "/images/news-event-card-og.jpg": { width: 1400, height: 787 },
+  "/images/news-gio-hang-card-og.jpg": { width: 960, height: 540 },
+  "/images/news-ra-hang-card-og.jpg": { width: 960, height: 540 },
+  "/images/news-launch-og.jpg": { width: 1080, height: 722 },
+  "/images/news-ceo-1-og.jpg": { width: 960, height: 641 },
+  "/images/news-tt03-og.jpg": { width: 1080, height: 608 },
+};
+
+function ogPathKey(imageUrl: string) {
+  try {
+    if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
+      return new URL(imageUrl).pathname;
+    }
+  } catch {
+    /* keep as-is */
+  }
+  return imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`;
+}
+
+export function resolveOgDims(input: Pick<SeoInput, "image" | "imageWidth" | "imageHeight">) {
+  if (input.imageWidth && input.imageHeight) {
+    return { width: input.imageWidth, height: input.imageHeight };
+  }
+  const key = ogPathKey(input.image ?? SITE.ogImage);
+  return OG_IMAGE_DIMS[key] ?? { width: 1200, height: 630 };
+}
+
 const TITLE_SUFFIX = "The Camellia Sơn Trà";
 
 export function fullTitle(title: string) {
-  return title.includes(TITLE_SUFFIX) ? title : `${title} | ${TITLE_SUFFIX}`;
+  if (title.includes(TITLE_SUFFIX)) return title;
+  const withSuffix = `${title} | ${TITLE_SUFFIX}`;
+  // Keep SERP titles near ~60–70 chars when the raw title is already descriptive.
+  if (withSuffix.length > 70 && title.length >= 48) return title;
+  return withSuffix;
 }
 
 export function pageHead(input: SeoInput) {
   const title = fullTitle(input.title);
   const url = absUrl(input.path);
   const image = absUrl(input.image ?? SITE.ogImage);
+  const dims = resolveOgDims(input);
+  const imageAlt =
+    input.imageAlt ??
+    (input.type === "article" ? input.title : `${SITE.name} — ${SITE.tagline}`);
   const robots = input.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
   return {
@@ -71,9 +115,9 @@ export function pageHead(input: SeoInput) {
       { property: "og:description", content: input.description },
       { property: "og:url", content: url },
       { property: "og:image", content: image },
-      { property: "og:image:width", content: "1400" },
-      { property: "og:image:height", content: "787" },
-      { property: "og:image:alt", content: `${SITE.name} — ${SITE.tagline}` },
+      { property: "og:image:width", content: String(dims.width) },
+      { property: "og:image:height", content: String(dims.height) },
+      { property: "og:image:alt", content: imageAlt },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: input.description },
@@ -98,21 +142,21 @@ export const DEFAULT_KEYWORDS =
 
 export const PAGES = {
   home: {
-    title: "The Camellia Sơn Trà | Căn hộ biển kề rừng Đà Nẵng, sở hữu lâu dài",
+    title: "The Camellia Sơn Trà | Căn hộ biển kề rừng Đà Nẵng",
     description:
       "The Camellia Sơn Trà – Đà Nẵng: 469 căn hộ biển kề rừng, sổ hồng lâu dài, giá từ 1,98 tỷ. Giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà. Nhận bảng giá.",
     path: "/",
     keywords: DEFAULT_KEYWORDS,
   },
   units: {
-    title: "Loại hình căn hộ Studio đến 3PN và Duplex",
+    title: "Căn hộ Studio đến 3PN & Duplex",
     description:
       "Mặt bằng The Camellia Sơn Trà: Studio 27,8–28,4 m² từ 1,98 tỷ, 1PN+1, 2PN, 3PN và Duplex. Tầm view 360 tầng 5–25. Thông thủy, tim tường, bàn giao hoàn thiện.",
     path: "/can-ho",
     keywords: "mặt bằng The Camellia, căn hộ studio Sơn Trà, tầm view 360 The Camellia, căn 2 phòng ngủ Đà Nẵng",
   },
   amenities: {
-    title: "Tiện ích 42 hạng mục — Wellness, Nature, Community",
+    title: "42 tiện ích Wellness · Nature · Community",
     description:
       "42 tiện ích The Camellia Sơn Trà: hồ bơi, gym, yoga, vườn trên cao, kids club, sảnh chữ V. Xếp lớp theo tầng, không dồn hết ở khối đế.",
     path: "/tien-ich",
@@ -130,6 +174,14 @@ export const PAGES = {
     description: `Đăng ký tư vấn The Camellia Sơn Trà. Hotline ${PROJECT.hotlineDisplay}, Zalo, email ${PROJECT.email}. Nhận bảng giá, mặt bằng và chính sách.`,
     path: "/lien-he",
     keywords: "liên hệ The Camellia, hotline The Camellia Sơn Trà, đăng ký bảng giá căn hộ Sơn Trà",
+  },
+  tour: {
+    title: "Tour 360 PanaMotion The Camellia Sơn Trà",
+    description:
+      "Khám phá The Camellia Sơn Trà bằng tour 360 PanaMotion: xoay tòa nhà, vào căn hộ và tầm view biển – rừng – thành phố tại Sơn Trà, Đà Nẵng.",
+    path: "/kham-pha",
+    keywords:
+      "tour 360 The Camellia, PanaMotion The Camellia Sơn Trà, khám phá căn hộ 360 Đà Nẵng, virtual tour Sơn Trà",
   },
 } as const;
 
@@ -279,6 +331,7 @@ export const SITEMAP_PATHS = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/can-ho", priority: "0.9", changefreq: "weekly" },
   { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
+  { path: "/kham-pha", priority: "0.8", changefreq: "monthly" },
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
   ...NEWS.map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
