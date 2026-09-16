@@ -334,7 +334,7 @@ export const NEWS: NewsArticle[] = [
     title: "Giỏ hàng đã mở: The Camellia Sơn Trà chính thức ra hàng",
     excerpt:
       "09.09.2026 The Camellia Sơn Trà chính thức ra hàng. DKRA Virgo đồng hành chọn căn theo nhu cầu, loại căn, ngân sách và hướng view.",
-    image: "/images/news-gio-hang-card.webp",
+    image: "/images/news-gio-hang-card-og.jpg",
     poster: "/images/news-gio-hang.webp",
     gallery: [
       "/images/news-gio-hang.webp",
@@ -369,7 +369,7 @@ export const NEWS: NewsArticle[] = [
     title: "Chỉ còn 1 ngày: The Camellia Sơn Trà chính thức ra hàng 09.09.2026",
     excerpt:
       "15h00–16h00 ngày 09.09.2026, The Camellia Sơn Trà – Đà Nẵng chính thức ra hàng. DKRA Virgo phân phối. Liên hệ nhận thông tin quỹ căn phù hợp.",
-    image: "/images/news-ra-hang-card.webp",
+    image: "/images/news-ra-hang-card-og.jpg",
     poster: "/images/news-ra-hang.webp",
     gallery: [
       "/images/news-ra-hang.webp",
@@ -405,7 +405,7 @@ export const NEWS: NewsArticle[] = [
     title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng, chọn Sơn Trà làm điểm khởi đầu",
     excerpt:
       "Ngày 26.07.2026, MBLAND tổ chức sự kiện giới thiệu The Camellia Sơn Trà – Đà Nẵng, mở đầu hành trình kiến tạo không gian sống chất lượng bên biển.",
-    image: "/images/news-launch.webp",
+    image: "/images/news-launch-og.jpg",
     gallery: [
       "/images/news-launch.webp",
       "/images/news-launch-2.webp",
@@ -441,7 +441,7 @@ export const NEWS: NewsArticle[] = [
     title: "CEO Meeting The Camellia Sơn Trà",
     excerpt:
       "Ngày 07.07.2026, CEO Meeting diễn ra với sự tham dự của WELAND cùng các CEO và đối tác chiến lược, lần đầu hé lộ hình ảnh dự án.",
-    image: "/images/news-ceo-1.webp",
+    image: "/images/news-ceo-1-og.jpg",
     gallery: [
       "/images/news-ceo-1.webp",
       "/images/news-ceo-2.webp",
@@ -472,7 +472,7 @@ export const NEWS: NewsArticle[] = [
     title: "Căn hộ biển sở hữu lâu dài — quỹ hàng giới hạn tại Sơn Trà",
     excerpt:
       "The Camellia là một trong số ít căn hộ biển kề rừng được sở hữu lâu dài tại Sơn Trà, nơi quỹ đất ven biển ngày càng khan hiếm.",
-    image: "/images/news-tt03.webp",
+    image: "/images/news-tt03-og.jpg",
     gallery: [
       "/images/news-tt03.webp",
       "/images/news-tt04.webp",

@@ -32,12 +32,48 @@ export type SeoInput = {
   description: string;
   path: string;
   image?: string;
+  /** Override OG image pixel size when known. */
+  imageWidth?: number;
+  imageHeight?: number;
+  /** Override og:image:alt (articles default to title). */
+  imageAlt?: string;
   type?: "website" | "article";
   keywords?: string;
   noindex?: boolean;
   publishedTime?: string;
   modifiedTime?: string;
 };
+
+/** Known OG asset dimensions (path relative to site root). Default og.jpg is 1200×630. */
+export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = {
+  "/og.jpg": { width: 1200, height: 630 },
+  "/images/news-tien-do-card.jpg": { width: 1200, height: 900 },
+  "/images/news-event-card-og.jpg": { width: 1400, height: 787 },
+  "/images/news-gio-hang-card-og.jpg": { width: 960, height: 540 },
+  "/images/news-ra-hang-card-og.jpg": { width: 960, height: 540 },
+  "/images/news-launch-og.jpg": { width: 1080, height: 722 },
+  "/images/news-ceo-1-og.jpg": { width: 960, height: 641 },
+  "/images/news-tt03-og.jpg": { width: 1080, height: 608 },
+};
+
+function ogPathKey(imageUrl: string) {
+  try {
+    if (imageUrl.startsWith("http://") || imageUrl.startsWith("https://")) {
+      return new URL(imageUrl).pathname;
+    }
+  } catch {
+    /* keep as-is */
+  }
+  return imageUrl.startsWith("/") ? imageUrl : `/${imageUrl}`;
+}
+
+export function resolveOgDims(input: Pick<SeoInput, "image" | "imageWidth" | "imageHeight">) {
+  if (input.imageWidth && input.imageHeight) {
+    return { width: input.imageWidth, height: input.imageHeight };
+  }
+  const key = ogPathKey(input.image ?? SITE.ogImage);
+  return OG_IMAGE_DIMS[key] ?? { width: 1200, height: 630 };
+}
 
 const TITLE_SUFFIX = "The Camellia Sơn Trà";
 
@@ -49,6 +85,10 @@ export function pageHead(input: SeoInput) {
   const title = fullTitle(input.title);
   const url = absUrl(input.path);
   const image = absUrl(input.image ?? SITE.ogImage);
+  const dims = resolveOgDims(input);
+  const imageAlt =
+    input.imageAlt ??
+    (input.type === "article" ? input.title : `${SITE.name} — ${SITE.tagline}`);
   const robots = input.noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
   return {
@@ -71,9 +111,9 @@ export function pageHead(input: SeoInput) {
       { property: "og:description", content: input.description },
       { property: "og:url", content: url },
       { property: "og:image", content: image },
-      { property: "og:image:width", content: "1400" },
-      { property: "og:image:height", content: "787" },
-      { property: "og:image:alt", content: `${SITE.name} — ${SITE.tagline}` },
+      { property: "og:image:width", content: String(dims.width) },
+      { property: "og:image:height", content: String(dims.height) },
+      { property: "og:image:alt", content: imageAlt },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: input.description },
