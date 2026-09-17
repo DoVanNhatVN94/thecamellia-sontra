@@ -175,6 +175,14 @@ export const PAGES = {
     path: "/lien-he",
     keywords: "liên hệ The Camellia, hotline The Camellia Sơn Trà, đăng ký bảng giá căn hộ Sơn Trà",
   },
+  factSheet: {
+    title: "Giới thiệu The Camellia Sơn Trà | Fact sheet",
+    description:
+      "Fact sheet The Camellia Sơn Trà: 469 căn, giá từ 1,98 tỷ, sổ hồng lâu dài. CĐT Thành Lâm · MBLAND · WELAND · DKRA Virgo. Lê Văn Lương – Lê Đức Thọ.",
+    path: "/gioi-thieu",
+    keywords:
+      "giới thiệu The Camellia, fact sheet The Camellia Sơn Trà, thông tin dự án The Camellia, căn hộ Sơn Trà Đà Nẵng",
+  },
   tour: {
     title: "Tour 360 PanaMotion The Camellia Sơn Trà",
     description:
@@ -332,6 +340,7 @@ export const SITEMAP_PATHS = [
   { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
   { path: "/kham-pha", priority: "0.8", changefreq: "monthly" },
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
+  { path: "/gioi-thieu", priority: "0.85", changefreq: "monthly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
   ...NEWS.map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
 ] as const;

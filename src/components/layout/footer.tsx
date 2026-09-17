@@ -38,6 +38,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link to="/gioi-thieu" className="inline-flex min-h-11 items-center py-1.5 hover:text-paper">
+                Giới thiệu
+              </Link>
+            </li>
+            <li>
               <Link to="/tin-tuc" className="inline-flex min-h-11 items-center py-1.5 hover:text-paper">
                 Tin tức
               </Link>

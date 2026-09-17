@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CanHoRouteImport } from './routes/can-ho'
+import { Route as GioiThieuRouteImport } from './routes/gioi-thieu'
 import { Route as KhamPhaRouteImport } from './routes/kham-pha'
 import { Route as LienHeRouteImport } from './routes/lien-he'
 import { Route as SuaAnhRouteImport } from './routes/sua-anh'
@@ -27,6 +28,11 @@ const IndexRoute = IndexRouteImport.update({
 const CanHoRoute = CanHoRouteImport.update({
   id: '/can-ho',
   path: '/can-ho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GioiThieuRoute = GioiThieuRouteImport.update({
+  id: '/gioi-thieu',
+  path: '/gioi-thieu',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KhamPhaRoute = KhamPhaRouteImport.update({
@@ -68,6 +74,7 @@ const TinTucSlugRoute = TinTucSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/can-ho': typeof CanHoRoute
+  '/gioi-thieu': typeof GioiThieuRoute
   '/kham-pha': typeof KhamPhaRoute
   '/lien-he': typeof LienHeRoute
   '/sua-anh': typeof SuaAnhRoute
@@ -79,6 +86,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/can-ho': typeof CanHoRoute
+  '/gioi-thieu': typeof GioiThieuRoute
   '/kham-pha': typeof KhamPhaRoute
   '/lien-he': typeof LienHeRoute
   '/sua-anh': typeof SuaAnhRoute
@@ -90,6 +98,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/can-ho': typeof CanHoRoute
+  '/gioi-thieu': typeof GioiThieuRoute
   '/kham-pha': typeof KhamPhaRoute
   '/lien-he': typeof LienHeRoute
   '/sua-anh': typeof SuaAnhRoute
@@ -103,6 +112,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/can-ho'
+    | '/gioi-thieu'
     | '/kham-pha'
     | '/lien-he'
     | '/sua-anh'
@@ -114,6 +124,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/can-ho'
+    | '/gioi-thieu'
     | '/kham-pha'
     | '/lien-he'
     | '/sua-anh'
@@ -124,6 +135,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/can-ho'
+    | '/gioi-thieu'
     | '/kham-pha'
     | '/lien-he'
     | '/sua-anh'
@@ -136,6 +148,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CanHoRoute: typeof CanHoRoute
+  GioiThieuRoute: typeof GioiThieuRoute
   KhamPhaRoute: typeof KhamPhaRoute
   LienHeRoute: typeof LienHeRoute
   SuaAnhRoute: typeof SuaAnhRoute
@@ -157,6 +170,13 @@ declare module '@tanstack/react-router' {
       path: '/can-ho'
       fullPath: '/can-ho'
       preLoaderRoute: typeof CanHoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gioi-thieu': {
+      id: '/gioi-thieu'
+      path: '/gioi-thieu'
+      fullPath: '/gioi-thieu'
+      preLoaderRoute: typeof GioiThieuRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/kham-pha': {
@@ -227,6 +247,7 @@ const TinTucRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CanHoRoute: CanHoRoute,
+  GioiThieuRoute: GioiThieuRoute,
   KhamPhaRoute: KhamPhaRoute,
   LienHeRoute: LienHeRoute,
   SuaAnhRoute: SuaAnhRoute,
