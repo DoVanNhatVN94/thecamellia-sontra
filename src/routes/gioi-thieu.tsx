@@ -147,6 +147,28 @@ function FactSheetPage() {
             </div>
           </Reveal>
 
+
+          <Reveal>
+            <div className="max-w-3xl rounded-xl border border-stone bg-paper px-5 py-6 shadow-border sm:px-6">
+              <p className="kicker">FAQ</p>
+              <h2 className="mt-2 font-display text-2xl sm:text-3xl">
+                Căn hộ Sơn Trà sở hữu lâu dài khác gì có thời hạn?
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+                Theo thông tin dự án, The Camellia công bố pháp lý sổ hồng sở hữu
+                lâu dài — khác nhiều sản phẩm resort / condo có thời hạn. Đọc câu
+                trả lời đầy đủ cho người mua.
+              </p>
+              <Link
+                to="/tin-tuc/$slug"
+                params={{ slug: "can-ho-son-tra-so-huu-lau-dai" }}
+                className="mt-4 inline-flex text-sm font-medium text-terracotta underline-offset-4 hover:underline"
+              >
+                Đọc FAQ sở hữu lâu dài →
+              </Link>
+            </div>
+          </Reveal>
+
           <Reveal>
             <div>
               <p className="kicker">Khám phá thêm</p>
