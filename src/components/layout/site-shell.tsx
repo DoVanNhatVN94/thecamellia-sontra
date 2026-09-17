@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { Footer } from "@/components/layout/footer";
 import { FloatingCta } from "@/components/layout/floating-cta";
 import { Header } from "@/components/layout/header";
-import { RegisterDialog } from "@/components/register-dialog";
+import { LazyRegisterDialog } from "@/components/register-dialog-lazy";
 import { SeoJsonLd } from "@/components/seo-jsonld";
 import { cn } from "@/lib/utils";
 
@@ -28,7 +28,7 @@ export function SiteShell({
       </main>
       {tour ? null : <Footer />}
       {tour ? null : <FloatingCta />}
-      <RegisterDialog />
+      <LazyRegisterDialog />
       <SeoJsonLd />
     </div>
   );
