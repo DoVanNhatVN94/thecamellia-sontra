@@ -73,6 +73,20 @@ function ArticlePage() {
                 <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
               ) : null}
               <p>{block.text}</p>
+              {block.links?.length ? (
+                <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  {block.links.map((l) => (
+                    <li key={l.to}>
+                      <Link
+                        to={l.to}
+                        className="font-medium text-terracotta underline-offset-4 hover:underline"
+                      >
+                        {l.label} →
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ))}
         </div>
