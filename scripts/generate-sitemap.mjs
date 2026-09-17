@@ -23,6 +23,7 @@ const STATIC = [
   { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
   { path: "/kham-pha", priority: "0.8", changefreq: "monthly" },
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
+  { path: "/gioi-thieu", priority: "0.85", changefreq: "monthly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
 ];
 

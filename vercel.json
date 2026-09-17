@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/fact",
+      "destination": "/gioi-thieu",
+      "permanent": true
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/favicon.png",
       "permanent": true

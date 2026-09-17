@@ -71,6 +71,17 @@ export function SeoJsonLd() {
       ),
     );
     if (article) nodes.push(articleLd(article, origin));
+  } else if (pathname === "/gioi-thieu") {
+    nodes.push(
+      apartmentComplexLd(origin),
+      breadcrumbLd(
+        [
+          { name: "Trang chủ", path: "/" },
+          { name: "Giới thiệu", path: "/gioi-thieu" },
+        ],
+        origin,
+      ),
+    );
   } else if (pathname === "/lien-he") {
     nodes.push(
       breadcrumbLd(
