@@ -281,7 +281,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Theo dõi & nhận tư vấn",
-        text: "Hotline / Zalo 0934 885 108. Email: dovannhatdn94@gmail.com. Inbox để được cập nhật tiến độ và rà soát giỏ hàng theo nhu cầu.",
+        text: "Hotline / Zalo 0934 885 108. Inbox để được cập nhật tiến độ và rà soát giỏ hàng theo nhu cầu.",
       },
     ],
   },
@@ -328,7 +328,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Tiếp tục chọn căn",
-        text: "Quỹ căn còn lại theo từng đợt. Inbox hoặc gọi hotline 0934 885 108 — Zalo cùng số — để được rà soát giỏ hàng theo loại căn, ngân sách và hướng view. Email: dovannhatdn94@gmail.com.",
+        text: "Quỹ căn còn lại theo từng đợt. Inbox hoặc gọi hotline 0934 885 108 — Zalo cùng số — để được rà soát giỏ hàng theo loại căn, ngân sách và hướng view.",
       },
     ],
   },
@@ -360,7 +360,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Gửi nhu cầu theo mẫu",
-        text: "Nhu cầu: ở hoặc đầu tư. Loại căn quan tâm: Studio, 1PN, 2PN hoặc 3PN. Ngân sách dự kiến. Tiêu chí ưu tiên: tầng, hướng, view. Inbox, gọi hotline 0934 885 108 hoặc Zalo cùng số. Email: dovannhatdn94@gmail.com.",
+        text: "Nhu cầu: ở hoặc đầu tư. Loại căn quan tâm: Studio, 1PN, 2PN hoặc 3PN. Ngân sách dự kiến. Tiêu chí ưu tiên: tầng, hướng, view. Inbox, gọi hotline 0934 885 108 hoặc Zalo cùng số.",
       },
       {
         text: "Giỏ căn đẹp đã được giới thiệu. Nếu anh chị đã quan tâm The Camellia Sơn Trà, đây là lúc gửi nhu cầu để bắt đầu chọn căn phù hợp.",
@@ -399,7 +399,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nhận thông tin quỹ căn",
-        text: "Inbox hoặc gọi hotline 0934 885 108 — Zalo cùng số — để được hỗ trợ thông tin, đối chiếu loại căn và hướng dẫn đăng ký. Email: dovannhatdn94@gmail.com.",
+        text: "Inbox hoặc gọi hotline 0934 885 108 — Zalo cùng số — để được hỗ trợ thông tin, đối chiếu loại căn và hướng dẫn đăng ký.",
       },
     ],
   },

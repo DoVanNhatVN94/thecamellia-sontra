@@ -1,4 +1,4 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute, redirect } from "@tanstack/react-router";
 import { Eye, EyeOff, RotateCcw, Upload } from "lucide-react";
 import { useMemo, useRef, useState } from "react";
 import { SiteShell } from "@/components/layout/site-shell";
@@ -7,6 +7,10 @@ import { MEDIA_GROUPS, MEDIA_SLOTS, type MediaSlot } from "@/data/media-slots";
 import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { cn } from "@/lib/utils";
 
+/** Production marketing builds hide the studio unless explicitly enabled (preview). */
+const imageStudioEnabled =
+  import.meta.env.VITE_ENABLE_IMAGE_STUDIO === "true" || !import.meta.env.PROD;
+
 export const Route = createFileRoute("/sua-anh")({
   head: () => ({
     meta: [
@@ -14,6 +18,11 @@ export const Route = createFileRoute("/sua-anh")({
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
+  beforeLoad: () => {
+    if (!imageStudioEnabled) {
+      throw redirect({ to: "/" });
+    }
+  },
   component: StudioPage,
 });
 

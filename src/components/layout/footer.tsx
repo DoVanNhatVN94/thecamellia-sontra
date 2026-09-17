@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, MessageCircle, Phone } from "lucide-react";
 import { CamelliaWordmark } from "@/components/camellia-logo";
 import { PROJECT } from "@/data/project";
 
@@ -66,12 +66,6 @@ export function Footer() {
               <MessageCircle className="size-4 shrink-0" />
               <a href={PROJECT.zalo} target="_blank" rel="noreferrer" className="font-num hover:text-paper">
                 Zalo {PROJECT.hotlineDisplay}
-              </a>
-            </li>
-            <li className="flex min-h-11 items-center gap-2.5 py-1.5">
-              <Mail className="size-4 shrink-0" />
-              <a href={`mailto:${PROJECT.email}`} className="hover:text-paper">
-                {PROJECT.email}
               </a>
             </li>
           </ul>

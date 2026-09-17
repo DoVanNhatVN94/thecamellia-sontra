@@ -226,12 +226,9 @@ export function UnitSmartFilter({
       </div>
       <div className="filter-dots" aria-hidden="true">
         {UNIT_TYPES.map((u) => (
-          <button
+          <span
             key={u.id}
-            type="button"
             className={cn("filter-dot", u.id === active && "is-on")}
-            onClick={() => pick(u)}
-            tabIndex={-1}
           />
         ))}
       </div>

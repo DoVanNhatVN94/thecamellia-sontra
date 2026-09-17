@@ -7,17 +7,14 @@ import {
   useState,
   type ImgHTMLAttributes,
 } from "react";
-import {
-  clearOverrides,
-  compressImage,
-  deleteOverride,
-  loadHidden,
-  loadOverrides,
-  saveHidden,
-  saveOverride,
-} from "@/lib/image-studio";
 import { companionSrcSet, isBlobUrl } from "@/lib/image-variants";
 import { cn } from "@/lib/utils";
+
+/** Align with /sua-anh gate — avoid IndexedDB studio work on production marketing. */
+const imageStudioEnabled =
+  import.meta.env.VITE_ENABLE_IMAGE_STUDIO === "true" || !import.meta.env.PROD;
+
+type StudioMod = typeof import("@/lib/image-studio");
 
 type Api = {
   ready: boolean;
@@ -33,17 +30,26 @@ type Api = {
 
 const ImageSrcContext = createContext<Api | null>(null);
 
+async function loadStudio(): Promise<StudioMod> {
+  return import("@/lib/image-studio");
+}
+
 export function ImageSrcProvider({ children }: { children: React.ReactNode }) {
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(!imageStudioEnabled);
   const [urls, setUrls] = useState<Record<string, string>>({});
   const [hidden, setHidden] = useState<Set<string>>(new Set());
 
   useEffect(() => {
+    if (!imageStudioEnabled) {
+      setReady(true);
+      return;
+    }
     let live = true;
     const created: string[] = [];
     void (async () => {
       try {
-        const blobs = await loadOverrides();
+        const studio = await loadStudio();
+        const blobs = await studio.loadOverrides();
         const next: Record<string, string> = {};
         for (const [key, blob] of Object.entries(blobs)) {
           const url = URL.createObjectURL(blob);
@@ -55,7 +61,7 @@ export function ImageSrcProvider({ children }: { children: React.ReactNode }) {
           return;
         }
         setUrls(next);
-        setHidden(new Set(loadHidden()));
+        setHidden(new Set(studio.loadHidden()));
       } catch {
         /* private mode / no IDB */
       } finally {
@@ -79,8 +85,10 @@ export function ImageSrcProvider({ children }: { children: React.ReactNode }) {
   const isHidden = useCallback((slotId: string) => hidden.has(slotId), [hidden]);
 
   const replace = useCallback(async (slotId: string, file: File) => {
-    const blob = await compressImage(file);
-    await saveOverride(slotId, blob);
+    if (!imageStudioEnabled) return;
+    const studio = await loadStudio();
+    const blob = await studio.compressImage(file);
+    await studio.saveOverride(slotId, blob);
     const url = URL.createObjectURL(blob);
     setUrls((prev) => {
       if (prev[slotId]) URL.revokeObjectURL(prev[slotId]);
@@ -89,34 +97,42 @@ export function ImageSrcProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const hide = useCallback((slotId: string, value: boolean) => {
+    if (!imageStudioEnabled) return;
     setHidden((prev) => {
       const next = new Set(prev);
       if (value) next.add(slotId);
       else next.delete(slotId);
-      saveHidden([...next]);
+      void loadStudio().then((studio) => studio.saveHidden([...next]));
       return next;
     });
   }, []);
 
-  const reset = useCallback(async (slotId: string) => {
-    await deleteOverride(slotId);
-    setUrls((prev) => {
-      if (prev[slotId]) URL.revokeObjectURL(prev[slotId]);
-      const next = { ...prev };
-      delete next[slotId];
-      return next;
-    });
-    hide(slotId, false);
-  }, [hide]);
+  const reset = useCallback(
+    async (slotId: string) => {
+      if (!imageStudioEnabled) return;
+      const studio = await loadStudio();
+      await studio.deleteOverride(slotId);
+      setUrls((prev) => {
+        if (prev[slotId]) URL.revokeObjectURL(prev[slotId]);
+        const next = { ...prev };
+        delete next[slotId];
+        return next;
+      });
+      hide(slotId, false);
+    },
+    [hide],
+  );
 
   const resetAll = useCallback(async () => {
-    await clearOverrides();
+    if (!imageStudioEnabled) return;
+    const studio = await loadStudio();
+    await studio.clearOverrides();
     setUrls((prev) => {
       Object.values(prev).forEach((u) => URL.revokeObjectURL(u));
       return {};
     });
     setHidden(new Set());
-    saveHidden([]);
+    studio.saveHidden([]);
   }, []);
 
   const value = useMemo<Api>(

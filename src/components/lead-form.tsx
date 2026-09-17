@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PROJECT, UNIT_TYPES } from "@/data/project";
 import { leadMailtoHref, saveLead, sendLeadEmail } from "@/lib/leads";
 import { Button } from "@/components/ui/button";
@@ -23,10 +23,12 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
   const [unit, setUnit] = useState(defaultUnit ?? "");
   const [message, setMessage] = useState("");
   const [honey, setHoney] = useState("");
+  const [website, setWebsite] = useState("");
   const [error, setError] = useState("");
   const [fieldErrors, setFieldErrors] = useState<{ name?: string; phone?: string }>({});
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
+  const openedAt = useRef(Date.now());
 
   useEffect(() => {
     if (defaultUnit) setUnit(defaultUnit);
@@ -51,7 +53,8 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
       setError("Vui lòng kiểm tra các trường bắt buộc.");
       return;
     }
-    if (honey) {
+    // Dual honeypot: classic company + website URL traps
+    if (honey || website) {
       setOk(true);
       return;
     }
@@ -63,7 +66,10 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
       message: message.trim() || undefined,
     };
     setBusy(true);
-    const result = await sendLeadEmail(payload);
+    const result = await sendLeadEmail(payload, {
+      honey: honey || website,
+      openedAt: openedAt.current,
+    });
     if (!result.ok) {
       setError(result.error);
       setBusy(false);
@@ -92,14 +98,24 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
 
   return (
     <form noValidate onSubmit={submit} className={cn("relative grid gap-3", className)}>
-      <div className="h-0 overflow-hidden opacity-0" aria-hidden="true">
+      <div className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0" aria-hidden="true">
         <label htmlFor="lead-company">Công ty</label>
         <input
           id="lead-company"
+          name="company"
           tabIndex={-1}
           autoComplete="off"
           value={honey}
           onChange={(e) => setHoney(e.target.value)}
+        />
+        <label htmlFor="lead-website">Website</label>
+        <input
+          id="lead-website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
         />
       </div>
       <div className="grid gap-1.5">
@@ -195,7 +211,7 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
         </>
       ) : null}
       {error ? (
-        <div className="grid gap-2 rounded-md bg-terracotta/10 p-3">
+        <div className="grid gap-2 rounded-md bg-terracotta/10 p-3" role="alert">
           <p className="text-sm text-terracotta">{error}</p>
           <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs">
             <a href={`tel:${PROJECT.hotlineTel}`} className="font-num underline underline-offset-2">
