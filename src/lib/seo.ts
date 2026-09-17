@@ -54,6 +54,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-launch-og.jpg": { width: 1080, height: 722 },
   "/images/news-ceo-1-og.jpg": { width: 960, height: 641 },
   "/images/news-tt03-og.jpg": { width: 1080, height: 608 },
+  "/images/news-gio-hang-studio-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
@@ -226,6 +227,9 @@ export function parseDotDate(date: string) {
   return `${y}-${m}-${d}`;
 }
 
+/** Official profiles found in repo — never invent social URLs. */
+export const SAME_AS = [PROJECT.zalo] as const;
+
 export function organizationLd(origin = SITE_ORIGIN) {
   return {
     "@type": "RealEstateAgent",
@@ -233,6 +237,7 @@ export function organizationLd(origin = SITE_ORIGIN) {
     name: PROJECT.sales,
     url: absUrl("/", origin),
     telephone: `+84${PROJECT.hotlineTel.replace(/^0/, "")}`,
+    sameAs: [...SAME_AS],
     address: {
       "@type": "PostalAddress",
       streetAddress: "Giao lộ Lê Văn Lương – Lê Đức Thọ",
@@ -278,6 +283,7 @@ export function apartmentComplexLd(origin = SITE_ORIGIN) {
     slogan: PROJECT.slogan,
     developer: { "@type": "Organization", name: PROJECT.developer },
     brand: { "@type": "Brand", name: PROJECT.name },
+    sameAs: [...SAME_AS],
   };
 }
 
