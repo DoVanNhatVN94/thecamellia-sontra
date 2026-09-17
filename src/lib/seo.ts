@@ -171,7 +171,7 @@ export const PAGES = {
   },
   contact: {
     title: "Liên hệ nhận bảng giá và lịch xem nhà",
-    description: `Đăng ký tư vấn The Camellia Sơn Trà. Hotline ${PROJECT.hotlineDisplay}, Zalo, email ${PROJECT.email}. Nhận bảng giá, mặt bằng và chính sách.`,
+    description: `Đăng ký tư vấn The Camellia Sơn Trà. Hotline ${PROJECT.hotlineDisplay} · Zalo cùng số. Nhận bảng giá, mặt bằng và lịch xem nhà mẫu.`,
     path: "/lien-he",
     keywords: "liên hệ The Camellia, hotline The Camellia Sơn Trà, đăng ký bảng giá căn hộ Sơn Trà",
   },
@@ -225,7 +225,6 @@ export function organizationLd(origin = SITE_ORIGIN) {
     name: PROJECT.sales,
     url: absUrl("/", origin),
     telephone: `+84${PROJECT.hotlineTel.replace(/^0/, "")}`,
-    email: PROJECT.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Giao lộ Lê Văn Lương – Lê Đức Thọ",
@@ -246,7 +245,6 @@ export function apartmentComplexLd(origin = SITE_ORIGIN) {
     url: absUrl("/", origin),
     image: [absUrl("/og.jpg", origin), absUrl("/images/hero.webp", origin)],
     telephone: `+84${PROJECT.hotlineTel.replace(/^0/, "")}`,
-    email: PROJECT.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Giao lộ Lê Văn Lương – Lê Đức Thọ",

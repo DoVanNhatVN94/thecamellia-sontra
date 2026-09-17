@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { MapPin, MessageCircle, Phone } from "lucide-react";
 import { LeadForm } from "@/components/lead-form";
 import { SiteShell } from "@/components/layout/site-shell";
 import { FadeSlider } from "@/components/media/fade-slider";
@@ -53,15 +53,6 @@ function ContactPage() {
                 </div>
               </li>
               <li className="flex gap-3 rounded-xl bg-paper p-5 shadow-border">
-                <Mail className="mt-0.5 size-4 text-terracotta" />
-                <div>
-                  <p className="text-xs tracking-widest uppercase text-muted">Email nhận đăng ký</p>
-                  <a href={`mailto:${PROJECT.email}`} className="mt-1 block break-all font-sans text-lg font-medium">
-                    {PROJECT.email}
-                  </a>
-                </div>
-              </li>
-              <li className="flex gap-3 rounded-xl bg-paper p-5 shadow-border">
                 <MapPin className="mt-0.5 size-4 text-terracotta" />
                 <div>
                   <p className="text-xs tracking-widest uppercase text-muted">Địa chỉ dự án</p>
@@ -81,7 +72,7 @@ function ContactPage() {
             <div className="rounded-xl bg-paper p-6 shadow-border sm:p-8">
               <h2 className="font-display text-2xl">Đăng ký nhận bảng giá</h2>
               <p className="mt-1 mb-6 text-sm text-muted">
-                Thông tin gửi về {PROJECT.email}. Phản hồi trong giờ hành chính.
+                Điền form bên dưới — tư vấn viên phản hồi qua hotline hoặc Zalo trong giờ hành chính.
               </p>
               <LeadForm />
             </div>
