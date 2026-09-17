@@ -325,6 +325,7 @@ export function jsonLdGraph(nodes: object[], origin = SITE_ORIGIN) {
   };
 }
 
+/** Canonical public URL list — keep `public/sitemap.xml` in sync via `npm run sitemap`. */
 export const SITEMAP_PATHS = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/can-ho", priority: "0.9", changefreq: "weekly" },
