@@ -1,5 +1,6 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { NewsYoutube } from "@/components/media/news-youtube";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { RelatedNews } from "@/components/media/related-news";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
@@ -31,28 +32,6 @@ export const Route = createFileRoute("/tin-tuc/$slug")({
   },
   component: ArticlePage,
 });
-
-const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
-
-function NewsYoutube({ id, title, caption }: { id: string; title?: string; caption?: string }) {
-  if (!YOUTUBE_ID.test(id)) return null;
-  return (
-    <figure className="mt-8">
-      {caption ? <figcaption className="mb-3 text-sm text-muted">{caption}</figcaption> : null}
-      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-ink">
-        <iframe
-          className="absolute inset-0 size-full border-0"
-          src={`https://www.youtube-nocookie.com/embed/${id}`}
-          title={title ?? "Video YouTube"}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        />
-      </div>
-    </figure>
-  );
-}
 
 function ArticlePage() {
   const article = Route.useLoaderData();
