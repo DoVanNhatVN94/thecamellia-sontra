@@ -253,6 +253,12 @@ export type NewsArticle = {
   poster?: string;
   gallery: readonly string[];
   body: NewsBlock[];
+  /** Privacy-enhanced YouTube id. The article page embeds it only when set. */
+  youtubeId?: string;
+  /** Vietnamese iframe title. Used only with youtubeId. */
+  youtubeTitle?: string;
+  /** One line above the player. Used only with youtubeId. */
+  youtubeCaption?: string;
 };
 
 export const NEWS: NewsArticle[] = [
@@ -473,6 +479,10 @@ export const NEWS: NewsArticle[] = [
     excerpt:
       "12.09.2026 The Camellia Sơn Trà – Đà Nẵng mở bán chính thức. Gần 400 khách hàng và đối tác, 159 giao dịch thành công — Life Within, nơi chốn thuộc về.",
     image: "/images/news-event-card-og.jpg",
+    youtubeId: "e2vRxNmuyOk",
+    youtubeTitle:
+      "Video tóm tắt sự kiện mở bán chính thức Premier Launch ngày 12.09.2026",
+    youtubeCaption: "Recap Premier Launch 12.09.2026.",
     gallery: [
       "/images/news-event-01.webp",
       "/images/news-event-02.webp",

@@ -32,6 +32,28 @@ export const Route = createFileRoute("/tin-tuc/$slug")({
   component: ArticlePage,
 });
 
+const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
+
+function NewsYoutube({ id, title, caption }: { id: string; title?: string; caption?: string }) {
+  if (!YOUTUBE_ID.test(id)) return null;
+  return (
+    <figure className="mt-8">
+      {caption ? <figcaption className="mb-3 text-sm text-muted">{caption}</figcaption> : null}
+      <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-ink">
+        <iframe
+          className="absolute inset-0 size-full border-0"
+          src={`https://www.youtube-nocookie.com/embed/${id}`}
+          title={title ?? "Video YouTube"}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        />
+      </div>
+    </figure>
+  );
+}
+
 function ArticlePage() {
   const article = Route.useLoaderData();
   const openWith = useRegister((s) => s.openWith);
@@ -66,6 +88,13 @@ function ArticlePage() {
               : "mt-8 aspect-video w-full rounded-xl object-cover"
           }
         />
+        {article.youtubeId ? (
+          <NewsYoutube
+            id={article.youtubeId}
+            title={article.youtubeTitle}
+            caption={article.youtubeCaption}
+          />
+        ) : null}
         <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted sm:text-base">
           {article.body.map((block, i) => (
             <div key={i}>
