@@ -14,17 +14,14 @@ import {
   DISTANCES,
   FACTS,
   GALLERIES,
-  LEGAL_MILESTONES,
   NEWS,
   PARTNERS,
-  POLICIES,
   PROJECT,
   UNIT_TYPES,
 } from "@/data/project";
 import { MIDHOME_COPY, MIDHOME_IMAGES } from "@/data/midhome-copy";
 import { FAQS } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
-
 
 export function StatementBand() {
   const openWith = useRegister((s) => s.openWith);
@@ -78,55 +75,65 @@ export function StatementBand() {
 }
 
 export function StorySection() {
-  const copy = MIDHOME_COPY.story;
   return (
     <section id="du-an" className="scroll-mt-24 bg-cream">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-14 lg:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
         <Reveal>
-          <p className="kicker">{copy.kicker}</p>
+          <p className="kicker">Câu chuyện vùng đất</p>
           <h2 className="mt-4 font-display text-3xl leading-tight sm:text-5xl">
-            {copy.headline}
+            <span className="split-mask">
+              <span className="split-line">Nơi thiên nhiên chưa từng rời xa,</span>
+            </span>
+            <span className="split-mask">
+              <span className="split-line">nơi biển cả luôn ở lại</span>
+            </span>
           </h2>
           <p className="mt-6 text-sm leading-relaxed text-muted sm:text-base">
-            {copy.body}
+            Có những vùng đất được gọi tên bằng vị trí. Và có những vùng đất được
+            nhận diện bằng linh khí. Sơn Trà là nơi rừng gặp biển, nơi núi lặng lẽ
+            chở che và đại dương mở ra những mùa sóng khoáng đạt.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button variant="outline" asChild>
-              <Link to="/gioi-thieu">
-                Tìm hiểu dự án <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href="#vi-tri">Xem vị trí</a>
-            </Button>
-          </div>
+          <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+            Từ hình ảnh Phượng bay về núi bạc và Cá Ông nâng sóng biển khơi,{" "}
+            {PROJECT.name} được khởi nguồn như một biểu tượng sống giữa thế đất{" "}
+            <em>phượng quy ngư hội — sơn hải giao hòa</em>. Nơi hoa trà bung nở —
+            thanh nhã, bền bỉ, kín đáo.
+          </p>
         </Reveal>
         <Reveal delay={120} className="relative">
-          <div className="relative overflow-hidden rounded-xl shadow-border">
+          <div className="relative min-h-[380px] sm:min-h-[480px]">
             <ParallaxImage
-              src={MIDHOME_IMAGES.building}
-              slot="story:building"
-              alt="Phối cảnh tòa tháp The Camellia Sơn Trà"
-              className="img-reveal aspect-16/10 w-full"
-              sizes="(max-width: 1024px) 100vw, 560px"
+              src="/images/hero-aerial.webp"
+              slot="story:main"
+              alt="Flycam tổng thể The Camellia Sơn Trà"
+              className="img-reveal aspect-4/3 w-[88%] rounded-xl"
+              sizes="(max-width: 1024px) 88vw, 520px"
+            />
+            <ParallaxImage
+              src="/images/brochure-02.webp"
+              slot="story:inset"
+              alt="Góc phố Lê Văn Lương lúc chiều"
+              className="absolute right-0 bottom-0 w-[58%] rounded-xl shadow-border"
+              imgClassName="aspect-4/3"
+              speed={0.12}
+              sizes="(max-width: 1024px) 58vw, 340px"
+            />
+            <SmartImg
+              src="/images/camellia.webp"
+              alt="Hoa trà Camellia — biểu tượng dự án"
+              width={128}
+              height={186}
+              sizes="128px"
+              loading="lazy"
+              decoding="async"
+              className="camellia-float pointer-events-none absolute -bottom-4 -left-3 w-24 !bg-transparent outline-none sm:w-32"
             />
           </div>
-          <SmartImg
-            src="/images/camellia.webp"
-            alt="Hoa trà Camellia — biểu tượng dự án"
-            width={128}
-            height={186}
-            sizes="128px"
-            loading="lazy"
-            decoding="async"
-            className="camellia-float pointer-events-none absolute -bottom-4 -left-3 w-24 !bg-transparent outline-none sm:w-32"
-          />
         </Reveal>
       </div>
     </section>
   );
 }
-
 
 export function ExteriorSlider() {
   return (
@@ -194,7 +201,6 @@ export function FactsSection() {
   );
 }
 
-
 export function UnderstandSection() {
   const copy = MIDHOME_COPY.understand;
   return (
@@ -212,7 +218,6 @@ export function UnderstandSection() {
     </section>
   );
 }
-
 
 export function LocationSection() {
   return (
@@ -252,7 +257,6 @@ export function LocationSection() {
 }
 
 export function ArchitectureSection() {
-  const copy = MIDHOME_COPY.architecture;
   return (
     <section className="bg-ink text-paper">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 sm:px-6 lg:grid-cols-2">
@@ -267,12 +271,15 @@ export function ArchitectureSection() {
           />
         </Reveal>
         <Reveal delay={120}>
-          <p className="kicker text-paper">{copy.kicker}</p>
+          <p className="kicker text-paper">Kiến trúc biểu tượng</p>
           <h2 className="mt-3 font-display text-3xl sm:text-5xl">
-            {copy.headline}
+            Cảm hứng Sơn Trà trên mặt đứng
           </h2>
           <p className="mt-5 text-sm leading-relaxed text-paper/75 sm:text-base">
-            {copy.body}
+            Sảnh đón hình chữ V tạo dáng cánh chim phượng. Mặt đứng lấy cảm hứng từ
+            sóng và nhịp điệu mặt nước. Dáng núi, đường bờ biển cùng sự chuyển
+            tiếp giữa các lớp không gian được đưa vào kiến trúc và cảnh quan,
+            tạo nên mối liên kết tự nhiên giữa công trình với vùng đất.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-paper/80">
             <li className="flex gap-2">
@@ -293,7 +300,6 @@ export function ArchitectureSection() {
     </section>
   );
 }
-
 
 export function AmenitiesPreview() {
   return (
@@ -466,56 +472,123 @@ export function TourPreview() {
 }
 
 export function PolicySection() {
+  const openWith = useRegister((s) => s.openWith);
+  const copy = MIDHOME_COPY.policy;
   return (
     <section id="chinh-sach" className="scroll-mt-24 bg-paper">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <p className="kicker">Chính sách</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-5xl">Linh hoạt dòng tiền</h2>
-          <p className="mt-4 max-w-2xl text-sm text-muted">
-            Ưu đãi và phương án thanh toán có thể thay đổi theo đợt mở bán. Tư vấn
-            viên sẽ đối chiếu hồ sơ pháp lý và bảng giá tại thời điểm ký.
+          <p className="kicker">{copy.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">
+            {copy.headline}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+            {copy.sub}
           </p>
+          <div className="mt-6">
+            <Button size="lg" onClick={() => openWith()}>
+              {copy.cta}
+            </Button>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {POLICIES.map((p, i) => (
-            <Reveal key={p.title} delay={i * 60}>
-              <article className="rounded-xl bg-cream p-6 shadow-border">
-                <p className="text-xs tracking-widest uppercase text-muted">{p.title}</p>
-                <p className="mt-2 font-num text-2xl text-terracotta">{p.value}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{p.note}</p>
-              </article>
-            </Reveal>
+
+        {/* Mobile: accordion · Desktop: expandable cards (same details pattern) */}
+        <div className="mt-10 divide-y divide-stone overflow-hidden rounded-xl border border-stone bg-cream shadow-border lg:grid lg:grid-cols-2 lg:gap-4 lg:divide-y-0 lg:border-0 lg:bg-transparent lg:shadow-none">
+          {copy.items.map((item, i) => (
+            <details
+              key={item.title}
+              className="group lg:rounded-xl lg:border lg:border-stone lg:bg-cream lg:shadow-border"
+              open={i === 0}
+            >
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
+                <span className="min-w-0">
+                  <span className="block text-xs tracking-[0.16em] uppercase text-muted">
+                    {item.title}
+                  </span>
+                  <span className="mt-1 block font-num text-xl text-terracotta sm:text-2xl">
+                    {item.value}
+                  </span>
+                </span>
+                <span
+                  className="flex size-11 shrink-0 items-center justify-center rounded-md text-2xl text-terracotta transition-transform duration-200 group-open:rotate-45"
+                  aria-hidden
+                >
+                  +
+                </span>
+              </summary>
+              <p className="px-4 pb-5 text-sm leading-relaxed text-muted sm:px-5">
+                {item.body}
+              </p>
+            </details>
           ))}
         </div>
+
+        <p className="mt-6 text-sm leading-relaxed text-muted">{copy.disclaimer}</p>
       </div>
     </section>
   );
 }
 
 export function LegalSection() {
+  const openWith = useRegister((s) => s.openWith);
+  const copy = MIDHOME_COPY.legal;
   return (
-    <section className="bg-cream">
+    <section id="phap-ly" className="scroll-mt-24 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <p className="kicker">Pháp lý</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl">Giá trị tạo niềm tin</h2>
+          <p className="kicker">{copy.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">
+            {copy.headline}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+            {copy.sub}
+          </p>
+          <div className="mt-6">
+            <Button size="lg" onClick={() => openWith()}>
+              {copy.cta}
+            </Button>
+          </div>
         </Reveal>
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {LEGAL_MILESTONES.map((m, i) => (
-            <li key={m.date}>
-              <Reveal delay={i * 80} className="h-full rounded-xl border border-stone p-5">
-                <span className="font-num text-3xl text-stone">0{i + 1}</span>
-                <p className="mt-3 text-xs tracking-widest uppercase text-terracotta">{m.date}</p>
-                <p className="mt-2 text-sm leading-relaxed">{m.title}</p>
-              </Reveal>
+
+        <ol className="mt-10 divide-y divide-stone overflow-hidden rounded-xl border border-stone bg-paper shadow-border lg:grid lg:grid-cols-1 lg:gap-0">
+          {copy.items.map((item, i) => (
+            <li key={item.title}>
+              <details className="group" open={i === 0}>
+                <summary className="flex min-h-11 cursor-pointer list-none items-center gap-4 px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
+                  <span className="font-num text-2xl text-stone sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium leading-snug">{item.title}</span>
+                    {item.date ? (
+                      <span className="mt-1 block text-xs tracking-[0.16em] uppercase text-terracotta">
+                        {item.date}
+                      </span>
+                    ) : null}
+                  </span>
+                  <span
+                    className="flex size-11 shrink-0 items-center justify-center rounded-md text-2xl text-terracotta transition-transform duration-200 group-open:rotate-45"
+                    aria-hidden
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="px-4 pb-5 pl-[4.25rem] text-sm leading-relaxed text-muted sm:px-5 sm:pl-[4.75rem]">
+                  {item.date ? (
+                    <>
+                      <span className="font-medium text-ink">{item.date}: </span>
+                      {item.body}
+                    </>
+                  ) : (
+                    item.body
+                  )}
+                </p>
+              </details>
             </li>
           ))}
         </ol>
-        <p className="mt-6 text-sm text-muted">
-          Hình thức sở hữu: {PROJECT.legal}. Thiết kế {PROJECT.designer} · Nhà
-          thầu {PROJECT.contractor}.
-        </p>
+
+        <p className="mt-6 text-sm leading-relaxed text-muted">{copy.partners}</p>
       </div>
     </section>
   );
