@@ -21,6 +21,9 @@ const VARIANTS: Record<string, { w640: number; full: number }> = {
   "/images/layouts/ch06.webp": { w640: 640, full: 1200 },
   "/images/layouts/ch01.webp": { w640: 640, full: 1200 },
   "/images/layouts/ch03.webp": { w640: 640, full: 1200 },
+  "/images/midhome-statement.webp": { w640: 800, full: 1600 },
+  "/images/midhome-building.webp": { w640: 800, full: 1600 },
+  "/images/midhome-facts-bg.webp": { w640: 800, full: 1600 },
 };
 
 /** Build a `srcset` for a static `/images/...` path when a `-640` companion exists. */

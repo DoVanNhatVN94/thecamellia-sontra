@@ -92,16 +92,18 @@ export function RelatedNews({ articles, className }: Props) {
               data-related-card
               to="/tin-tuc/$slug"
               params={{ slug: n.slug }}
-              className="group w-[min(82vw,420px)] shrink-0 snap-start overflow-hidden rounded-xl bg-cream shadow-border sm:w-[min(46%,420px)]"
+              className="group block w-[min(82vw,420px)] shrink-0 snap-start overflow-hidden rounded-xl bg-cream shadow-border sm:w-[min(46%,420px)]"
             >
-              <SmartImg
-                slot={`news:${n.slug}`}
-                src={n.image}
-                alt={n.title}
-                loading="lazy"
-                decoding="async"
-                className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
+              <div className="aspect-video overflow-hidden rounded-t-xl">
+                <SmartImg
+                  slot={`news:${n.slug}`}
+                  src={n.image}
+                  alt={n.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
               <div className="p-5">
                 <p className="text-xs tracking-[0.16em] uppercase text-muted">{n.date}</p>
                 <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">

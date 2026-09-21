@@ -14,15 +14,65 @@ import {
   DISTANCES,
   FACTS,
   GALLERIES,
-  LEGAL_MILESTONES,
   NEWS,
   PARTNERS,
-  POLICIES,
   PROJECT,
   UNIT_TYPES,
 } from "@/data/project";
+import { MIDHOME_COPY, MIDHOME_IMAGES } from "@/data/midhome-copy";
 import { FAQS } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
+
+export function StatementBand() {
+  const openWith = useRegister((s) => s.openWith);
+  const copy = MIDHOME_COPY.statement;
+  return (
+    <section
+      aria-labelledby="statement-band-heading"
+      className="relative isolate min-h-[min(72vh,640px)] overflow-hidden bg-ink text-paper"
+    >
+      <SmartImg
+        slot="statement:bg"
+        src={MIDHOME_IMAGES.statement}
+        alt="Biển Sơn Trà nhìn từ trên cao — The Camellia"
+        loading="lazy"
+        decoding="async"
+        sizes="100vw"
+        className="absolute inset-0 size-full object-cover"
+      />
+      <div
+        className="absolute inset-0 bg-linear-to-r from-ink/85 via-ink/55 to-ink/25"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 bg-linear-to-t from-ink/70 via-transparent to-ink/30"
+        aria-hidden
+      />
+      <div className="relative mx-auto flex min-h-[min(72vh,640px)] max-w-6xl items-end px-4 py-16 sm:px-6 sm:py-20">
+        <Reveal className="max-w-xl">
+          <p className="kicker text-paper/85">{copy.kicker}</p>
+          <h2
+            id="statement-band-heading"
+            className="mt-4 font-display text-3xl leading-tight sm:text-5xl"
+          >
+            {copy.headline}
+          </h2>
+          <p className="mt-5 max-w-md text-sm leading-relaxed text-paper/85 sm:text-base">
+            {copy.sub}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Button size="lg" onClick={() => openWith()}>
+              {copy.cta}
+            </Button>
+            <Button size="lg" variant="light" asChild>
+              <Link to="/lien-he">Liên hệ tư vấn</Link>
+            </Button>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
 
 export function StorySection() {
   return (
@@ -109,37 +159,40 @@ export function ExteriorSlider() {
 }
 
 export function FactsSection() {
+  const copy = MIDHOME_COPY.facts;
   return (
     <section className="relative isolate overflow-hidden bg-ink text-paper">
       <ParallaxImage
-        src="/images/hero.webp"
+        src={MIDHOME_IMAGES.factsBg}
         slot="facts:bg"
-        alt="Phối cảnh tòa tháp The Camellia Sơn Trà lúc chiều"
-        className="absolute inset-0 size-full opacity-40"
-        speed={0.18}
+        alt=""
+        className="absolute inset-0 size-full opacity-25"
+        speed={0.14}
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-ink/70" />
+      <div className="absolute inset-0 bg-ink/80" aria-hidden />
       <div className="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <Reveal>
-          <p className="kicker text-paper">Thông tin dự án</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl">Một tòa tháp, một biểu tượng</h2>
+          <p className="kicker text-paper">{copy.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl sm:text-4xl">{copy.headline}</h2>
         </Reveal>
-        <dl className="mt-10 grid grid-cols-2 items-stretch gap-px overflow-hidden rounded-xl bg-paper/10 sm:grid-cols-3">
+        <dl className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
           {FACTS.map((f, i) => (
             <Reveal
               key={f.label}
               delay={i * 70}
-              className="flex h-full min-h-[8.75rem] flex-col justify-center bg-ink/85 p-5 sm:min-h-[9.75rem] sm:p-6"
+              className="flex h-full min-h-[8.75rem] flex-col justify-center rounded-xl border border-paper/15 bg-ink/90 p-5 shadow-border backdrop-blur-[2px] sm:min-h-[9.75rem] sm:p-6"
             >
               <dt className="text-[0.65rem] tracking-[0.16em] uppercase text-paper/90">
                 {f.label}
               </dt>
-              <dd className="mt-2 font-num text-xl leading-snug sm:text-2xl">{f.value}</dd>
+              <dd className="mt-2 font-num text-xl leading-snug text-paper sm:text-2xl">
+                {f.value}
+              </dd>
             </Reveal>
           ))}
         </dl>
-        <p className="mt-6 text-sm text-paper/65">
+        <p className="mt-6 text-sm text-paper/75">
           Chủ đầu tư {PROJECT.developer} · Phát triển {PROJECT.operator} · Kinh
           doanh {PROJECT.sales}
         </p>
@@ -149,20 +202,15 @@ export function FactsSection() {
 }
 
 export function UnderstandSection() {
+  const copy = MIDHOME_COPY.understand;
   return (
     <section className="bg-paper">
       <Reveal>
         <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 sm:py-24">
-          <p className="kicker">Tinh thần dự án</p>
-          <h2 className="mt-4 font-display text-3xl sm:text-5xl">Một ngôi nhà “hiểu” bạn?</h2>
+          <p className="kicker">{copy.kicker}</p>
+          <h2 className="mt-4 font-display text-3xl sm:text-5xl">{copy.headline}</h2>
           <p className="mt-6 text-sm leading-relaxed text-muted sm:text-base">
-            Có những giá trị không được tạo nên từ sự khác biệt, mà từ sự giao hòa.
-            Nơi rừng gặp biển để hình thành một miền thiên nhiên hiếm có. Nơi kiến
-            trúc hòa cùng cảnh quan. Nơi nhịp sống đô thị cân bằng với những khoảng
-            bình yên để trở về.
-          </p>
-          <p className="mt-4 font-display text-xl italic text-ink sm:text-2xl">
-            Là nhà — nhưng ở biển, kề rừng.
+            {copy.body}
           </p>
         </div>
       </Reveal>
@@ -424,56 +472,123 @@ export function TourPreview() {
 }
 
 export function PolicySection() {
+  const openWith = useRegister((s) => s.openWith);
+  const copy = MIDHOME_COPY.policy;
   return (
     <section id="chinh-sach" className="scroll-mt-24 bg-paper">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <p className="kicker">Chính sách</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-5xl">Linh hoạt dòng tiền</h2>
-          <p className="mt-4 max-w-2xl text-sm text-muted">
-            Ưu đãi và phương án thanh toán có thể thay đổi theo đợt mở bán. Tư vấn
-            viên sẽ đối chiếu hồ sơ pháp lý và bảng giá tại thời điểm ký.
+          <p className="kicker">{copy.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">
+            {copy.headline}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+            {copy.sub}
           </p>
+          <div className="mt-6">
+            <Button size="lg" onClick={() => openWith()}>
+              {copy.cta}
+            </Button>
+          </div>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {POLICIES.map((p, i) => (
-            <Reveal key={p.title} delay={i * 60}>
-              <article className="rounded-xl bg-cream p-6 shadow-border">
-                <p className="text-xs tracking-widest uppercase text-muted">{p.title}</p>
-                <p className="mt-2 font-num text-2xl text-terracotta">{p.value}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{p.note}</p>
-              </article>
-            </Reveal>
+
+        {/* Mobile: accordion · Desktop: expandable cards (same details pattern) */}
+        <div className="mt-10 divide-y divide-stone overflow-hidden rounded-xl border border-stone bg-cream shadow-border lg:grid lg:grid-cols-2 lg:gap-4 lg:divide-y-0 lg:border-0 lg:bg-transparent lg:shadow-none">
+          {copy.items.map((item, i) => (
+            <details
+              key={item.title}
+              className="group lg:rounded-xl lg:border lg:border-stone lg:bg-cream lg:shadow-border"
+              open={i === 0}
+            >
+              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
+                <span className="min-w-0">
+                  <span className="block text-xs tracking-[0.16em] uppercase text-muted">
+                    {item.title}
+                  </span>
+                  <span className="mt-1 block font-num text-xl text-terracotta sm:text-2xl">
+                    {item.value}
+                  </span>
+                </span>
+                <span
+                  className="flex size-11 shrink-0 items-center justify-center rounded-md text-2xl text-terracotta transition-transform duration-200 group-open:rotate-45"
+                  aria-hidden
+                >
+                  +
+                </span>
+              </summary>
+              <p className="px-4 pb-5 text-sm leading-relaxed text-muted sm:px-5">
+                {item.body}
+              </p>
+            </details>
           ))}
         </div>
+
+        <p className="mt-6 text-sm leading-relaxed text-muted">{copy.disclaimer}</p>
       </div>
     </section>
   );
 }
 
 export function LegalSection() {
+  const openWith = useRegister((s) => s.openWith);
+  const copy = MIDHOME_COPY.legal;
   return (
-    <section className="bg-cream">
+    <section id="phap-ly" className="scroll-mt-24 bg-cream">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <Reveal>
-          <p className="kicker">Pháp lý</p>
-          <h2 className="mt-3 font-display text-3xl sm:text-4xl">Giá trị tạo niềm tin</h2>
+          <p className="kicker">{copy.kicker}</p>
+          <h2 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">
+            {copy.headline}
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+            {copy.sub}
+          </p>
+          <div className="mt-6">
+            <Button size="lg" onClick={() => openWith()}>
+              {copy.cta}
+            </Button>
+          </div>
         </Reveal>
-        <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {LEGAL_MILESTONES.map((m, i) => (
-            <li key={m.date}>
-              <Reveal delay={i * 80} className="h-full rounded-xl border border-stone p-5">
-                <span className="font-num text-3xl text-stone">0{i + 1}</span>
-                <p className="mt-3 text-xs tracking-widest uppercase text-terracotta">{m.date}</p>
-                <p className="mt-2 text-sm leading-relaxed">{m.title}</p>
-              </Reveal>
+
+        <ol className="mt-10 divide-y divide-stone overflow-hidden rounded-xl border border-stone bg-paper shadow-border lg:grid lg:grid-cols-1 lg:gap-0">
+          {copy.items.map((item, i) => (
+            <li key={item.title}>
+              <details className="group" open={i === 0}>
+                <summary className="flex min-h-11 cursor-pointer list-none items-center gap-4 px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
+                  <span className="font-num text-2xl text-stone sm:text-3xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block font-medium leading-snug">{item.title}</span>
+                    {item.date ? (
+                      <span className="mt-1 block text-xs tracking-[0.16em] uppercase text-terracotta">
+                        {item.date}
+                      </span>
+                    ) : null}
+                  </span>
+                  <span
+                    className="flex size-11 shrink-0 items-center justify-center rounded-md text-2xl text-terracotta transition-transform duration-200 group-open:rotate-45"
+                    aria-hidden
+                  >
+                    +
+                  </span>
+                </summary>
+                <p className="px-4 pb-5 pl-[4.25rem] text-sm leading-relaxed text-muted sm:px-5 sm:pl-[4.75rem]">
+                  {item.date ? (
+                    <>
+                      <span className="font-medium text-ink">{item.date}: </span>
+                      {item.body}
+                    </>
+                  ) : (
+                    item.body
+                  )}
+                </p>
+              </details>
             </li>
           ))}
         </ol>
-        <p className="mt-6 text-sm text-muted">
-          Hình thức sở hữu: {PROJECT.legal}. Thiết kế {PROJECT.designer} · Nhà
-          thầu {PROJECT.contractor}.
-        </p>
+
+        <p className="mt-6 text-sm leading-relaxed text-muted">{copy.partners}</p>
       </div>
     </section>
   );
@@ -528,16 +643,18 @@ export function NewsPreview() {
               <Link
                 to="/tin-tuc/$slug"
                 params={{ slug: n.slug }}
-                className="group overflow-hidden rounded-xl bg-cream shadow-border"
+                className="group block overflow-hidden rounded-xl bg-cream shadow-border"
               >
-                <SmartImg
-                  slot={`news:${n.slug}`}
-                  src={n.image}
-                  alt={n.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-16/10 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <div className="aspect-16/10 overflow-hidden rounded-t-xl">
+                  <SmartImg
+                    slot={`news:${n.slug}`}
+                    src={n.image}
+                    alt={n.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
                 <div className="p-5">
                   <p className="text-xs tracking-widest uppercase text-muted">{n.date}</p>
                   <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">
