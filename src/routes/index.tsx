@@ -14,6 +14,7 @@ import {
   NewsPreview,
   PartnerStrip,
   PolicySection,
+  StatementBand,
   StorySection,
   UnderstandSection,
   UnitsPreview,
@@ -46,6 +47,7 @@ function Home() {
   return (
     <SiteShell>
       <Hero />
+      <StatementBand />
       <StorySection />
       <ExteriorSlider />
       <FactsSection />
