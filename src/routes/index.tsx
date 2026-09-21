@@ -19,6 +19,7 @@ import {
   UnderstandSection,
   UnitsPreview,
 } from "@/components/sections/home-sections";
+import { SalesPlansSection } from "@/components/sections/sales-plans";
 import { PAGES, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
@@ -58,6 +59,7 @@ function Home() {
       <InteriorGallery />
       <UnitsPreview />
       <PolicySection />
+      <SalesPlansSection />
       <LegalSection />
       <FaqSection />
       <NewsPreview />

@@ -32,14 +32,16 @@ function NewsIndex() {
                   params={{ slug: n.slug }}
                   className="group flex h-full flex-col overflow-hidden rounded-xl bg-paper shadow-border"
                 >
-                  <SmartImg
-                    slot={`news:${n.slug}`}
-                    src={n.image}
-                    alt={n.title}
-                    loading={i < 2 ? "eager" : "lazy"}
-                    decoding="async"
-                    className="aspect-video w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                  <div className="aspect-video overflow-hidden rounded-t-xl">
+                    <SmartImg
+                      slot={`news:${n.slug}`}
+                      src={n.image}
+                      alt={n.title}
+                      loading={i < 2 ? "eager" : "lazy"}
+                      decoding="async"
+                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-xs tracking-[0.16em] uppercase text-muted">{n.date}</p>
                     <h2 className="mt-2 font-display text-2xl leading-snug group-hover:text-terracotta">

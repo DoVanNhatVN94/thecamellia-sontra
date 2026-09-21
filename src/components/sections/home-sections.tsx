@@ -643,16 +643,18 @@ export function NewsPreview() {
               <Link
                 to="/tin-tuc/$slug"
                 params={{ slug: n.slug }}
-                className="group overflow-hidden rounded-xl bg-cream shadow-border"
+                className="group block overflow-hidden rounded-xl bg-cream shadow-border"
               >
-                <SmartImg
-                  slot={`news:${n.slug}`}
-                  src={n.image}
-                  alt={n.title}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-16/10 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+                <div className="aspect-16/10 overflow-hidden rounded-t-xl">
+                  <SmartImg
+                    slot={`news:${n.slug}`}
+                    src={n.image}
+                    alt={n.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
                 <div className="p-5">
                   <p className="text-xs tracking-widest uppercase text-muted">{n.date}</p>
                   <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">
