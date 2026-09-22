@@ -20,7 +20,7 @@ export type Lead = {
 
 export type LeadInput = Omit<Lead, "id" | "createdAt">;
 
-/** FormSubmit inbox — prefer env so personal mail is not required in SEO/meta. */
+/** Inbox used for mailto fallback (and optional FormSubmit if ever re-enabled). */
 export function formSubmitEmail(): string {
   const fromEnv = String(import.meta.env.VITE_FORMSUBMIT_EMAIL ?? "").trim();
   return fromEnv || PROJECT.email;
@@ -108,6 +108,13 @@ export type SendLeadOptions = {
   openedAt?: number;
 };
 
+const FALLBACK_ERROR =
+  "Không gửi được. Vui lòng gọi hotline hoặc nhắn Zalo (hoặc dùng Gửi email bên dưới).";
+
+/**
+ * First-party POST /api/leads (Resend on server).
+ * On network/5xx failure → error + mailto button in the form (no FormSubmit).
+ */
 export async function sendLeadEmail(
   input: LeadInput,
   opts: SendLeadOptions = {},
@@ -125,11 +132,10 @@ export async function sendLeadEmail(
   const rate = checkLeadRateLimit();
   if (!rate.ok) return rate;
 
-  const inbox = formSubmitEmail();
   recordLeadAttempt();
 
   try {
-    const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`, {
+    const res = await fetch("/api/leads", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -137,44 +143,36 @@ export async function sendLeadEmail(
       },
       signal: AbortSignal.timeout(15000),
       body: JSON.stringify({
-        "Họ và tên": input.name,
-        "Số điện thoại": input.phone,
-        "Email khách": input.email || "(không có)",
-        "Loại căn quan tâm": input.unit || "(chưa chọn)",
-        "Nhu cầu": input.message || "(không có)",
-        Nguồn: "Website The Camellia Sơn Trà",
-        _subject: `[The Camellia] Đăng ký nhận bảng giá — ${input.name}`,
-        _template: "table",
-        // AJAX endpoint cannot complete a visible captcha challenge; rely on
-        // honeypot + dwell + client rate-limit instead of silent _captcha:false only.
-        _captcha: "false",
-        _honey: opts.honey ?? "",
-        _autoresponse:
-          "Cảm ơn bạn đã đăng ký nhận bảng giá The Camellia Sơn Trà. Tư vấn viên sẽ liên hệ sớm qua số điện thoại bạn để lại.",
-        ...(input.email ? { _replyto: input.email } : {}),
+        name: input.name,
+        phone: input.phone,
+        email: input.email,
+        unit: input.unit,
+        message: input.message,
+        honey: opts.honey ?? "",
+        openedAt: opts.openedAt ?? Date.now(),
+        sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
       }),
     });
-    if (!res.ok) {
-      return {
-        ok: false,
-        error: "Không gửi được. Vui lòng gọi hotline hoặc nhắn Zalo (hoặc dùng Gửi email bên dưới).",
-      };
+
+    let json: { ok?: boolean; error?: string } = {};
+    try {
+      json = (await res.json()) as { ok?: boolean; error?: string };
+    } catch {
+      /* non-JSON */
     }
-    const json = (await res.json()) as { success?: string | boolean; message?: string };
-    if (json.success === false || json.success === "false") {
-      return {
-        ok: false,
-        error:
-          typeof json.message === "string" && json.message.trim()
-            ? json.message
-            : "Không gửi được. Vui lòng gọi hotline hoặc nhắn Zalo (hoặc dùng Gửi email bên dưới).",
-      };
+
+    if (res.ok && json.ok !== false) {
+      return { ok: true };
     }
-    return { ok: true };
-  } catch {
+
     return {
       ok: false,
-      error: "Không gửi được. Vui lòng gọi hotline hoặc nhắn Zalo (hoặc dùng Gửi email bên dưới).",
+      error:
+        typeof json.error === "string" && json.error.trim()
+          ? json.error
+          : FALLBACK_ERROR,
     };
+  } catch {
+    return { ok: false, error: FALLBACK_ERROR };
   }
 }
