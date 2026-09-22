@@ -101,7 +101,8 @@
     scroll-behavior: smooth;
     overflow-x: clip;
     scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px));
-    scroll-padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+    /* Mobile sticky CTA (~3.25rem bar + gap); keep anchors clear of fixed bar. */
+    scroll-padding-bottom: calc(var(--sticky-cta-clearance) + env(safe-area-inset-bottom, 0px));
   }
 
   @media (min-width: 640px) {
@@ -376,16 +377,22 @@
   padding-top: env(safe-area-inset-top, 0px);
 }
 
+/* Sticky mobile CTA bar: min-h 3.25rem + labels + safe-area.
+   6.25rem clears bar + pager hit-target (min-h-11) on ~390px widths. */
+:root {
+  --sticky-cta-clearance: 6.25rem;
+}
+
 .main-pad-cta {
-  padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(var(--sticky-cta-clearance) + env(safe-area-inset-bottom, 0px));
 }
 
 /* Home hero FadeSlider: keep pager/progress above mobile sticky CTA bar. */
 .slider-pager-above-cta {
-  bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px) + 0.25rem);
+  bottom: calc(var(--sticky-cta-clearance) + env(safe-area-inset-bottom, 0px) + 0.5rem);
 }
 .slider-progress-above-cta {
-  bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px));
+  bottom: calc(var(--sticky-cta-clearance) + env(safe-area-inset-bottom, 0px));
 }
 
 .sticky-under-header {

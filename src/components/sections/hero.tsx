@@ -21,7 +21,7 @@ export function Hero() {
         clearStickyCta
       />
       <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink via-ink/50 to-ink/20" />
-      <div className="relative mx-auto flex min-h-dvh max-w-6xl flex-col justify-end px-4 pb-36 pt-28 sm:px-6 sm:pb-28">
+      <div className="relative mx-auto flex min-h-dvh max-w-6xl flex-col justify-end px-4 pb-40 pt-28 sm:px-6 sm:pb-28">
         <p className="stagger-item kicker text-paper/80">{PROJECT.nameEn}</p>
         <h1 className="stagger-item mt-4 max-w-3xl font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
           {PROJECT.name}
