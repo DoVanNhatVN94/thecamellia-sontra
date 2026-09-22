@@ -42,7 +42,7 @@ export function SeoJsonLd() {
       breadcrumbLd(
         [
           { name: "Trang chủ", path: "/" },
-          { name: "Khám phá", path: "/kham-pha" },
+          { name: "Tour 360", path: "/kham-pha" },
         ],
         origin,
       ),

@@ -11,6 +11,7 @@ const PHONE_RE = /^(0|\+84)[0-9]{8,10}$/;
 
 type Props = {
   defaultUnit?: string;
+  /** Compact first step: name + phone + unit; email/message behind “Thêm thông tin”. */
   compact?: boolean;
   onSuccess?: () => void;
   className?: string;
@@ -28,6 +29,7 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
   const [fieldErrors, setFieldErrors] = useState<{ name?: string; phone?: string }>({});
   const [ok, setOk] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [showExtras, setShowExtras] = useState(!compact);
   const openedAt = useRef(Date.now());
 
   useEffect(() => {
@@ -93,8 +95,6 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
       </div>
     );
   }
-
-  const showExtras = !compact;
 
   return (
     <form noValidate onSubmit={submit} className={cn("relative grid gap-3", className)}>
@@ -185,6 +185,16 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
           ))}
         </select>
       </div>
+      {compact && !showExtras ? (
+        <button
+          type="button"
+          className="justify-self-start text-sm text-terracotta underline underline-offset-2 hover:text-ink"
+          onClick={() => setShowExtras(true)}
+          aria-expanded={false}
+        >
+          Thêm thông tin
+        </button>
+      ) : null}
       {showExtras ? (
         <>
           <div className="grid gap-1.5">

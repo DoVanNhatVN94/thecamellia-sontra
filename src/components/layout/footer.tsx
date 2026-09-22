@@ -29,7 +29,7 @@ export function Footer() {
             </li>
             <li>
               <Link to="/kham-pha" className="inline-flex min-h-11 items-center py-1.5 hover:text-paper">
-                Khám phá 360
+                Tour 360
               </Link>
             </li>
             <li>

@@ -273,7 +273,7 @@ export const NEWS: NewsArticle[] = [
     title: "Tích sản vĩnh cửu — di sản cho thế hệ mai sau",
     excerpt:
       "Quỹ đất kề biển Đà Nẵng ngày càng khan hiếm. Sở hữu căn hộ The Camellia Sơn Trà không chỉ là an cư — mà là nắm giữ tài sản pháp lý lâu dài, bàn giao hoàn thiện, giá từ 1,98 tỷ.",
-    image: "/images/news-tich-san-og.jpg",
+    image: "/images/featured-tich-san-16x9.jpg",
     poster: "/images/news-tich-san.webp",
     // Upper-biased landscape crop — bias cover toward logos/crowns/faces
     imageObjectClass: "object-top",
@@ -323,7 +323,7 @@ export const NEWS: NewsArticle[] = [
     title: "Vì sao The Camellia Sơn Trà nằm gần biển Mân Thái?",
     excerpt:
       "The Camellia Sơn Trà tại giao lộ Lê Văn Lương – Lê Đức Thọ: gần biển Mân Thái khoảng 200 m, khoảng 5 phút tới Bán đảo Sơn Trà. Căn hộ Mân Thái và căn hộ Sơn Trà đọc vị trí theo số đã công bố.",
-    image: "/images/news-vi-tri-son-tra-og.jpg",
+    image: "/images/featured-vi-tri-man-thai-16x9.jpg",
     poster: "/images/hero-aerial.webp",
     gallery: [
       "/images/hero-aerial.webp",
@@ -406,7 +406,8 @@ export const NEWS: NewsArticle[] = [
     title: "Tiến độ thi công — minh chứng cho cam kết bàn giao",
     excerpt:
       "Cập nhật 17.09.2026: The Camellia Sơn Trà đã hoàn thiện phần móng - hầm và đang thi công phần thân theo thông tin đã công bố. Ảnh công trường sẽ được làm mới khi có bộ chụp mới.",
-    image: "/images/news-tien-do-card.jpg",
+    image: "/images/featured-tien-do-16x9.jpg",
+    imageObjectClass: "object-top",
     poster: "/images/news-tien-do-01b.webp",
     gallery: [
       "/images/news-tien-do-01b.webp",
@@ -451,7 +452,7 @@ export const NEWS: NewsArticle[] = [
     title: "Giỏ hàng Studio / 1PN / 2PN: loại căn nào phù hợp với bạn?",
     excerpt:
       "So sánh nhanh Studio, 1PN+1 và 2PN tại The Camellia Sơn Trà (469 căn, giá từ 1,98 tỷ). Ai nên chọn loại nào — rồi nhận bảng giá qua Zalo 0934 885 108.",
-    image: "/images/news-gio-hang-card-og.jpg",
+    image: "/images/featured-gio-hang-16x9.jpg",
     poster: "/images/news-gio-hang.webp",
     gallery: [
       "/images/news-gio-hang.webp",
@@ -533,7 +534,7 @@ export const NEWS: NewsArticle[] = [
     title: "Premier Launch: gần 400 khách, 159 giao dịch thành công",
     excerpt:
       "12.09.2026 The Camellia Sơn Trà – Đà Nẵng mở bán chính thức. Gần 400 khách hàng và đối tác, 159 giao dịch thành công — Life Within, nơi chốn thuộc về.",
-    image: "/images/news-event-card-og.jpg",
+    image: "/images/featured-premier-launch-16x9.jpg",
     youtubeId: "e2vRxNmuyOk",
     youtubeTitle:
       "Video tóm tắt sự kiện mở bán chính thức Premier Launch ngày 12.09.2026",
@@ -841,7 +842,7 @@ export const NAV = [
   { href: "/#vi-tri", label: "Vị trí", to: "/" },
   { href: "/tien-ich", label: "Tiện ích", to: "/tien-ich" },
   { href: "/can-ho", label: "Căn hộ", to: "/can-ho" },
-  { href: "/kham-pha", label: "Khám phá", to: "/kham-pha" },
+  { href: "/kham-pha", label: "Tour 360", to: "/kham-pha" },
   { href: "/#chinh-sach", label: "Chính sách", to: "/" },
   { href: "/tin-tuc", label: "Tin tức", to: "/tin-tuc" },
   { href: "/lien-he", label: "Liên hệ", to: "/lien-he" },

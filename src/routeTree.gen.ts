@@ -17,9 +17,9 @@ import { Route as LienHeRouteImport } from './routes/lien-he'
 import { Route as SuaAnhRouteImport } from './routes/sua-anh'
 import { Route as TienIchRouteImport } from './routes/tien-ich'
 import { Route as TinTucRouteImport } from './routes/tin-tuc'
+import { Route as ApiLeadsRouteImport } from './routes/api/leads'
 import { Route as TinTucIndexRouteImport } from './routes/tin-tuc.index'
 import { Route as TinTucSlugRouteImport } from './routes/tin-tuc.$slug'
-import { Route as ApiLeadsRouteImport } from './routes/api/leads'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -61,6 +61,11 @@ const TinTucRoute = TinTucRouteImport.update({
   path: '/tin-tuc',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiLeadsRoute = ApiLeadsRouteImport.update({
+  id: '/api/leads',
+  path: '/api/leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TinTucIndexRoute = TinTucIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -72,12 +77,6 @@ const TinTucSlugRoute = TinTucSlugRouteImport.update({
   getParentRoute: () => TinTucRoute,
 } as any)
 
-const ApiLeadsRoute = ApiLeadsRouteImport.update({
-  id: '/api/leads',
-  path: '/api/leads',
-  getParentRoute: () => rootRouteImport,
-} as any)
-
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/can-ho': typeof CanHoRoute
@@ -87,9 +86,9 @@ export interface FileRoutesByFullPath {
   '/sua-anh': typeof SuaAnhRoute
   '/tien-ich': typeof TienIchRoute
   '/tin-tuc': typeof TinTucRouteWithChildren
+  '/api/leads': typeof ApiLeadsRoute
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc/': typeof TinTucIndexRoute
-  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -99,9 +98,9 @@ export interface FileRoutesByTo {
   '/lien-he': typeof LienHeRoute
   '/sua-anh': typeof SuaAnhRoute
   '/tien-ich': typeof TienIchRoute
+  '/api/leads': typeof ApiLeadsRoute
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc': typeof TinTucIndexRoute
-  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -113,9 +112,9 @@ export interface FileRoutesById {
   '/sua-anh': typeof SuaAnhRoute
   '/tien-ich': typeof TienIchRoute
   '/tin-tuc': typeof TinTucRouteWithChildren
+  '/api/leads': typeof ApiLeadsRoute
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc/': typeof TinTucIndexRoute
-  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -128,9 +127,9 @@ export interface FileRouteTypes {
     | '/sua-anh'
     | '/tien-ich'
     | '/tin-tuc'
+    | '/api/leads'
     | '/tin-tuc/$slug'
     | '/tin-tuc/'
-    | '/api/leads'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -140,9 +139,9 @@ export interface FileRouteTypes {
     | '/lien-he'
     | '/sua-anh'
     | '/tien-ich'
+    | '/api/leads'
     | '/tin-tuc/$slug'
     | '/tin-tuc'
-    | '/api/leads'
   id:
     | '__root__'
     | '/'
@@ -153,9 +152,9 @@ export interface FileRouteTypes {
     | '/sua-anh'
     | '/tien-ich'
     | '/tin-tuc'
+    | '/api/leads'
     | '/tin-tuc/$slug'
     | '/tin-tuc/'
-    | '/api/leads'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -228,6 +227,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TinTucRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/leads': {
+      id: '/api/leads'
+      path: '/api/leads'
+      fullPath: '/api/leads'
+      preLoaderRoute: typeof ApiLeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tin-tuc/': {
       id: '/tin-tuc/'
       path: '/'
@@ -241,13 +247,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/tin-tuc/$slug'
       preLoaderRoute: typeof TinTucSlugRouteImport
       parentRoute: typeof TinTucRoute
-    }
-    '/api/leads': {
-      id: '/api/leads'
-      path: '/api/leads'
-      fullPath: '/api/leads'
-      preLoaderRoute: typeof ApiLeadsRouteImport
-      parentRoute: typeof rootRouteImport
     }
   }
 }

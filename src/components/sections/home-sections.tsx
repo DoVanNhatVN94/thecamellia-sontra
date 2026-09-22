@@ -472,11 +472,10 @@ export function TourPreview() {
 }
 
 export function PolicySection() {
-  const openWith = useRegister((s) => s.openWith);
   const copy = MIDHOME_COPY.policy;
   return (
     <section id="chinh-sach" className="scroll-mt-24 bg-paper">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
         <Reveal>
           <p className="kicker">{copy.kicker}</p>
           <h2 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">
@@ -486,44 +485,11 @@ export function PolicySection() {
             {copy.sub}
           </p>
           <div className="mt-6">
-            <Button size="lg" onClick={() => openWith()}>
-              {copy.cta}
+            <Button size="lg" asChild>
+              <a href={copy.ctaHref}>{copy.cta}</a>
             </Button>
           </div>
         </Reveal>
-
-        {/* Mobile: accordion · Desktop: expandable cards (same details pattern) */}
-        <div className="mt-10 divide-y divide-stone overflow-hidden rounded-xl border border-stone bg-cream shadow-border lg:grid lg:grid-cols-2 lg:gap-4 lg:divide-y-0 lg:border-0 lg:bg-transparent lg:shadow-none">
-          {copy.items.map((item, i) => (
-            <details
-              key={item.title}
-              className="group lg:rounded-xl lg:border lg:border-stone lg:bg-cream lg:shadow-border"
-              open={i === 0}
-            >
-              <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 marker:content-none sm:px-5 [&::-webkit-details-marker]:hidden">
-                <span className="min-w-0">
-                  <span className="block text-xs tracking-[0.16em] uppercase text-muted">
-                    {item.title}
-                  </span>
-                  <span className="mt-1 block font-num text-xl text-terracotta sm:text-2xl">
-                    {item.value}
-                  </span>
-                </span>
-                <span
-                  className="flex size-11 shrink-0 items-center justify-center rounded-md text-2xl text-terracotta transition-transform duration-200 group-open:rotate-45"
-                  aria-hidden
-                >
-                  +
-                </span>
-              </summary>
-              <p className="px-4 pb-5 text-sm leading-relaxed text-muted sm:px-5">
-                {item.body}
-              </p>
-            </details>
-          ))}
-        </div>
-
-        <p className="mt-6 text-sm leading-relaxed text-muted">{copy.disclaimer}</p>
       </div>
     </section>
   );
@@ -698,7 +664,7 @@ export function CtaBand() {
         </Reveal>
         <Reveal delay={120}>
           <div className="rounded-xl bg-cream p-6 text-ink sm:p-8">
-            <LeadForm />
+            <LeadForm compact />
           </div>
         </Reveal>
       </div>

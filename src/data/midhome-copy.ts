@@ -7,7 +7,7 @@ export const MIDHOME_COPY = {
     kicker: "Life WITHIN · Sơn Trà",
     headline: "Biển kề rừng. Nhà thuộc về bạn.",
     sub: "The Camellia Sơn Trà — 469 căn, sổ hồng sở hữu lâu dài, giá từ 1,98 tỷ.",
-    cta: "Nhận bảng giá",
+    cta: "Đăng ký xem nhà mẫu",
   },
   understand: {
     kicker: "Tinh thần dự án",
@@ -18,46 +18,19 @@ export const MIDHOME_COPY = {
     kicker: "Thông tin dự án",
     headline: "Một tòa tháp, một biểu tượng",
   },
+  /** Short teaser — SalesPlans (#chinh-sach-ban-hang) is the source of truth for offers. */
   policy: {
-    kicker: "Linh hoạt dòng tiền",
-    headline: "Chọn nhịp thanh toán phù hợp bạn",
-    sub: "Ưu đãi và phương án có thể đổi theo đợt mở bán. Tư vấn đối chiếu hồ sơ + bảng giá tại thời điểm ký.",
-    cta: "Nhận bảng giá",
-    disclaimer:
-      "Chi tiết % và điều kiện theo chính sách đợt. Hotline 0934 885 108.",
-    items: [
-      {
-        title: "Early Bird",
-        value: "Chiết khấu 3%",
-        body: "Chiết khấu 3% cho 100 căn đủ điều kiện đăng ký sớm.",
-      },
-      {
-        title: "Thanh toán nhanh",
-        value: "Ưu đãi đến 16%",
-        body: "Ưu đãi đến 16% — chiết khấu theo tiến độ, tối đa khi đóng sớm.",
-      },
-      {
-        title: "Vay ngân hàng",
-        value: "Hỗ trợ vay đến 70%",
-        body: "Hỗ trợ vay đến 70%. Ân hạn gốc đến 5 năm; hỗ trợ lãi theo chương trình ngân hàng tại thời điểm ký.",
-      },
-      {
-        title: "Nhận nhà linh hoạt",
-        value: "Thanh toán 50%",
-        body: "Thanh toán 50% — nhận nhà để ở hoặc khai thác theo phương án vốn tự có.",
-      },
-      {
-        title: "Phí quản lý",
-        value: "Miễn phí quản lý 12 tháng",
-        body: "Miễn phí quản lý 12 tháng, áp dụng theo chính sách bán hàng khi ký.",
-      },
-    ],
+    kicker: "Chính sách",
+    headline: "Linh hoạt dòng tiền",
+    sub: "Nhiều phương án HTLS và chiết khấu — xem chi tiết bên dưới.",
+    cta: "Xem chính sách bán hàng",
+    ctaHref: "#chinh-sach-ban-hang",
   },
   legal: {
     kicker: "Giá trị tạo niềm tin",
     headline: "Pháp lý rõ — sở hữu lâu dài",
     sub: "Hồ sơ công bố theo lộ trình; căn hộ hình thành trong tương lai đủ điều kiện kinh doanh.",
-    cta: "Xem hồ sơ tư vấn",
+    cta: "Nhận quỹ căn phù hợp",
     partners: "Archivina · Delta · MBLAND · WELAND · DKRA Virgo.",
     items: [
       {

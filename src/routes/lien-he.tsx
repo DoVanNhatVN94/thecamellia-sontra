@@ -74,7 +74,7 @@ function ContactPage() {
               <p className="mt-1 mb-6 text-sm text-muted">
                 Điền form bên dưới — tư vấn viên phản hồi qua hotline hoặc Zalo trong giờ hành chính.
               </p>
-              <LeadForm />
+              <LeadForm compact />
             </div>
           </Reveal>
         </div>
