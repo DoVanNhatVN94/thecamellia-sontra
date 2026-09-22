@@ -251,6 +251,11 @@ export type NewsArticle = {
   excerpt: string;
   image: string;
   poster?: string;
+  /**
+   * Optional Tailwind object-position for card/cover crops (e.g. "object-top").
+   * Use for hero-biased assets so object-cover keeps faces/crowns, not sand.
+   */
+  imageObjectClass?: string;
   gallery: readonly string[];
   body: NewsBlock[];
   /** Privacy-enhanced YouTube id. The article page embeds it only when set. */
@@ -270,6 +275,8 @@ export const NEWS: NewsArticle[] = [
       "Quỹ đất kề biển Đà Nẵng ngày càng khan hiếm. Sở hữu căn hộ The Camellia Sơn Trà không chỉ là an cư — mà là nắm giữ tài sản pháp lý lâu dài, bàn giao hoàn thiện, giá từ 1,98 tỷ.",
     image: "/images/news-tich-san-og.jpg",
     poster: "/images/news-tich-san.webp",
+    // Upper-biased landscape crop — bias cover toward logos/crowns/faces
+    imageObjectClass: "object-top",
     gallery: [
       "/images/news-tich-san.webp",
       "/images/exterior-1.webp",
