@@ -652,7 +652,7 @@ export function NewsPreview() {
                     alt={n.title}
                     loading="lazy"
                     decoding="async"
-                    className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`size-full object-cover transition-transform duration-700 group-hover:scale-105 ${n.imageObjectClass ?? ""}`}
                   />
                 </div>
                 <div className="p-5">

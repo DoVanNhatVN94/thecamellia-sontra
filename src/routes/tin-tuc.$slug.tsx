@@ -62,9 +62,9 @@ function ArticlePage() {
           fetchPriority="high"
           decoding="async"
           className={
-            article.poster
+            article.poster && !article.imageObjectClass
               ? "news-poster"
-              : "mt-8 aspect-video w-full rounded-xl object-cover"
+              : `mt-8 aspect-video w-full rounded-xl object-cover ${article.imageObjectClass ?? ""}`
           }
         />
         {article.youtubeId ? (

@@ -39,7 +39,7 @@ function NewsIndex() {
                       alt={n.title}
                       loading={i < 2 ? "eager" : "lazy"}
                       decoding="async"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className={`size-full object-cover transition-transform duration-700 group-hover:scale-105 ${n.imageObjectClass ?? ""}`}
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
