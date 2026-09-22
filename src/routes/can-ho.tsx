@@ -82,6 +82,9 @@ function UnitsPage() {
             {unit.price}
           </p>
         </div>
+        <p className="mx-auto max-w-6xl px-4 pb-1.5 text-[0.65rem] tracking-wide text-muted md:hidden sm:px-6">
+          Vuốt ngang để xem thêm loại căn →
+        </p>
       </div>
 
       <section className="bg-cream">

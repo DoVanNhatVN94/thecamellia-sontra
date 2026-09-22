@@ -106,7 +106,7 @@ export function RelatedNews({ articles, className }: Props) {
               </div>
               <div className="p-5">
                 <p className="text-xs tracking-[0.16em] uppercase text-muted">{n.date}</p>
-                <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">
+                <h3 className="mt-2 line-clamp-3 min-h-[4.125rem] font-display text-xl leading-snug group-hover:text-terracotta">
                   {n.title}
                 </h3>
               </div>

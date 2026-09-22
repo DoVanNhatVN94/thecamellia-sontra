@@ -44,7 +44,7 @@ function NewsIndex() {
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-xs tracking-[0.16em] uppercase text-muted">{n.date}</p>
-                    <h2 className="mt-2 font-display text-2xl leading-snug group-hover:text-terracotta">
+                    <h2 className="mt-2 line-clamp-3 min-h-[4.5rem] font-display text-2xl leading-snug group-hover:text-terracotta sm:min-h-[4.875rem]">
                       {n.title}
                     </h2>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{n.excerpt}</p>

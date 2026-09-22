@@ -31,32 +31,34 @@ function PlanChips({
   }, [active]);
 
   return (
-    <div
-      className="filter-rail min-w-0"
-      role="tablist"
-      aria-label="Phương án thanh toán"
-    >
-      {SALES_PLANS.map((p) => {
-        const on = p.id === active;
-        return (
-          <button
-            key={p.id}
-            id={`sales-plan-tab-${p.id}`}
-            type="button"
-            role="tab"
-            aria-controls={`sales-plan-${p.id}`}
-            aria-selected={on}
-            ref={on ? (activeRef as RefObject<HTMLButtonElement>) : undefined}
-            onClick={() => onSelect(p.id)}
-            className={cn(
-              "filter-chip border",
-              on ? "border-ink bg-ink text-paper" : "border-stone bg-paper text-ink",
-            )}
-          >
-            {p.short}
-          </button>
-        );
-      })}
+    <div className="filter-rail-fade min-w-0">
+      <div
+        className="filter-rail min-w-0"
+        role="tablist"
+        aria-label="Phương án thanh toán"
+      >
+        {SALES_PLANS.map((p) => {
+          const on = p.id === active;
+          return (
+            <button
+              key={p.id}
+              id={`sales-plan-tab-${p.id}`}
+              type="button"
+              role="tab"
+              aria-controls={`sales-plan-${p.id}`}
+              aria-selected={on}
+              ref={on ? (activeRef as RefObject<HTMLButtonElement>) : undefined}
+              onClick={() => onSelect(p.id)}
+              className={cn(
+                "filter-chip border",
+                on ? "border-ink bg-ink text-paper" : "border-stone bg-paper text-ink",
+              )}
+            >
+              {p.short}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }

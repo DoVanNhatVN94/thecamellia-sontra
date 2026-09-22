@@ -368,6 +368,25 @@ export function InteriorGallery() {
   );
 }
 
+function DuplexRegisterCard({ unit }: { unit: (typeof UNIT_TYPES)[number] }) {
+  const openWith = useRegister((s) => s.openWith);
+  return (
+    <Reveal delay={80}>
+      <article className="mt-4 flex flex-col items-start justify-between gap-4 rounded-xl bg-paper p-6 shadow-border sm:flex-row sm:items-center">
+        <div>
+          <p className="text-xs tracking-[0.22em] text-terracotta uppercase">Sắp công bố</p>
+          <h3 className="mt-1 font-display text-2xl">{unit.name}</h3>
+          <p className="mt-1 font-num text-sm text-muted">{unit.area}</p>
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{unit.desc}</p>
+        </div>
+        <Button variant="outline" type="button" onClick={() => openWith(unit.name)}>
+          Nhận thông tin Duplex
+        </Button>
+      </article>
+    </Reveal>
+  );
+}
+
 export function UnitsPreview() {
   return (
     <section id="can-ho" className="cv-auto scroll-mt-24 bg-cream">
@@ -423,21 +442,7 @@ export function UnitsPreview() {
           ))}
         </div>
         {UNIT_TYPES.filter((u) => u.comingSoon).map((u) => (
-          <Reveal key={u.id} delay={80}>
-            <article className="mt-4 flex flex-col items-start justify-between gap-4 rounded-xl bg-paper p-6 shadow-border sm:flex-row sm:items-center">
-              <div>
-                <p className="text-xs tracking-[0.22em] text-terracotta uppercase">Sắp công bố</p>
-                <h3 className="mt-1 font-display text-2xl">{u.name}</h3>
-                <p className="mt-1 font-num text-sm text-muted">{u.area}</p>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">{u.desc}</p>
-              </div>
-              <Button variant="outline" asChild>
-                <Link to="/can-ho" hash={u.id}>
-                  Nhận thông tin Duplex
-                </Link>
-              </Button>
-            </article>
-          </Reveal>
+          <DuplexRegisterCard key={u.id} unit={u} />
         ))}
       </div>
     </section>
@@ -623,7 +628,7 @@ export function NewsPreview() {
                 </div>
                 <div className="p-5">
                   <p className="text-xs tracking-widest uppercase text-muted">{n.date}</p>
-                  <h3 className="mt-2 font-display text-xl leading-snug group-hover:text-terracotta">
+                  <h3 className="mt-2 line-clamp-3 min-h-[4.125rem] font-display text-xl leading-snug group-hover:text-terracotta">
                     {n.title}
                   </h3>
                   <p className="mt-2 line-clamp-3 text-sm text-muted">{n.excerpt}</p>

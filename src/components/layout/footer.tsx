@@ -61,15 +61,23 @@ export function Footer() {
               <MapPin className="mt-0.5 size-4 shrink-0" />
               <address className="not-italic">{PROJECT.address}</address>
             </li>
-            <li className="flex min-h-11 items-center gap-2.5 py-1.5">
-              <Phone className="size-4 shrink-0" />
-              <a href={`tel:${PROJECT.hotlineTel}`} className="font-num hover:text-paper">
+            <li>
+              <a
+                href={`tel:${PROJECT.hotlineTel}`}
+                className="inline-flex min-h-11 items-center gap-2.5 py-1.5 font-num hover:text-paper"
+              >
+                <Phone className="size-4 shrink-0" aria-hidden="true" />
                 Hotline {PROJECT.hotlineDisplay}
               </a>
             </li>
-            <li className="flex min-h-11 items-center gap-2.5 py-1.5">
-              <MessageCircle className="size-4 shrink-0" />
-              <a href={PROJECT.zalo} target="_blank" rel="noreferrer" className="font-num hover:text-paper">
+            <li>
+              <a
+                href={PROJECT.zalo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center gap-2.5 py-1.5 font-num hover:text-paper"
+              >
+                <MessageCircle className="size-4 shrink-0" aria-hidden="true" />
                 Zalo {PROJECT.hotlineDisplay}
               </a>
             </li>

@@ -170,7 +170,7 @@ export function UnitSmartFilter({
       <p className="kicker">Bộ lọc thông minh</p>
       <h2 className="mt-2 font-display text-3xl sm:text-5xl">So sánh và chọn loại căn</h2>
       <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:mt-4">
-        <span className="lg:hidden">Vuốt ngang để so sánh loại căn. </span>
+        <span className="font-medium text-ink/80 lg:hidden">← Vuốt ngang để so sánh loại căn → </span>
         Chọn nhu cầu hoặc ngân sách — loại căn phù hợp sẽ nổi lên.
       </p>
 
@@ -181,11 +181,12 @@ export function UnitSmartFilter({
 
       <p className="mt-4 text-sm text-muted sm:mt-5">
         {matched.length === UNIT_TYPES.length
-          ? "5 loại hình · bấm thẻ để xem mặt bằng"
+          ? "5 loại hình · bấm thẻ để xem chi tiết"
           : `${matched.length} loại căn khớp bộ lọc`}
       </p>
 
-      <div className="filter-unit-rail mt-3 sm:mt-4">
+      <div className="filter-unit-rail-fade mt-3 sm:mt-4">
+      <div className="filter-unit-rail">
         {UNIT_TYPES.map((u) => {
           const on = u.id === active;
           const fit = matchedIds.has(u.id);
@@ -209,7 +210,7 @@ export function UnitSmartFilter({
                 <span className="hidden lg:inline">{u.name}</span>
               </span>
               <span className={cn("mt-1 text-xs tracking-wide", on ? "text-paper/70" : "text-muted")}>
-                {u.comingSoon ? "Sắp công bố mặt bằng" : `${u.layouts.length} mã căn`}
+                {u.comingSoon ? "Sắp công bố — đăng ký nhận" : `${u.layouts.length} mã căn`}
               </span>
               <span className={cn("font-num mt-3 text-sm sm:mt-4", on ? "text-paper/85" : "text-muted")}>
                 {areaShort(u.area)}
@@ -218,11 +219,18 @@ export function UnitSmartFilter({
                 {u.price}
               </span>
               <span className={cn("mt-3 text-xs tracking-wide", on ? "text-paper/80" : "text-muted")}>
-                {on ? "Đang xem mặt bằng" : "Xem mặt bằng"}
+                {u.comingSoon
+                  ? on
+                    ? "Đăng ký nhận thông tin"
+                    : "Nhận thông tin"
+                  : on
+                    ? "Đang xem mặt bằng"
+                    : "Xem mặt bằng"}
               </span>
             </button>
           );
         })}
+      </div>
       </div>
       <div className="filter-dots" aria-hidden="true">
         {UNIT_TYPES.map((u) => (
@@ -253,26 +261,28 @@ export function UnitFilterChips({
   }, [active]);
 
   return (
-    <div className="filter-rail min-w-0 flex-1" role="tablist" aria-label="Loại căn hộ">
-      {list.map((u) => {
-        const on = u.id === active;
-        return (
-          <button
-            key={u.id}
-            type="button"
-            role="tab"
-            aria-selected={on}
-            ref={on ? (activeRef as RefObject<HTMLButtonElement>) : undefined}
-            onClick={() => onSelect(u.id)}
-            className={cn(
-              "filter-chip border",
-              on ? "border-ink bg-ink text-paper" : "border-stone bg-paper text-ink",
-            )}
-          >
-            {u.beds}
-          </button>
-        );
-      })}
+    <div className="filter-rail-fade min-w-0 flex-1">
+      <div className="filter-rail min-w-0" role="tablist" aria-label="Loại căn hộ">
+        {list.map((u) => {
+          const on = u.id === active;
+          return (
+            <button
+              key={u.id}
+              type="button"
+              role="tab"
+              aria-selected={on}
+              ref={on ? (activeRef as RefObject<HTMLButtonElement>) : undefined}
+              onClick={() => onSelect(u.id)}
+              className={cn(
+                "filter-chip border",
+                on ? "border-ink bg-ink text-paper" : "border-stone bg-paper text-ink",
+              )}
+            >
+              {u.beds}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 }
