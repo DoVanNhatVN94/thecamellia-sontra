@@ -19,6 +19,8 @@ type Props = {
   kenBurns?: boolean;
   showArrows?: boolean;
   showDots?: boolean;
+  /** Raise pager/progress above mobile sticky bottom CTA (full-bleed heroes). */
+  clearStickyCta?: boolean;
   lightbox?: boolean;
   priority?: boolean;
   galleryId?: string;
@@ -40,6 +42,7 @@ export function FadeSlider({
   kenBurns = true,
   showArrows = true,
   showDots = true,
+  clearStickyCta = false,
   lightbox = false,
   priority = false,
   galleryId,
@@ -257,7 +260,12 @@ export function FadeSlider({
       ) : null}
 
       {count > 1 ? (
-        <div className="absolute inset-x-0 bottom-0 z-10 h-0.5 bg-paper/15">
+        <div
+          className={cn(
+            "absolute inset-x-0 z-10 h-0.5 bg-paper/15",
+            clearStickyCta ? "slider-progress-above-cta" : "bottom-0",
+          )}
+        >
           <div
             key={index}
             className="slider-progress h-full bg-terracotta"
@@ -270,7 +278,12 @@ export function FadeSlider({
       ) : null}
 
       {showDots && count > 1 ? (
-        <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-1">
+        <div
+          className={cn(
+            "absolute inset-x-0 z-10 flex justify-center gap-1",
+            clearStickyCta ? "slider-pager-above-cta" : "bottom-4",
+          )}
+        >
           {items.map((s, i) => (
             <button
               key={`${s.src}-dot-${s.origin}`}
