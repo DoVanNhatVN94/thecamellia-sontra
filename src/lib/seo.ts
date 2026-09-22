@@ -55,6 +55,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-ceo-1-og.jpg": { width: 960, height: 641 },
   "/images/news-tt03-og.jpg": { width: 1080, height: 608 },
   "/images/news-vi-tri-son-tra-og.jpg": { width: 1080, height: 602 },
+  "/images/news-tich-san-og.jpg": { width: 1122, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
