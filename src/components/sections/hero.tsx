@@ -20,7 +20,11 @@ export function Hero() {
         priority
         clearStickyCta
       />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink via-ink/50 to-ink/20" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink via-ink/70 to-ink/35" />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[72%] bg-linear-to-t from-ink/95 via-ink/55 to-transparent"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto flex min-h-dvh max-w-6xl flex-col justify-end px-4 pb-40 pt-28 sm:px-6 sm:pb-28">
         <p className="stagger-item kicker text-paper/80">{PROJECT.nameEn}</p>
         <h1 className="stagger-item mt-4 max-w-3xl font-display text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
@@ -87,7 +91,11 @@ export function PageHero({
         showArrows={false}
         priority
       />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink via-ink/55 to-ink/25" />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink via-ink/70 to-ink/35" />
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[78%] bg-linear-to-t from-ink/95 via-ink/50 to-transparent"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto flex min-h-[52vh] max-w-6xl flex-col justify-end px-4 pb-12 pt-28 sm:min-h-[58vh] sm:px-6 sm:pb-16">
         {crumbs ? <Breadcrumbs items={crumbs} className="stagger-item mb-5 text-paper/70" /> : null}
         <p className="stagger-item kicker text-paper/80">{kicker}</p>
