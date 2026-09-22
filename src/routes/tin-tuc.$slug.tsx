@@ -102,7 +102,7 @@ function ArticlePage() {
           {PROJECT.address} · Hotline {PROJECT.hotlineDisplay}
         </p>
         <Button className="mt-6" onClick={() => openWith()}>
-          Nhận bảng giá
+          Nhận quỹ căn phù hợp
         </Button>
       </div>
 

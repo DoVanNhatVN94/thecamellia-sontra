@@ -243,6 +243,7 @@ function PlanDetail({ plan }: { plan: SalesPlan }) {
 }
 
 export function SalesPlansSection() {
+  const openWith = useRegister((s) => s.openWith);
   const [active, setActive] = useState<SalesPlanId>("htls");
   const plan = SALES_PLANS.find((p) => p.id === active) ?? SALES_PLANS[0];
   const meta = SALES_PLANS_META;
@@ -258,6 +259,11 @@ export function SalesPlansSection() {
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
             {meta.sub}
           </p>
+          <div className="mt-6">
+            <Button size="lg" onClick={() => openWith()}>
+              {meta.cta}
+            </Button>
+          </div>
         </Reveal>
 
         <Reveal delay={60} className="mt-8 md:mt-10">

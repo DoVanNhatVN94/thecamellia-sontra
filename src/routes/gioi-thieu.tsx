@@ -24,9 +24,9 @@ const FIXED_TRUTHS = [
 
 const RELATED_LINKS = [
   { to: "/can-ho" as const, label: "Căn hộ", desc: "Studio đến 3PN & Duplex" },
-  { to: "/kham-pha" as const, label: "Khám phá 360", desc: "Tour ảo PanaMotion" },
+  { to: "/kham-pha" as const, label: "Tour 360", desc: "Tour ảo PanaMotion" },
   { to: "/tin-tuc" as const, label: "Tin tức", desc: "Cập nhật dự án" },
-  { to: "/lien-he" as const, label: "Liên hệ", desc: "Nhận bảng giá" },
+  { to: "/lien-he" as const, label: "Liên hệ", desc: "Tư vấn qua Zalo" },
 ] as const;
 
 const FACT_ROWS: { label: string; value: string }[] = [
@@ -201,7 +201,7 @@ function FactSheetPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button size="lg" onClick={() => openWith()}>
-                  Nhận bảng giá
+                  Nhận mặt bằng
                 </Button>
                 <Button asChild size="lg" variant="light">
                   <Link to="/lien-he">Đến trang liên hệ</Link>

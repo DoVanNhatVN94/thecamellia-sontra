@@ -41,7 +41,7 @@ export function Hero() {
             Nhận bảng giá
           </Button>
           <Button size="lg" variant="light" asChild>
-            <a href="#du-an">Khám phá dự án</a>
+            <a href="#du-an">Tìm hiểu dự án</a>
           </Button>
         </div>
         <div className="stagger-item mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-paper/20 pt-6">

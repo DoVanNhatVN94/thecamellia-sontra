@@ -100,9 +100,9 @@ export type SalesPlan = (typeof SALES_PLANS)[number];
 
 export const SALES_PLANS_META = {
   kicker: "Chính sách bán hàng",
-  headline: "Bốn phương án thanh toán — chọn nhịp phù hợp",
-  sub: "Chọn phương án bên dưới để xem lộ trình chi tiết. Ưu đãi và điều kiện có thể đổi theo đợt mở bán.",
-  cta: "Nhận tư vấn / bảng giá",
+  headline: "Chọn nhịp thanh toán phù hợp bạn",
+  sub: "Giá từ 1,98 tỷ · 469 căn · sổ hồng lâu dài. Bốn PA: HTLS 70%/18th · Chuẩn 4% · TTS 95%→13% · Thảnh thơi 50%+CK 2%. Early Bird & ưu đãi khác theo đợt.",
+  cta: "Nhận bảng giá",
   disclaimer:
-    "Chi tiết theo đợt & ngân hàng tại thời điểm ký. Hotline 0934 885 108.",
+    "Ưu đãi, lãi suất và điều kiện vay theo đợt mở bán và chương trình ngân hàng tại thời điểm ký. Hotline 0934 885 108.",
 } as const;
