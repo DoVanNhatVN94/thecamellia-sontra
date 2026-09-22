@@ -19,6 +19,7 @@ import { Route as TienIchRouteImport } from './routes/tien-ich'
 import { Route as TinTucRouteImport } from './routes/tin-tuc'
 import { Route as TinTucIndexRouteImport } from './routes/tin-tuc.index'
 import { Route as TinTucSlugRouteImport } from './routes/tin-tuc.$slug'
+import { Route as ApiLeadsRouteImport } from './routes/api/leads'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -71,6 +72,12 @@ const TinTucSlugRoute = TinTucSlugRouteImport.update({
   getParentRoute: () => TinTucRoute,
 } as any)
 
+const ApiLeadsRoute = ApiLeadsRouteImport.update({
+  id: '/api/leads',
+  path: '/api/leads',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/can-ho': typeof CanHoRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByFullPath {
   '/tin-tuc': typeof TinTucRouteWithChildren
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc/': typeof TinTucIndexRoute
+  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -93,6 +101,7 @@ export interface FileRoutesByTo {
   '/tien-ich': typeof TienIchRoute
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc': typeof TinTucIndexRoute
+  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -106,6 +115,7 @@ export interface FileRoutesById {
   '/tin-tuc': typeof TinTucRouteWithChildren
   '/tin-tuc/$slug': typeof TinTucSlugRoute
   '/tin-tuc/': typeof TinTucIndexRoute
+  '/api/leads': typeof ApiLeadsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -120,6 +130,7 @@ export interface FileRouteTypes {
     | '/tin-tuc'
     | '/tin-tuc/$slug'
     | '/tin-tuc/'
+    | '/api/leads'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -131,6 +142,7 @@ export interface FileRouteTypes {
     | '/tien-ich'
     | '/tin-tuc/$slug'
     | '/tin-tuc'
+    | '/api/leads'
   id:
     | '__root__'
     | '/'
@@ -143,6 +155,7 @@ export interface FileRouteTypes {
     | '/tin-tuc'
     | '/tin-tuc/$slug'
     | '/tin-tuc/'
+    | '/api/leads'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -154,6 +167,7 @@ export interface RootRouteChildren {
   SuaAnhRoute: typeof SuaAnhRoute
   TienIchRoute: typeof TienIchRoute
   TinTucRoute: typeof TinTucRouteWithChildren
+  ApiLeadsRoute: typeof ApiLeadsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -228,6 +242,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TinTucSlugRouteImport
       parentRoute: typeof TinTucRoute
     }
+    '/api/leads': {
+      id: '/api/leads'
+      path: '/api/leads'
+      fullPath: '/api/leads'
+      preLoaderRoute: typeof ApiLeadsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -253,6 +274,7 @@ const rootRouteChildren: RootRouteChildren = {
   SuaAnhRoute: SuaAnhRoute,
   TienIchRoute: TienIchRoute,
   TinTucRoute: TinTucRouteWithChildren,
+  ApiLeadsRoute: ApiLeadsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
