@@ -3,6 +3,7 @@ import { NEWS } from "@/data/project";
 import {
   SITE_ORIGIN,
   apartmentComplexLd,
+  articleFaqLd,
   articleLd,
   breadcrumbLd,
   faqLd,
@@ -70,7 +71,11 @@ export function SeoJsonLd() {
         origin,
       ),
     );
-    if (article) nodes.push(articleLd(article, origin));
+    if (article) {
+      nodes.push(articleLd(article, origin));
+      const faq = articleFaqLd(article, origin);
+      if (faq) nodes.push(faq);
+    }
   } else if (pathname === "/gioi-thieu") {
     nodes.push(
       apartmentComplexLd(origin),

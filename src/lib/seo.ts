@@ -311,25 +311,85 @@ export function breadcrumbLd(items: { name: string; path: string }[], origin = S
   };
 }
 
+/** NewsArticle JSON-LD — dates from article.date only (no invented fields). */
 export function articleLd(
   article: (typeof NEWS)[number],
   origin = SITE_ORIGIN,
 ) {
+  const url = absUrl(`/tin-tuc/${article.slug}`, origin);
+  const published = parseDotDate(article.date);
+  const imagePath = article.image;
+  const dims = resolveOgDims({ image: imagePath });
   return {
     "@type": "NewsArticle",
+    "@id": `${url}#article`,
     headline: article.title,
     description: article.excerpt,
-    image: absUrl(article.image, origin),
-    datePublished: parseDotDate(article.date),
-    dateModified: parseDotDate(article.date),
-    author: { "@type": "Organization", name: PROJECT.operator },
+    image: [
+      {
+        "@type": "ImageObject",
+        url: absUrl(imagePath, origin),
+        width: dims.width,
+        height: dims.height,
+      },
+    ],
+    datePublished: published,
+    dateModified: published,
+    author: {
+      "@type": "Organization",
+      name: PROJECT.operator,
+      url: absUrl("/", origin),
+    },
     publisher: {
       "@type": "Organization",
       name: PROJECT.operator,
-      logo: { "@type": "ImageObject", url: absUrl("/images/brand/logo-terracotta.webp", origin) },
+      logo: {
+        "@type": "ImageObject",
+        url: absUrl("/images/brand/logo-terracotta.webp", origin),
+      },
     },
-    mainEntityOfPage: absUrl(`/tin-tuc/${article.slug}`, origin),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    url,
     inLanguage: "vi-VN",
+  };
+}
+
+/**
+ * FAQPage from real on-page Q&As only (headings ending with "?").
+ * Returns null when the article has no question headings.
+ */
+export function articleFaqLd(
+  article: (typeof NEWS)[number],
+  _origin = SITE_ORIGIN,
+) {
+  const faqs: { q: string; a: string }[] = [];
+  let cur: { q: string; parts: string[] } | null = null;
+  for (const block of article.body) {
+    const heading = block.heading?.trim();
+    if (heading?.endsWith("?")) {
+      if (cur) faqs.push({ q: cur.q, a: cur.parts.join(" ") });
+      cur = { q: heading, parts: [block.text] };
+    } else if (heading) {
+      if (cur) {
+        faqs.push({ q: cur.q, a: cur.parts.join(" ") });
+        cur = null;
+      }
+    } else if (cur) {
+      cur.parts.push(block.text);
+    }
+  }
+  if (cur) faqs.push({ q: cur.q, a: cur.parts.join(" ") });
+  if (!faqs.length) return null;
+  return {
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 }
 

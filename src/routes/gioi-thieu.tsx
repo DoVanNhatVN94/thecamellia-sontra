@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
 import { Reveal } from "@/components/motion/reveal";
+import { AnswerCapsule } from "@/components/sections/answer-capsule";
 import { PageHero } from "@/components/sections/hero";
 import { Button } from "@/components/ui/button";
 import { FACTS, GALLERIES, PROJECT } from "@/data/project";
@@ -69,6 +70,21 @@ function FactSheetPage() {
 
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl space-y-16 px-4 py-14 sm:px-6 sm:py-16">
+          <Reveal>
+            <AnswerCapsule
+              label="Tóm tắt dự án"
+              actions={
+                <Button onClick={() => openWith()}>Nhận bảng giá</Button>
+              }
+            >
+              {PROJECT.name}: {PROJECT.units}, giá từ {PROJECT.fromPrice},{" "}
+              {PROJECT.legal.toLowerCase()}, tại {PROJECT.address}. CĐT{" "}
+              {PROJECT.developer}; phát triển {PROJECT.operator}; kinh doanh{" "}
+              {PROJECT.sales}; phân phối DKRA Virgo. Bàn giao{" "}
+              {PROJECT.handover.toLowerCase()}. Hotline {PROJECT.hotlineDisplay}.
+            </AnswerCapsule>
+          </Reveal>
+
           <Reveal>
             <div className="max-w-3xl">
               <p className="kicker">Sự thật cố định</p>
