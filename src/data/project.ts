@@ -240,7 +240,7 @@ export type NewsBlock = {
   text: string;
   /** Optional internal paths rendered under the block (SEO FAQ articles). */
   links?: readonly {
-    to: "/" | "/gioi-thieu" | "/can-ho" | "/lien-he" | "/kham-pha" | "/tin-tuc";
+    to: "/" | "/gioi-thieu" | "/can-ho" | "/tien-ich" | "/lien-he" | "/kham-pha" | "/tin-tuc";
     label: string;
   }[];
 };
@@ -267,6 +267,151 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+
+  {
+    slug: "chinh-sach-ban-hang-htls-early-bird-chiet-khau",
+    date: "23.09.2026",
+    title: "Chính sách bán hàng The Camellia: HTLS, Early Bird, CK",
+    excerpt:
+      "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn. Các phương án thường gặp: HTLS vay đến 70% và lãi 0% trong 18 tháng (theo đợt/ngân hàng), Early Bird 3%, CK chuẩn 4%, TTS 95% đến 13%, Thảnh thơi 50% nhận nhà CK 2%. Số liệu áp dụng theo chính sách đợt khi ký.",
+    image: "/images/featured-gio-hang-16x9.jpg",
+    poster: "/images/news-gio-hang.webp",
+    imageObjectClass: "object-top",
+    gallery: [
+      "/images/news-gio-hang.webp",
+      "/images/featured-gio-hang-16x9.jpg",
+      "/images/exterior-1.webp",
+    ],
+    body: [
+      {
+        text: "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn. Các phương án thường gặp: HTLS vay đến 70% và lãi 0% trong 18 tháng (theo đợt/ngân hàng), Early Bird 3%, CK chuẩn 4%, TTS 95% đến 13%, Thảnh thơi 50% nhận nhà CK 2%. Số liệu áp dụng theo chính sách đợt khi ký.",
+      },
+      {
+        heading: "Giá và khung pháp lý",
+        text: "Giá tham chiếu từ 1,98 tỷ, quy mô 469 căn, sổ hồng sở hữu lâu dài. CĐT Thành Lâm · MBLAND · WELAND · DKRA Virgo. Vị trí giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng. Chính sách tài chính gắn với căn đủ điều kiện bán nhà ở hình thành trong tương lai theo văn bản đã công bố.",
+      },
+      {
+        heading: "Phương án HTLS, CK và Early Bird",
+        text: "HTLS: hỗ trợ vay đến 70%; hỗ trợ lãi 0% trong 18 tháng theo chương trình ngân hàng / đợt. Chuẩn (theo tiến độ): chiết khấu 4%. Thanh toán sớm 95%: chiết khấu đến 13%. Thảnh thơi: thanh toán 50% nhận nhà, chiết khấu 2%. Early Bird: chiết khấu 3% cho tối đa 100 căn đăng ký sớm (khi còn suất).",
+      },
+      {
+        heading: "Nên chọn phương án nào?",
+        text: "Ưu tiên dòng tiền nhẹ đầu kỳ: hỏi HTLS. Có vốn và muốn tối ưu giá: TTS 95% hoặc Chuẩn. Muốn nhận nhà với vốn một phần: Thảnh thơi. Đặt chỗ giai đoạn đầu: hỏi suất Early Bird. Tư vấn đối chiếu quỹ căn, tầng/view và phụ lục trước khi ký.",
+      },
+      {
+        heading: "Disclaimer theo đợt",
+        text: "Ưu đãi, lãi suất và điều kiện vay theo đợt mở bán và chương trình ngân hàng tại thời điểm ký. Bài này không thay bảng giá / phụ lục chính thức.",
+      },
+      {
+        heading: "Nhận bảng giá",
+        text: "Vào trang Liên hệ hoặc gọi / Zalo 0934 885 108 để nhận bảng giá, quỹ căn và lịch xem nhà mẫu.",
+        links: [{ to: "/lien-he", label: "Đến trang liên hệ — nhận bảng giá" }],
+      },
+    ],
+  },
+  {
+    slug: "tien-ich-the-camellia-wellness-nature-community",
+    date: "23.09.2026",
+    title: "42 tiện ích The Camellia: Wellness, Nature, Community",
+    excerpt:
+      "The Camellia Sơn Trà công bố 42 tiện ích theo bốn nhóm: Wellness, Nature, Community và Everyday Living. Tiện ích xếp lớp theo nhịp sống cư dân, không dồn hết ở khối đế — kèm tầng điển hình 22 căn/tầng tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà.",
+    image: "/images/amenity-collage.webp",
+    poster: "/images/pool-1.webp",
+    gallery: [
+      "/images/pool-1.webp",
+      "/images/yoga-op1.webp",
+      "/images/amenity-2.webp",
+      "/images/amenity-collage.webp",
+      "/images/lobby.webp",
+    ],
+    body: [
+      {
+        text: "The Camellia Sơn Trà công bố 42 tiện ích theo bốn nhóm: Wellness, Nature, Community và Everyday Living. Tiện ích xếp lớp theo nhịp sống cư dân, không dồn hết ở khối đế — kèm tầng điển hình 22 căn/tầng tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà.",
+      },
+      {
+        heading: "Wellness — chăm sóc thân và nhịp sống",
+        text: "Nhóm Wellness gồm phòng gym, yoga, spa, hồ bơi, jacuzzi, phòng xông hơi, đường chạy bộ, sân tập ngoài trời, sàn thiền và phòng thay đồ. Đây là lớp tiện ích dùng hàng ngày trong tòa, không phụ thuộc “đi ra ngoài mới tập”.",
+      },
+      {
+        heading: "Nature — khoảng xanh trong và trên cao",
+        text: "Nhóm Nature gồm vườn trên cao, vườn cảnh quan, khu BBQ, sân trong nhiệt đới, chòi đọc sách, đài ngắm hoàng hôn, vườn hoa trà, mặt nước cảnh quan, sân trời và mảng xanh đứng. Kết hợp vị trí gần biển Mân Thái / bán đảo Sơn Trà đã công bố trên site, đây là lớp “ở trong nhà vẫn gần thiên nhiên”.",
+      },
+      {
+        heading: "Community — gặp gỡ và làm việc",
+        text: "Nhóm Community gồm khu vui chơi trẻ em, sảnh tiệc, không gian làm việc, lounge doanh nhân, thư viện, hội trường đa năng, phòng chiếu phim, sky bar, phòng họp và lounge cư dân. Phù hợp gia đình đa thế hệ và cư dân vừa ở vừa làm việc linh hoạt.",
+      },
+      {
+        heading: "Everyday Living — vận hành hàng ngày",
+        text: "Nhóm Everyday Living gồm sảnh đón hình chữ V, lễ tân 24/7, an ninh 24/7, hầm để xe, shophouse khối đế, concierge, sạc xe điện, hệ thống locker, dịch vụ hành chính và khu thương mại. Đây là lớp hạ tầng khiến 42 tiện ích “dùng được” chứ không chỉ liệt kê brochure.",
+      },
+      {
+        heading: "Vì sao gọi là “đáng tiền”?",
+        text: "Giá căn từ 1,98 tỷ, 469 căn, sổ hồng lâu dài. Giá trị tiện ích nằm ở việc xếp lớp Wellness–Nature–Community–Everyday trong cùng tòa (không dồn khối đế) và mật độ tầng điển hình 22 căn. Chi tiết danh mục xem trang Tiện ích.",
+        links: [{ to: "/tien-ich", label: "Xem trang tiện ích" }],
+      },
+      {
+        heading: "Đặt lịch xem thực tế",
+        text: "Muốn đối chiếu mặt bằng tiện ích với loại căn phù hợp, vào trang Liên hệ hoặc gọi / Zalo 0934 885 108.",
+        links: [{ to: "/lien-he", label: "Đến trang liên hệ" }],
+      },
+    ],
+  },
+  {
+    slug: "huong-dan-tour-360-the-camellia-son-tra",
+    date: "23.09.2026",
+    title: "Hướng dẫn Tour 360 The Camellia Sơn Trà",
+    excerpt:
+      "Tour 360 The Camellia Sơn Trà nằm tại trang Khám phá / Tour 360 (PanaMotion). Mở link trên máy tính hoặc điện thoại, xoay góc nhìn để xem không gian dự án trước khi đặt lịch xem thực tế tại Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng.",
+    image: "/images/hero-aerial.webp",
+    poster: "/images/exterior-1.webp",
+    gallery: [
+      "/images/exterior-1.webp",
+      "/images/hero-aerial.webp",
+      "/images/exterior-2.webp",
+      "/images/facade.webp",
+    ],
+    body: [
+      {
+        text: "Tour 360 The Camellia Sơn Trà nằm tại trang Khám phá / Tour 360 (PanaMotion). Anh mở link trên máy tính hoặc điện thoại, xoay góc nhìn để xem không gian dự án trước khi đặt lịch xem thực tế tại Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng.",
+      },
+      {
+        heading: "Tour 360 khác gì “Tìm hiểu dự án”?",
+        text: "Tour 360 / Khám phá 360 (/kham-pha): trải nghiệm xoay nhìn không gian (PanaMotion). Tìm hiểu dự án (ví dụ #du-an / giới thiệu): đọc quy mô, giá từ 1,98 tỷ, 469 căn, pháp lý, tiện ích bằng chữ và ảnh tĩnh. Hai lối vào khác nhau — tránh nhầm “Khám phá” với toàn bộ thông tin dự án.",
+        links: [
+          { to: "/kham-pha", label: "Mở Tour 360" },
+          { to: "/gioi-thieu", label: "Tìm hiểu dự án / Fact sheet" },
+        ],
+      },
+      {
+        heading: "Cách xem Tour 360 trên điện thoại và máy tính",
+        text: "Một, vào thecamellia-sontra.com/kham-pha. Hai, đợi tour tải (có thể cần mạng ổn định). Ba, kéo / vuốt hoặc dùng chuột để xoay góc nhìn; pinch để phóng nếu trình duyệt hỗ trợ. Bốn, nếu tour chưa hiện: thử trình duyệt khác hoặc Wi‑Fi mạnh hơn, rồi tải lại trang.",
+        links: [{ to: "/kham-pha", label: "Trải nghiệm Tour 360" }],
+      },
+      {
+        heading: "Nên chú ý gì khi “đi tour” ảo?",
+        text: "Đối chiếu với fact đã công bố: 469 căn, 25 tầng & 2 hầm, tầng điển hình 22 căn, tiện ích xếp lớp Wellness · Nature · Community, vị trí gần biển Mân Thái khoảng 200 m (theo số công bố trên site). Tour giúp cảm nhận không gian; bảng giá và quỹ căn vẫn cần tư vấn viên xác nhận.",
+      },
+      {
+        heading: "Sau Tour 360 — bước tiếp theo",
+        text: "Khi đã xem xong, anh có thể đọc Giới thiệu, Tiện ích hoặc gửi nhu cầu loại căn qua Liên hệ. Hotline / Zalo 0934 885 108.",
+        links: [
+          { to: "/gioi-thieu", label: "Giới thiệu dự án" },
+          { to: "/tien-ich", label: "Tiện ích" },
+          { to: "/lien-he", label: "Liên hệ — nhận bảng giá" },
+        ],
+      },
+      {
+        heading: "Tour 360 có thay nhà mẫu không?",
+        text: "Không — đây là công cụ xem trước; lịch nhà mẫu / tư vấn vẫn qua liên hệ.",
+        links: [{ to: "/lien-he", label: "Đặt lịch / nhận tư vấn" }],
+      },
+      {
+        heading: "Có cần tải app không?",
+        text: "Không — mở bằng trình duyệt tại /kham-pha.",
+        links: [{ to: "/kham-pha", label: "Mở Tour 360 trên trình duyệt" }],
+      },
+    ],
+  },
   {
     slug: "tich-san-vinh-cuu-di-san",
     date: "22.09.2026",
