@@ -3,11 +3,12 @@ import { useEffect, useMemo, useState } from "react";
 import { SiteShell } from "@/components/layout/site-shell";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { Reveal } from "@/components/motion/reveal";
+import { AnswerCapsule } from "@/components/sections/answer-capsule";
 import { PageHero } from "@/components/sections/hero";
 import { Button } from "@/components/ui/button";
 import { UnitFilterChips, UnitSmartFilter, type UnitId } from "@/components/units/compare-table";
 import { View360Section } from "@/components/units/view-360";
-import { GALLERIES, UNIT_TYPES } from "@/data/project";
+import { GALLERIES, PROJECT, UNIT_TYPES } from "@/data/project";
 import { SmartImg } from "@/lib/image-src";
 import { PAGES, pageHead } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
@@ -74,6 +75,22 @@ function UnitsPage() {
         Studio đến 3 phòng ngủ, bàn giao hoàn thiện. Duplex sắp công bố mặt bằng.
         Lọc theo nhu cầu hoặc ngân sách, rồi xem mặt bằng loại căn phù hợp.
       </PageHero>
+
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 sm:pt-12">
+          <AnswerCapsule
+            label="Giá & loại căn"
+            actions={
+              <Button onClick={() => openWith()}>Nhận bảng giá</Button>
+            }
+          >
+            The Camellia Sơn Trà có Studio đến 3PN và Duplex, giá từ {PROJECT.fromPrice}{" "}
+            (Studio), {PROJECT.legal.toLowerCase()}. {PROJECT.units} tại {PROJECT.address}.
+            Bàn giao {PROJECT.handover.toLowerCase()}. Xem mặt bằng bên dưới hoặc gọi{" "}
+            {PROJECT.hotlineDisplay}.
+          </AnswerCapsule>
+        </div>
+      </section>
 
       <div className="sticky-under-header sticky z-20 border-b border-stone bg-cream/95 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl min-w-0 items-center gap-3 px-4 py-2 sm:px-6">
