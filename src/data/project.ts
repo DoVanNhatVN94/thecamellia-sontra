@@ -233,6 +233,7 @@ export const LEGAL_MILESTONES = [
   { date: "26.07.2026", title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng" },
   { date: "09.09.2026", title: "Chính thức ra hàng The Camellia Sơn Trà" },
   { date: "12.09.2026", title: "Premier Launch — 159 giao dịch thành công" },
+  { date: "25.09.2026", title: "Soft Opening Sales Gallery — Da Nang Complex" },
 ] as const;
 
 export type NewsBlock = {
@@ -267,6 +268,41 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+
+  {
+    slug: "ra-mat-van-phong-ban-hang",
+    date: "24.09.2026",
+    title: "Ra mắt văn phòng bán hàng The Camellia Sơn Trà",
+    excerpt:
+      "The Camellia Sơn Trà chính thức ra mắt Sales Gallery — không gian trải nghiệm mới tại Tầng 9, Tòa nhà Da Nang Complex. Soft Opening 25/09; Grand Opening 10/10.",
+    image: "/images/featured-sales-gallery-16x9.jpg",
+    poster: "/images/news-sales-gallery.webp",
+    // Upper-biased landscape — keep logos MBLAND / THE CAMELLIA / WELAND and faces
+    imageObjectClass: "object-top",
+    gallery: [
+      "/images/news-sales-gallery.webp",
+      "/images/exterior-1.webp",
+      "/images/hero-aerial.webp",
+    ],
+    body: [
+      {
+        text: "The Camellia Sơn Trà chính thức ra mắt Sales Gallery / văn phòng bán hàng — không gian chào đón chủ nhân tương lai tại Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Đây là nơi anh chị trải nghiệm dự án SON TRA – DA NANG trước khi quyết định an cư hay tích sản.",
+      },
+      {
+        heading: "Không gian thưởng lãm",
+        text: "Sales Gallery mở tầm nhìn panorama khoảng 270° sông Hàn và biển Đà Nẵng. Sa bàn trực quan giúp hình dung quy hoạch và kiến trúc tòa nhà; đội ngũ tư vấn chuyên nghiệp đồng hành để anh chị chọn căn, tầng và hướng view phù hợp.",
+      },
+      {
+        heading: "Cột mốc ra mắt Sales Gallery",
+        text: "Soft Opening 25/09: mở cửa đón khách và đào tạo tại sa bàn. Grand Opening 10/10: lễ khai trương chính thức. The Camellia Sơn Trà kính mời anh chị ghé thăm Sales Gallery để cảm nhận không gian và nhận tư vấn quỹ căn.",
+      },
+      {
+        heading: "Địa chỉ",
+        text: "Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Liên hệ Hotline / Zalo 0934 885 108 hoặc để lại nhu cầu tại trang Liên hệ để đặt lịch tham quan và nhận bảng giá cập nhật (giá công bố từ 1,98 tỷ).",
+        links: [{ to: "/lien-he", label: "Đến trang liên hệ — đặt lịch tham quan" }],
+      },
+    ],
+  },
 
   {
     slug: "chinh-sach-ban-hang-htls-early-bird-chiet-khau",
