@@ -1,3 +1,8 @@
+> **Trợ lý AI không phải Grok Build (Higgsfield Supercomputer, Claude Code, Cursor, Codex…):**
+> hãy đọc **`AGENTS.project.md`** và **`docs/HANDOVER.md`** trước — đó là hướng dẫn thật của dự án
+> The Camellia Sơn Trà. Phần "App Builder Workspace" bên dưới là quy tắc sandbox của Grok Build
+> (cổng 8080, `startup.sh`, preview proxy) và không áp dụng cho bạn.
+
 # App Builder Workspace
 
 **The single source of truth** for the App Builder sandbox contract. You are
