@@ -155,11 +155,12 @@ export const PAGES = {
     keywords: DEFAULT_KEYWORDS,
   },
   units: {
-    title: "Căn hộ Studio đến 3PN & Duplex",
+    title: "Giá căn hộ The Camellia Sơn Trà từ 1,98 tỷ | Studio–3PN",
     description:
-      "Mặt bằng The Camellia Sơn Trà: Studio 27,8–28,4 m² từ 1,98 tỷ, 1PN+1, 2PN, 3PN và Duplex. Tầm view 360 tầng 5–25. Thông thủy, tim tường, bàn giao hoàn thiện.",
+      "Giá The Camellia Sơn Trà từ 1,98 tỷ (Studio). 1PN+1 từ 3,28 tỷ, 2PN từ 3,90 tỷ, 3PN từ 7,50 tỷ. Sổ hồng lâu dài · mặt bằng · tầm view 360. Nhận bảng giá.",
     path: "/can-ho",
-    keywords: "mặt bằng The Camellia, căn hộ studio Sơn Trà, tầm view 360 The Camellia, căn 2 phòng ngủ Đà Nẵng",
+    keywords:
+      "giá The Camellia Sơn Trà, The Camellia giá từ 1,98 tỷ, bảng giá The Camellia Đà Nẵng, căn hộ studio Sơn Trà, mặt bằng The Camellia",
   },
   amenities: {
     title: "42 tiện ích Wellness · Nature · Community",

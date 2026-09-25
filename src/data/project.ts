@@ -300,6 +300,75 @@ export const NEWS: NewsArticle[] = [
     ],
   },
 
+  {
+    slug: "gia-the-camellia-son-tra-tu-1-98-ty",
+    date: "25.09.2026",
+    title: "The Camellia giá từ 1,98 tỷ: Studio đến 3PN",
+    excerpt:
+      "The Camellia Sơn Trà công bố giá từ 1,98 tỷ (Studio). 1PN+1 từ 3,28 tỷ · 2PN từ 3,90 tỷ · 3PN từ 7,50 tỷ. Sổ hồng lâu dài; nhận bảng giá qua Zalo 0934 885 108.",
+    image: "/images/featured-gio-hang-16x9.jpg",
+    poster: "/images/news-gio-hang.webp",
+    imageObjectClass: "object-top",
+    gallery: [
+      "/images/news-gio-hang.webp",
+      "/images/featured-gio-hang-16x9.jpg",
+      "/images/exterior-1.webp",
+    ],
+    body: [
+      {
+        text: "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn cho loại Studio. Các loại 1PN+1, 2PN và 3PN có mức từ riêng theo diện tích và mã căn. Dự án 469 căn, sổ hồng sở hữu lâu dài, bàn giao dự kiến 2028 tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà. Nhận bảng giá và tư vấn căn phù hợp qua Zalo 0934 885 108 hoặc trang liên hệ.",
+        links: [
+          { to: "/can-ho", label: "Xem mặt bằng & loại căn" },
+          { to: "/lien-he", label: "Đến trang liên hệ" },
+        ],
+      },
+      {
+        heading: "Giá từ 1,98 tỷ nghĩa là gì?",
+        text: "«Giá từ 1,98 tỷ» trên site là mức công bố thấp nhất của giỏ hàng — gắn với Studio (khoảng 27,8–28,4 m² thông thủy), không phải mức sàn cho mọi loại căn. Khi xem bảng giá đợt mở bán, anh chị đối chiếu đúng mã căn, tầng, hướng view và chính sách thanh toán tại thời điểm ký. Số liệu trong bài lấy từ trang Căn hộ; không dùng mức cũ 1,72 tỷ.",
+      },
+      {
+        heading: "The Camellia Đà Nẵng giá có phải 1,72 tỷ không?",
+        text: "Không. Nguồn chính thức trên thecamellia-sontra.com ghi giá từ 1,98 tỷ. Một số trang đại lý hoặc bài đăng cũ có thể nêu mức khác (ví dụ 1,72 tỷ). Khi research, hãy đối chiếu lại trang Căn hộ / Fact sheet của dự án hoặc gọi 0934 885 108 trước khi đặt chỗ.",
+      },
+      {
+        heading: "Bảng giá theo loại căn (theo công bố trên site)",
+        text: "Studio 27,8–28,4 m² từ 1,98 tỷ. 1PN+1 47,0 m² từ 3,28 tỷ. 2PN 57,4–72,1 m² từ 3,90 tỷ. 3PN 84,2–103,6 m² từ 7,50 tỷ. Duplex 103,6–226,7 m²: sắp công bố. Tầng điển hình khoảng 22 căn/tầng. Chi tiết mặt bằng và viewer 360 xem tại trang Căn hộ và Tour 360.",
+        links: [
+          { to: "/can-ho", label: "Trang căn hộ" },
+          { to: "/kham-pha", label: "Tour 360" },
+        ],
+      },
+      {
+        heading: "Giá và chính sách thanh toán",
+        text: "Giá công bố đi kèm các phương án thanh toán theo đợt mở bán (HTLS, Early Bird, chiết khấu chuẩn / TTS / Thảnh thơi…). Tỷ lệ vay, lãi suất hỗ trợ và % chiết khấu có thể đổi theo ngân hàng và chính sách tại thời điểm ký. Trước khi đặt cọc, hãy yêu cầu bảng giá và phương án áp dụng đúng đợt từ DKRA Virgo / đại diện chủ đầu tư.",
+        links: [
+          {
+            to: "/tin-tuc/chinh-sach-ban-hang-htls-early-bird-chiet-khau",
+            label: "Chính sách HTLS · Early Bird · CK",
+          },
+        ],
+      },
+      {
+        heading: "Vì sao mức giá gắn vị trí và pháp lý?",
+        text: "The Camellia định vị căn hộ nhà ở tại P. Sơn Trà — gần biển Mân Thái, gần Bán đảo Sơn Trà — với pháp lý sổ hồng sở hữu lâu dài theo thông tin dự án (khác nhiều sản phẩm nghỉ dưỡng / condotel có thời hạn). Chủ đầu tư Công ty TNHH Địa ốc Thành Lâm; phát triển MBLAND; kinh doanh WELAND; phân phối DKRA Virgo. Quy mô 469 căn, 25 tầng nổi & 2 hầm; bàn giao dự kiến 2028. Đây là khung để hiểu «giá từ» trong ngữ cảnh an cư / giữ tài sản dài hạn.",
+        links: [
+          { to: "/tin-tuc/can-ho-son-tra-so-huu-lau-dai", label: "Căn hộ Sơn Trà sở hữu lâu dài" },
+        ],
+      },
+      {
+        heading: "FAQ giá The Camellia",
+        text: "The Camellia giá bao nhiêu? Theo công bố trên site: từ 1,98 tỷ (Studio); các loại lớn hơn có mức từ riêng như bảng trên. 1,98 tỷ đã gồm gì? Bài viết nêu mức giá từ công bố theo loại căn — phí, nội thất bàn giao và điều kiện HĐMB cần đối chiếu hồ sơ / bảng giá đợt với đơn vị phân phối. Giá có thay đổi theo đợt không? Có thể — luôn lấy bảng giá và chính sách tại thời điểm tư vấn / ký. Xem mặt bằng và nhận bảng giá ở đâu? Trang Căn hộ, form Liên hệ, hoặc Zalo / Hotline 0934 885 108.",
+      },
+      {
+        heading: "Nhận bảng giá & tư vấn căn",
+        text: "Gọi hoặc nhắn Zalo 0934 885 108, hoặc gửi form tại trang liên hệ để nhận bảng giá đợt hiện tại và tư vấn Studio / 1PN+1 / 2PN / 3PN phù hợp ngân sách. Sales Gallery: Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng.",
+        links: [
+          { to: "/lien-he", label: "Đến trang liên hệ" },
+          { to: "/gioi-thieu", label: "Xem fact sheet" },
+        ],
+      },
+    ],
+  },
 
   {
     slug: "ra-mat-van-phong-ban-hang",
@@ -797,7 +866,7 @@ export const NEWS: NewsArticle[] = [
     date: "17.09.2026",
     title: "Căn hộ Sơn Trà sở hữu lâu dài: khác gì có thời hạn?",
     excerpt:
-      "The Camellia Sơn Trà công bố pháp lý sổ hồng sở hữu lâu dài — khác căn hộ / resort có thời hạn. Ai phù hợp, giấy tờ nên hỏi CĐT / DKRA, và liên quan vị trí biển Sơn Trà.",
+      "Căn hộ Sơn Trà sở hữu lâu dài tại The Camellia: sổ hồng lâu dài (không condotel/có hạn), giá từ 1,98 tỷ. So nhanh với sản phẩm có thời hạn trước khi hỏi CĐT / DKRA.",
     image: "/images/news-tt03-og.jpg",
     poster: "/images/news-tt03.webp",
     gallery: [
@@ -809,13 +878,13 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Câu trả lời ngắn: theo thông tin dự án công bố trên site, The Camellia Sơn Trà là căn hộ nhà ở với pháp lý sổ hồng sở hữu lâu dài — không phải sản phẩm căn hộ du lịch / condotel hay resort có thời hạn sử dụng. Điểm này thường là lý do khách hàng so sánh The Camellia với nhiều dự án ven biển khác tại Đà Nẵng trước khi quyết định an cư hoặc giữ tài sản dài hạn.",
+        text: "Căn hộ Sơn Trà sở hữu lâu dài tại The Camellia, theo thông tin dự án công bố trên site, là căn hộ nhà ở gắn sổ hồng sở hữu lâu dài — không phải condotel / căn hộ du lịch có thời hạn. Dự án 469 căn, giá từ 1,98 tỷ, tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà. Nội dung dưới đây giúp so nhanh với sản phẩm có thời hạn trước khi xem hồ sơ gốc với CĐT / DKRA Virgo.",
       },
       {
         text: "Các câu hỏi dưới đây dựa trên số liệu dự án đã công bố (469 căn, 25 tầng nổi & 2 hầm, giá từ 1,98 tỷ, giao lộ Lê Văn Lương – Lê Đức Thọ). Nội dung không thay thế tư vấn pháp lý cá nhân — khi ký hợp đồng hãy đối chiếu hồ sơ gốc với chủ đầu tư và đơn vị phân phối.",
       },
       {
-        heading: "Sở hữu lâu dài khác gì căn hộ / resort có thời hạn?",
+        heading: "Căn hộ Sơn Trà sở hữu lâu dài khác gì có thời hạn?",
         text: "Trên thị trường ven biển Đà Nẵng, nhiều sản phẩm mang tên “căn hộ biển” thuộc nhóm căn hộ du lịch, condotel hoặc nghỉ dưỡng có thời hạn. Người mua thường quan tâm quyền sử dụng trong khung thời gian xác định, vận hành khai thác và điều kiện chuyển nhượng theo quy chế dự án.",
       },
       {
@@ -868,6 +937,14 @@ export const NEWS: NewsArticle[] = [
       {
         heading: "Tóm tắt nhanh trước khi nhận bảng giá",
         text: "The Camellia Sơn Trà, theo thông tin dự án / pháp lý sở hữu lâu dài công bố trên site, là căn hộ nhà ở sổ hồng lâu dài tại P. Sơn Trà — khác với nhiều sản phẩm resort / condo có thời hạn. Phù hợp người an cư hoặc giữ tài sản dài hạn gần biển Mân Thái. Khi làm việc với CĐT / DKRA Virgo, hãy hỏi rõ hồ sơ pháp lý, loại căn, tiến độ và chính sách đợt bán hiện tại — rồi mới quyết định.",
+      },
+      {
+        heading: "FAQ: căn hộ Sơn Trà sở hữu lâu dài",
+        text: "The Camellia có phải căn hộ sở hữu lâu dài không? Theo pháp lý công bố trên site: có — định vị căn hộ nhà ở, sổ hồng sở hữu lâu dài (không định vị condotel / resort có thời hạn). Khác gì căn hộ / nghỉ dưỡng có thời hạn? Sản phẩm có thời hạn thường gắn quyền sử dụng trong khung thời gian và mô hình khai thác nghỉ dưỡng; The Camellia hướng an cư hoặc giữ tài sản nhà ở dài hạn theo thông tin dự án. Giấy tờ nào cần hỏi trước khi đặt cọc? Hồ sơ pháp lý dự án do CĐT / DKRA cung cấp, loại căn và diện tích, tiến độ / bàn giao (dự kiến 2028), chính sách thanh toán đợt hiện tại — đối chiếu bản công bố hợp lệ, không chỉ brochure. Giá và liên hệ tư vấn? Giá từ 1,98 tỷ (Studio) theo công bố trên site. Hotline / Zalo 0934 885 108 · trang Liên hệ · xem loại căn tại Căn hộ.",
+        links: [
+          { to: "/can-ho", label: "Xem loại căn" },
+          { to: "/lien-he", label: "Liên hệ tư vấn" },
+        ],
       },
       {
         heading: "Nhận bảng giá The Camellia Sơn Trà",
