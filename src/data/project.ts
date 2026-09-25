@@ -300,6 +300,53 @@ export const NEWS: NewsArticle[] = [
     ],
   },
 
+  {
+    slug: "gia-the-camellia-son-tra-tu-1-98-ty",
+    date: "25.09.2026",
+    title: "Giá The Camellia Sơn Trà từ 1,98 tỷ — bảng giá tham chiếu theo loại căn",
+    excerpt:
+      "Giá The Camellia Sơn Trà công bố từ 1,98 tỷ (Studio). 1PN+1 từ 3,28 tỷ · 2PN từ 3,90 tỷ · 3PN từ 7,50 tỷ. Sổ hồng lâu dài; nhận bảng giá cập nhật qua Zalo 0934 885 108.",
+    image: "/images/featured-gio-hang-16x9.jpg",
+    poster: "/images/news-gio-hang.webp",
+    imageObjectClass: "object-top",
+    gallery: [
+      "/images/news-gio-hang.webp",
+      "/images/featured-gio-hang-16x9.jpg",
+      "/images/exterior-1.webp",
+    ],
+    body: [
+      {
+        text: "Câu trả lời ngắn: giá The Camellia Sơn Trà công bố trên site từ 1,98 tỷ cho căn Studio. Các mức tham chiếu tiếp theo — 1PN+1 từ 3,28 tỷ, 2PN từ 3,90 tỷ, 3PN từ 7,50 tỷ — thay đổi theo đợt mở bán, tầng và hướng view. Pháp lý sổ hồng sở hữu lâu dài. Hotline / Zalo 0934 885 108 để nhận bảng giá cập nhật.",
+      },
+      {
+        heading: "Giá The Camellia Sơn Trà từ bao nhiêu?",
+        text: "Theo fact sheet và trang căn hộ, mức khởi điểm là 1,98 tỷ (Studio, khoảng 27,8–28,4 m² thông thủy). 1 phòng ngủ + 1 từ 3,28 tỷ (47,0 m²). 2 phòng ngủ từ 3,90 tỷ (khoảng 57,4–72,1 m²). 3 phòng ngủ từ 7,50 tỷ. Duplex sắp công bố mặt bằng. Đây là giá công bố tham chiếu — không phải cam kết tồn kho từng căn tại mọi thời điểm.",
+        links: [
+          { to: "/can-ho", label: "Xem mặt bằng & loại căn" },
+          { to: "/gioi-thieu", label: "Fact sheet dự án" },
+        ],
+      },
+      {
+        heading: "The Camellia Đà Nẵng giá có phải 1,72 tỷ không?",
+        text: "Không. Nguồn chính thức trên thecamellia-sontra.com ghi giá từ 1,98 tỷ. Một số trang đại lý hoặc bài đăng cũ có thể nêu mức khác (ví dụ 1,72 tỷ). Khi research, hãy đối chiếu lại trang Căn hộ / Fact sheet của dự án hoặc gọi 0934 885 108 trước khi đặt chỗ.",
+      },
+      {
+        heading: "Giá đi kèm chính sách nào?",
+        text: "Ngoài mức giá theo loại căn, The Camellia công bố các phương án thường gặp: HTLS vay đến 70% và lãi 0% trong 18 tháng (theo đợt/ngân hàng), Early Bird, chiết khấu theo tiến độ thanh toán. Chi tiết từng đợt nằm ở bài chính sách bán hàng — số liệu áp dụng khi ký, không suy diễn từ bài tổng hợp.",
+        links: [
+          { to: "/tin-tuc", label: "Xem tin tức & chính sách bán hàng" },
+        ],
+      },
+      {
+        heading: "Nhận bảng giá The Camellia Sơn Trà",
+        text: "Để nhận bảng giá và giỏ hàng theo ngân sách, để lại nhu cầu (loại căn, tầng/hướng view, ở hoặc đầu tư) qua trang liên hệ hoặc Zalo 0934 885 108. Sales Gallery: Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng.",
+        links: [
+          { to: "/lien-he", label: "Đến trang liên hệ" },
+          { to: "/gioi-thieu", label: "Xem fact sheet" },
+        ],
+      },
+    ],
+  },
 
   {
     slug: "ra-mat-van-phong-ban-hang",
@@ -797,7 +844,7 @@ export const NEWS: NewsArticle[] = [
     date: "17.09.2026",
     title: "Căn hộ Sơn Trà sở hữu lâu dài: khác gì có thời hạn?",
     excerpt:
-      "The Camellia Sơn Trà công bố pháp lý sổ hồng sở hữu lâu dài — khác căn hộ / resort có thời hạn. Ai phù hợp, giấy tờ nên hỏi CĐT / DKRA, và liên quan vị trí biển Sơn Trà.",
+      "Căn hộ Sơn Trà sở hữu lâu dài khác gì có thời hạn? The Camellia công bố sổ hồng lâu dài (không condotel/resort có hạn). Ai phù hợp, giấy tờ hỏi CĐT / DKRA Virgo.",
     image: "/images/news-tt03-og.jpg",
     poster: "/images/news-tt03.webp",
     gallery: [
@@ -815,7 +862,7 @@ export const NEWS: NewsArticle[] = [
         text: "Các câu hỏi dưới đây dựa trên số liệu dự án đã công bố (469 căn, 25 tầng nổi & 2 hầm, giá từ 1,98 tỷ, giao lộ Lê Văn Lương – Lê Đức Thọ). Nội dung không thay thế tư vấn pháp lý cá nhân — khi ký hợp đồng hãy đối chiếu hồ sơ gốc với chủ đầu tư và đơn vị phân phối.",
       },
       {
-        heading: "Sở hữu lâu dài khác gì căn hộ / resort có thời hạn?",
+        heading: "Căn hộ Sơn Trà sở hữu lâu dài khác gì có thời hạn?",
         text: "Trên thị trường ven biển Đà Nẵng, nhiều sản phẩm mang tên “căn hộ biển” thuộc nhóm căn hộ du lịch, condotel hoặc nghỉ dưỡng có thời hạn. Người mua thường quan tâm quyền sử dụng trong khung thời gian xác định, vận hành khai thác và điều kiện chuyển nhượng theo quy chế dự án.",
       },
       {

@@ -79,16 +79,52 @@ function UnitsPage() {
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 pt-10 sm:px-6 sm:pt-12">
           <AnswerCapsule
-            label="Giá & loại căn"
+            label="Giá The Camellia Sơn Trà"
             actions={
               <Button onClick={() => openWith()}>Nhận bảng giá</Button>
             }
           >
-            The Camellia Sơn Trà có Studio đến 3PN và Duplex, giá từ {PROJECT.fromPrice}{" "}
-            (Studio), {PROJECT.legal.toLowerCase()}. {PROJECT.units} tại {PROJECT.address}.
-            Bàn giao {PROJECT.handover.toLowerCase()}. Xem mặt bằng bên dưới hoặc gọi{" "}
-            {PROJECT.hotlineDisplay}.
+            Giá căn hộ The Camellia Sơn Trà công bố từ {PROJECT.fromPrice} (Studio).
+            1PN+1 từ 3,28 tỷ · 2PN từ 3,90 tỷ · 3PN từ 7,50 tỷ (theo đợt, tầng, hướng
+            view). {PROJECT.legal}. {PROJECT.units} tại {PROJECT.address}. Bàn giao{" "}
+            {PROJECT.handover.toLowerCase()}. Hotline / Zalo {PROJECT.hotlineDisplay}.
           </AnswerCapsule>
+        </div>
+      </section>
+
+      <section className="bg-cream" aria-labelledby="gia-the-camellia">
+        <div className="mx-auto max-w-6xl px-4 pb-2 sm:px-6">
+          <Reveal>
+            <article className="rounded-xl border border-stone bg-paper px-5 py-6 shadow-border sm:px-6">
+              <h2 id="gia-the-camellia" className="font-display text-2xl sm:text-3xl">
+                Giá The Camellia Sơn Trà từ bao nhiêu?
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:text-base">
+                Theo công bố trên site, giá The Camellia Sơn Trà bắt đầu từ{" "}
+                {PROJECT.fromPrice} cho căn Studio (khoảng 27,8–28,4 m² thông thủy). Các
+                mức tham chiếu tiếp theo: 1PN+1 từ 3,28 tỷ (47,0 m²), 2PN từ 3,90 tỷ
+                (57,4–72,1 m²), 3PN từ 7,50 tỷ. Duplex sắp công bố mặt bằng. Giá thay đổi
+                theo đợt mở bán, tầng và hướng view — nhận bảng giá cập nhật qua hotline{" "}
+                {PROJECT.hotlineDisplay} hoặc form đăng ký.
+              </p>
+              <h3 className="mt-5 font-display text-xl">
+                The Camellia Đà Nẵng giá có phải 1,72 tỷ không?
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
+                Không. Fact sheet và trang căn hộ của dự án ghi giá từ 1,98 tỷ — không
+                dùng mức 1,72 tỷ. Khi thấy số khác trên mạng xã hội hoặc trang đại lý,
+                hãy đối chiếu lại với{" "}
+                <a href="/can-ho" className="text-terracotta underline-offset-2 hover:underline">
+                  /can-ho
+                </a>{" "}
+                hoặc fact sheet{" "}
+                <a href="/gioi-thieu" className="text-terracotta underline-offset-2 hover:underline">
+                  /gioi-thieu
+                </a>
+                .
+              </p>
+            </article>
+          </Reveal>
         </div>
       </section>
 
