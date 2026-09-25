@@ -33,6 +33,10 @@ export const Route = createFileRoute("/tin-tuc/$slug")({
   component: ArticlePage,
 });
 
+function isNewsArticlePath(path: string): path is `/tin-tuc/${string}` {
+  return path.startsWith("/tin-tuc/");
+}
+
 function ArticlePage() {
   const article = Route.useLoaderData();
   const openWith = useRegister((s) => s.openWith);
@@ -85,12 +89,21 @@ function ArticlePage() {
                 <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                   {block.links.map((l) => (
                     <li key={l.to}>
-                      <Link
-                        to={l.to}
-                        className="font-medium text-terracotta underline-offset-4 hover:underline"
-                      >
-                        {l.label} →
-                      </Link>
+                      {isNewsArticlePath(l.to) ? (
+                        <a
+                          href={l.to}
+                          className="font-medium text-terracotta underline-offset-4 hover:underline"
+                        >
+                          {l.label} →
+                        </a>
+                      ) : (
+                        <Link
+                          to={l.to}
+                          className="font-medium text-terracotta underline-offset-4 hover:underline"
+                        >
+                          {l.label} →
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
