@@ -283,12 +283,12 @@ export const NEWS: NewsArticle[] = [
     title: "Chung cư hết niên hạn không mặc nhiên bị phá dỡ",
     excerpt:
       "Chung cư hết niên hạn theo hồ sơ thiết kế không đồng nghĩa với việc mặc nhiên bị phá dỡ. Việc kiểm định an toàn, phương án cải tạo và quyền tài sản của chủ sở hữu cần được xem xét theo quy định.",
-    image: "/images/news-tt03-og.jpg",
+    image: "/images/news-nien-han-og.jpg",
+    poster: "/images/news-nien-han-hero.webp",
     imageObjectClass: "object-center",
     gallery: [
-      "/images/news-tt03-og.jpg",
+      "/images/news-nien-han-hero.webp",
       "/images/exterior-1.webp",
-      "/images/sontra-beach.webp",
       "/images/hero-aerial.webp",
     ],
     body: [
@@ -322,7 +322,7 @@ export const NEWS: NewsArticle[] = [
         text: "Trước khi đặt cọc hoặc ký hợp đồng, nên yêu cầu được cung cấp và giải thích hồ sơ pháp lý dự án, thông tin về loại hình nhà ở, quyền sở hữu, tiến độ, quy chế quản lý vận hành và các điều kiện liên quan. Không nên chỉ dựa vào cách diễn giải ngắn gọn như “hết niên hạn là mất nhà” để đánh giá giá trị một căn hộ.",
       },
       {
-        heading: "Liên hệ với người đang tìm căn hộ Sơn Trà sở hữu lâu dài",
+        heading: "Với người đang tìm căn hộ Sơn Trà sở hữu lâu dài",
         text: "Với người đang tìm căn hộ Sơn Trà theo hướng sở hữu lâu dài, cần tách rõ niên hạn công trình và quyền tài sản. The Camellia Sơn Trà định vị pháp lý / sổ theo hướng sở hữu lâu dài; anh chị có thể đọc thêm bài giải thích về căn hộ Sơn Trà sở hữu lâu dài hoặc liên hệ tư vấn qua Zalo 0934 885 108.",
         links: [
           { to: "/tin-tuc/can-ho-son-tra-so-huu-lau-dai", label: "Đọc bài: Căn hộ Sơn Trà sở hữu lâu dài" },

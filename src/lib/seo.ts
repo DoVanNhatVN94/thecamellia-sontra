@@ -60,6 +60,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-sales-gallery-og.jpg": { width: 1200, height: 630 },
   "/images/featured-trung-thu-16x9.jpg": { width: 1920, height: 1080 },
   "/images/news-trung-thu-og.jpg": { width: 1200, height: 630 },
+  "/images/news-nien-han-og.jpg": { width: 1200, height: 631 },
 };
 
 function ogPathKey(imageUrl: string) {
