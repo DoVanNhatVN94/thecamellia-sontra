@@ -1,14 +1,17 @@
 import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Lightbox } from "@/components/media/lightbox";
 import { NewsYoutube } from "@/components/media/news-youtube";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { RelatedNews } from "@/components/media/related-news";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { NEWS, PROJECT } from "@/data/project";
-import { SmartImg } from "@/lib/image-src";
+import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { pageHead, parseDotDate } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
+import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/tin-tuc/$slug")({
   loader: ({ params }) => {
@@ -41,6 +44,34 @@ function ArticlePage() {
   const article = Route.useLoaderData();
   const openWith = useRegister((s) => s.openWith);
   const others = NEWS.filter((n) => n.slug !== article.slug);
+  const { resolve, isHidden } = useImageSrc();
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const heroSrc = article.poster ?? article.image;
+  const heroSlot = article.poster ? `news:${article.slug}:poster` : `news:${article.slug}`;
+  const galleryId = `news:${article.slug}`;
+
+  const lightboxImages = useMemo(() => {
+    const seen = new Set<string>();
+    const out: { src: string; alt: string }[] = [];
+    const heroDisplay = resolve(heroSlot, heroSrc);
+    if (heroDisplay) {
+      seen.add(heroDisplay);
+      out.push({ src: heroDisplay, alt: article.title });
+    }
+    article.gallery.forEach((src, i) => {
+      const slot = `${galleryId}:${i}`;
+      if (isHidden(slot)) return;
+      const displaySrc = resolve(slot, src);
+      if (!displaySrc || seen.has(displaySrc)) return;
+      seen.add(displaySrc);
+      out.push({ src: displaySrc, alt: article.title });
+    });
+    return out;
+  }, [article.gallery, article.title, galleryId, heroSlot, heroSrc, isHidden, resolve]);
+
+  const heroClickable = lightboxImages.length > 0;
 
   return (
     <article className="bg-cream pt-28">
@@ -60,16 +91,25 @@ function ArticlePage() {
         </p>
         <h1 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">{article.title}</h1>
         <SmartImg
-          slot={article.poster ? `news:${article.slug}:poster` : `news:${article.slug}`}
-          src={article.poster ?? article.image}
+          slot={heroSlot}
+          src={heroSrc}
           alt={article.title}
           fetchPriority="high"
           decoding="async"
-          className={
+          onClick={
+            heroClickable
+              ? () => {
+                  setLightboxIndex(0);
+                  setLightboxOpen(true);
+                }
+              : undefined
+          }
+          className={cn(
             article.poster && !article.imageObjectClass
               ? "news-poster"
-              : `mt-8 aspect-video w-full rounded-xl object-cover ${article.imageObjectClass ?? ""}`
-          }
+              : `mt-8 aspect-video w-full rounded-xl object-cover ${article.imageObjectClass ?? ""}`,
+            heroClickable && "cursor-zoom-in",
+          )}
         />
         {article.youtubeId ? (
           <NewsYoutube
@@ -138,6 +178,15 @@ function ArticlePage() {
       ) : (
         <div className="pb-20" />
       )}
+
+      {lightboxOpen ? (
+        <Lightbox
+          images={lightboxImages}
+          index={lightboxIndex}
+          onClose={() => setLightboxOpen(false)}
+          onIndex={setLightboxIndex}
+        />
+      ) : null}
     </article>
   );
 }
