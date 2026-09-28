@@ -278,6 +278,68 @@ export type NewsArticle = {
 export const NEWS: NewsArticle[] = [
 
   {
+    slug: "bai-toan-dau-tu-thanh-thoi-the-camellia",
+    date: "28.09.2026",
+    title: "Bài toán đầu tư “Thảnh Thơi” tại The Camellia Sơn Trà",
+    excerpt:
+      "Phương án Thảnh thơi: thanh toán 50% nhận nhà, giãn dòng tiền tới 38 tháng; 45% còn lại chia 4 đợt trong ~20 tháng sau nhận nhà. Minh họa lợi nhuận và thuê tham khảo — không phải cam kết. Liên hệ / Zalo 0934 885 108.",
+    image: "/images/news-thanh-thoi-og.jpg",
+    poster: "/images/news-thanh-thoi-hero.webp",
+    // Designed infographic — keep logo, timeline, table and profit cards full frame
+    imageObjectClass: "object-center",
+    gallery: [
+      "/images/news-thanh-thoi-hero.webp",
+      "/images/exterior-1.webp",
+      "/images/news-gio-hang.webp",
+    ],
+    body: [
+      {
+        text: "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn cùng nhiều phương án thanh toán. Phương án Thảnh thơi hướng tới người mua muốn nhận nhà với vốn một phần đầu kỳ: thanh toán 50% nhận nhà sử dụng, chiết khấu 2%, giãn phần còn lại sau bàn giao. Bài này tóm tắt nhịp dòng tiền và các minh họa tham khảo theo tài liệu bán hàng — số liệu không thay bảng giá / phụ lục chính thức tại thời điểm ký.",
+      },
+      {
+        heading: "Thanh toán 50% nhận nhà, giãn dòng tiền tới 38 tháng",
+        text: "Theo phương án Thảnh thơi trên site: thanh toán khoảng 50% để nhận nhà sử dụng; phần còn lại (khoảng 45%) được giãn sau bàn giao trong khoảng 20 tháng (thường chia 4 đợt), cộng 5% khi nhận sổ / GCN. Tổng nhịp từ ký HĐMB đến hoàn tất thường kéo dài tới khoảng 38 tháng. Chiết khấu gắn phương án này là 2%. Ưu đãi và điều kiện cụ thể theo đợt mở bán khi ký.",
+      },
+      {
+        heading: "Mốc dòng tiền minh họa (T9/2026 → sổ)",
+        text: "Minh họa theo tài liệu bán hàng: T9/2026 ký HĐMB; khoảng 18 tháng đầu thanh toán dần tới 50% đến nhận nhà; dự kiến nhận nhà khoảng T3/2028 (Q1/2028); khoảng 20 tháng sau nhận nhà thanh toán tiếp ~45% chia 4 đợt; mốc tham chiếu khoảng T11/2029; 5% còn lại khi nhận sổ / GCN. Tiến độ thực tế theo thông báo bàn giao và phụ lục hợp đồng — không phải cam kết cứng theo lịch minh họa.",
+      },
+      {
+        heading: "Minh họa giá trị và chia giai đoạn theo loại căn",
+        text: "Các mức dưới đây là phương án minh họa từ tài liệu bán hàng (đã gồm VAT + KPBT, đã trừ chiết khấu 2% của phương án Thảnh thơi). Không phải giá sàn công bố trên website và không thay bảng giá chính thức. Giá công bố trên site vẫn từ 1,98 tỷ. Minh họa tổng giá trị: Studio khoảng 2,24 tỷ; 1PN+1 khoảng 3,16 tỷ; 2PN khoảng 3,79 tỷ; 3PN khoảng 6,30 tỷ. Phần trước nhận nhà / phần giãn sau nhận nhà (minh họa): Studio ~1,14 tỷ / ~1 tỷ; 1PN+1 ~1,61 tỷ / ~1,4 tỷ; 2PN ~1,93 tỷ / ~1,76 tỷ; 3PN ~3,21 tỷ / ~2,78 tỷ.",
+      },
+      {
+        heading: "Minh họa lợi nhuận và thuê tham khảo",
+        text: "Tài liệu minh họa lợi nhuận ước tính sau khoảng 20 tháng nhận nhà (tùy loại căn, không phải cam kết): Studio khoảng 300 triệu; 1PN+1 khoảng 400 triệu; 2PN khoảng 600 triệu; 3PN khoảng 900 triệu — khung tham chiếu khoảng 300–900 triệu tùy loại căn. Thuê tham khảo (minh họa): Studio 16–19 triệu/tháng; 1PN+1 22–24 triệu/tháng; 2PN 30–40 triệu/tháng; 3PN 40–50 triệu/tháng (khung rộng khoảng 16–50 triệu/tháng). Lợi nhuận, giá thuê và khả năng khai thác thực tế phụ thuộc vị trí căn, tầng/view, tình trạng thị trường và điều kiện vận hành — không bảo đảm kết quả.",
+      },
+      {
+        heading: "Lưu ý quan trọng",
+        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê trong bài / hình kèm theo mang tính minh họa, tham khảo, không phải cam kết của chủ đầu tư hay đơn vị phân phối. Giá sàn công bố trên website: từ 1,98 tỷ. Ưu đãi, chiết khấu, tiến độ thanh toán và điều kiện nhận nhà / sổ theo phụ lục và chính sách đợt tại thời điểm ký. Bài này không thay bảng giá chính thức.",
+      },
+      {
+        heading: "So với các phương án khác trên site",
+        text: "Site đang có bốn PA chính: HTLS (vay ngân hàng, hỗ trợ lãi theo đợt/ngân hàng); Chuẩn (chiết khấu 4%); TTS 95% (chiết khấu đến 13%); Thảnh thơi (50% nhận nhà, chiết khấu 2%). Muốn nhận nhà với vốn một phần và giãn phần còn lại sau bàn giao: hỏi Thảnh thơi. Ưu tiên vốn vay đầu kỳ: hỏi HTLS. Có vốn và muốn tối ưu giá: TTS hoặc Chuẩn. Chi tiết khung PA xem bài chính sách bán hàng; lãi suất và điều kiện vay chỉ theo chương trình ngân hàng / đợt đã công bố — không suy diễn thêm.",
+        links: [
+          {
+            to: "/tin-tuc/chinh-sach-ban-hang-htls-early-bird-chiet-khau",
+            label: "Chính sách bán hàng: HTLS · Early Bird · CK",
+          },
+          { to: "/can-ho", label: "Xem mặt bằng & loại căn" },
+        ],
+      },
+      {
+        heading: "Nhận tư vấn phương án Thảnh thơi",
+        text: "Để đối chiếu quỹ căn, tầng/view và phụ lục thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ hoặc nhắn Zalo / gọi Hotline 0934 885 108. Tư vấn sẽ gửi bảng giá cập nhật (giá công bố từ 1,98 tỷ) và giải thích nhịp 50% nhận nhà — giãn ~45% sau bàn giao — 5% sổ theo chính sách hiện hành.",
+        links: [
+          { to: "/lien-he", label: "Liên hệ — nhận bảng giá & tư vấn Thảnh thơi" },
+          { to: "/", label: "Trang chủ — xem các phương án thanh toán" },
+        ],
+      },
+    ],
+  },
+
+
+  {
     slug: "tham-quan-sa-ban-camellia-gallery",
     date: "28.09.2026",
     title: "Tham quan sa bàn The Camellia Sơn Trà tại Camellia Gallery",
