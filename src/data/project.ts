@@ -239,6 +239,10 @@ export const LEGAL_MILESTONES = [
 export type NewsBlock = {
   heading?: string;
   text: string;
+  /** Optional mid-body image (absolute /images/... path). Click opens lightbox when rendered. */
+  image?: string;
+  /** Alt for body image; falls back to heading or article title. */
+  imageAlt?: string;
   /** Optional internal paths rendered under the block (SEO FAQ articles). */
   links?: readonly {
     to:
@@ -294,27 +298,15 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn cùng nhiều phương án thanh toán. Phương án Thảnh thơi hướng tới người mua muốn nhận nhà với vốn một phần đầu kỳ: thanh toán 50% nhận nhà sử dụng, chiết khấu 2%, giãn phần còn lại sau bàn giao. Bài này tóm tắt nhịp dòng tiền và các minh họa tham khảo theo tài liệu bán hàng — số liệu không thay bảng giá / phụ lục chính thức tại thời điểm ký.",
+        text: "The Camellia Sơn Trà công bố giá từ 1,98 tỷ/căn cùng nhiều phương án thanh toán. Phương án Thảnh thơi hướng tới người mua muốn nhận nhà với vốn một phần đầu kỳ: thanh toán 50% nhận nhà, chiết khấu 2%, giãn ~45% sau bàn giao trong khoảng 20 tháng (thường 4 đợt), cộng 5% sổ. Tổng nhịp thường tới khoảng 38 tháng. Các số trên thẻ / bảng là minh họa — giá sàn site vẫn từ 1,98 tỷ.",
       },
       {
-        heading: "Thanh toán 50% nhận nhà, giãn dòng tiền tới 38 tháng",
-        text: "Theo phương án Thảnh thơi trên site: thanh toán khoảng 50% để nhận nhà sử dụng; phần còn lại (khoảng 45%) được giãn sau bàn giao trong khoảng 20 tháng (thường chia 4 đợt), cộng 5% khi nhận sổ / GCN. Tổng nhịp từ ký HĐMB đến hoàn tất thường kéo dài tới khoảng 38 tháng. Chiết khấu gắn phương án này là 2%. Ưu đãi và điều kiện cụ thể theo đợt mở bán khi ký.",
-      },
-      {
-        heading: "Mốc dòng tiền minh họa (T9/2026 → sổ)",
-        text: "Minh họa theo tài liệu bán hàng: T9/2026 ký HĐMB; khoảng 18 tháng đầu thanh toán dần tới 50% đến nhận nhà; dự kiến nhận nhà khoảng T3/2028 (Q1/2028); khoảng 20 tháng sau nhận nhà thanh toán tiếp ~45% chia 4 đợt; mốc tham chiếu khoảng T11/2029; 5% còn lại khi nhận sổ / GCN. Tiến độ thực tế theo thông báo bàn giao và phụ lục hợp đồng — không phải cam kết cứng theo lịch minh họa.",
-      },
-      {
-        heading: "Minh họa giá trị và chia giai đoạn theo loại căn",
-        text: "Các mức dưới đây là phương án minh họa từ tài liệu bán hàng (đã gồm VAT + KPBT, đã trừ chiết khấu 2% của phương án Thảnh thơi). Không phải giá sàn công bố trên website và không thay bảng giá chính thức. Giá công bố trên site vẫn từ 1,98 tỷ. Minh họa tổng giá trị: Studio khoảng 2,24 tỷ; 1PN+1 khoảng 3,16 tỷ; 2PN khoảng 3,79 tỷ; 3PN khoảng 6,30 tỷ. Phần trước nhận nhà / phần giãn sau nhận nhà (minh họa): Studio ~1,14 tỷ / ~1 tỷ; 1PN+1 ~1,61 tỷ / ~1,4 tỷ; 2PN ~1,93 tỷ / ~1,76 tỷ; 3PN ~3,21 tỷ / ~2,78 tỷ.",
-      },
-      {
-        heading: "Minh họa lợi nhuận và thuê tham khảo",
-        text: "Tài liệu minh họa lợi nhuận ước tính sau khoảng 20 tháng nhận nhà (tùy loại căn, không phải cam kết): Studio khoảng 300 triệu; 1PN+1 khoảng 400 triệu; 2PN khoảng 600 triệu; 3PN khoảng 900 triệu — khung tham chiếu khoảng 300–900 triệu tùy loại căn. Thuê tham khảo (minh họa): Studio 16–19 triệu/tháng; 1PN+1 22–24 triệu/tháng; 2PN 30–40 triệu/tháng; 3PN 40–50 triệu/tháng (khung rộng khoảng 16–50 triệu/tháng). Lợi nhuận, giá thuê và khả năng khai thác thực tế phụ thuộc vị trí căn, tầng/view, tình trạng thị trường và điều kiện vận hành — không bảo đảm kết quả.",
+        heading: "Nhịp dòng tiền (minh họa)",
+        text: "T9/2026 ký HĐMB → ~18 tháng thanh toán tới 50% đến nhận nhà (dự kiến Q1/2028) → ~20 tháng sau nhận nhà thanh toán tiếp ~45% chia 4 đợt → 5% khi nhận sổ / GCN. Tiến độ thực tế theo thông báo bàn giao và phụ lục — không phải cam kết cứng theo lịch minh họa.",
       },
       {
         heading: "Lưu ý quan trọng",
-        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê trong bài / hình kèm theo mang tính minh họa, tham khảo, không phải cam kết của chủ đầu tư hay đơn vị phân phối. Giá sàn công bố trên website: từ 1,98 tỷ. Ưu đãi, chiết khấu, tiến độ thanh toán và điều kiện nhận nhà / sổ theo phụ lục và chính sách đợt tại thời điểm ký. Bài này không thay bảng giá chính thức.",
+        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê mang tính minh họa, tham khảo, không phải cam kết của chủ đầu tư hay đơn vị phân phối. Giá bán minh họa trong bảng đã gồm VAT + KPBT và đã trừ CK 2% của phương án Thảnh thơi — không phải giá sàn công bố. Giá sàn trên website: từ 1,98 tỷ. Ưu đãi, chiết khấu, tiến độ thanh toán và điều kiện nhận nhà / sổ theo phụ lục và chính sách đợt tại thời điểm ký. Bài này không thay bảng giá chính thức.",
       },
       {
         heading: "So với các phương án khác trên site",

@@ -5,6 +5,10 @@ import { Lightbox } from "@/components/media/lightbox";
 import { NewsYoutube } from "@/components/media/news-youtube";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { RelatedNews } from "@/components/media/related-news";
+import {
+  ThanhThoiLayoutBExtras,
+  isThanhThoiArticleSlug,
+} from "@/components/media/thanh-thoi-article-extras";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { NEWS, PROJECT } from "@/data/project";
@@ -47,6 +51,7 @@ function ArticlePage() {
   const { resolve, isHidden } = useImageSrc();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const showLayoutB = isThanhThoiArticleSlug(article.slug);
 
   const heroSrc = article.poster ?? article.image;
   const heroSlot = article.poster ? `news:${article.slug}:poster` : `news:${article.slug}`;
@@ -55,23 +60,40 @@ function ArticlePage() {
   const lightboxImages = useMemo(() => {
     const seen = new Set<string>();
     const out: { src: string; alt: string }[] = [];
-    const heroDisplay = resolve(heroSlot, heroSrc);
-    if (heroDisplay) {
-      seen.add(heroDisplay);
-      out.push({ src: heroDisplay, alt: article.title });
-    }
+    const push = (displaySrc: string | undefined | null, alt: string) => {
+      if (!displaySrc || seen.has(displaySrc)) return;
+      seen.add(displaySrc);
+      out.push({ src: displaySrc, alt });
+    };
+
+    push(resolve(heroSlot, heroSrc), article.title);
+
+    article.body.forEach((block, i) => {
+      if (!block.image) return;
+      const slot = `${galleryId}:body:${i}`;
+      if (isHidden(slot)) return;
+      push(
+        resolve(slot, block.image),
+        block.imageAlt ?? block.heading ?? article.title,
+      );
+    });
+
     article.gallery.forEach((src, i) => {
       const slot = `${galleryId}:${i}`;
       if (isHidden(slot)) return;
-      const displaySrc = resolve(slot, src);
-      if (!displaySrc || seen.has(displaySrc)) return;
-      seen.add(displaySrc);
-      out.push({ src: displaySrc, alt: article.title });
+      push(resolve(slot, src), article.title);
     });
+
     return out;
-  }, [article.gallery, article.title, galleryId, heroSlot, heroSrc, isHidden, resolve]);
+  }, [article.body, article.gallery, article.title, galleryId, heroSlot, heroSrc, isHidden, resolve]);
 
   const heroClickable = lightboxImages.length > 0;
+
+  const openLightboxAtSrc = (displaySrc: string) => {
+    const found = lightboxImages.findIndex((img) => img.src === displaySrc);
+    setLightboxIndex(found >= 0 ? found : 0);
+    setLightboxOpen(true);
+  };
 
   return (
     <article className="bg-cream pt-28">
@@ -118,38 +140,58 @@ function ArticlePage() {
             caption={article.youtubeCaption}
           />
         ) : null}
+
+        {showLayoutB ? <ThanhThoiLayoutBExtras /> : null}
+
         <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted sm:text-base">
-          {article.body.map((block, i) => (
-            <div key={i}>
-              {block.heading ? (
-                <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
-              ) : null}
-              <p>{block.text}</p>
-              {block.links?.length ? (
-                <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                  {block.links.map((l) => (
-                    <li key={l.to}>
-                      {isNewsArticlePath(l.to) ? (
-                        <a
-                          href={l.to}
-                          className="font-medium text-terracotta underline-offset-4 hover:underline"
-                        >
-                          {l.label} →
-                        </a>
-                      ) : (
-                        <Link
-                          to={l.to}
-                          className="font-medium text-terracotta underline-offset-4 hover:underline"
-                        >
-                          {l.label} →
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
-            </div>
-          ))}
+          {article.body.map((block, i) => {
+            const bodySlot = `${galleryId}:body:${i}`;
+            const bodyHidden = block.image ? isHidden(bodySlot) : true;
+            const bodyDisplay = block.image && !bodyHidden ? resolve(bodySlot, block.image) : null;
+
+            return (
+              <div key={i}>
+                {block.heading ? (
+                  <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
+                ) : null}
+                {block.text ? <p>{block.text}</p> : null}
+                {bodyDisplay ? (
+                  <SmartImg
+                    slot={bodySlot}
+                    src={block.image!}
+                    alt={block.imageAlt ?? block.heading ?? article.title}
+                    loading="lazy"
+                    decoding="async"
+                    onClick={() => openLightboxAtSrc(bodyDisplay)}
+                    className="mt-4 w-full cursor-zoom-in rounded-xl object-contain shadow-border"
+                  />
+                ) : null}
+                {block.links?.length ? (
+                  <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                    {block.links.map((l) => (
+                      <li key={l.to}>
+                        {isNewsArticlePath(l.to) ? (
+                          <a
+                            href={l.to}
+                            className="font-medium text-terracotta underline-offset-4 hover:underline"
+                          >
+                            {l.label} →
+                          </a>
+                        ) : (
+                          <Link
+                            to={l.to}
+                            className="font-medium text-terracotta underline-offset-4 hover:underline"
+                          >
+                            {l.label} →
+                          </Link>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
         <p className="mt-10 text-sm text-muted">
           {PROJECT.address} · Hotline {PROJECT.hotlineDisplay}
