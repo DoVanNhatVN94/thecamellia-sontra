@@ -2,6 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHero } from "@/components/sections/hero";
+import { isPreviewNewsSlug } from "@/components/media/thanh-thoi-preview-extras";
 import { NEWS } from "@/data/project";
 import { SmartImg } from "@/lib/image-src";
 import { PAGES, pageHead } from "@/lib/seo";
@@ -12,20 +13,21 @@ export const Route = createFileRoute("/tin-tuc/")({
 });
 
 function NewsIndex() {
+  const articles = NEWS.filter((n) => !isPreviewNewsSlug(n.slug));
   return (
     <>
       <PageHero
         kicker="Tin tức"
         title="Tin tức The Camellia Sơn Trà"
         crumbs={[{ label: "Tin tức" }]}
-        slides={NEWS.slice(0, 3).map((n) => ({ src: n.image, alt: n.title }))}
+        slides={articles.slice(0, 3).map((n) => ({ src: n.image, alt: n.title }))}
       >
         Sự kiện ra mắt, tiến độ pháp lý và những câu chuyện sống tại Sơn Trà.
       </PageHero>
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="grid gap-6 md:grid-cols-2">
-            {NEWS.map((n, i) => (
+            {articles.map((n, i) => (
               <Reveal key={n.slug} delay={i * 80}>
                 <Link
                   to="/tin-tuc/$slug"

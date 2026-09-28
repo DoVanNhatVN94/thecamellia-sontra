@@ -1,3 +1,4 @@
+import { isPreviewNewsSlug } from "@/components/media/thanh-thoi-preview-extras";
 import { NEWS, PROJECT, UNIT_TYPES } from "@/data/project";
 
 /** Public origin. Override with VITE_SITE_URL when needed. */
@@ -417,5 +418,5 @@ export const SITEMAP_PATHS = [
   { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
   { path: "/gioi-thieu", priority: "0.85", changefreq: "monthly" },
   { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
-  ...NEWS.map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
+  ...NEWS.filter((n) => !isPreviewNewsSlug(n.slug)).map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
 ] as const;

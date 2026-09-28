@@ -239,6 +239,10 @@ export const LEGAL_MILESTONES = [
 export type NewsBlock = {
   heading?: string;
   text: string;
+  /** Optional mid-body image (absolute /images/... path). Click opens lightbox when rendered. */
+  image?: string;
+  /** Alt for body image; falls back to heading or article title. */
+  imageAlt?: string;
   /** Optional internal paths rendered under the block (SEO FAQ articles). */
   links?: readonly {
     to:
@@ -338,6 +342,129 @@ export const NEWS: NewsArticle[] = [
     ],
   },
 
+  // --- Temporary layout compare (do not merge to main as permanent; preview-only) ---
+  {
+    slug: "preview-thanh-thoi-a",
+    date: "28.09.2026",
+    title: "[Preview A] Thảnh thơi — ảnh xen kẽ (timeline + lợi nhuận)",
+    excerpt:
+      "Layout A: crop infographic thành 2 ảnh giữa bài (dòng tiền + bảng lợi nhuận/thuê), đoạn văn ngắn. Minh họa — không cam kết. Giá sàn từ 1,98 tỷ.",
+    image: "/images/news-thanh-thoi-og.jpg",
+    poster: "/images/news-thanh-thoi-hero.webp",
+    imageObjectClass: "object-center",
+    gallery: [
+      "/images/news-thanh-thoi-hero.webp",
+      "/images/news-thanh-thoi-timeline.webp",
+      "/images/news-thanh-thoi-profit.webp",
+    ],
+    body: [
+      {
+        text: "Phương án Thảnh thơi: thanh toán 50% nhận nhà sử dụng, chiết khấu 2%, giãn phần còn lại sau bàn giao tới khoảng 38 tháng. Số liệu dưới đây là minh họa tham khảo — không thay bảng giá / phụ lục chính thức. Giá sàn công bố trên site: từ 1,98 tỷ.",
+      },
+      {
+        heading: "Dòng tiền thanh toán linh hoạt",
+        text: "Ký HĐMB khoảng T9/2026 → thanh toán dần tới 50% trong ~18 tháng đến nhận nhà (dự kiến T3/2028) → ~45% chia 4 đợt trong ~20 tháng sau bàn giao → 5% khi nhận sổ. Bấm ảnh để phóng to.",
+        image: "/images/news-thanh-thoi-timeline.webp",
+        imageAlt: "Timeline thanh toán Thảnh thơi — 50% nhận nhà, giãn ~38 tháng",
+      },
+      {
+        heading: "Minh họa lợi nhuận và thuê theo loại căn",
+        text: "Khung tham chiếu (không cam kết): lợi nhuận ước tính sau ~20 tháng nhận nhà khoảng 300–900 triệu tùy loại căn; thuê tham khảo khoảng 16–50 triệu/tháng. Kết quả thực tế phụ thuộc căn, tầng/view và thị trường.",
+        image: "/images/news-thanh-thoi-profit.webp",
+        imageAlt: "Minh họa lợi nhuận và thuê Studio · 1PN+1 · 2PN · 3PN",
+      },
+      {
+        heading: "Lưu ý quan trọng",
+        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê trong bài / hình kèm theo mang tính minh họa, tham khảo, không phải cam kết của chủ đầu tư hay đơn vị phân phối. Giá sàn công bố trên website: từ 1,98 tỷ. Ưu đãi, chiết khấu, tiến độ thanh toán và điều kiện nhận nhà / sổ theo phụ lục và chính sách đợt tại thời điểm ký.",
+      },
+      {
+        heading: "Nhận tư vấn phương án Thảnh thơi",
+        text: "Để đối chiếu quỹ căn, tầng/view và phụ lục thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ hoặc nhắn Zalo / gọi Hotline 0934 885 108.",
+        links: [
+          { to: "/lien-he", label: "Liên hệ — nhận bảng giá & tư vấn Thảnh thơi" },
+          { to: "/", label: "Trang chủ — xem các phương án thanh toán" },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "preview-thanh-thoi-b",
+    date: "28.09.2026",
+    title: "[Preview B] Thảnh thơi — thẻ tóm tắt + bảng HTML",
+    excerpt:
+      "Layout B: 4 thẻ tóm tắt (50% nhận nhà, 38 tháng, LN/thuê minh họa) + bảng loại căn responsive. Ít ảnh phụ. Giá sàn từ 1,98 tỷ.",
+    image: "/images/news-thanh-thoi-og.jpg",
+    poster: "/images/news-thanh-thoi-hero.webp",
+    imageObjectClass: "object-center",
+    gallery: ["/images/news-thanh-thoi-hero.webp", "/images/exterior-1.webp"],
+    body: [
+      {
+        text: "Phương án Thảnh thơi hướng tới người mua muốn nhận nhà với vốn một phần đầu kỳ: thanh toán 50% nhận nhà, chiết khấu 2%, giãn ~45% sau bàn giao trong khoảng 20 tháng (thường 4 đợt), cộng 5% sổ. Tổng nhịp thường tới khoảng 38 tháng. Các số dưới đây là minh họa — giá sàn site vẫn từ 1,98 tỷ.",
+      },
+      {
+        heading: "Nhịp dòng tiền (minh họa)",
+        text: "T9/2026 ký HĐMB → ~18 tháng thanh toán tới 50% đến nhận nhà (dự kiến Q1/2028) → ~20 tháng sau nhận nhà thanh toán tiếp ~45% chia 4 đợt → 5% khi nhận sổ / GCN. Tiến độ thực tế theo thông báo bàn giao và phụ lục — không phải cam kết cứng theo lịch minh họa.",
+      },
+      {
+        heading: "Lưu ý quan trọng",
+        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê mang tính minh họa, tham khảo, không phải cam kết. Giá bán minh họa trong bảng đã gồm VAT + KPBT và đã trừ CK 2% của phương án Thảnh thơi — không phải giá sàn công bố. Giá sàn trên website: từ 1,98 tỷ.",
+      },
+      {
+        heading: "Nhận tư vấn phương án Thảnh thơi",
+        text: "Anh chị để lại nhu cầu tại trang Liên hệ hoặc nhắn Zalo / gọi Hotline 0934 885 108 để nhận bảng giá cập nhật và giải thích nhịp 50% nhận nhà — giãn ~45% sau bàn giao — 5% sổ.",
+        links: [
+          { to: "/lien-he", label: "Liên hệ — nhận bảng giá & tư vấn Thảnh thơi" },
+          { to: "/can-ho", label: "Xem mặt bằng & loại căn" },
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "preview-thanh-thoi-c",
+    date: "28.09.2026",
+    title: "[Preview C] Thảnh thơi — thẻ + ảnh crop kết hợp",
+    excerpt:
+      "Layout C: 4 thẻ tóm tắt trên đầu + 1–2 ảnh crop giữa bài + đoạn ngắn + disclaimer. Minh họa — không cam kết. Giá sàn từ 1,98 tỷ.",
+    image: "/images/news-thanh-thoi-og.jpg",
+    poster: "/images/news-thanh-thoi-hero.webp",
+    imageObjectClass: "object-center",
+    gallery: [
+      "/images/news-thanh-thoi-hero.webp",
+      "/images/news-thanh-thoi-timeline.webp",
+      "/images/news-thanh-thoi-profit.webp",
+    ],
+    body: [
+      {
+        text: "Thảnh thơi: 50% nhận nhà, CK 2%, giãn phần còn lại sau bàn giao. Dưới đây kết hợp thẻ tóm tắt và ảnh crop từ tài liệu bán hàng — mọi số liệu mang tính minh họa. Giá sàn công bố: từ 1,98 tỷ.",
+      },
+      {
+        heading: "Timeline thanh toán (crop)",
+        text: "Nhịp minh họa T9/2026 → nhận nhà Q1/2028 → sổ sau khoảng T11/2029. Bấm ảnh để xem rõ các mốc.",
+        image: "/images/news-thanh-thoi-timeline.webp",
+        imageAlt: "Timeline thanh toán Thảnh thơi minh họa",
+      },
+      {
+        heading: "Lợi nhuận & thuê tham khảo (crop)",
+        text: "Studio ~300 triệu / thuê 16–19; 1PN+1 ~400 / 22–24; 2PN ~600 / 30–40; 3PN ~900 / 40–50 (triệu; sau ~20 tháng nhận nhà). Không bảo đảm kết quả.",
+        image: "/images/news-thanh-thoi-profit.webp",
+        imageAlt: "Minh họa lợi nhuận và thuê theo loại căn",
+      },
+      {
+        heading: "Lưu ý quan trọng",
+        text: "Mọi thông tin, giá minh họa, lợi nhuận ước tính và mức thuê trong bài / hình kèm theo mang tính minh họa, tham khảo, không phải cam kết. Giá sàn công bố trên website: từ 1,98 tỷ. Điều kiện nhận nhà / sổ theo phụ lục đợt tại thời điểm ký.",
+      },
+      {
+        heading: "Nhận tư vấn phương án Thảnh thơi",
+        text: "Liên hệ hoặc Zalo / Hotline 0934 885 108 để đối chiếu quỹ căn và phụ lục thanh toán đúng đợt.",
+        links: [
+          { to: "/lien-he", label: "Liên hệ — nhận bảng giá & tư vấn Thảnh thơi" },
+          { to: "/", label: "Trang chủ — xem các phương án thanh toán" },
+        ],
+      },
+    ],
+  },
 
   {
     slug: "tham-quan-sa-ban-camellia-gallery",
