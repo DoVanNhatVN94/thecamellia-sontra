@@ -2,6 +2,7 @@ import { ChevronLeft, ChevronRight, Minus, Plus, X } from "lucide-react";
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type MouseEvent as ReactMouseEvent,
@@ -22,7 +23,7 @@ type Point = { x: number; y: number };
 
 const ZOOM_STEP = 1.25;
 const WHEEL_ZOOM_SPEED = 0.0025;
-/** Allow zoom past native 1:1 (scale where CSS px ≈ image px). */
+/** Allow zoom past native 1:1 (user-scale where CSS px ≈ image px). */
 const PAST_NATIVE = 2;
 
 function clamp(n: number, min: number, max: number) {
@@ -37,18 +38,31 @@ function mid(a: Point, b: Point): Point {
   return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
 }
 
+function contentSize(el: HTMLElement) {
+  const cs = getComputedStyle(el);
+  const pl = parseFloat(cs.paddingLeft) || 0;
+  const pr = parseFloat(cs.paddingRight) || 0;
+  const pt = parseFloat(cs.paddingTop) || 0;
+  const pb = parseFloat(cs.paddingBottom) || 0;
+  return {
+    w: Math.max(0, el.clientWidth - pl - pr),
+    h: Math.max(0, el.clientHeight - pt - pb),
+  };
+}
+
 export function Lightbox({ images, index, onClose, onIndex }: Props) {
   const [mounted, setMounted] = useState(false);
   const current = images[index];
 
   const viewportRef = useRef<HTMLDivElement>(null);
 
-  /** 1 = fitted to viewport; higher = zoomed in. */
+  /** 1 = fitted to viewport; higher = zoomed in (relative to fit). */
   const [scale, setScale] = useState(1);
   const [tx, setTx] = useState(0);
   const [ty, setTy] = useState(0);
   const [maxScale, setMaxScale] = useState(4);
   const [natural, setNatural] = useState({ w: 0, h: 0 });
+  const [vpSize, setVpSize] = useState({ w: 0, h: 0 });
 
   const view = useRef({ scale: 1, tx: 0, ty: 0, maxScale: 4 });
   const pointers = useRef(new Map<number, Point>());
@@ -67,6 +81,17 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
     | null
   >(null);
   const didDragRef = useRef(false);
+
+  /**
+   * Fit factor: scale the full-res img down to the content box.
+   * Zoom applies as fitScale * userScale so the compositor keeps native pixels.
+   */
+  const fitScale = useMemo(() => {
+    if (!natural.w || !natural.h || !vpSize.w || !vpSize.h) return 1;
+    return Math.min(vpSize.w / natural.w, vpSize.h / natural.h);
+  }, [natural, vpSize]);
+
+  const displayScale = fitScale * scale;
 
   const commit = useCallback((next: { scale: number; tx: number; ty: number }) => {
     view.current.scale = next.scale;
@@ -87,11 +112,12 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
     const vp = viewportRef.current;
     const { w: nw, h: nh } = natural;
     if (!vp || !nw || !nh) return;
-    const vw = vp.clientWidth;
-    const vh = vp.clientHeight;
+    const { w: vw, h: vh } = contentSize(vp);
     if (!vw || !vh) return;
+    setVpSize({ w: vw, h: vh });
     const fit = Math.min(vw / nw, vh / nh);
     const nativeAtFit = fit > 0 ? 1 / fit : 1;
+    // Cap allows true 1:1 (nativeAtFit) and past it.
     const nextMax = Math.max(4, nativeAtFit * PAST_NATIVE);
     view.current.maxScale = nextMax;
     setMaxScale(nextMax);
@@ -134,6 +160,7 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
   }, []);
 
   useEffect(() => {
+    setNatural({ w: 0, h: 0 });
     resetView();
   }, [index, current?.src, resetView]);
 
@@ -218,8 +245,6 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
       const d = dist(a, b) || 1;
       const m = mid(a, b);
       const nextScale = clamp(g.scale * (d / g.dist), 1, view.current.maxScale);
-      // Focal = pinch midpoint in viewport-local coords at gesture start frame,
-      // then also follow mid movement for pan-while-pinch.
       const fx0 = g.mid.x - g.vpLeft;
       const fy0 = g.mid.y - g.vpTop;
       const ratio = nextScale / g.scale;
@@ -274,6 +299,12 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
   if (!mounted || !current) return null;
 
   const zoomPct = Math.round(scale * 100);
+  const hasNatural = natural.w > 0 && natural.h > 0;
+  const layoutReady = hasNatural && vpSize.w > 0 && vpSize.h > 0;
+  // User-scale that shows ~1 CSS px per image px.
+  const nativeUserScale = fitScale > 0 ? 1 / fitScale : 1;
+  // Until viewport is measured, keep CSS object-fit; then switch to native + transform.
+  const effectiveDisplayScale = layoutReady ? displayScale : 1;
 
   return createPortal(
     <div
@@ -363,16 +394,18 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
           src={current.src}
           alt={current.alt}
           draggable={false}
+          width={layoutReady ? natural.w : undefined}
+          height={layoutReady ? natural.h : undefined}
           onClick={(e) => e.stopPropagation()}
           onDoubleClick={(e) => {
             e.stopPropagation();
             if (view.current.scale > 1.05) {
               applyZoom(1);
             } else {
-              // Jump toward native 1:1 (or 2× fit if already near-native).
+              // Jump to native 1:1 (or 2× fit if already near-native).
               const nativeTarget = Math.min(
                 view.current.maxScale,
-                Math.max(2, view.current.maxScale / PAST_NATIVE),
+                Math.max(2, nativeUserScale),
               );
               applyZoom(nativeTarget, { x: e.clientX, y: e.clientY });
             }
@@ -381,9 +414,15 @@ export function Lightbox({ images, index, onClose, onIndex }: Props) {
             const el = e.currentTarget;
             setNatural({ w: el.naturalWidth, h: el.naturalHeight });
           }}
-          className="max-h-full max-w-full select-none rounded-md object-contain will-change-transform"
+          className="select-none rounded-md object-contain"
           style={{
-            transform: `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`,
+            // Full natural layout box — avoid max-w/max-h shrink that rasterizes a
+            // small GPU layer; fit + zoom via transform keeps native pixels sharp.
+            width: layoutReady ? natural.w : undefined,
+            height: layoutReady ? natural.h : undefined,
+            maxWidth: layoutReady ? "none" : "100%",
+            maxHeight: layoutReady ? "none" : "100%",
+            transform: `translate3d(${tx}px, ${ty}px, 0) scale(${effectiveDisplayScale})`,
             transformOrigin: "center center",
           }}
         />

@@ -32,7 +32,7 @@ const TYPICAL_FLOOR = {
   /** In-page SmartImg — lighter WebP. */
   src: "/images/floor-typical.webp",
   /** Lightbox — lossless PNG original (cache-bust via distinct filename). */
-  lightboxSrc: "/images/floor-typical.png",
+  lightboxSrc: "/images/floor-typical.png?v=20260930b",
   alt: "Mặt bằng tầng điển hình The Camellia",
 } as const;
 
