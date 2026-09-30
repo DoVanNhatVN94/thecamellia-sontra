@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { SiteShell } from "@/components/layout/site-shell";
+import { Lightbox } from "@/components/media/lightbox";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { Reveal } from "@/components/motion/reveal";
 import { AnswerCapsule } from "@/components/sections/answer-capsule";
@@ -9,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { UnitFilterChips, UnitSmartFilter, type UnitId } from "@/components/units/compare-table";
 import { View360Section } from "@/components/units/view-360";
 import { GALLERIES, PROJECT, UNIT_TYPES } from "@/data/project";
-import { SmartImg } from "@/lib/image-src";
+import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { PAGES, pageHead } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
 
@@ -26,9 +27,18 @@ function readHash(): UnitId {
   return UNIT_IDS.includes(raw as UnitId) ? (raw as UnitId) : "studio";
 }
 
+const TYPICAL_FLOOR = {
+  slot: "unit:typical",
+  src: "/images/floor-typical.webp",
+  alt: "Mặt bằng tầng điển hình The Camellia",
+} as const;
+
 function UnitsPage() {
   const openWith = useRegister((s) => s.openWith);
+  const { resolve } = useImageSrc();
   const [filter, setFilter] = useState<UnitId>("studio");
+  const [typicalOpen, setTypicalOpen] = useState(false);
+  const typicalDisplay = resolve(TYPICAL_FLOOR.slot, TYPICAL_FLOOR.src);
 
   useEffect(() => {
     const initial = readHash();
@@ -156,12 +166,16 @@ function UnitsPage() {
               </p>
               <div className="mt-8 overflow-hidden rounded-xl bg-paper shadow-border">
                 <SmartImg
-                  slot="unit:typical"
-                  src="/images/floor-typical.webp"
-                  alt="Mặt bằng tầng điển hình The Camellia"
-                  className="aspect-video w-full bg-paper object-contain"
+                  slot={TYPICAL_FLOOR.slot}
+                  src={TYPICAL_FLOOR.src}
+                  alt={TYPICAL_FLOOR.alt}
+                  onClick={() => setTypicalOpen(true)}
+                  className="aspect-video w-full cursor-zoom-in bg-paper object-contain"
                 />
               </div>
+              <p className="mt-3 text-center text-xs tracking-wide text-muted">
+                Bấm để xem lớn
+              </p>
             </article>
           </Reveal>
 
@@ -228,6 +242,15 @@ function UnitsPage() {
           </article>
         </div>
       </section>
+
+      {typicalOpen ? (
+        <Lightbox
+          images={[{ src: typicalDisplay, alt: TYPICAL_FLOOR.alt }]}
+          index={0}
+          onClose={() => setTypicalOpen(false)}
+          onIndex={() => {}}
+        />
+      ) : null}
     </SiteShell>
   );
 }
