@@ -29,7 +29,10 @@ function readHash(): UnitId {
 
 const TYPICAL_FLOOR = {
   slot: "unit:typical",
+  /** In-page SmartImg — lighter WebP. */
   src: "/images/floor-typical.webp",
+  /** Lightbox — lossless PNG original (cache-bust via distinct filename). */
+  lightboxSrc: "/images/floor-typical.png",
   alt: "Mặt bằng tầng điển hình The Camellia",
 } as const;
 
@@ -38,7 +41,7 @@ function UnitsPage() {
   const { resolve } = useImageSrc();
   const [filter, setFilter] = useState<UnitId>("studio");
   const [typicalOpen, setTypicalOpen] = useState(false);
-  const typicalDisplay = resolve(TYPICAL_FLOOR.slot, TYPICAL_FLOOR.src);
+  const typicalLightbox = resolve(TYPICAL_FLOOR.slot, TYPICAL_FLOOR.lightboxSrc);
 
   useEffect(() => {
     const initial = readHash();
@@ -245,7 +248,7 @@ function UnitsPage() {
 
       {typicalOpen ? (
         <Lightbox
-          images={[{ src: typicalDisplay, alt: TYPICAL_FLOOR.alt }]}
+          images={[{ src: typicalLightbox, alt: TYPICAL_FLOOR.alt }]}
           index={0}
           onClose={() => setTypicalOpen(false)}
           onIndex={() => {}}
