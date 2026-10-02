@@ -64,6 +64,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-sa-ban-og.jpg": { width: 1200, height: 628 },
   "/images/news-thanh-thoi-og.jpg": { width: 1200, height: 849 },
   "/images/news-chon-khu-og.jpg": { width: 1200, height: 630 },
+  "/images/news-heso-k-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
