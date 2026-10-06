@@ -210,7 +210,11 @@ function ArticlePage() {
             galleryId={`news:${article.slug}`}
             slides={article.gallery.map((src) => ({
               src,
-              alt: article.title,
+              alt:
+                (src === article.poster ? article.imageAlt : undefined) ??
+                article.body.find((block) => block.image === src)?.imageAlt ??
+                article.title,
+              fit: article.galleryFit,
             }))}
           />
         </div>

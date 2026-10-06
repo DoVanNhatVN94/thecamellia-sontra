@@ -272,6 +272,8 @@ export type NewsArticle = {
    */
   imageObjectClass?: string;
   gallery: readonly string[];
+  /** Gallery card fit. Use "contain" when a poster or plan must not be cropped. */
+  galleryFit?: "cover" | "contain";
   body: NewsBlock[];
   /** Privacy-enhanced YouTube id. The article page embeds it only when set. */
   youtubeId?: string;
@@ -298,6 +300,7 @@ export const NEWS: NewsArticle[] = [
       "/images/news-tang-3-mat-bang.webp",
       "/images/news-tang-3-can-1pn.webp",
     ],
+    galleryFit: "contain",
     body: [
       {
         text: "Dành riêng cho những tâm hồn thích sự tự do và trải nghiệm, Bộ sưu tập căn hộ tầng 3 tại The Camellia Sơn Trà mang đến một không gian sống hội tụ ba đặc quyền khác biệt — quỹ giới hạn chỉ 11 căn. Trần cao đến 5,4m, sát tiện ích nội khu ngay ngoài cửa, tổng giá chỉ từ 1,72 tỷ. Dự án 469 căn, 25 tầng nổi & 2 hầm, sổ hồng sở hữu lâu dài, giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng; khoảng 200m tới biển Mân Thái. CĐT Công ty TNHH Địa ốc Thành Lâm · phát triển MBLAND · kinh doanh WELAND · phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028.",
