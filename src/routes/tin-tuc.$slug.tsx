@@ -31,6 +31,7 @@ export const Route = createFileRoute("/tin-tuc/$slug")({
       description: loaderData.excerpt,
       path: `/tin-tuc/${loaderData.slug}`,
       image: loaderData.image,
+      imageAlt: loaderData.imageAlt,
       type: "article",
       publishedTime: published,
       modifiedTime: published,
@@ -66,7 +67,7 @@ function ArticlePage() {
       out.push({ src: displaySrc, alt });
     };
 
-    push(resolve(heroSlot, heroSrc), article.title);
+    push(resolve(heroSlot, heroSrc), article.imageAlt ?? article.title);
 
     article.body.forEach((block, i) => {
       if (!block.image) return;
@@ -85,7 +86,7 @@ function ArticlePage() {
     });
 
     return out;
-  }, [article.body, article.gallery, article.title, galleryId, heroSlot, heroSrc, isHidden, resolve]);
+  }, [article.body, article.gallery, article.imageAlt, article.title, galleryId, heroSlot, heroSrc, isHidden, resolve]);
 
   const heroClickable = lightboxImages.length > 0;
 
@@ -115,7 +116,7 @@ function ArticlePage() {
         <SmartImg
           slot={heroSlot}
           src={heroSrc}
-          alt={article.title}
+          alt={article.imageAlt ?? article.title}
           fetchPriority="high"
           decoding="async"
           onClick={

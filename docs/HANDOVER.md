@@ -1,7 +1,7 @@
 # The Camellia Sơn Trà — Tài liệu bàn giao (HANDOVER)
 
 > **Đọc file này trước** khi làm bất kỳ việc dev / SEO / lead / DNS nào trên site.
-> Cập nhật lần cuối: **24.09.2026** (Asia/Bangkok). Repo: `DoVanNhatVN94/thecamellia-sontra`.
+> Cập nhật lần cuối: **06.10.2026** (Asia/Bangkok). Repo: `DoVanNhatVN94/thecamellia-sontra`.
 
 ---
 
@@ -30,7 +30,7 @@ Tài liệu liên quan trong repo:
 
 ## 2. Fact dự án chuẩn (single source of truth)
 
-**Không bao giờ dùng giá 1,72 tỷ** — giá công bố đúng là **từ 1,98 tỷ**.
+**Giá sàn công bố (mặc định): từ 1,98 tỷ** — không đổi `PROJECT.fromPrice` hay các fact 1,98 tỷ trên site. **1,72 tỷ** chỉ được dùng khi chủ dự án yêu cầu, và chỉ với nghĩa **tổng giá sau chiết khấu theo phương thức thanh toán** (ví dụ bài BST căn hộ tầng 3, 06.10.2026). Không dùng 1,72 như giá sàn thay thế. Luôn nhắc đối chiếu bảng giá tại thời điểm ký.
 
 | Hạng mục | Giá trị chuẩn |
 |----------|----------------|
@@ -196,7 +196,7 @@ Client: `VITE_SITE_URL` (apex). Thiếu 3 biến server → `/api/leads` trả *
 | **Tháng 2 W8** | So sánh khu vực trung lập | **Tiếp theo** |
 | **Tháng 3** | Recap Premier Launch sâu hơn · Q&A mốc pháp lý · video+transcript · retune title/meta từ GSC | Chưa |
 | Indexing | Request indexing 3 bài Month 2 + `/kham-pha` trên GSC | Cần làm |
-| AI smoke | Chạy `docs/ai-smoke-prompts.md` (đặc biệt giá **1,98** vs sai **1,72**) | Định kỳ |
+| AI smoke | Chạy `docs/ai-smoke-prompts.md` (giá sàn **1,98 tỷ**; **1,72 tỷ** chỉ khi là tổng giá sau chiết khấu do chủ dự án yêu cầu) | Định kỳ |
 | Bing | **Luna** sở hữu / Webmaster — Dev không trùng việc indexing Bing |
 
 Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiến độ+1 bài; monthly fact audit + AI test + Lighthouse.
@@ -221,6 +221,19 @@ Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiế
 
 | Ngày | Slug |
 |------|------|
+| 06.10.2026 | `bst-can-ho-tang-3-the-camellia-11-can` |
+| 06.10.2026 | `luu-y-len-ban-dao-son-tra-thang-10-2026` |
+| 05.10.2026 | `lai-suat-vay-mua-nha-tren-10-can-ho-da-nang-2026` |
+| 03.10.2026 | `mo-rong-duong-ven-bien-son-tra-hoi-an-2026` |
+| 02.10.2026 | `he-so-k-gia-dat-da-nang-2026-dat-nen` |
+| 01.10.2026 | `le-hoi-doi-moi-sang-tao-son-tra-sif-2026` |
+| 29.09.2026 | `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` |
+| 28.09.2026 | `bai-toan-dau-tu-thanh-thoi-the-camellia` |
+| 28.09.2026 | `tham-quan-sa-ban-camellia-gallery` |
+| 26.09.2026 | `chung-cu-het-nien-han-khong-mac-nhien-pha-do` |
+| 25.09.2026 | `trung-thu-ngam-trang-son-tra` |
+| 25.09.2026 | `gia-the-camellia-son-tra-tu-1-98-ty` |
+| 24.09.2026 | `ra-mat-van-phong-ban-hang` |
 | 23.09.2026 | `chinh-sach-ban-hang-htls-early-bird-chiet-khau` |
 | 23.09.2026 | `tien-ich-the-camellia-wellness-nature-community` |
 | 23.09.2026 | `huong-dan-tour-360-the-camellia-son-tra` |
@@ -298,7 +311,7 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 
 - **Ping trước** khi sửa file dùng chung: `project.ts`, `seo.ts`, sitemap, `llms.txt`, sales-plans.
 - **Không trùng việc indexing:** Dev lo GSC; Luna lo Bing.
-- Caption / post Facebook phải dùng giá **1,98 tỷ** (không 1,72).
+- Caption / post Facebook mặc định dùng giá **1,98 tỷ**. Chỉ ghi **1,72 tỷ** khi chủ dự án yêu cầu, và phải nói rõ đó là tổng giá sau chiết khấu theo phương thức thanh toán (như BST tầng 3).
 
 ---
 
@@ -320,7 +333,7 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 | GSC indexing | Request indexing **3 bài Month 2** + `/kham-pha` |
 | Month 2 W8 | Bài so sánh khu vực trung lập |
 | Month 3 | Theo calendar STRATEGY (recap, pháp lý Q&A, video+transcript, retune meta) |
-| Caption Facebook | Luôn **1,98 tỷ** |
+| Caption Facebook | Mặc định **1,98 tỷ**; **1,72 tỷ** chỉ khi chủ dự án yêu cầu và là tổng giá sau chiết khấu |
 | UX residual nhỏ | Filter fade luôn hiện; CountUp dưới fold; nav desktop dày |
 | Offer schema | Chỉ khi có **bảng giá có ngày** |
 | Google Business Profile | Chỉ nếu xác minh được; NAP khớp site; không tạo listing giả |
@@ -346,7 +359,7 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 
 ## Phụ lục nhanh — “đừng làm”
 
-- Đổi giá thành 1,72 tỷ hoặc số không có trong `project.ts`.
+- Đổi giá sàn (`fromPrice` / fact 1,98 tỷ) thành 1,72 tỷ, hoặc bịa số không có trong `project.ts`. 1,72 tỷ chỉ khi chủ dự án yêu cầu, như tổng giá sau chiết khấu.
 - Thêm `sameAs` / AggregateRating / Offer bịa.
 - Index `/api`, `/sua-anh`, `/embed`.
 - Sửa Production DNS/env không xin duyệt + không đối chiếu runbook.
