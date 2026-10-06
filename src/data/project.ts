@@ -779,7 +779,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý pháp lý & minh họa",
-        text: "Bài viết mang tính giáo dục thị trường, không phải tư vấn pháp lý hay cam kết lợi nhuận / cho thuê. Giá, tiến độ, ưu đãi và loại hình sở hữu chỉ đúng theo phụ lục / bảng giá / hồ sơ tại thời điểm ký. Với The Camellia Sơn Trà, giá sàn công bố trên website là từ 1,98 tỷ — không dùng mức cũ. Anh chị nên đối chiếu sổ / GCN dự kiến, loại đất và điều kiện bàn giao với chủ đầu tư hoặc đơn vị phân phối trước khi quyết định.",
+        text: "Bài viết mang tính giáo dục thị trường, không phải tư vấn pháp lý hay cam kết lợi nhuận / cho thuê. Giá, tiến độ, ưu đãi và loại hình sở hữu chỉ đúng theo phụ lục / bảng giá / hồ sơ tại thời điểm ký. Với The Camellia Sơn Trà, giá sàn công bố trên website là từ 1,98 tỷ. Một số ưu đãi, như BST căn hộ tầng 3, có thể chào tổng giá từ 1,72 tỷ sau chiết khấu theo phương thức thanh toán; luôn đối chiếu bảng giá lúc ký. Anh chị nên đối chiếu sổ / GCN dự kiến, loại đất và điều kiện bàn giao với chủ đầu tư hoặc đơn vị phân phối trước khi quyết định.",
         links: [
           {
             to: "/tin-tuc/gia-the-camellia-son-tra-tu-1-98-ty",

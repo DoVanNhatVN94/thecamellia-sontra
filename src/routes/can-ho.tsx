@@ -124,17 +124,15 @@ function UnitsPage() {
                 The Camellia Đà Nẵng giá có phải 1,72 tỷ không?
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted sm:text-base">
-                Không. Fact sheet và trang căn hộ của dự án ghi giá từ 1,98 tỷ — không
-                dùng mức 1,72 tỷ. Khi thấy số khác trên mạng xã hội hoặc trang đại lý,
-                hãy đối chiếu lại với{" "}
-                <a href="/can-ho" className="text-terracotta underline-offset-2 hover:underline">
-                  /can-ho
-                </a>{" "}
-                hoặc fact sheet{" "}
-                <a href="/gioi-thieu" className="text-terracotta underline-offset-2 hover:underline">
-                  /gioi-thieu
+                Giá sàn công bố là từ 1,98 tỷ. Một số ưu đãi, như{" "}
+                <a
+                  href="/tin-tuc/bst-can-ho-tang-3-the-camellia-11-can"
+                  className="text-terracotta underline-offset-2 hover:underline"
+                >
+                  BST căn hộ tầng 3
                 </a>
-                .
+                , có thể chào tổng giá từ 1,72 tỷ sau chiết khấu theo phương thức thanh toán.
+                Luôn đối chiếu bảng giá tại thời điểm ký.
               </p>
             </article>
           </Reveal>
