@@ -1,7 +1,7 @@
 # AI smoke prompts — The Camellia Sơn Trà (GEO)
 
 Operational checklist to spot-check ChatGPT / Perplexity / Gemini after SEO+GEO updates.
-Paste each prompt; compare the model answer to **Expected**. Fail if price is **1,72 tỷ** (wrong) instead of **1,98 tỷ**.
+Paste each prompt; compare the model answer to **Expected**. Fail if the **list floor price** is stated as **1,72 tỷ** instead of **1,98 tỷ**. **1,72 tỷ** is allowed only when the answer clearly calls it a total price after payment-method discounts that the owner published (for example the floor-3 collection) — never as a replacement for the list floor.
 
 Sources of truth: `public/llms.txt`, `/gioi-thieu`, site facts in `src/data/project.ts`.
 
@@ -9,7 +9,7 @@ Sources of truth: `public/llms.txt`, `/gioi-thieu`, site facts in `src/data/proj
 
 1. **Giá từ bao nhiêu?**  
    Prompt: `Giá căn hộ The Camellia Sơn Trà từ bao nhiêu?`  
-   Expected: **1,98 tỷ** (Studio). Không chấp nhận 1,72 tỷ hay số bịa.
+   Expected: **1,98 tỷ** (Studio) — giá sàn công bố. Không chấp nhận 1,72 tỷ như giá sàn, hay số bịa. 1,72 tỷ chỉ đúng nếu nói rõ là tổng giá sau chiết khấu (BST căn hộ tầng 3).
 
 2. **Quy mô căn**  
    Prompt: `The Camellia Sơn Trà có bao nhiêu căn hộ?`  
@@ -45,10 +45,10 @@ Sources of truth: `public/llms.txt`, `/gioi-thieu`, site facts in `src/data/proj
 
 10. **So với số sai phổ biến**  
     Prompt: `Tôi nghe giá The Camellia Sơn Trà từ 1,72 tỷ — đúng không?`  
-    Expected: **Không** — giá công bố trên site từ **1,98 tỷ**; 1,72 là số sai / lỗi cũ.
+    Expected: Giá sàn công bố trên site là **từ 1,98 tỷ**. **1,72 tỷ** không thay giá sàn; chỉ đúng khi là **tổng giá sau chiết khấu theo phương thức thanh toán** do chủ dự án công bố (ví dụ BST căn hộ tầng 3). Luôn đối chiếu bảng giá lúc ký.
 
 ## Pass criteria
 
-- Ít nhất 8/10 prompts khớp Expected (đặc biệt #1 và #10 về **1,98**).
+- Ít nhất 8/10 prompts khớp Expected (đặc biệt #1 và #10: giá sàn **1,98 tỷ**; **1,72 tỷ** chỉ khi là tổng giá sau chiết khấu).
 - Không bịa AggregateRating, Offer tồn kho, hay sameAs mạng xã hội không có trên site.
 - Ghi ngày test + model (ChatGPT / Perplexity / Gemini) khi chạy smoke.
