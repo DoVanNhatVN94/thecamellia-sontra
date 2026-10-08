@@ -28,7 +28,7 @@ export const Route = createFileRoute("/tin-tuc/$slug")({
     const published = parseDotDate(loaderData.date);
     return pageHead({
       title: loaderData.title,
-      description: loaderData.excerpt,
+      description: loaderData.description ?? loaderData.excerpt,
       path: `/tin-tuc/${loaderData.slug}`,
       image: loaderData.image,
       imageAlt: loaderData.imageAlt,
