@@ -292,7 +292,7 @@ export const NEWS: NewsArticle[] = [
     date: "08.10.2026",
     title: "Tầng 3 The Camellia – chiều cao phần thô dự kiến 5,4m (*): nhiều lớp sống",
     description:
-      "Căn hộ tầng 3 The Camellia Sơn Trà: chiều cao phần thô dự kiến 5,4m (*), thêm tầng lửng, góc làm việc, góc nghỉ. Giá từ 1,82 tỷ/căn, tặng 3 chỉ vàng đến 17/10/2026.",
+      "Căn hộ tầng 3 The Camellia Sơn Trà: chiều cao phần thô dự kiến 5,4m (*), thêm tầng lửng, góc làm việc, góc nghỉ. Giá từ 1,82 tỷ/căn; trong tuần lễ khai trương tặng 3 chỉ vàng đến 17/10/2026.",
     excerpt:
       "Chỉ 11 căn tầng 3 có chiều cao phần thô dự kiến 5,4m (*): thêm tầng lửng, góc làm việc, khu chơi trẻ. Tuần lễ khai trương tặng 3 chỉ vàng/giao dịch đến 17/10/2026, giá chỉ từ 1,82 tỷ/căn.",
     image: "/images/news-5-4m-og.jpg",
@@ -303,7 +303,7 @@ export const NEWS: NewsArticle[] = [
     galleryFit: "contain",
     body: [
       {
-        text: "Một khoảng không cao, mở ra một cách sống riêng. Bộ sưu tập căn hộ tầng 3 tại The Camellia Sơn Trà có chiều cao phần thô dự kiến 5,4m (*) — một khoảng không đặc biệt để gia chủ tự định hình không gian sống theo cách của mình. Bộ sưu tập tầng 3 chỉ có 11 căn. Trong tuần lễ khai trương, giá chỉ từ 1,82 tỷ/căn, tặng 3 chỉ vàng mỗi giao dịch — duy nhất đến 17/10/2026.",
+        text: "Một khoảng không cao, mở ra một cách sống riêng. Bộ sưu tập căn hộ tầng 3 tại The Camellia Sơn Trà có chiều cao phần thô dự kiến 5,4m (*) — một khoảng không đặc biệt để gia chủ tự định hình không gian sống theo cách của mình. Bộ sưu tập tầng 3 chỉ có 11 căn. Giá chỉ từ 1,82 tỷ/căn; trong tuần lễ khai trương tặng 3 chỉ vàng mỗi giao dịch, duy nhất đến 17/10/2026.",
       },
       {
         heading: "Một căn, nhiều lớp không gian",
@@ -332,7 +332,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Gặp Nhật — nhận bảng giá tuần lễ khai trương",
-        text: "Anh chị muốn xem mặt bằng 11 căn tầng 3 và ý tưởng bố trí khoảng không 5,4m (*), hãy gọi 0934 885 108 gặp Nhật tư vấn trực tiếp và nhận bảng giá chi tiết; Zalo cùng số; hoặc để lại nhu cầu tại trang Liên hệ. Đặt lịch xem sa bàn tại Camellia Gallery — Tầng 9 Bạch Đằng Complex, để không lỡ ưu đãi trước 17/10/2026.",
+        text: "Anh chị muốn xem mặt bằng 11 căn tầng 3 và ý tưởng bố trí theo chiều cao phần thô dự kiến 5,4m (*), hãy gọi 0934 885 108 gặp Nhật tư vấn trực tiếp và nhận bảng giá chi tiết; Zalo cùng số; hoặc để lại nhu cầu tại trang Liên hệ. Đặt lịch xem sa bàn tại Camellia Gallery — Tầng 9 Bạch Đằng Complex, để không lỡ ưu đãi trước 17/10/2026.",
         links: [
           { to: "/lien-he", label: "Liên hệ — gặp Nhật nhận bảng giá" },
           { to: "/can-ho", label: "Xem mặt bằng & loại căn" },
