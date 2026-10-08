@@ -334,7 +334,7 @@ export function articleLd(
     "@type": "NewsArticle",
     "@id": `${url}#article`,
     headline: article.title,
-    description: article.excerpt,
+    description: article.description ?? article.excerpt,
     image: [
       {
         "@type": "ImageObject",
