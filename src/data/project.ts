@@ -294,6 +294,8 @@ export const NEWS: NewsArticle[] = [
       "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 vì mưa lớn: vì sao, nên làm gì và khi nào mở lại?",
     excerpt:
       "Ban Quản lý bán đảo Sơn Trà tạm dừng toàn bộ hoạt động tham quan từ 08/10/2026 đến khi có thông báo mới, do mưa to đến rất to và nguy cơ sạt lở taluy, đá rơi, cây đổ. Tóm tắt lý do, khuyến cáo an toàn và dự báo thời tiết những ngày tới — tin địa phương, không phải thông cáo The Camellia.",
+    description:
+      "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 do mưa lớn, nguy cơ sạt lở. Lý do, khuyến cáo an toàn và khi nào mở lại.",
     image: "/images/news-tamdung-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): đường đèo ven núi Sơn Trà ướt mưa, sương mù phủ đồi, thanh chắn đỏ trắng tạm đóng đường, biển động phía xa",
