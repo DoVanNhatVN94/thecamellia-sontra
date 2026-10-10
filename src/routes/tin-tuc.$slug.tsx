@@ -134,6 +134,9 @@ function ArticlePage() {
             heroClickable && "cursor-zoom-in",
           )}
         />
+        {article.imageCaption ? (
+          <p className="mt-2 text-sm text-muted">{article.imageCaption}</p>
+        ) : null}
         {article.youtubeId ? (
           <NewsYoutube
             id={article.youtubeId}
