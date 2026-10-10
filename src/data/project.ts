@@ -295,7 +295,7 @@ export const NEWS: NewsArticle[] = [
     title:
       "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 vì mưa lớn: vì sao, nên làm gì và khi nào mở lại?",
     excerpt:
-      "Ban Quản lý bán đảo Sơn Trà tạm dừng toàn bộ hoạt động tham quan từ 08/10/2026 đến khi có thông báo mới, do mưa to đến rất to và nguy cơ sạt lở taluy, đá rơi, cây đổ. Tóm tắt lý do, khuyến cáo an toàn và dự báo thời tiết những ngày tới — tin địa phương, không phải thông cáo The Camellia.",
+      "Ban Quản lý bán đảo Sơn Trà tạm dừng hoạt động tham quan từ 08/10/2026 đến khi có thông báo mới, do mưa to đến rất to và nguy cơ sạt lở taluy, đá rơi, cây đổ. Tóm tắt lý do, khuyến cáo an toàn và dự báo thời tiết những ngày tới — tin địa phương, không phải thông cáo The Camellia.",
     description:
       "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 do mưa lớn, nguy cơ sạt lở. Lý do, khuyến cáo an toàn và khi nào mở lại.",
     image: "/images/news-tamdung-og.jpg",
@@ -343,7 +343,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Góc nhìn mềm từ The Camellia Sơn Trà",
-        text: "Mùa mưa từ tháng 10 đến tháng 2 là một phần nhịp sống của Sơn Trà; việc cơ quan quản lý chủ động tạm dừng tham quan thay vì chờ sự cố là thông tin hữu ích cho cư dân khi sắp xếp lịch đi dạo, đưa gia đình lên bán đảo. Bài viết không suy diễn tác động lên giá bất động sản. Nếu anh chị đang tìm căn hộ sở hữu lâu dài gần khu vực, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; theo thông tin dự án, khoảng 200 m tới biển Mân Thái. Dự án 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028. Anh chị có thể để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Đà Nẵng) để xem sa bàn và nhận bảng giá cập nhật.",
+        text: "Mùa mưa từ tháng 10 đến tháng 2 là một phần nhịp sống của Sơn Trà; việc cơ quan quản lý chủ động tạm dừng tham quan thay vì chờ sự cố là thông tin hữu ích cho cư dân khi sắp xếp lịch đi dạo, đưa gia đình lên bán đảo. Bài viết không suy diễn tác động lên giá bất động sản. Nếu anh chị đang tìm căn hộ sở hữu lâu dài gần khu vực, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; theo thông tin dự án, khoảng 200 m tới biển Mân Thái. Dự án 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028. Anh chị có thể để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex, Đà Nẵng để xem sa bàn và nhận bảng giá cập nhật.",
         links: [
           {
             to: "/tin-tuc/can-ho-son-tra-so-huu-lau-dai",
@@ -393,7 +393,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Căn hộ: cải thiện chọn lọc, chưa phải phục hồi đồng đều",
-        text: "Theo báo cáo quý II/2026 của DKRA Consulting (được stockproxx.com / CafeF dẫn lại), nguồn cung sơ cấp căn hộ tăng khoảng 47%; nguồn cung mới tăng gấp khoảng 2,2 lần so với quý trước, phần lớn tập trung ở tháng 4. Lượng tiêu thụ tăng 54%, nhưng DKRA nhấn mạnh dòng tiền chủ yếu đổ vào dự án pháp lý hoàn chỉnh, tiến độ tốt và chủ đầu tư có năng lực — tức thanh khoản cục bộ, chưa lan tỏa toàn thị trường. Giá sơ cấp tăng nhẹ khoảng 2% theo quý; giá thứ cấp giảm khoảng 6% khi một bộ phận nhà đầu tư điều chỉnh kỳ vọng để thu hồi vốn. Hai tháng cuối quý, sức cầu bắt đầu chững lại khi mặt bằng lãi suất vẫn cao.",
+        text: "Theo báo cáo quý II/2026 của DKRA Consulting (được Người Quan Sát / CafeF dẫn lại), nguồn cung sơ cấp căn hộ tăng khoảng 47%; nguồn cung mới tăng gấp khoảng 2,2 lần so với quý trước, phần lớn tập trung ở tháng 4. Lượng tiêu thụ tăng 54%, nhưng DKRA nhấn mạnh dòng tiền chủ yếu đổ vào dự án pháp lý hoàn chỉnh, tiến độ tốt và chủ đầu tư có năng lực — tức thanh khoản cục bộ, chưa lan tỏa toàn thị trường. Giá sơ cấp tăng nhẹ khoảng 2% theo quý; giá thứ cấp giảm khoảng 6% khi một bộ phận nhà đầu tư điều chỉnh kỳ vọng để thu hồi vốn. Hai tháng cuối quý, sức cầu bắt đầu chững lại khi mặt bằng lãi suất vẫn cao.",
         links: [
           {
             to: "/tin-tuc/lai-suat-vay-mua-nha-tren-10-can-ho-da-nang-2026",
