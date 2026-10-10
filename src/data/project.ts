@@ -267,6 +267,8 @@ export type NewsArticle = {
   image: string;
   /** Alt for the cover / OG image. Falls back to the article title. */
   imageAlt?: string;
+  /** Optional caption under the article hero. Other articles omit it. */
+  imageCaption?: string;
   poster?: string;
   /**
    * Optional Tailwind object-position for card/cover crops (e.g. "object-top").
@@ -308,15 +310,15 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Ngày 08/10/2026, Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng (BQL) thông báo tạm dừng hoạt động tham quan tại bán đảo Sơn Trà từ ngày 08/10 cho đến khi có thông báo mới, do dự báo mưa to đến rất to, tiềm ẩn nguy cơ sạt lở đất và lũ quét. Đến tối 09/10, theo VTV, thành phố tiếp tục tạm dừng tham quan và chỉ mở lại khi điều kiện an toàn được bảo đảm. Bài viết cập nhật tình hình đến sáng 10/10/2026, nối tiếp bài lưu ý lên bán đảo tháng 10 đăng ngày 06/10. Đây là tin địa phương tổng hợp, không phải thông báo của BQL và không phải thông cáo của The Camellia Sơn Trà.",
+        text: "Ngày 08/10/2026, Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng (BQL) thông báo tạm dừng hoạt động tham quan tại bán đảo Sơn Trà từ ngày 08/10 cho đến khi có thông báo mới, do dự báo mưa to đến rất to, tiềm ẩn nguy cơ sạt lở đất và lũ quét. Đến tối 09/10, theo VTV, thành phố tiếp tục tạm dừng tham quan và chỉ mở lại khi điều kiện an toàn được bảo đảm. Bài viết cập nhật tình hình đến 17h30 ngày 10/10/2026, nối tiếp bài lưu ý lên bán đảo tháng 10 đăng ngày 06/10. Đây là tin địa phương tổng hợp, không phải thông báo của BQL và không phải thông cáo của The Camellia Sơn Trà.",
       },
       {
         heading: "Tóm tắt nhanh (đọc trong 30 giây)",
-        text: "• Từ 08/10/2026: tạm dừng toàn bộ hoạt động tham quan bán đảo Sơn Trà, đến khi có thông báo mới; thời điểm mở lại chưa được xác định. • Lý do: mưa to đến rất to từ chiều tối 07/10; đất gần bão hòa; nguy cơ sạt lở taluy, đá rơi, cây gãy đổ, nước chảy xiết trên đường đèo. • Khuyến cáo: không tự ý lên bán đảo, kể cả khi trời tạnh; không dừng xe gần vách núi, taluy, dưới cây lớn; gặp đoạn ngập hoặc đất đá chắn lối thì quay lại. • Dự báo (bản tin PCTT TP ngày 09/10): 10–11/10 còn có nơi mưa vừa đến mưa to và dông; từ 14/10 mưa có xu hướng giảm. • Khi mở lại, giờ tham quan tháng 10 đến hết tháng 2 là 7h30–17h30.",
+        text: "• Từ 08/10/2026: tạm dừng hoạt động tham quan bán đảo Sơn Trà đến khi có thông báo mới; thời điểm mở lại chưa được xác định. • Lý do: mưa to đến rất to từ chiều tối 07/10; đất gần bão hòa; nguy cơ sạt lở taluy, đá rơi, cây gãy đổ, nước chảy xiết trên đường đèo. • Khuyến cáo: không tự ý lên bán đảo, kể cả khi trời tạnh; không dừng xe gần vách núi, taluy, dưới cây lớn; gặp đoạn ngập hoặc đất đá chắn lối thì quay lại. • Dự báo (Đài KTTV Trung Bộ, bản tin ngày 09/10): 10–11/10 còn có nơi mưa vừa đến mưa to và dông; từ 14/10 mưa có xu hướng giảm. • Khi mở lại, giờ tham quan tháng 10 đến hết tháng 2 là 7h30–17h30.",
       },
       {
         heading: "Vì sao phải tạm dừng?",
-        text: "Theo VnExpress (08/10/2026), Trung tâm Dự báo Khí tượng Thủy văn quốc gia cho biết mưa to đến rất to tại Đà Nẵng kéo dài từ chiều tối 07/10 đến đêm 08/10, sau đó giảm dần từ 09/10; nhiều tuyến đường phía nam thành phố ngập sâu gần nửa mét. BQL cho biết khu vực bán đảo thường có dông lốc và gió mạnh; các tuyến đường nhiều đoạn đèo dốc, khúc cua gấp, dễ trơn trượt khi mưa, sương mù làm hạn chế tầm nhìn, cùng nguy cơ cây gãy đổ, đá rơi từ vách núi và nước chảy xiết trên mặt đường. Bản tin cảnh báo lũ quét, sạt lở đất chiều 08/10 của cơ quan phòng chống thiên tai TP Đà Nẵng ghi nhận độ ẩm đất trên địa bàn đã gần bão hòa (80–90%) và liệt kê phường Sơn Trà trong danh sách cần lưu ý, đặc biệt các taluy dọc đường bê tông, đường nhựa gần Nhà Vọng Cảnh và taluy đường Hoàng Sa.",
+        text: "Theo VnExpress (08/10/2026), Trung tâm Dự báo Khí tượng Thủy văn quốc gia cho biết mưa to đến rất to tại Đà Nẵng kéo dài từ chiều tối 07/10 đến đêm 08/10, sau đó giảm dần từ 09/10; nhiều tuyến đường phía nam thành phố ngập sâu gần nửa mét. BQL cho biết khu vực bán đảo thường có dông lốc và gió mạnh; các tuyến đường nhiều đoạn đèo dốc, khúc cua gấp, dễ trơn trượt khi mưa, sương mù làm hạn chế tầm nhìn, cùng nguy cơ cây gãy đổ, đá rơi từ vách núi và nước chảy xiết trên mặt đường. Tin cảnh báo lũ quét, sạt lở đất lúc 15h30 ngày 08/10 của Đài Khí tượng Thủy văn Trung Bộ (đăng trên cổng pctt.danang.gov.vn) ghi nhận độ ẩm đất trên địa bàn đã gần bão hòa (80–90%) và liệt kê phường Sơn Trà trong danh sách cần lưu ý, đặc biệt các taluy dọc đường bê tông, đường nhựa gần Nhà Vọng Cảnh và taluy đường Hoàng Sa.",
         image: "/images/news-tamdung-body.webp",
         imageAlt:
           "Infographic tổng hợp: bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026, lý do mưa lớn và nguy cơ sạt lở, những điều không nên làm và thông tin mở lại — theo BQL bán đảo Sơn Trà và báo chí",
@@ -327,7 +329,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Khi nào mở lại? Theo dõi ở đâu?",
-        text: "Đến sáng 10/10/2026 chưa có thông báo chính thức về thời điểm mở lại. Bản tin dự báo thời tiết 10 ngày do cơ quan phòng chống thiên tai TP Đà Nẵng phát hành chiều 09/10 cho biết các ngày 10–13/10 có mưa rào rải rác, riêng 10–11/10 có nơi mưa vừa đến mưa to và dông; từ 14–19/10 mưa có xu hướng giảm, có ngày nắng. Đây là dự báo, không phải lịch mở cửa — anh chị nên theo dõi thông báo của BQL bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng, cổng thông tin TP Đà Nẵng hoặc báo chí chính thống trước khi lên kế hoạch. Khi tham quan được mở lại, khung giờ mùa thấp điểm (tháng 10 đến hết tháng 2) là 7h30–17h30 và các quy định về tuyến, phương tiện vẫn áp dụng như bài tổng hợp ngày 06/10.",
+        text: "Đến chiều 10/10/2026 chưa có thông báo chính thức về thời điểm mở lại. Tin dự báo lúc 15h30 ngày 10/10 của Đài KTTV Trung Bộ cho biết từ chiều tối 10/10 đến sáng 11/10 Đà Nẵng còn mưa, có nơi mưa to và dông. Bản tin dự báo thời tiết 10 ngày của Đài KTTV Trung Bộ phát lúc 15h30 ngày 09/10 (đăng trên cổng pctt.danang.gov.vn) cho biết các ngày 10–13/10 có mưa rào rải rác, riêng 10–11/10 có nơi mưa vừa đến mưa to và dông; từ 14–19/10 mưa có xu hướng giảm, có ngày nắng. Đây là dự báo, không phải lịch mở cửa — anh chị nên theo dõi thông báo của BQL bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng, cổng thông tin TP Đà Nẵng hoặc báo chí chính thống trước khi lên kế hoạch. Khi tham quan được mở lại, khung giờ mùa thấp điểm (tháng 10 đến hết tháng 2) là 7h30–17h30 và các quy định về tuyến, phương tiện vẫn áp dụng như bài tổng hợp ngày 06/10.",
         links: [
           {
             to: "/tin-tuc/luu-y-len-ban-dao-son-tra-thang-10-2026",
@@ -341,7 +343,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Góc nhìn mềm từ The Camellia Sơn Trà",
-        text: "Mùa mưa từ tháng 10 đến tháng 2 là một phần nhịp sống của Sơn Trà; việc cơ quan quản lý chủ động tạm dừng tham quan thay vì chờ sự cố là thông tin hữu ích cho cư dân khi sắp xếp lịch đi dạo, đưa gia đình lên bán đảo. Bài viết không suy diễn tác động lên giá bất động sản. Nếu anh chị đang tìm căn hộ sở hữu lâu dài gần khu vực, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; theo thông tin dự án, khoảng 200 m tới biển Mân Thái và khoảng 5 phút tới Bán đảo Sơn Trà. Dự án 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028. Anh chị có thể để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Đà Nẵng) để xem sa bàn và nhận bảng giá cập nhật.",
+        text: "Mùa mưa từ tháng 10 đến tháng 2 là một phần nhịp sống của Sơn Trà; việc cơ quan quản lý chủ động tạm dừng tham quan thay vì chờ sự cố là thông tin hữu ích cho cư dân khi sắp xếp lịch đi dạo, đưa gia đình lên bán đảo. Bài viết không suy diễn tác động lên giá bất động sản. Nếu anh chị đang tìm căn hộ sở hữu lâu dài gần khu vực, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; theo thông tin dự án, khoảng 200 m tới biển Mân Thái. Dự án 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028. Anh chị có thể để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Đà Nẵng) để xem sa bàn và nhận bảng giá cập nhật.",
         links: [
           {
             to: "/tin-tuc/can-ho-son-tra-so-huu-lau-dai",
@@ -373,6 +375,7 @@ export const NEWS: NewsArticle[] = [
     image: "/images/news-thanh-khoan-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): toàn cảnh Đà Nẵng lúc hoàng hôn — sông Hàn, cầu Rồng, dãy cao ốc và đường ven biển",
+    imageCaption: "Ảnh minh họa tạo bằng AI",
     poster: "/images/news-thanh-khoan-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -386,7 +389,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Tóm tắt nhanh (đọc trong 30 giây)",
-        text: "• Quý II/2026, căn hộ sơ cấp Đà Nẵng ghi nhận khoảng 5.090 căn đang mở bán (+47% so với quý trước); giao dịch khoảng 2.793 căn (+54%), tỷ lệ hấp thụ khoảng 55% — nhưng phần lớn từ dự án mới và chủ đầu tư lớn. • Căn hộ hạng A–B chiếm khoảng 88% nguồn cung và 93% lượng tiêu thụ; Ngũ Hành Sơn khoảng 45–46% nguồn cung / tiêu thụ. • Đất nền: khoảng 1.470 sản phẩm sơ cấp (−13%), chỉ khoảng 62 nền giao dịch (−71%), tỷ lệ hấp thụ khoảng 4%. • Biệt thự nghỉ dưỡng: khoảng 9/167 căn (~5%); nhà phố / shophouse nghỉ dưỡng gần như không phát sinh giao dịch; condotel chỉ khoảng 1 giao dịch cả quý dù nguồn cung còn hơn 1.200 căn. • Sang tháng 7–8/2026, sức cầu căn hộ và đất nền đều chậm lại khi lãi suất vay mua nhà vẫn neo cao.",
+        text: "• Quý II/2026, căn hộ sơ cấp Đà Nẵng ghi nhận khoảng 5.090 căn đang mở bán (+47% so với quý trước); giao dịch khoảng 2.793 căn (+54%), tỷ lệ hấp thụ khoảng 55% — nhưng phần lớn từ dự án mới và chủ đầu tư lớn. • Căn hộ hạng A–B chiếm khoảng 88% nguồn cung và 93% lượng tiêu thụ; Ngũ Hành Sơn khoảng 45–46% nguồn cung / tiêu thụ. • Đất nền: khoảng 1.470 sản phẩm sơ cấp (−13%), chỉ khoảng 62 nền giao dịch (−71%), tỷ lệ hấp thụ khoảng 4%. • Biệt thự nghỉ dưỡng: khoảng 9/167 căn (~5%); nhà phố / shophouse nghỉ dưỡng gần như không phát sinh giao dịch; condotel chỉ ghi nhận 1 giao dịch cả quý dù nguồn cung còn khoảng 1.234 căn. • Sang tháng 8/2026, sức cầu căn hộ và đất nền đều giảm so với tháng trước khi lãi suất vay mua nhà vẫn neo cao (tháng 7 đất nền có nhích lên nhưng hấp thụ chỉ khoảng 3%).",
       },
       {
         heading: "Căn hộ: cải thiện chọn lọc, chưa phải phục hồi đồng đều",
@@ -404,7 +407,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Đất nền: hấp thụ rất thấp — khoảng 4% nguồn cung sơ cấp",
-        text: "Trái ngược căn hộ, đất nền tiếp tục là phân khúc kém sôi động. DKRA ghi nhận toàn thị trường còn khoảng 1.470 nền sơ cấp (giảm 13% so với quý trước), toàn bộ từ hàng đã mở bán trước đó; lượng giao dịch chỉ khoảng 62 nền (giảm 71%), tương đương tỷ lệ hấp thụ khoảng 4%. Giá sơ cấp gần như đi ngang nhưng vẫn neo cao do chi phí đầu vào; giá thứ cấp ít biến động. VietnamFinance (tháng 7/2026) cũng nêu sức cầu đất nền chỉ khoảng 3% nguồn cung sơ cấp. Sang tháng 8/2026, báo chí dẫn DKRA cho biết cả tháng chỉ tiêu thụ khoảng 11 nền, lượng tiêu thụ giảm khoảng 74% so với tháng trước. Với người đang cân nhắc đất nền, con số hấp thụ thấp là lời nhắc: niêm yết cao không đồng nghĩa giao dịch được — cần kiểm tra pháp lý, hạ tầng thực tế và khả năng giữ vốn dài hạn.",
+        text: "Trái ngược căn hộ, đất nền tiếp tục là phân khúc kém sôi động. DKRA ghi nhận toàn thị trường còn khoảng 1.470 nền sơ cấp (giảm 13% so với quý trước), toàn bộ từ hàng đã mở bán trước đó; lượng giao dịch chỉ khoảng 62 nền (giảm 71%), tương đương tỷ lệ hấp thụ khoảng 4%. Giá sơ cấp gần như đi ngang nhưng vẫn neo cao do chi phí đầu vào; giá thứ cấp ít biến động. Riêng tháng 7/2026, theo bản tin tháng của DKRA (VietnamFinance đăng ngày 25/08/2026), lượng tiêu thụ đất nền chỉ khoảng 3% nguồn cung sơ cấp. Sang tháng 8/2026, báo chí dẫn DKRA cho biết cả tháng chỉ tiêu thụ khoảng 11 nền, lượng tiêu thụ giảm khoảng 74% so với tháng trước. Với người đang cân nhắc đất nền, con số hấp thụ thấp là lời nhắc: niêm yết cao không đồng nghĩa giao dịch được — cần kiểm tra pháp lý, hạ tầng thực tế và khả năng giữ vốn dài hạn.",
         image: "/images/news-thanh-khoan-body.webp",
         imageAlt:
           "Infographic minh họa phân hóa thanh khoản BĐS Đà Nẵng 2026: căn hộ — thanh khoản chọn lọc; đất nền — hấp thụ thấp; nghỉ dưỡng — trầm lắng",
@@ -417,11 +420,11 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nghỉ dưỡng / condotel: gần như «ngủ đông»",
-        text: "Nhóm bất động sản nghỉ dưỡng vẫn trầm lắng dù du lịch Đà Nẵng phục hồi. Quý II/2026, biệt thự nghỉ dưỡng tiêu thụ khoảng 9 căn trên 167 căn nguồn cung (~5% hấp thụ); nhà phố / shophouse nghỉ dưỡng hầu như không phát sinh giao dịch mới; condotel chỉ khoảng 1 giao dịch cả quý dù nguồn cung còn khoảng 1.234 căn. VietnamFinance (tháng 7) và các bài đăng lại DKRA tháng 7–8 mô tả nhà phố / shophouse nghỉ dưỡng gần như không giao dịch, condotel chủ yếu là hàng tồn kho (>99% ở một số kỳ báo cáo), vướng pháp lý và tiến độ kéo dài khiến nhà đầu tư thận trọng. Du lịch tăng là nền tảng tích cực cho dịch vụ và việc làm, nhưng chưa đủ để «đánh thức» thanh khoản nghỉ dưỡng trong ngắn hạn.",
+        text: "Nhóm bất động sản nghỉ dưỡng vẫn trầm lắng dù du lịch Đà Nẵng phục hồi. Quý II/2026, biệt thự nghỉ dưỡng tiêu thụ khoảng 9 căn trên 167 căn nguồn cung (~5% hấp thụ); nhà phố / shophouse nghỉ dưỡng hầu như không phát sinh giao dịch mới; condotel chỉ ghi nhận 1 giao dịch cả quý dù nguồn cung còn khoảng 1.234 căn. VietnamFinance (tháng 7) và các bài đăng lại DKRA tháng 7–8 mô tả nhà phố / shophouse nghỉ dưỡng gần như không giao dịch, condotel chủ yếu là hàng tồn kho (>99% ở một số kỳ báo cáo), vướng pháp lý và tiến độ kéo dài khiến nhà đầu tư thận trọng. Du lịch tăng là nền tảng tích cực cho dịch vụ và việc làm, nhưng chưa đủ để «đánh thức» thanh khoản nghỉ dưỡng trong ngắn hạn.",
       },
       {
-        heading: "Tháng 7–8/2026: sức cầu chậm lại trên diện rộng",
-        text: "Sau nhịp Q2, các báo cáo tháng của DKRA cho thấy cả căn hộ và đất nền đều chịu áp lực. Tháng 8/2026: nguồn cung sơ cấp căn hộ giảm khoảng 23% so với tháng trước, hơn 94% đến từ tồn kho; lượng tiêu thụ căn hộ giảm khoảng 39% MoM và khoảng 26% so với cùng kỳ; Ngũ Hành Sơn vẫn dẫn đầu khoảng 39% nguồn cung và 63% tiêu thụ sơ cấp. Giá sơ cấp căn hộ đi ngang; giá thứ cấp giảm khoảng 1%. Bối cảnh chung: lãi suất vay mua nhà vẫn neo cao, tín dụng thận trọng — đúng với phân tích trong bài lãi suất >10% trên website này. DKRA dự báo Q3/2026 nguồn cung căn hộ mới có thể chỉ khoảng 1.500–2.000 căn; đất nền nguồn cung mới khoảng 100–200 sản phẩm; thanh khoản tiếp tục chọn lọc theo pháp lý và uy tín chủ đầu tư.",
+        heading: "Tháng 7–8/2026: thanh khoản vẫn thấp, tháng 8 giảm trên diện rộng",
+        text: "Sau nhịp Q2, các báo cáo tháng của DKRA cho thấy cả căn hộ và đất nền đều chịu áp lực: tháng 7 đất nền tăng giao dịch nhưng hấp thụ chỉ khoảng 3%, sang tháng 8 lượng tiêu thụ giảm mạnh. Tháng 8/2026: nguồn cung sơ cấp căn hộ giảm khoảng 23% so với tháng trước, hơn 94% đến từ tồn kho; lượng tiêu thụ căn hộ giảm khoảng 39% MoM và khoảng 26% so với cùng kỳ; Ngũ Hành Sơn vẫn dẫn đầu khoảng 39% nguồn cung và 63% tiêu thụ sơ cấp. Giá sơ cấp căn hộ đi ngang; giá thứ cấp giảm khoảng 1%. Bối cảnh chung: lãi suất vay mua nhà vẫn neo cao, tín dụng được kiểm soát thận trọng (theo DKRA). DKRA dự báo Q3/2026 nguồn cung căn hộ mới có thể chỉ khoảng 1.500–2.000 căn; đất nền nguồn cung mới khoảng 100–200 sản phẩm; thanh khoản tiếp tục chọn lọc theo pháp lý và uy tín chủ đầu tư.",
       },
       {
         heading: "Người mua ở thật nên đọc phân hóa thế nào?",
@@ -439,7 +442,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Góc nhìn mềm từ The Camellia Sơn Trà",
-        text: "Trong bối cảnh thanh khoản phân hóa, người mua để ở thường ưu tiên pháp lý rõ, loại hình nhà ở (không phải condotel), vị trí gần nhu cầu sống và khả năng thanh toán. The Camellia Sơn Trà là căn hộ sở hữu lâu dài: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Da Nang Complex), Đà Nẵng.",
+        text: "Trong bối cảnh thanh khoản phân hóa, người mua để ở thường ưu tiên pháp lý rõ, loại hình nhà ở (không phải condotel), vị trí gần nhu cầu sống và khả năng thanh toán. The Camellia Sơn Trà là căn hộ sở hữu lâu dài: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex, Đà Nẵng.",
         links: [
           {
             to: "/tin-tuc/gia-the-camellia-son-tra-tu-1-98-ty",
@@ -450,7 +453,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nguồn & lưu ý",
-        text: "Nguồn: DKRA Consulting — Báo cáo thị trường BĐS nhà ở TP. Đà Nẵng quý II/2026 (pdf dkra.vn) và các bài đăng lại / diễn đạt lại số liệu: stockproxx.com (02/08/2026), CafeF (16/07/2026); VietnamFinance về nhà phố / shophouse nghỉ dưỡng tháng 7/2026 (25/08/2026); báo chí dẫn DKRA tháng 8/2026 về đất nền (khoảng 11 nền) và căn hộ (tiêu thụ −39% MoM) — nhịp sống kinh doanh / thương trường. Infographic do website tổng hợp ý chính phân hóa, không invent thêm tỷ lệ ngoài nguồn đã nêu. Ảnh đầu bài là hình ảnh minh họa (tạo bằng AI), không phải ảnh thực tế dự án. Bài là tin thị trường tổng hợp trên website dự án; không phải thông cáo The Camellia / DKRA, không phải tư vấn đầu tư, không cam kết giá, lợi nhuận cho thuê hay thanh khoản. Giá / chính sách The Camellia chỉ đúng theo bảng giá và phụ lục tại thời điểm ký — giá sàn website từ 1,98 tỷ.",
+        text: "Nguồn: DKRA Consulting — Báo cáo thị trường BĐS nhà ở TP. Đà Nẵng quý II/2026 (pdf dkra.vn) và các bài đăng lại / diễn đạt lại số liệu: Người Quan Sát (02/08/2026, theo Kiến thức Đầu tư), CafeF (16/07/2026); VietnamFinance về nhà phố / shophouse nghỉ dưỡng tháng 7/2026 (25/08/2026); báo chí dẫn DKRA tháng 8/2026 về đất nền (khoảng 11 nền) và căn hộ (tiêu thụ −39% MoM) — nhịp sống kinh doanh / thương trường. Infographic do website tổng hợp ý chính về sự phân hóa, không thêm tỷ lệ nào ngoài các nguồn đã nêu. Ảnh đầu bài là hình ảnh minh họa (tạo bằng AI), không phải ảnh thực tế dự án. Bài là tin thị trường tổng hợp trên website dự án; không phải thông cáo The Camellia / DKRA, không phải tư vấn đầu tư, không cam kết giá, lợi nhuận cho thuê hay thanh khoản. Giá / chính sách The Camellia chỉ đúng theo bảng giá và phụ lục tại thời điểm ký — giá sàn website từ 1,98 tỷ.",
       },
     ],
   },
