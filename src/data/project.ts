@@ -371,7 +371,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý",
-        text: "Bài viết dựa trên thông tin sự kiện do ban tổ chức công bố. Ảnh sự kiện do ban tổ chức cung cấp. CĐT Công ty TNHH Địa ốc Thành Lâm · phát triển MBLAND · kinh doanh WELAND · phân phối DKRA Virgo. Giá và chính sách theo bảng giá tại thời điểm ký. Không cam kết lợi nhuận. Giá từ 1,72 tỷ đã áp dụng chiết khấu theo phương thức thanh toán.",
+        text: "Bài viết dựa trên thông tin sự kiện do ban tổ chức công bố. Ảnh sự kiện do ban tổ chức cung cấp. Phát triển dự án MBLAND · phát triển kinh doanh WELAND · phân phối DKRA Virgo. Giá và chính sách theo bảng giá tại thời điểm ký. Không cam kết lợi nhuận. Giá từ 1,72 tỷ đã áp dụng chiết khấu theo phương thức thanh toán.",
       },
     ],
   },
@@ -556,7 +556,7 @@ export const NEWS: NewsArticle[] = [
       "Chỉ 11 căn tầng 3 có chiều cao phần thô dự kiến 5,4m (*): thêm tầng lửng, góc làm việc, khu chơi trẻ. Tuần lễ khai trương tặng 3 chỉ vàng/giao dịch đến 17/10/2026, giá chỉ từ 1,82 tỷ/căn.",
     image: "/images/news-5-4m-og.jpg",
     imageAlt:
-      "Poster căn hộ tầng 3 The Camellia Sơn Trà trần cao 5,4m: phòng khách trần cao với đèn chùm và ban công nhìn ra biển, tổng giá chỉ từ 1,82 tỷ",
+      "Poster căn hộ tầng 3 The Camellia Sơn Trà chiều cao phần thô dự kiến 5,4m: phòng khách trần cao với đèn chùm và ban công nhìn ra biển, tổng giá chỉ từ 1,82 tỷ",
     poster: "/images/news-5-4m-poster.webp",
     gallery: ["/images/news-5-4m-poster.webp"],
     galleryFit: "contain",
@@ -569,7 +569,7 @@ export const NEWS: NewsArticle[] = [
         text: "Với chiều cao phần thô dự kiến 5,4m (*), một căn hộ có thể mở thành nhiều lớp sống. Thêm tầng lửng để tách khu ngủ riêng tư phía trên, giữ phòng khách thông tầng bên dưới. Bố trí góc làm việc yên tĩnh cho người làm từ xa. Dành một khu vui chơi cho trẻ mà không chiếm chỗ sinh hoạt chung. Và giữ lại một góc nghỉ đón gió, tùy hướng căn có thể nhìn về biển, để đọc sách, uống cà phê mỗi sáng. Mọi phương án cải tạo theo hồ sơ thiết kế và quy định của tòa nhà.",
         image: "/images/news-5-4m-poster.webp",
         imageAlt:
-          "Poster căn hộ tầng 3 The Camellia Sơn Trà trần cao 5,4m: phòng khách trần cao với đèn chùm và ban công nhìn ra biển, tổng giá chỉ từ 1,82 tỷ",
+          "Poster căn hộ tầng 3 The Camellia Sơn Trà chiều cao phần thô dự kiến 5,4m: phòng khách trần cao với đèn chùm và ban công nhìn ra biển, tổng giá chỉ từ 1,82 tỷ",
       },
       {
         heading: "Không gian cao — rộng thoáng, đón nắng và gió biển",
@@ -993,7 +993,7 @@ export const NEWS: NewsArticle[] = [
     title:
       "Đà Nẵng mở rộng đường ven biển Sơn Trà – Hội An: ý nghĩa với người mua căn hộ",
     excerpt:
-      "Theo ý kiến Chủ tịch UBND TP Đà Nẵng (Thông báo 157/TB-VP), thành phố cơ bản thống nhất phương án hướng tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An. Tin hạ tầng địa phương — không phải thông cáo The Camellia; gợi ý mềm cho người quan tâm sống dài hạn gần biển Sơn Trà.",
+      "Theo Thông báo 157/TB-VP của Văn phòng UBND TP Đà Nẵng (doanhnghiepvn.vn, Tuổi Trẻ đưa tin ngày 13/3/2026), thành phố cơ bản thống nhất phương án hướng tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An. Tin hạ tầng địa phương — không phải thông cáo The Camellia; gợi ý mềm cho người quan tâm sống dài hạn gần biển Sơn Trà.",
     image: "/images/news-venbien-og.jpg",
     poster: "/images/news-venbien-hero.webp",
     imageObjectClass: "object-top",
@@ -1004,15 +1004,15 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Đà Nẵng đang đẩy mạnh nghiên cứu mở rộng các tuyến đường du lịch ven biển, trong đó nổi bật là hành lang Hoàng Sa – Võ Nguyên Giáp – Trường Sa nối bán đảo Sơn Trà hướng Hội An. Nội dung dưới đây tổng hợp từ Thông báo 157/TB-VP (ý kiến Chủ tịch UBND TP Đà Nẵng Phạm Đức Ấn) được báo chí địa phương đăng tải — mang tính tin hạ tầng địa phương, không phải thông cáo của The Camellia Sơn Trà và không cam kết tăng giá bất động sản.",
+        text: "Đà Nẵng đang đẩy mạnh nghiên cứu mở rộng các tuyến đường du lịch ven biển, trong đó nổi bật là hành lang Hoàng Sa – Võ Nguyên Giáp – Trường Sa nối bán đảo Sơn Trà hướng Hội An. Nội dung dưới đây tổng hợp từ Thông báo 157/TB-VP của Văn phòng UBND TP Đà Nẵng (doanhnghiepvn.vn, Tuổi Trẻ đưa tin ngày 13/3/2026) — mang tính tin hạ tầng địa phương, không phải thông cáo của The Camellia Sơn Trà và không cam kết tăng giá bất động sản.",
       },
       {
         heading: "Tóm tắt nhanh (đọc trong 30 giây)",
-        text: "• Tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An: cơ bản thống nhất phương án hướng tuyến theo Sở Xây dựng. • Chức năng: phục vụ phát triển du lịch, dịch vụ dọc biển; nghiên cứu phân luồng sang tuyến lân cận. • Chủ đầu tư dự án mở rộng: Ban QLDA ĐTXD công trình dân dụng, công nghiệp và hạ tầng kỹ thuật Đà Nẵng (CIC&TII PMU). • CIC&TII PMU lập thiết kế / cảnh quan tuyến; đề xuất hầm chui / cầu vượt cho người đi bộ xuống biển; báo cáo UBND trong tháng 5/2026. • Cải tạo cảnh quan vỉa hè / bãi cát: tổng mức đầu tư dự kiến hơn 620 tỷ đồng — giai đoạn 1 (2026–2027) khu vực trọng điểm; giai đoạn 2 (2028–2029) hạng mục còn lại. • Tiến độ thực tế theo quyết định / thông báo UBND; bài này không suy diễn thời điểm hoàn thành hay mức tăng giá BĐS.",
+        text: "• Tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An: cơ bản thống nhất phương án hướng tuyến theo Sở Xây dựng. • Chức năng: phục vụ phát triển du lịch, dịch vụ dọc biển; nghiên cứu phân luồng sang tuyến lân cận. • Chủ đầu tư dự án mở rộng: Ban QLDA ĐTXD công trình dân dụng, công nghiệp và hạ tầng kỹ thuật Đà Nẵng (CIC&TII PMU). • CIC&TII PMU lập thiết kế / cảnh quan tuyến; đề xuất hầm chui / cầu vượt cho người đi bộ xuống biển. Theo thông báo, đơn vị được giao báo cáo UBND trong tháng 5/2026; kết quả chưa được công bố trong nguồn bài dẫn. • Cải tạo cảnh quan vỉa hè / bãi cát: tổng mức đầu tư dự kiến hơn 620 tỷ đồng — giai đoạn 1 (2026–2027) khu vực trọng điểm; giai đoạn 2 (2028–2029) hạng mục còn lại. • Tiến độ thực tế theo quyết định / thông báo UBND; bài này không suy diễn thời điểm hoàn thành hay mức tăng giá BĐS.",
       },
       {
         heading: "Hành lang Sơn Trà → Hội An: thống nhất hướng tuyến",
-        text: "Theo Thông báo 157/TB-VP được doanhnghiepvn.vn và cadn.com.vn đưa tin, Chủ tịch UBND TP Đà Nẵng cơ bản thống nhất phương án hướng tuyến theo đề xuất của Sở Xây dựng đối với tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An. Đây là trục ven biển nối bán đảo Sơn Trà hướng Hội An, được định hướng phục vụ phát triển du lịch và dịch vụ dọc biển, đồng thời nghiên cứu phân luồng giao thông sang các tuyến lân cận để giảm áp lực cho hành lang chính.",
+        text: "Theo Thông báo 157/TB-VP của Văn phòng UBND TP Đà Nẵng (doanhnghiepvn.vn, Tuổi Trẻ đưa tin ngày 13/3/2026), Chủ tịch UBND TP Đà Nẵng cơ bản thống nhất phương án hướng tuyến theo đề xuất của Sở Xây dựng đối với tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa – Hội An. Đây là trục ven biển nối bán đảo Sơn Trà hướng Hội An, được định hướng phục vụ phát triển du lịch và dịch vụ dọc biển, đồng thời nghiên cứu phân luồng giao thông sang các tuyến lân cận để giảm áp lực cho hành lang chính.",
         links: [
           {
             to: "/tin-tuc/vi-sao-son-tra-man-thai",
@@ -1022,7 +1022,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Ai làm chủ đầu tư? Thiết kế & tiếp cận biển",
-        text: "Chủ đầu tư dự án mở rộng được nêu là Ban Quản lý dự án đầu tư xây dựng công trình dân dụng, công nghiệp và hạ tầng kỹ thuật thành phố Đà Nẵng (CIC&TII PMU). Đơn vị này được giao lập thiết kế, cảnh quan cho tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa; nghiên cứu đề xuất hầm chui hoặc cầu vượt phục vụ người đi bộ xuống biển; và báo cáo UBND thành phố trong tháng 5/2026. Mốc báo cáo này là kế hoạch theo thông báo — tiến độ chi tiết vẫn phụ thuộc quyết định tiếp theo của UBND.",
+        text: "Chủ đầu tư dự án mở rộng được nêu là Ban Quản lý dự án đầu tư xây dựng công trình dân dụng, công nghiệp và hạ tầng kỹ thuật thành phố Đà Nẵng (CIC&TII PMU). Đơn vị này được giao lập thiết kế, cảnh quan cho tuyến Hoàng Sa – Võ Nguyên Giáp – Trường Sa; nghiên cứu đề xuất hầm chui hoặc cầu vượt phục vụ người đi bộ xuống biển. Theo thông báo, đơn vị được giao báo cáo UBND trong tháng 5/2026; kết quả chưa được công bố trong nguồn bài dẫn.",
         image: "/images/news-venbien-body.webp",
         imageAlt:
           "Hình ảnh minh họa — đường ven biển / vỉa hè cảnh quan Đà Nẵng (không phải hiện trạng thi công chính thức của dự án mở rộng)",
@@ -1066,7 +1066,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nguồn & lưu ý",
-        text: "Nguồn chính: Thông báo 157/TB-VP (ý kiến Chủ tịch UBND TP Đà Nẵng Phạm Đức Ấn) — tổng hợp / diễn đạt lại theo doanhnghiepvn.vn và cadn.com.vn. Hạng mục phụ: gói thầu kiên cố hóa đường Hoàng Sa ~66,6 tỷ (Liên danh Đức Nhì - GTC) theo vietnam.vn / Báo Đà Nẵng (khoảng 8/2026). Bài mang tính tin hạ tầng địa phương trên website dự án; không phải thông cáo The Camellia / CIC&TII PMU / UBND; không cam kết tăng giá BĐS, thanh khoản hay tiến độ hoàn thành từng đoạn đường. Tiến độ mở rộng theo quyết định UBND. Giá / quỹ hàng The Camellia chỉ đúng theo bảng giá và phụ lục tại thời điểm ký — giá sàn website từ 1,98 tỷ.",
+        text: "Nguồn chính: Thông báo 157/TB-VP của Văn phòng UBND TP Đà Nẵng (ý kiến Chủ tịch UBND TP Đà Nẵng Phạm Đức Ấn; doanhnghiepvn.vn, Tuổi Trẻ đưa tin ngày 13/3/2026; cadn.com.vn). Hạng mục phụ: gói thầu kiên cố hóa đường Hoàng Sa ~66,6 tỷ (Liên danh Đức Nhì - GTC) theo vietnam.vn / Báo Đà Nẵng (khoảng 8/2026). Bài mang tính tin hạ tầng địa phương trên website dự án; không phải thông cáo The Camellia / CIC&TII PMU / UBND; không cam kết tăng giá BĐS, thanh khoản hay tiến độ hoàn thành từng đoạn đường. Tiến độ mở rộng theo quyết định UBND. Giá / quỹ hàng The Camellia chỉ đúng theo bảng giá và phụ lục tại thời điểm ký — giá sàn website từ 1,98 tỷ.",
       },
     ],
   },
