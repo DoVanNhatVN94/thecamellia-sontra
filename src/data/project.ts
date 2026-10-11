@@ -577,7 +577,7 @@ export const NEWS: NewsArticle[] = [
         links: [
           {
             to: "/tin-tuc/bst-can-ho-tang-3-the-camellia-11-can",
-            label: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, phần thô cao dự kiến 5,4m",
+            label: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, chiều cao phần thô dự kiến 5,4m (*)",
           },
         ],
       },
@@ -771,7 +771,7 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "bst-can-ho-tang-3-the-camellia-11-can",
     date: "06.10.2026",
-    title: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, phần thô cao dự kiến 5,4m",
+    title: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, chiều cao phần thô dự kiến 5,4m (*)",
     excerpt:
       "Bộ sưu tập căn hộ tầng 3 The Camellia: chỉ 11 căn, chiều cao phần thô dự kiến 5,4m (*), ngoài cửa là bể bơi–gym–kid club. Tổng giá chỉ từ 1,72 tỷ. Gặp Nhật 0934 885 108.",
     image: "/images/news-tang-3-og.jpg",
