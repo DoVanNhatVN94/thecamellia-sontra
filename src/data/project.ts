@@ -388,6 +388,7 @@ export const NEWS: NewsArticle[] = [
     image: "/images/news-tamdung-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): đường đèo ven núi Sơn Trà ướt mưa, sương mù phủ đồi, thanh chắn đỏ trắng tạm đóng đường, biển động phía xa",
+    imageCaption: "Ảnh minh họa tạo bằng AI – không phải ảnh hiện trường",
     poster: "/images/news-tamdung-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -576,7 +577,7 @@ export const NEWS: NewsArticle[] = [
         links: [
           {
             to: "/tin-tuc/bst-can-ho-tang-3-the-camellia-11-can",
-            label: "BST căn hộ tầng 3: chỉ 11 căn, trần cao đến 5,4m",
+            label: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, phần thô cao dự kiến 5,4m",
           },
         ],
       },
@@ -613,6 +614,7 @@ export const NEWS: NewsArticle[] = [
     image: "/images/news-dothiso-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): người dân và du khách quét mã QR thanh toán tại quầy ăn ven biển Sơn Trà, phía sau là núi Sơn Trà",
+    imageCaption: "Ảnh minh họa tạo bằng AI",
     poster: "/images/news-dothiso-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -689,6 +691,7 @@ export const NEWS: NewsArticle[] = [
     image: "/images/news-dulich-fdi-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): bờ sông Hàn Đà Nẵng lúc hoàng hôn, cầu Rồng và các tòa nhà ven sông, du khách đi dạo",
+    imageCaption: "Ảnh minh họa tạo bằng AI",
     poster: "/images/news-dulich-fdi-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -768,12 +771,12 @@ export const NEWS: NewsArticle[] = [
   {
     slug: "bst-can-ho-tang-3-the-camellia-11-can",
     date: "06.10.2026",
-    title: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, trần cao đến 5,4m",
+    title: "BST căn hộ tầng 3 The Camellia: chỉ 11 căn, phần thô cao dự kiến 5,4m",
     excerpt:
-      "Bộ sưu tập căn hộ tầng 3 The Camellia: chỉ 11 căn, trần cao đến 5,4m, ngoài cửa là bể bơi–gym–kid club. Tổng giá chỉ từ 1,72 tỷ. Gặp Nhật 0934 885 108.",
+      "Bộ sưu tập căn hộ tầng 3 The Camellia: chỉ 11 căn, chiều cao phần thô dự kiến 5,4m (*), ngoài cửa là bể bơi–gym–kid club. Tổng giá chỉ từ 1,72 tỷ. Gặp Nhật 0934 885 108.",
     image: "/images/news-tang-3-og.jpg",
     imageAlt:
-      "Poster Bộ sưu tập căn hộ tầng 3 The Camellia Sơn Trà — giới hạn 11 căn, trần cao 5,4m",
+      "Poster Bộ sưu tập căn hộ tầng 3 The Camellia Sơn Trà — giới hạn 11 căn, chiều cao phần thô dự kiến 5,4m (*)",
     poster: "/images/news-tang-3-hero.webp",
     gallery: [
       "/images/news-tang-3-hero.webp",
@@ -783,11 +786,11 @@ export const NEWS: NewsArticle[] = [
     galleryFit: "contain",
     body: [
       {
-        text: "Dành riêng cho những tâm hồn thích sự tự do và trải nghiệm, Bộ sưu tập căn hộ tầng 3 tại The Camellia Sơn Trà mang đến một không gian sống hội tụ ba đặc quyền khác biệt — quỹ giới hạn chỉ 11 căn. Trần cao đến 5,4m, sát tiện ích nội khu ngay ngoài cửa, tổng giá chỉ từ 1,72 tỷ. Dự án 469 căn, 25 tầng nổi & 2 hầm, sổ hồng sở hữu lâu dài, giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng; khoảng 200m tới biển Mân Thái. CĐT Công ty TNHH Địa ốc Thành Lâm · phát triển MBLAND · kinh doanh WELAND · phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028.",
+        text: "Dành riêng cho những tâm hồn thích sự tự do và trải nghiệm, Bộ sưu tập căn hộ tầng 3 tại The Camellia Sơn Trà mang đến một không gian sống hội tụ ba đặc quyền khác biệt — quỹ giới hạn chỉ 11 căn. Với chiều cao phần thô dự kiến 5,4m (*), không gian sát tiện ích nội khu ngay ngoài cửa, tổng giá chỉ từ 1,72 tỷ. Dự án 469 căn, 25 tầng nổi & 2 hầm, sổ hồng sở hữu lâu dài, giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng; khoảng 200m tới biển Mân Thái. CĐT Công ty TNHH Địa ốc Thành Lâm · phát triển MBLAND · kinh doanh WELAND · phân phối DKRA Virgo; bàn giao dự kiến khoảng 2028.",
       },
       {
         heading: "Ba đặc quyền trải nghiệm không giới hạn",
-        text: "Một khoảng sống riêng: số lượng giới hạn chỉ 11 căn, mật độ cư dân thấp, riêng tư, hành lang và không gian chung tĩnh lặng. Một khoảng cao rộng mở: trần cao đến 5,4m, thoáng đón nắng gió biển, có thể thiết kế thêm tầng lửng tăng diện tích sử dụng. Một nhịp sống tiện nghi: không chờ thang máy — ngay ngoài cửa là bể bơi, vườn cảnh quan, Kid Club, Gym & Yoga.",
+        text: "Một khoảng sống riêng: số lượng giới hạn chỉ 11 căn, mật độ cư dân thấp, riêng tư, hành lang và không gian chung tĩnh lặng. Một khoảng cao rộng mở: chiều cao phần thô dự kiến 5,4m (*), thoáng đón nắng gió biển, có thể thiết kế thêm tầng lửng tăng diện tích sử dụng. Một nhịp sống tiện nghi: không chờ thang máy — ngay ngoài cửa là bể bơi, vườn cảnh quan, Kid Club, Gym & Yoga.",
       },
       {
         heading: "Mặt bằng tầng 3 — căn ở xen tiện ích",
@@ -797,8 +800,8 @@ export const NEWS: NewsArticle[] = [
           "Mặt bằng tầng 3 The Camellia Sơn Trà: căn hộ xen tiện ích bể bơi, gym, kid club, hướng Núi Sơn Trà và biển Mân Thái",
       },
       {
-        heading: "Trần cao đến 5,4m — không gian linh hoạt, đầy cảm hứng",
-        text: "Trần cao đến 5,4m giúp căn hộ cảm giác rộng thoáng và mở ra khả năng thiết kế tầng lửng tăng diện tích sử dụng. Ảnh căn 1PN+ trong gallery là hình ảnh minh họa phong cách không gian cao có tầng lửng — anh chị đối chiếu mặt bằng và hồ sơ kỹ thuật theo từng mã căn khi tư vấn.",
+        heading: "Chiều cao phần thô dự kiến 5,4m (*) — không gian linh hoạt, đầy cảm hứng",
+        text: "Chiều cao phần thô dự kiến 5,4m (*) giúp căn hộ cảm giác rộng thoáng và mở ra khả năng thiết kế tầng lửng tăng diện tích sử dụng. Ảnh căn 1PN+ trong gallery là hình ảnh minh họa phong cách không gian cao có tầng lửng — anh chị đối chiếu mặt bằng và hồ sơ kỹ thuật theo từng mã căn khi tư vấn.",
         image: "/images/news-tang-3-can-1pn.webp",
         imageAlt:
           "Minh họa không gian căn trần cao có tầng lửng tại The Camellia Sơn Trà — hình ảnh minh họa, không phải mặt bằng mã căn cụ thể",
@@ -809,7 +812,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Câu hỏi thường gặp",
-        text: "BST căn hộ tầng 3 có bao nhiêu căn? Chỉ 11 căn. Trần cao bao nhiêu? Trần cao đến 5,4m. Tiện ích có ngay tầng không? Có — bể bơi, vườn cảnh quan, Kid Club, Gym & Yoga ngay ngoài cửa. Tổng giá thế nào? Tổng giá chỉ từ 1,72 tỷ. Tư vấn ở đâu? 0934 885 108 gặp Nhật · Zalo cùng số · trang Liên hệ · Camellia Gallery Tầng 9 Bạch Đằng Complex.",
+        text: "BST căn hộ tầng 3 có bao nhiêu căn? Chỉ 11 căn. Chiều cao phần thô dự kiến bao nhiêu? Chiều cao phần thô dự kiến 5,4m (*). Tiện ích có ngay tầng không? Có — bể bơi, vườn cảnh quan, Kid Club, Gym & Yoga ngay ngoài cửa. Tổng giá thế nào? Tổng giá chỉ từ 1,72 tỷ. Tư vấn ở đâu? 0934 885 108 gặp Nhật · Zalo cùng số · trang Liên hệ · Camellia Gallery Tầng 9 Bạch Đằng Complex.",
       },
       {
         heading: "Gặp Nhật — nhận bảng giá chi tiết",
@@ -825,7 +828,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý / nguồn",
-        text: "Nguồn: thông tin Bộ sưu tập căn hộ tầng 3 và mặt bằng tầng 3 do đơn vị phát triển kinh doanh / phân phối cung cấp; số liệu dự án (469 căn, 25 tầng, sổ hồng lâu dài, vị trí, CĐT · MBLAND · WELAND · DKRA Virgo, bàn giao khoảng 2028) bám thecamellia-sontra.com. Giá đã áp dụng chiết khấu theo phương thức thanh toán; giá và chính sách theo bảng giá đợt tại thời điểm ký. Không cam kết lợi nhuận. Bài không thay thế hồ sơ pháp lý hay HĐMB chính thức.",
+        text: "Nguồn: thông tin Bộ sưu tập căn hộ tầng 3 và mặt bằng tầng 3 do đơn vị phát triển kinh doanh / phân phối cung cấp; số liệu dự án (469 căn, 25 tầng, sổ hồng lâu dài, vị trí, CĐT · MBLAND · WELAND · DKRA Virgo, bàn giao khoảng 2028) bám thecamellia-sontra.com. Giá đã áp dụng chiết khấu theo phương thức thanh toán; giá và chính sách theo bảng giá đợt tại thời điểm ký. Không cam kết lợi nhuận. Bài không thay thế hồ sơ pháp lý hay HĐMB chính thức. (*) Chiều cao phần thô dự kiến.",
       },
     ],
   },
@@ -838,6 +841,7 @@ export const NEWS: NewsArticle[] = [
     excerpt:
       "Từ tháng 10, giờ tham quan bán đảo Sơn Trà là 7h30–17h30; Ban Quản lý vừa đặt 12 biển cảnh báo không cho khỉ ăn, phường Sơn Trà tăng tuần tra đỗ xe ở Miếu Đôi, Lê Văn Lương, Hoàng Sa. Tóm tắt tuyến, phương tiện được phép và lưu ý mưa lớn — tin địa phương, không phải thông cáo The Camellia.",
     image: "/images/news-bandao-og.jpg",
+    imageCaption: "Ảnh minh họa tạo bằng AI",
     poster: "/images/news-bandao-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -916,6 +920,7 @@ export const NEWS: NewsArticle[] = [
     excerpt:
       "Lãi vay mua nhà cố định 12–24 tháng bình quân khoảng 10,9%/năm (DKRA, tháng 8/2026), thả nổi sau ưu đãi có thể 12–17%/năm. Ví dụ tính khoản vay 1,4 tỷ ở mức 9% – 11% – 14% và checklist 5 câu trước khi vay — tin thị trường, không phải thông cáo The Camellia.",
     image: "/images/news-lai-suat-og.jpg",
+    imageCaption: "Ảnh minh họa tạo bằng AI",
     poster: "/images/news-lai-suat-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -1445,7 +1450,7 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Ngắm trăng tròn trên biển sóng vỗ — cùng người thân phá cỗ đêm rằm. Trung thu là lúc chậm lại bên gia đình, nhìn ánh trăng soi mặt biển và cảm nhận nhịp sống kề rừng, sát biển tại Sơn Trà. The Camellia Sơn Trà hướng tới một nơi để trở về: thiên nhiên gần gũi, không gian ấm áp và những khoảnh khắc sum vầy đáng nhớ.",
+        text: "Ngắm trăng tròn trên biển sóng vỗ — cùng người thân phá cỗ đêm rằm. Trung thu là lúc chậm lại bên gia đình, nhìn ánh trăng soi mặt biển và cảm nhận nhịp sống giữa rừng và biển Sơn Trà. The Camellia Sơn Trà hướng tới một nơi để trở về: thiên nhiên gần gũi, không gian ấm áp và những khoảnh khắc sum vầy đáng nhớ.",
       },
       {
         heading: "Lời chúc Trung thu",
@@ -1453,7 +1458,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Ghé thăm Sales Gallery",
-        text: "The Camellia Son Tra - Da Nang kính mời anh chị ghé Sales Gallery tại Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng — hoặc liên hệ Hotline / Zalo 0934 885 108 để được tư vấn và đặt lịch tham quan.",
+        text: "The Camellia Son Tra - Da Nang kính mời anh chị ghé Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng — hoặc liên hệ Hotline / Zalo 0934 885 108 để được tư vấn và đặt lịch tham quan.",
         links: [{ to: "/lien-he", label: "Đến trang liên hệ — đặt lịch tham quan" }],
       },
     ],
@@ -1526,7 +1531,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nhận bảng giá & tư vấn căn",
-        text: "Gọi hoặc nhắn Zalo 0934 885 108, hoặc gửi form tại trang liên hệ để nhận bảng giá đợt hiện tại và tư vấn Studio / 1PN+1 / 2PN / 3PN phù hợp ngân sách. Sales Gallery: Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng.",
+        text: "Gọi hoặc nhắn Zalo 0934 885 108, hoặc gửi form tại trang liên hệ để nhận bảng giá đợt hiện tại và tư vấn Studio / 1PN+1 / 2PN / 3PN phù hợp ngân sách. Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng. Giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà, Đà Nẵng.",
         links: [
           { to: "/lien-he", label: "Đến trang liên hệ" },
           { to: "/gioi-thieu", label: "Xem fact sheet" },
@@ -1540,7 +1545,7 @@ export const NEWS: NewsArticle[] = [
     date: "24.09.2026",
     title: "Ra mắt văn phòng bán hàng The Camellia Sơn Trà",
     excerpt:
-      "The Camellia Sơn Trà chính thức ra mắt Sales Gallery — không gian trải nghiệm mới tại Tầng 9, Tòa nhà Da Nang Complex. Soft Opening 25/09; Grand Opening 10/10.",
+      "The Camellia Sơn Trà chính thức ra mắt Sales Gallery — không gian trải nghiệm mới tại Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng. Soft Opening 25/09; Grand Opening 10/10.",
     image: "/images/featured-sales-gallery-16x9.jpg",
     poster: "/images/news-sales-gallery.webp",
     // Upper-biased landscape — keep logos MBLAND / THE CAMELLIA / WELAND and faces
@@ -1552,7 +1557,7 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "The Camellia Sơn Trà chính thức ra mắt Sales Gallery / văn phòng bán hàng — không gian chào đón chủ nhân tương lai tại Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Đây là nơi anh chị trải nghiệm dự án SON TRA – DA NANG trước khi quyết định an cư hay tích sản.",
+        text: "The Camellia Sơn Trà chính thức ra mắt Sales Gallery / văn phòng bán hàng — không gian chào đón chủ nhân tương lai tại Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng. Đây là nơi anh chị trải nghiệm dự án SON TRA – DA NANG trước khi quyết định an cư hay tích sản.",
       },
       {
         heading: "Không gian thưởng lãm",
@@ -1564,7 +1569,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Địa chỉ",
-        text: "Tầng 9, Tòa nhà Da Nang Complex, Đà Nẵng. Liên hệ Hotline / Zalo 0934 885 108 hoặc để lại nhu cầu tại trang Liên hệ để đặt lịch tham quan và nhận bảng giá cập nhật (giá công bố từ 1,98 tỷ).",
+        text: "Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng. Liên hệ Hotline / Zalo 0934 885 108 hoặc để lại nhu cầu tại trang Liên hệ để đặt lịch tham quan và nhận bảng giá cập nhật (giá công bố từ 1,98 tỷ).",
         links: [{ to: "/lien-he", label: "Đến trang liên hệ — đặt lịch tham quan" }],
       },
     ],
@@ -1719,7 +1724,7 @@ export const NEWS: NewsArticle[] = [
     date: "22.09.2026",
     title: "Tích sản vĩnh cửu — di sản cho thế hệ mai sau",
     excerpt:
-      "Quỹ đất kề biển Đà Nẵng ngày càng khan hiếm. Sở hữu căn hộ The Camellia Sơn Trà không chỉ là an cư — mà là nắm giữ tài sản pháp lý lâu dài, bàn giao hoàn thiện, giá từ 1,98 tỷ.",
+      "Sở hữu căn hộ The Camellia Sơn Trà không chỉ là an cư — mà là nắm giữ tài sản pháp lý lâu dài, bàn giao hoàn thiện, giá từ 1,98 tỷ.",
     image: "/images/featured-tich-san-16x9.jpg",
     poster: "/images/news-tich-san.webp",
     // Upper-biased landscape crop — bias cover toward logos/crowns/faces
@@ -1731,7 +1736,7 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Quỹ đất kề biển Đà Nẵng ngày càng khan hiếm. Tại P. Sơn Trà — nơi rừng nguyên sinh, biển Mân Thái và nhịp phố giao nhau — The Camellia Sơn Trà được định vị không chỉ là nơi an cư, mà là tài sản pháp lý lâu dài để truyền lại cho thế hệ sau. Giá công bố từ 1,98 tỷ; bàn giao hoàn thiện; sổ hồng sở hữu lâu dài theo thông tin dự án trên site.",
+        text: "Tại P. Sơn Trà — nơi rừng nguyên sinh, biển Mân Thái và nhịp phố giao nhau — The Camellia Sơn Trà được định vị không chỉ là nơi an cư, mà là tài sản pháp lý lâu dài để truyền lại cho thế hệ sau. Giá công bố từ 1,98 tỷ; bàn giao hoàn thiện; sổ hồng sở hữu lâu dài theo thông tin dự án trên site.",
       },
       {
         heading: "Pháp lý sở hữu lâu dài — nền tảng của tích sản",
@@ -1746,7 +1751,7 @@ export const NEWS: NewsArticle[] = [
         text: "Chất lượng tích sản gắn với đội ngũ triển khai. Chủ đầu tư Công ty TNHH Địa ốc Thành Lâm; phát triển MBLAND; kinh doanh WELAND; phân phối DKRA Virgo. Thiết kế Archivina. Nhà thầu Tập đoàn Xây dựng Delta. Quy mô 469 căn, 25 tầng nổi & 2 hầm, khu đất 4.299,9 m² tại giao lộ Lê Văn Lương – Lê Đức Thọ — địa chỉ đã công bố trên site, không suy diễn thêm.",
       },
       {
-        heading: "Bàn giao full nội thất — nhận nhà để ở thật",
+        heading: "Bàn giao hoàn thiện — nhận nhà để ở thật",
         text: "Căn hộ The Camellia Sơn Trà bàn giao hoàn thiện theo tiêu chuẩn đã công bố trên site (Xingfa, Daikin, Hafele, Grohe/Kohler). Studio đến 3 phòng ngủ — bếp mở, loggia, nội thất sẵn sàng — phù hợp an cư hoặc giữ tài sản dài hạn mà không phải tự hoàn thiện từ thô. Duplex theo lộ trình công bố mặt bằng. Bàn giao dự kiến Quý I/2028.",
         links: [
           { to: "/can-ho", label: "Xem loại căn & mặt bằng" },
