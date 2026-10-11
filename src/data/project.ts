@@ -233,7 +233,7 @@ export const LEGAL_MILESTONES = [
   { date: "26.07.2026", title: "MBLAND ra mắt dự án đầu tiên tại Đà Nẵng" },
   { date: "09.09.2026", title: "Chính thức ra hàng The Camellia Sơn Trà" },
   { date: "12.09.2026", title: "Premier Launch — 159 giao dịch thành công" },
-  { date: "25.09.2026", title: "Soft Opening Sales Gallery — Da Nang Complex" },
+  { date: "25.09.2026", title: "Soft Opening Sales Gallery — Bạch Đằng Complex" },
 ] as const;
 
 export type NewsBlock = {
@@ -748,7 +748,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Góc nhìn mềm từ The Camellia Sơn Trà",
-        text: "Sơn Trà là khu vực gần biển và bán đảo — nơi du khách quốc tế thường lui tới — nhưng với người mua để ở, điều đáng cân nhắc vẫn là pháp lý, vị trí và khả năng thanh toán. The Camellia Sơn Trà là căn hộ sở hữu lâu dài: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Chính sách bán hàng trên website gồm các phương án HTLS, Chuẩn, TTS và Thảnh thơi — điều kiện áp dụng theo chính sách đợt tại thời điểm ký. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Da Nang Complex), Đà Nẵng.",
+        text: "Sơn Trà là khu vực gần biển và bán đảo — nơi du khách quốc tế thường lui tới — nhưng với người mua để ở, điều đáng cân nhắc vẫn là pháp lý, vị trí và khả năng thanh toán. The Camellia Sơn Trà là căn hộ sở hữu lâu dài: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Chính sách bán hàng trên website gồm các phương án HTLS, Chuẩn, TTS và Thảnh thơi — điều kiện áp dụng theo chính sách đợt tại thời điểm ký. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng.",
         links: [
           {
             to: "/tin-tuc/can-ho-son-tra-so-huu-lau-dai",
@@ -967,7 +967,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Góc nhìn mềm từ The Camellia Sơn Trà",
-        text: "Khi lãi suất neo cao, nhiều người mua ưu tiên phương án thanh toán giãn theo tiến độ và chọn căn hộ có pháp lý sở hữu lâu dài để ở thật. Trên website, chính sách bán hàng The Camellia Sơn Trà nêu phương án HTLS (hỗ trợ vay đến 70%, hỗ trợ lãi 0% trong 18 tháng theo chương trình ngân hàng / đợt) cùng các phương án Chuẩn, TTS và Thảnh thơi — điều kiện áp dụng theo chính sách đợt tại thời điểm ký. Dù chọn phương án nào, anh chị vẫn nên tính trước phần lãi sau giai đoạn hỗ trợ như checklist ở trên. The Camellia Sơn Trà: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery — Tầng 9, Bạch Đằng Complex (Da Nang Complex), Đà Nẵng.",
+        text: "Khi lãi suất neo cao, nhiều người mua ưu tiên phương án thanh toán giãn theo tiến độ và chọn căn hộ có pháp lý sở hữu lâu dài để ở thật. Trên website, chính sách bán hàng The Camellia Sơn Trà nêu phương án HTLS (hỗ trợ vay đến 70%, hỗ trợ lãi 0% trong 18 tháng theo chương trình ngân hàng / đợt) cùng các phương án Chuẩn, TTS và Thảnh thơi — điều kiện áp dụng theo chính sách đợt tại thời điểm ký. Dù chọn phương án nào, anh chị vẫn nên tính trước phần lãi sau giai đoạn hỗ trợ như checklist ở trên. The Camellia Sơn Trà: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo; giao lộ Lê Văn Lương – Lê Đức Thọ, P. Sơn Trà; bàn giao dự kiến khoảng 2028. Để nhận bảng giá và phương án thanh toán đúng đợt, anh chị để lại nhu cầu tại trang Liên hệ, nhắn Zalo / gọi Hotline 0934 885 108, hoặc ghé Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng.",
         links: [
           {
             to: "/tin-tuc/chinh-sach-ban-hang-htls-early-bird-chiet-khau",
@@ -1275,7 +1275,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Nếu anh chị đang cân nhắc Sơn Trà",
-        text: "Có thể xem The Camellia Sơn Trà như một lựa chọn căn hộ biển sở hữu lâu dài trong khu vực: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo. Tham quan sa bàn / nhận tư vấn tại Camellia Gallery — Tầng 9, Bạch Đằng Complex (Da Nang Complex), Đà Nẵng; hoặc để lại nhu cầu tại trang Liên hệ / Zalo – Hotline 0934 885 108.",
+        text: "Có thể xem The Camellia Sơn Trà như một lựa chọn căn hộ biển sở hữu lâu dài trong khu vực: 469 căn, giá từ 1,98 tỷ; CĐT Công ty TNHH Địa ốc Thành Lâm · Phát triển MBLAND · Kinh doanh WELAND · Phân phối DKRA Virgo. Tham quan sa bàn / nhận tư vấn tại Camellia Gallery, Tầng 9, Bạch Đằng Complex (50 Bạch Đằng), Đà Nẵng; hoặc để lại nhu cầu tại trang Liên hệ / Zalo – Hotline 0934 885 108.",
         links: [
           { to: "/lien-he", label: "Liên hệ — nhận bảng giá & tư vấn" },
           {
