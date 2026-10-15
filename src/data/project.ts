@@ -695,9 +695,9 @@ export const NEWS: NewsArticle[] = [
     title:
       "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 vì mưa lớn: vì sao, nên làm gì và khi nào mở lại?",
     excerpt:
-      "Ban Quản lý bán đảo Sơn Trà tạm dừng hoạt động tham quan từ 08/10/2026 đến khi có thông báo mới, do mưa to đến rất to và nguy cơ sạt lở taluy, đá rơi, cây đổ. Tóm tắt lý do, khuyến cáo an toàn và dự báo thời tiết những ngày tới — tin địa phương, không phải thông cáo The Camellia.",
+      "Cập nhật 14/10/2026: bán đảo đã mở cửa tham quan trở lại. Ban Quản lý bán đảo Sơn Trà đã tạm dừng hoạt động tham quan từ 08/10/2026 do mưa to đến rất to và nguy cơ sạt lở taluy, đá rơi, cây đổ. Tóm tắt lý do, khuyến cáo an toàn và dự báo thời tiết những ngày tới — tin địa phương, không phải thông cáo The Camellia.",
     description:
-      "Bán đảo Sơn Trà tạm dừng tham quan từ 08/10/2026 do mưa lớn, nguy cơ sạt lở. Lý do, khuyến cáo an toàn và khi nào mở lại.",
+      "Bán đảo Sơn Trà tạm dừng tham quan 08/10/2026 vì mưa lớn và đã mở cửa trở lại từ 14/10/2026. Lý do tạm dừng và khuyến cáo an toàn.",
     image: "/images/news-tamdung-og.jpg",
     imageAlt:
       "Hình ảnh minh họa (tạo bằng AI): đường đèo ven núi Sơn Trà ướt mưa, sương mù phủ đồi, thanh chắn đỏ trắng tạm đóng đường, biển động phía xa",
@@ -710,6 +710,16 @@ export const NEWS: NewsArticle[] = [
       "/images/exterior-1.webp",
     ],
     body: [
+      {
+        heading: "Cập nhật 14/10/2026: bán đảo đã mở cửa tham quan trở lại",
+        text: "Từ ngày 14/10/2026, Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng đã đón du khách trở lại sau đợt tạm dừng từ 08/10 (theo Báo Đà Nẵng, Đại Đoàn Kết, Báo Văn Hóa ngày 14/10). Nội dung bên dưới là tình hình tại thời điểm đăng bài 10/10/2026, giữ lại để tham khảo. Xem quy định tuyến và lưu ý khi lên bán đảo trong bài cập nhật mới.",
+        links: [
+          {
+            to: "/tin-tuc/ban-dao-son-tra-mo-lai-tham-quan-14-10-2026",
+            label: "Bán đảo Sơn Trà mở lại tham quan từ 14/10/2026",
+          },
+        ],
+      },
       {
         text: "Ngày 08/10/2026, Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng (BQL) thông báo tạm dừng hoạt động tham quan tại bán đảo Sơn Trà từ ngày 08/10 cho đến khi có thông báo mới, do dự báo mưa to đến rất to, tiềm ẩn nguy cơ sạt lở đất và lũ quét. Đến tối 09/10, theo VTV, thành phố tiếp tục tạm dừng tham quan và chỉ mở lại khi điều kiện an toàn được bảo đảm. Bài viết cập nhật tình hình đến 17h30 ngày 10/10/2026, nối tiếp bài lưu ý lên bán đảo tháng 10 đăng ngày 06/10. Đây là tin địa phương tổng hợp, không phải thông báo của BQL và không phải thông cáo của The Camellia Sơn Trà.",
       },
