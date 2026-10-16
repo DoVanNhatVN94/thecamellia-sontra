@@ -207,7 +207,7 @@ export const POLICIES = [
   {
     title: "Vay ngân hàng",
     value: "Hỗ trợ đến 70%",
-    note: "Ân hạn gốc đến 5 năm · hỗ trợ lãi theo chương trình ngân hàng",
+    note: "Ân hạn gốc tối đa 3 năm (theo ngân hàng) · hỗ trợ lãi theo chương trình ngân hàng",
   },
   {
     title: "Nhận nhà",
@@ -2179,7 +2179,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Sở hữu nhẹ nhàng — chọn nhịp thanh toán phù hợp",
-        text: "Chính sách bán hàng công bố nhiều phương án để giảm áp lực dòng tiền khi tích sản. Phương án HTLS: hỗ trợ vay lên tới 70% trong 18 tháng (ân hạn nợ gốc theo ngân hàng liên kết). Phương án chuẩn: chiết khấu 4%. Thanh toán sớm 95%: chiết khấu 13%. Ngoài ra miễn phí quản lý 12 tháng theo chính sách khi ký. Giá công bố trên site từ 1,98 tỷ. Ưu đãi và điều kiện có thể đổi theo đợt — tư vấn đối chiếu bảng giá tại thời điểm ký.",
+        text: "Chính sách bán hàng công bố nhiều phương án để giảm áp lực dòng tiền khi tích sản. Phương án HTLS: hỗ trợ vay lên tới 70% trong 18 tháng (ân hạn nợ gốc tối đa 3 năm theo ngân hàng liên kết). Phương án chuẩn: chiết khấu 4%. Thanh toán sớm 95%: chiết khấu 13%. Ngoài ra miễn phí quản lý 12 tháng theo chính sách khi ký. Giá công bố trên site từ 1,98 tỷ. Ưu đãi và điều kiện có thể đổi theo đợt — tư vấn đối chiếu bảng giá tại thời điểm ký.",
       },
       {
         heading: "Nhận tư vấn The Camellia Sơn Trà",
