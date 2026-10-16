@@ -9,7 +9,7 @@ export const SALES_PLANS = [
     title: "Phương án thanh toán HTLS",
     tagline: "Vay ngân hàng · hỗ trợ lãi suất",
     highlight: "Lên tới 70% trong 18 tháng",
-    badge: "Ân hạn nợ gốc 05 năm (theo NH)",
+    badge: "Ân hạn nợ gốc tối đa 03 năm (theo NH)",
     funding: "Vay ngân hàng",
     discount: null as string | null,
     banks: ["VietinBank", "MB", "SHB"] as string[],
