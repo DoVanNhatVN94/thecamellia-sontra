@@ -67,6 +67,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-heso-k-og.jpg": { width: 1200, height: 630 },
   "/images/news-gallery-og.jpg": { width: 1200, height: 630 },
   "/images/news-csbh-1410-og.jpg": { width: 1200, height: 630 },
+  "/images/news-nhnn-1810-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
