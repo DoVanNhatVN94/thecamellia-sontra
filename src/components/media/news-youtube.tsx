@@ -77,6 +77,38 @@ function isLive(state: number) {
   return state === YT_PLAYING || state === YT_BUFFERING;
 }
 
+/** Lazy 9:16 Short. The landscape player below stays on autoplay and 16:9. */
+export function NewsYoutubeShort({
+  id,
+  title,
+  caption,
+}: {
+  id: string;
+  title?: string;
+  caption?: string;
+}) {
+  if (!YOUTUBE_ID.test(id)) return null;
+  const src = `https://www.youtube-nocookie.com/embed/${id}?rel=0`;
+  return (
+    <figure className="mt-8">
+      {caption ? <figcaption className="mb-3 text-sm text-muted">{caption}</figcaption> : null}
+      <div className="mx-auto w-full max-w-[20.5rem]">
+        <div className="relative aspect-[9/16] overflow-hidden rounded-xl bg-ink">
+          <iframe
+            className="absolute inset-0 size-full border-0"
+            src={src}
+            title={title ?? "Video YouTube"}
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </figure>
+  );
+}
+
 export function NewsYoutube({
   id,
   title,

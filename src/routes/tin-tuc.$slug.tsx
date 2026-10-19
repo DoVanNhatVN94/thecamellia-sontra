@@ -2,7 +2,7 @@ import { Link, createFileRoute, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Lightbox } from "@/components/media/lightbox";
-import { NewsYoutube } from "@/components/media/news-youtube";
+import { NewsYoutube, NewsYoutubeShort } from "@/components/media/news-youtube";
 import { PeekSlider } from "@/components/media/peek-slider";
 import { RelatedNews } from "@/components/media/related-news";
 import {
@@ -138,11 +138,19 @@ function ArticlePage() {
           <p className="mt-2 text-sm text-muted">{article.imageCaption}</p>
         ) : null}
         {article.youtubeId ? (
-          <NewsYoutube
-            id={article.youtubeId}
-            title={article.youtubeTitle}
-            caption={article.youtubeCaption}
-          />
+          article.youtubeAspect === "short" ? (
+            <NewsYoutubeShort
+              id={article.youtubeId}
+              title={article.youtubeTitle}
+              caption={article.youtubeCaption}
+            />
+          ) : (
+            <NewsYoutube
+              id={article.youtubeId}
+              title={article.youtubeTitle}
+              caption={article.youtubeCaption}
+            />
+          )
         ) : null}
 
         {showLayoutB ? <ThanhThoiLayoutBExtras /> : null}
