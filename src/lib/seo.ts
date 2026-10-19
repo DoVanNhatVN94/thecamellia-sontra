@@ -71,6 +71,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-the-han-og.jpg": { width: 1200, height: 630 },
   "/images/news-ton-kho-q3-2026-og.jpg": { width: 1200, height: 630 },
   "/images/news-nhip-song-thu-thai-og.jpg": { width: 1200, height: 630 },
+  "/images/news-he-so-k-du-thao-10-2026-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
