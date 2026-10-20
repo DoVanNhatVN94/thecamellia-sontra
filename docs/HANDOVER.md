@@ -77,7 +77,7 @@ Nguồn code:
 | App framework | **TanStack Start** (`@tanstack/react-start`) + TanStack Router / Query |
 | Bundler / SSR | **Vite 8** + plugin React |
 | Server / deploy | **Nitro** (`nitro` beta, preset `vercel`) |
-| Analytics | `@vercel/analytics` + `@vercel/speed-insights` |
+| Analytics | `@vercel/analytics` + `@vercel/speed-insights` + Meta Pixel `1046573188388695` (`src/lib/meta-pixel.ts`, gắn ở root) |
 | Form / validate | react-hook-form · Zod |
 | Khác | better-auth, PGLite/pg (app-data nội bộ — không phải CMS marketing) |
 
@@ -100,6 +100,7 @@ src/data/project.ts          # Fact, NEWS, UNIT_TYPES, galleries, VIRTUAL_TOUR
 src/data/sales-plans.ts      # 4 PA thanh toán + meta
 src/lib/seo.ts               # meta, JSON-LD, SITEMAP_PATHS, SAME_AS
 src/lib/leads.ts             # client: POST /api/leads, honeypot, dwell, rate
+src/lib/meta-pixel.ts        # Meta Pixel ID (public) + PageView / Lead / Contact
 src/lib/leads.server.ts      # server: Resend, IP rate limit, validate
 src/routes/api/leads.ts      # route handler TanStack Start
 src/components/lead-form.tsx # UX form compact
