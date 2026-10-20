@@ -1,6 +1,7 @@
 import { HeadContent, Link, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { MediaCache } from "@/components/media-cache";
+import { MetaPixel } from "@/components/meta-pixel";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import { ImageSrcProvider } from "@/lib/image-src";
 import { Analytics } from "@vercel/analytics/react";
@@ -67,6 +68,7 @@ export const Route = createRootRoute({
       </head>
       <body>
         <PreviewHostBridge />
+        <MetaPixel />
         <DeferItalicFonts />
         <MediaCache />
         <ImageSrcProvider>

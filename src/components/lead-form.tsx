@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { PROJECT, UNIT_TYPES } from "@/data/project";
 import { leadMailtoHref, saveLead, sendLeadEmail } from "@/lib/leads";
+import { trackMeta } from "@/lib/meta-pixel";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -81,6 +82,7 @@ export function LeadForm({ defaultUnit, compact, onSuccess, className }: Props) 
     setOk(true);
     setBusy(false);
     onSuccess?.();
+    trackMeta("Lead");
   }
 
   if (ok) {
