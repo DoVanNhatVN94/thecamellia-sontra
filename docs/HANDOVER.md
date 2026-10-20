@@ -77,7 +77,7 @@ Nguồn code:
 | App framework | **TanStack Start** (`@tanstack/react-start`) + TanStack Router / Query |
 | Bundler / SSR | **Vite 8** + plugin React |
 | Server / deploy | **Nitro** (`nitro` beta, preset `vercel`) |
-| Analytics | `@vercel/analytics` + `@vercel/speed-insights` + Meta Pixel `1046573188388695` (`src/lib/meta-pixel.ts`, gắn ở root) |
+| Analytics | `@vercel/analytics` + `@vercel/speed-insights` + Meta Pixel `1046573188388695` (stub inline trong `<head>`, `src/lib/meta-pixel.ts`) |
 | Form / validate | react-hook-form · Zod |
 | Khác | better-auth, PGLite/pg (app-data nội bộ — không phải CMS marketing) |
 

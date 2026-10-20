@@ -7,6 +7,7 @@ import { ImageSrcProvider } from "@/lib/image-src";
 import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 import { DeferItalicFonts } from "@/components/perf/defer-italic-fonts";
+import { META_PIXEL_BOOT } from "@/lib/meta-pixel";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -59,6 +60,7 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
     ],
+    scripts: [{ id: "meta-pixel-base", children: META_PIXEL_BOOT }],
   }),
   notFoundComponent: NotFound,
   component: () => (
