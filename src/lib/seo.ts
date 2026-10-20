@@ -74,6 +74,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-he-so-k-du-thao-10-2026-og.jpg": { width: 1200, height: 630 },
   "/images/news-bst-tang-3-3-diem-og.jpg": { width: 1200, height: 630 },
   "/images/news-qh-chung-2050-og.jpg": { width: 1200, height: 630 },
+  "/images/chuc-mung-20-10-gui-nhung-nguoi-phu-nu-giu-lua-to-am-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
