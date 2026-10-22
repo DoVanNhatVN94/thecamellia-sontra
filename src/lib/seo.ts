@@ -78,6 +78,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-bds-dn-q3-2026-og.jpg": { width: 1200, height: 630 },
   "/images/news-giam-lai-vay-2110-og.jpg": { width: 1200, height: 630 },
   "/images/news-lai-tha-noi-2110-og.jpg": { width: 1200, height: 630 },
+  "/images/news-qh-2050-phe-duyet-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
