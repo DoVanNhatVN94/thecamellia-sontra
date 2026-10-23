@@ -82,6 +82,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-nhnn-9736-2210-og.jpg": { width: 1200, height: 630 },
   "/images/news-chuyen-camellia-01-og.jpg": { width: 1200, height: 630 },
   "/images/news-tb226-thi-diem-2310-og.jpg": { width: 1200, height: 630 },
+  "/images/news-3-luat-2310-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
