@@ -308,7 +308,12 @@ export const NEWS: NewsArticle[] = [
     imageCaption:
       "Sức cầu trong quý III/2026 tại TP Đà Nẵng sụt giảm. Ảnh: Thanh Đức/Báo Xây dựng",
     poster: "/images/news-dkra-q3-dn-2410-hero.webp",
-    gallery: ["/images/news-dkra-q3-dn-2410-hero.webp"],
+    gallery: [
+      "/images/news-dkra-q3-dn-2410-hero.webp",
+      "/images/news-dkra-q3-dn-2410-body-01.webp",
+      "/images/news-dkra-q3-dn-2410-body-02.webp",
+      "/images/news-dkra-q3-dn-2410-body-03.webp",
+    ],
     body: [
       {
         text: "Ngày 23/10/2026, DKRA Consulting (thuộc DKRA Group) công bố Báo cáo thị trường bất động sản nhà ở TP. Đà Nẵng quý III/2026. Theo Báo Đầu tư (Ngọc Tân, 23.10.2026), thị trường ghi nhận biến động cả về nguồn cung và lượng tiêu thụ ở hầu hết các phân khúc. Với người đang xem căn hộ, hai mốc trong bài nguồn là nguồn cung sơ cấp 4.385 căn, giảm 14% so với quý trước, và lượng tiêu thụ 2.099 căn, giảm 25% so với quý trước.",
@@ -323,7 +328,7 @@ export const NEWS: NewsArticle[] = [
         ],
       },
       {
-        text: "Ảnh đầu bài là ảnh Báo Xây dựng đăng kèm chú thích «Sức cầu trong quý III/2026 tại TP Đà Nẵng sụt giảm» (Ảnh: Thanh Đức). Ảnh ghi một tuyến phố, không phải biểu đồ nguồn cung căn hộ và không phải ảnh The Camellia Sơn Trà.",
+        text: "Ảnh đầu bài là ảnh Báo Xây dựng đăng kèm chú thích «Sức cầu trong quý III/2026 tại TP Đà Nẵng sụt giảm» (Ảnh: Thanh Đức). Ảnh ghi một tuyến phố, không phải biểu đồ nguồn cung căn hộ và không phải ảnh The Camellia Sơn Trà. Trong bài còn ba ảnh: khung cảnh chung cư ven vịnh là ảnh minh họa tạo bằng AI, không phải biểu đồ số liệu; ảnh Báo Xây dựng chú thích «Nguồn cung đất nền tại TP Đà Nẵng tiếp tục khan hiếm» (Ảnh: Thanh Đức); ảnh Báo Đầu tư ngày 23.10.2026 ghi Cầu Rồng và bờ biển. Không ảnh nào là ảnh The Camellia Sơn Trà.",
       },
       {
         heading: "Tóm tắt nhanh (đọc trong 30 giây)",
@@ -332,6 +337,9 @@ export const NEWS: NewsArticle[] = [
       {
         heading: "Căn hộ: nguồn cung và thanh khoản cùng giảm",
         text: "Theo Báo Đầu tư (23.10.2026), nguồn cung sơ cấp căn hộ trên địa bàn TP. Đà Nẵng quý III/2026 đạt 4.385 căn, đến từ 20 dự án, giảm 14% so với quý trước. Trong đó nguồn cung mới giảm gần 40% so với quý II/2026. Cùng bài, các chủ đầu tư tiếp tục thận trọng khi triển khai dự án. 4.385 căn là nguồn cung sơ cấp của cả quý, không phải số căn mở bán mới.",
+        image: "/images/news-dkra-q3-dn-2410-body-01.webp",
+        imageAlt:
+          "Khung cảnh chung cư ven vịnh và đường chân trời Đà Nẵng, có dáng bán đảo Sơn Trà. Ảnh minh họa tạo bằng AI",
       },
       {
         text: "Theo Báo Đầu tư (23.10.2026), thanh khoản căn hộ quý III/2026 đạt 2.099 căn, giảm 25% so với quý trước và giảm 24% so với cùng kỳ năm trước. MarketTimes (23.10.2026) ghi mức giảm cùng kỳ là so với năm 2025. Báo Xây dựng (23.10.2026) và MarketTimes cùng ghi nguồn cung sơ cấp giảm 14%, nguồn cung mới giảm gần 40%, thanh khoản giảm 25% so với quý trước và 24% so với cùng kỳ, nhưng không nêu số căn 4.385 hay 2.099.",
@@ -348,6 +356,9 @@ export const NEWS: NewsArticle[] = [
       {
         heading: "Đất nền và nhà phố, biệt thự",
         text: "Phần này chỉ ghi ngắn, để không đọc nhầm số liệu đất nền thành số liệu căn hộ. Theo Báo Đầu tư (23.10.2026), nguồn cung sơ cấp đất nền duy trì ổn định so với quý trước, ở mức 1.547 nền từ 7 dự án. Nguồn cung mới tiếp tục khan hiếm, chỉ chiếm khoảng 4% tổng nguồn cung sơ cấp. Lượng tiêu thụ đạt 54 nền, tương đương khoảng 4% tổng cung sơ cấp, giảm 16% so với quý trước. Cùng bài nêu nguyên nhân chủ yếu là tâm lý thận trọng của người mua trước áp lực lãi suất. Báo Xây dựng (23.10.2026) ghi nguồn cung sơ cấp đất nền ổn định so với quý II/2026, nguồn cung mới khoảng 4%, tiêu thụ khoảng 4% và giảm 16% so với quý trước, với nguyên nhân là tâm lý thận trọng trước áp lực lãi suất vay ngân hàng.",
+        image: "/images/news-dkra-q3-dn-2410-body-02.webp",
+        imageAlt:
+          "Đường đô thị Đà Nẵng dưới trời xanh, phía xa có công trình cao tầng. Nguồn cung đất nền tại TP Đà Nẵng tiếp tục khan hiếm. Ảnh: Thanh Đức/Báo Xây dựng",
       },
       {
         text: "Theo Báo Đầu tư (23.10.2026), mặt bằng giá sơ cấp đất nền giảm khoảng 7% so với quý trước; chủ đầu tư vẫn dùng ưu đãi và hỗ trợ thanh toán. Giá thứ cấp đất nền giảm trung bình 3% so với quý trước, khi một bộ phận nhà đầu tư chủ động chỉnh giá để thu hồi dòng tiền. MarketTimes (23.10.2026) ghi cùng mức khoảng 7% ở giá sơ cấp và trung bình 3% ở giá thứ cấp. Các mức này là giá đất nền, không phải giá căn hộ chung cư.",
@@ -361,6 +372,9 @@ export const NEWS: NewsArticle[] = [
       {
         heading: "Quý IV/2026 theo DKRA",
         text: "Theo Báo Đầu tư (23.10.2026), ông Võ Hồng Thắng, Phó tổng giám đốc phụ trách mảng DKRA Consulting kiêm Giám đốc Đầu tư DKRA Group, cho rằng nguồn cung căn hộ mới trong quý IV/2026 dự kiến khoảng 500–1.000 căn, tập trung tại phường Ngũ Hành Sơn, Hải Châu và Sơn Trà. Căn hộ hạng A và hạng B tiếp tục chiếm tỷ trọng chủ đạo, với định vị ở phân khúc trung cao cấp. Báo Xây dựng và MarketTimes (23.10.2026) ghi cùng khoảng 500–1.000 căn và cùng ba phường, trong phần dự báo của DKRA Consulting.",
+        image: "/images/news-dkra-q3-dn-2410-body-03.webp",
+        imageAlt:
+          "Cầu Rồng bắc qua sông Hàn, bãi biển và bán đảo Sơn Trà dưới trời xanh có mây. Ảnh: Báo Đầu tư",
       },
       {
         text: "Theo Báo Đầu tư (23.10.2026), ông Võ Hồng Thắng nói sức cầu căn hộ quý IV dự kiến chưa cải thiện rõ nét trước áp lực lãi suất cao và việc kiểm soát tín dụng. Mặt bằng giá sơ cấp tiếp tục neo cao do chi phí đầu vào gia tăng, trong khi giá thứ cấp được dự báo duy trì xu hướng giảm. Báo Xây dựng và MarketTimes (23.10.2026) ghi cùng nhận định này. «Neo cao» và «xu hướng giảm» là cách DKRA mô tả hai thị trường khác nhau: sơ cấp và thứ cấp. Bài này không đổi hai câu đó thành một dự báo giá sẽ đi lên.",
@@ -419,7 +433,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý",
-        text: "Lưu ý: Bài tóm tắt báo cáo thị trường bất động sản nhà ở TP. Đà Nẵng quý III/2026 của DKRA Consulting qua báo chí ngày 23.10.2026. Không phải thông báo của cơ quan nhà nước, không phải bản báo cáo gốc của DKRA, không phải thông cáo của The Camellia Sơn Trà, không phải khuyến nghị đầu tư và không cam kết thanh khoản, lợi nhuận hay diễn biến giá. Số liệu chỉ đúng theo bài nguồn tại thời điểm đăng; bài không tự tính thêm tỷ lệ hấp thụ. Nguồn: Báo Đầu tư, Ngọc Tân, 23.10.2026 — https://baodautu.vn/quy-iii2026-thi-truong-dat-nen-can-ho-da-nang-giam-nguon-cung-va-thanh-khoan-d729484.html ; Báo Xây dựng, Thanh Đức, 23.10.2026 — https://batdongsan.baoxaydung.vn/da-nang-suc-cau-phan-khuc-dat-nen-quy-3-2026-sut-giam-192261023162154172.htm ; MarketTimes, Mạnh Đại, 23.10.2026 — https://markettimes.vn/lai-suat-gay-suc-ep-nha-dau-tu-bat-dong-san-da-nang-chap-nhan-giam-gia-de-thoat-hang-133348.html. Ảnh: Thanh Đức/Báo Xây dựng (chú thích gốc trên Báo Xây dựng: «Sức cầu trong quý III/2026 tại TP Đà Nẵng sụt giảm». Dòng tín dụng của báo là «Ảnh: Thanh Đức»).",
+        text: "Lưu ý: Bài tóm tắt báo cáo thị trường bất động sản nhà ở TP. Đà Nẵng quý III/2026 của DKRA Consulting qua báo chí ngày 23.10.2026. Không phải thông báo của cơ quan nhà nước, không phải bản báo cáo gốc của DKRA, không phải thông cáo của The Camellia Sơn Trà, không phải khuyến nghị đầu tư và không cam kết thanh khoản, lợi nhuận hay diễn biến giá. Số liệu chỉ đúng theo bài nguồn tại thời điểm đăng; bài không tự tính thêm tỷ lệ hấp thụ. Nguồn: Báo Đầu tư, Ngọc Tân, 23.10.2026 — https://baodautu.vn/quy-iii2026-thi-truong-dat-nen-can-ho-da-nang-giam-nguon-cung-va-thanh-khoan-d729484.html ; Báo Xây dựng, Thanh Đức, 23.10.2026 — https://batdongsan.baoxaydung.vn/da-nang-suc-cau-phan-khuc-dat-nen-quy-3-2026-sut-giam-192261023162154172.htm ; MarketTimes, Mạnh Đại, 23.10.2026 — https://markettimes.vn/lai-suat-gay-suc-ep-nha-dau-tu-bat-dong-san-da-nang-chap-nhan-giam-gia-de-thoat-hang-133348.html. Ảnh đầu bài: Thanh Đức/Báo Xây dựng (chú thích gốc trên Báo Xây dựng: «Sức cầu trong quý III/2026 tại TP Đà Nẵng sụt giảm». Dòng tín dụng của báo là «Ảnh: Thanh Đức»). Ảnh đất nền trong bài: Thanh Đức/Báo Xây dựng (chú thích gốc: «Nguồn cung đất nền tại TP Đà Nẵng tiếp tục khan hiếm»). Ảnh Cầu Rồng: Báo Đầu tư, 23.10.2026. Ảnh khung cảnh chung cư: ảnh minh họa tạo bằng AI.",
       },
     ],
   },
