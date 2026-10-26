@@ -86,6 +86,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-dkra-q3-dn-2410-og.jpg": { width: 1200, height: 630 },
   "/images/news-khach-hang-bi-mat-2410-og.jpg": { width: 1200, height: 630 },
   "/images/news-thue-dat-bo-hoang-2510-og.jpg": { width: 1200, height: 630 },
+  "/images/news-lai-suat-ha-nhiet-2610-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
