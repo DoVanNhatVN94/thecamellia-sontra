@@ -303,9 +303,9 @@ export const NEWS: NewsArticle[] = [
       "Sáng 27/10/2026, Phó Bí thư Thường trực Thành ủy Nguyễn Khắc Toàn làm việc với phường Sơn Trà: đường 30m, khu dân cư Thọ Quang – Biển Đông, chợ, chung cư.",
     image: "/images/news-son-tra-uu-tien-2910-og.jpg",
     imageAlt:
-      "Tàu cá neo đậu tại âu thuyền Thọ Quang, phường Sơn Trà, phía sau là các tòa nhà ven bờ và núi. Ảnh: QUANG VIỆT/Báo Đà Nẵng.",
+      "Ảnh minh họa tạo bằng AI: tàu cá neo đậu trong một âu thuyền ven biển, phía sau là núi xanh, gợi khu vực âu thuyền Thọ Quang, phường Sơn Trà. Không phải ảnh chụp thực tế.",
     imageCaption:
-      "Âu thuyền Thọ Quang đang được Ban Quản lý âu thuyền và cảng cá Thọ Quang đầu tư nâng cấp. Ảnh: QUANG VIỆT/Báo Đà Nẵng (13/10/2026).",
+      "Ảnh minh họa tạo bằng AI, gợi khu vực âu thuyền Thọ Quang với núi Sơn Trà phía sau; không phải ảnh chụp thực tế.",
     poster: "/images/news-son-tra-uu-tien-2910-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
@@ -323,7 +323,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Phường Sơn Trà đang ở đâu sau 10 tháng",
-        text: "Theo Cổng TTĐT TP Đà Nẵng (Quang Hà, 27/10/2026), phường Sơn Trà hiện có 1.325 doanh nghiệp, 05 hợp tác xã và 4.662 hộ kinh doanh cá thể. Thu ngân sách lũy kế đến ngày 21/10 đạt 1.388 tỷ đồng, bằng 82,3% dự toán giao; chi ngân sách đạt 424,8 tỷ đồng, bằng 76,49% dự toán. Tổng kế hoạch vốn đầu tư công được giao là 120,133 tỷ đồng; đến 18/10 giải ngân đạt 80,44%, dự kiến đến 31/10 đạt 86% kế hoạch vốn. (Nguồn: Cổng TTĐT TP Đà Nẵng; Báo Đà Nẵng, 27/10/2026)",
+        text: "Theo Cổng TTĐT TP Đà Nẵng (Quang Hà, 27/10/2026), phường Sơn Trà hiện có 1.325 doanh nghiệp, 05 hợp tác xã và 4.662 hộ kinh doanh cá thể. Thu ngân sách lũy kế đến ngày 21/10 đạt 1.388 tỷ đồng, bằng 82,3% dự toán giao; chi ngân sách đạt 424,8 tỷ đồng, bằng 76,49% dự toán. Tổng kế hoạch vốn đầu tư công được giao là 120,133 tỷ đồng; đến 18/10 giải ngân đạt 80,4%, dự kiến đến 31/10 đạt 86% kế hoạch vốn. Báo Đà Nẵng cùng ngày ghi mức giải ngân đến 18/10 là 80,44%. (Nguồn: Cổng TTĐT TP Đà Nẵng; Báo Đà Nẵng, 27/10/2026)",
       },
       {
         text: "Cùng nguồn ghi phường tổ chức 357 đợt ra quân làm sạch bãi biển, âu thuyền Thọ Quang và khu vực chân núi, với hơn 20.000 lượt người tham gia. Đảng ủy phường đã ban hành ba đề án: phát triển kinh tế biển bền vững, giáo dục và nguồn nhân lực, và xây dựng cộng đồng hạnh phúc. Báo cáo cũng nêu hạn chế: hạ tầng giao thông, giáo dục, y tế, văn hóa – thể thao còn thiếu, một số dự án chậm vì giải phóng mặt bằng và tái định cư. (Nguồn: Cổng TTĐT TP Đà Nẵng, 27/10/2026)",
@@ -333,7 +333,7 @@ export const NEWS: NewsArticle[] = [
         text: "Phó Bí thư Thường trực Thành ủy yêu cầu tập trung tháo gỡ khó khăn, đẩy nhanh tiến độ tuyến đường 30m từ Ngô Quyền đến Lê Tấn Trung và dự án khu dân cư dọc tuyến Thọ Quang – Biển Đông, theo Báo Đà Nẵng ngày 27/10/2026. Cổng TTĐT TP Đà Nẵng ghi cụ thể hơn: đẩy nhanh thủ tục đầu tư, giải phóng mặt bằng tuyến 30m, rà soát dự án khu dân cư Thọ Quang – Biển Đông và các dự án trường học. Với dự án còn vướng, phường phải xác định rõ việc thuộc thẩm quyền phường hay thành phố, đầu mối chịu trách nhiệm và thời hạn xử lý. Các nguồn không nêu ngày khởi công hay hoàn thành tuyến 30m.",
         image: "/images/news-son-tra-uu-tien-2910-body-01.webp",
         imageAlt:
-          "Phó Bí thư Thường trực Thành ủy Nguyễn Khắc Toàn (thứ ba từ phải sang) cùng đoàn công tác kiểm tra tại âu thuyền, cảng cá Thọ Quang sáng 27/10/2026. Ảnh: NGỌC PHÚ/Báo Đà Nẵng.",
+          "Ảnh minh họa tạo bằng AI: công trường làm đường trong khu dân cư ven biển, máy xúc và xe lu, phía xa là núi xanh. Không phải ảnh tuyến đường 30m Ngô Quyền – Lê Tấn Trung.",
       },
       {
         heading: "Sáu việc được nêu, tóm tắt một trang",
@@ -354,7 +354,7 @@ export const NEWS: NewsArticle[] = [
         text: "Sơn Trà cần phối hợp với các sở, ngành tháo gỡ thủ tục pháp lý, quy hoạch đối với các dự án trên bán đảo, và thúc đẩy khai thác dịch vụ tại các bãi biển theo phương án được thành phố phê duyệt, theo Cổng TTĐT TP Đà Nẵng ngày 27/10/2026. Báo Đà Nẵng cùng ngày ghi Phó Bí thư Thường trực Thành ủy đề nghị UBND thành phố chỉ đạo các sở, ngành tháo gỡ vướng mắc pháp lý, quy hoạch đối với 13 dự án trên bán đảo Sơn Trà. Các bài không liệt kê tên 13 dự án và không nêu dự án nào sẽ được triển khai trước.",
         image: "/images/news-son-tra-uu-tien-2910-body-03.webp",
         imageAlt:
-          "Phó Bí thư Thường trực Thành ủy Nguyễn Khắc Toàn cùng đoàn công tác kiểm tra một dự án trên địa bàn phường Sơn Trà sáng 27/10/2026, phía sau là cây xanh. Ảnh: NGỌC PHÚ/Báo Đà Nẵng.",
+          "Ảnh minh họa tạo bằng AI: một con phố dân cư với nhà ống, cây xanh và xe máy, cuối phố là núi xanh, gợi khung cảnh phường Sơn Trà. Không phải ảnh chụp thực tế.",
       },
       {
         text: "Về an ninh, các lực lượng cần phối hợp tuần tra, kiểm soát khu vực cảng cá, âu thuyền, ven biển và bán đảo Sơn Trà, theo Báo Đà Nẵng ngày 27/10/2026. Định hướng kinh tế được nêu là phát huy lợi thế kinh tế biển, du lịch và dịch vụ gắn với bảo vệ cảnh quan, môi trường, rừng và đa dạng sinh học. (Nguồn: Báo Đà Nẵng, 27/10/2026)",
@@ -368,7 +368,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Đọc hồ sơ một căn tại phường Sơn Trà",
-        text: "Anh chị đang tìm hiểu căn hộ sở hữu lâu dài tại phường Sơn Trà có thể xem hồ sơ The Camellia Sơn Trà, tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà. MBLAND phát triển dự án, WELAND phát triển kinh doanh. Giá sàn website từ 1,98 tỷ; giá và chính sách theo bảng giá và phụ lục tại thời điểm ký. Liên hệ Nhật qua hotline hoặc Zalo 0934 885 108. Các việc thành phố nêu ngày 27/10/2026 là định hướng của địa phương; bài không gắn chúng với tiến độ, giá hay giá trị của một căn hộ cụ thể.",
+        text: "Anh chị đang tìm hiểu căn hộ sở hữu lâu dài tại phường Sơn Trà có thể xem hồ sơ The Camellia Sơn Trà, tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà. Chủ đầu tư là Công ty TNHH Địa ốc Thành Lâm; MBLAND phát triển dự án, WELAND phát triển kinh doanh. Giá sàn website từ 1,98 tỷ; giá và chính sách theo bảng giá và phụ lục tại thời điểm ký. Liên hệ Nhật qua hotline hoặc Zalo 0934 885 108. Các việc thành phố nêu ngày 27/10/2026 là định hướng của địa phương; bài không gắn chúng với tiến độ, giá hay giá trị của một căn hộ cụ thể.",
         links: [{ to: "/lien-he", label: "Liên hệ — để lại nhu cầu" }],
       },
       {
@@ -389,7 +389,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý",
-        text: "Lưu ý: Bài tóm tắt báo chí và tin của Cổng TTĐT TP Đà Nẵng về buổi làm việc ngày 27/10/2026 và khu vực Thọ Quang. Bài không phải thông báo chính thức, không phải tư vấn đầu tư. Số liệu và yêu cầu theo đúng các nguồn tại thời điểm đăng. Nguồn: Báo Đà Nẵng, 27/10/2026 — https://baodanang.vn/son-tra-can-phat-huy-loi-the-nang-cao-hieu-qua-quan-ly-va-phat-trien-dia-phuong-3356590.html ; Cổng TTĐT TP Đà Nẵng, Quang Hà, 27/10/2026 — https://danang.gov.vn/vi/w/pho-bi-thu-thuong-truc-thanh-uy-nguyen-khac-toan-lam-viec-voi-ban-thuong-vu-dang-uy-phuong-son-tra ; Báo Đà Nẵng, 13/10/2026 — https://baodanang.vn/bao-dam-an-toan-neo-dau-tau-ca-3354986.html ; Diễn đàn Giao thông, Công Huy, 14/10/2026 — https://diendangiaothong.vn/gt360/da-nang-cap-nhat-quy-hoach-di-doi-cang-ca-tho-quang-nang-cap-cang-hong-trieu-tintuc84497. Ảnh đầu bài: QUANG VIỆT/Báo Đà Nẵng. Ảnh kiểm tra âu thuyền, cảng cá Thọ Quang và ảnh kiểm tra dự án: NGỌC PHÚ/Báo Đà Nẵng. Đồ họa sáu việc: đồ họa tóm tắt chữ từ các nguồn trên, không dùng AI.",
+        text: "Lưu ý: Bài tóm tắt báo chí và tin của Cổng TTĐT TP Đà Nẵng về buổi làm việc ngày 27/10/2026 và khu vực Thọ Quang. Bài không phải thông báo chính thức, không phải tư vấn đầu tư. Số liệu và yêu cầu theo đúng các nguồn tại thời điểm đăng. Nguồn: Báo Đà Nẵng, 27/10/2026 — https://baodanang.vn/son-tra-can-phat-huy-loi-the-nang-cao-hieu-qua-quan-ly-va-phat-trien-dia-phuong-3356590.html ; Cổng TTĐT TP Đà Nẵng, Quang Hà, 27/10/2026 — https://danang.gov.vn/vi/w/pho-bi-thu-thuong-truc-thanh-uy-nguyen-khac-toan-lam-viec-voi-ban-thuong-vu-dang-uy-phuong-son-tra ; Báo Đà Nẵng, 13/10/2026 — https://baodanang.vn/bao-dam-an-toan-neo-dau-tau-ca-3354986.html ; Diễn đàn Giao thông, Công Huy, 14/10/2026 — https://diendangiaothong.vn/gt360/da-nang-cap-nhat-quy-hoach-di-doi-cang-ca-tho-quang-nang-cap-cang-hong-trieu-tintuc84497. Ảnh đầu bài, ảnh công trường làm đường và ảnh phố dân cư: Ảnh minh họa tạo bằng AI, không phải ảnh chụp thực tế, không mô tả công trình, dự án hay người cụ thể. Đồ họa sáu việc: đồ họa tóm tắt chữ từ các nguồn trên, không dùng AI.",
       },
     ],
   },
