@@ -337,7 +337,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Sáu việc được nêu, tóm tắt một trang",
-        text: "Đồ họa dưới đây gom sáu việc được nêu trong buổi làm việc ngày 27/10/2026, theo đúng thứ tự các nguồn đã viết. Đây là đồ họa tóm tắt chữ, không phải ảnh chụp và không phải văn bản của cơ quan nhà nước.",
+        text: "Đồ họa dưới đây gom sáu việc được nêu trong buổi làm việc ngày 27/10/2026, rút gọn từ hai nguồn Báo Đà Nẵng và Cổng TTĐT TP Đà Nẵng. Đây là đồ họa tóm tắt chữ, không phải ảnh chụp và không phải văn bản của cơ quan nhà nước.",
         image: "/images/news-son-tra-uu-tien-2910-body-02.webp",
         imageAlt:
           "Đồ họa tóm tắt sáu việc được nêu tại buổi làm việc với phường Sơn Trà ngày 27/10/2026: đường 30m Ngô Quyền – Lê Tấn Trung, khu dân cư Thọ Quang – Biển Đông, 9 khu chung cư thuộc sở hữu Nhà nước, trường THPT, trạm y tế, chợ Sơn Trà mới, 13 dự án bán đảo và tuần tra ven biển.",
@@ -361,7 +361,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Âu thuyền và cảng cá Thọ Quang trong tháng 10",
-        text: "Theo Báo Đà Nẵng ngày 13/10/2026, kè mái nghiêng phía đông nam âu thuyền Thọ Quang đã được gia cố, nâng cấp; các vị trí lún sụt đã được sửa. Ban Quản lý âu thuyền và cảng cá Đà Nẵng đang làm chủ đầu tư dự án sửa chữa, thay thế 10 phao neo hư hỏng tại âu thuyền, bằng ngân sách thành phố, dự kiến hoàn thành trong năm 2026. Thông tin do ông Phạm Trung Thành, Phó trưởng ban phụ trách, cho biết. (Nguồn: Báo Đà Nẵng, 13/10/2026)",
+        text: "Theo Báo Đà Nẵng ngày 13/10/2026, kè mái nghiêng phía đông nam âu thuyền Thọ Quang đã được gia cố, nâng cấp; các vị trí lún sụt đã được sửa. Ban Quản lý âu thuyền và cảng cá Đà Nẵng đang làm chủ đầu tư dự án sửa chữa, thay thế 10 phao neo hư hỏng tại âu thuyền, bằng ngân sách thành phố, dự kiến hoàn thành trong năm 2026. Cùng bài dẫn ông Phạm Trung Thành, Phó trưởng ban phụ trách, cho biết thành phố đã huy động vốn Trung ương để nâng cấp âu thuyền Thọ Quang. (Nguồn: Báo Đà Nẵng, 13/10/2026)",
       },
       {
         text: "Ngày 14/10/2026, Diễn đàn Giao thông (Công Huy) dẫn lãnh đạo Sở Xây dựng cho biết sở đã nghiên cứu, cập nhật, hiệu chỉnh nội dung quy hoạch liên quan việc di dời cảng cá Thọ Quang và nâng cấp cảng cá Hồng Triều cho phù hợp Quy hoạch chung thành phố. Cùng bài nêu một doanh nghiệp đề xuất dự án «Khu phức hợp đô thị dịch vụ bến du thuyền Thọ Quang» và kiến nghị cơ chế đặc thù. Bài cũng ghi thành phố hiện chưa có cơ chế, chính sách đặc thù để di dời cảng cá Thọ Quang, và việc nâng cấp Hồng Triều để thay thế chức năng cảng Thọ Quang chưa có đầy đủ cơ sở triển khai. Đây là đề xuất và việc đang nghiên cứu, chưa phải quyết định di dời. (Nguồn: Diễn đàn Giao thông, 14/10/2026)",
