@@ -294,6 +294,123 @@ export type NewsArticle = {
 
 export const NEWS: NewsArticle[] = [
   {
+    slug: "phan-loai-room-tin-dung-nguoi-mua-can-ho-hoi-gi",
+    date: "29.10.2026",
+    title: "Room tín dụng phân loại: người mua căn hộ hỏi gì?",
+    excerpt:
+      "Báo Thanh Tra 29/10 ghi chuyên gia nói room tín dụng BĐS sẽ chọn lọc theo pháp lý và nhu cầu ở thực. Người mua căn hộ nên hỏi ngân hàng gì trước khi vay.",
+    description:
+      "Báo Thanh Tra 29/10: room tín dụng BĐS chọn lọc theo pháp lý và nhu cầu ở thực. Công văn 8509/NHNN-CSTT ngày 16/9 không nói tự nới room vay căn hộ.",
+    image: "/images/news-room-tin-dung-2910-og.jpg",
+    imageAlt:
+      "Ảnh minh họa tạo bằng AI: bàn gỗ với sổ hồ sơ trắng, tờ giấy không chữ và biểu đồ cột không số. Không phải quầy của một ngân hàng.",
+    imageCaption:
+      "Ảnh minh họa tạo bằng AI: bàn làm việc với hồ sơ và biểu đồ cột không chữ, không số. Không phải ảnh một ngân hàng và không phải hồ sơ vay thật.",
+    poster: "/images/news-room-tin-dung-2910-hero.webp",
+    gallery: [
+      "/images/news-room-tin-dung-2910-hero.webp",
+      "/images/news-room-tin-dung-2910-body-01.webp",
+      "/images/news-room-tin-dung-2910-body-02.webp",
+      "/images/news-room-tin-dung-2910-body-03.webp",
+    ],
+    body: [
+      {
+        text: "Sáng 29/10/2026, Báo Thanh Tra (Kỳ Phương, 08:43) đăng bài về việc phân loại room tín dụng bất động sản. Bài dẫn các chuyên gia: không nên hiểu chính sách mới là nới room cho mọi dự án; dòng vốn phân hóa theo chất lượng dự án và chất lượng người vay, trong đó có pháp lý hoàn chỉnh và nhu cầu ở thực. Người mua căn hộ, trước khi ký, hỏi ngân hàng năm việc: pháp lý dự án đã được chấp thuận cho vay chưa, room còn cho vay mua nhà ở thương mại không, lãi ưu đãi bao lâu và lãi thả nổi sau đó, vốn tự có tối thiểu, và hồ sơ thu nhập. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Bài này tóm tắt báo chí và đối chiếu Công văn 8509/NHNN-CSTT ngày 16/9/2026. Bài không phải thông báo của Ngân hàng Nhà nước, không phải thông báo của một ngân hàng, và không phải tư vấn tín dụng.",
+      },
+      {
+        text: "Ảnh đầu bài là bàn gỗ, sổ hồ sơ trắng và biểu đồ cột không chữ. Ảnh người đọc hợp đồng, ảnh sổ tay checklist và ảnh tòa căn hộ giữa bài cũng là ảnh minh họa tạo bằng AI. Các ảnh không có logo, không có biển hiệu dự án, không phải ảnh một ngân hàng và không phải ảnh một tòa nhà có tên. Trang Báo Thanh Tra ngày 29/10 đăng ảnh một dự án khác; bài này không dùng ảnh đó.",
+      },
+      {
+        heading: "Công văn 8509 nói gì, và không nói gì, với người mua căn hộ",
+        text: "Công văn số 8509/NHNN-CSTT ngày 16/9/2026 của Ngân hàng Nhà nước, về việc tăng trưởng tín dụng năm 2026, được Thư viện pháp luật và dulieuphapluat.vn đăng nội dung, và được VietNamNet (Tuân Nguyễn, 17/9/2026) tường thuật. Điểm 1: kể từ ngày 01/01/2026 đến hết ngày 31/12/2026, các tổ chức tín dụng không phải tính phần dư nợ tín dụng tăng thêm so với cuối năm 2025 đối với nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng vào dư nợ tín dụng đối với lĩnh vực bất động sản, khi kiểm soát mức tăng trưởng tín dụng bất động sản theo điểm 4 Công văn 11686/NHNN-CSTT ngày 31/12/2025. Câu này là cách tính dư nợ trong phép kiểm soát tăng trưởng. Câu này không phải danh sách khoản vay được miễn thẩm định. (Nguồn: nội dung Công văn 8509/NHNN-CSTT; VietNamNet, 17/9/2026)",
+      },
+      {
+        text: "Câu mở đầu công văn, theo các nguồn vừa nêu, nói việc này nhằm tạo điều kiện cho tổ chức tín dụng cấp tín dụng đối với một số loại hình bất động sản phù hợp chủ trương của Đảng, Nhà nước và chính sách của cấp có thẩm quyền. Điểm 2 yêu cầu các tổ chức tín dụng tiếp tục thực hiện nghiêm Công văn 11686/NHNN-CSTT ngày 31/12/2025 và các văn bản liên quan. VietNamNet ngày 17/9/2026 viết rằng điều 4 Công văn 11686/NHNN-CSTT ngày 31/12/2025 yêu cầu tổ chức tín dụng kiểm soát tốc độ tăng trưởng tín dụng bất động sản so với cuối năm 2025 không vượt quá tốc độ tăng trưởng tín dụng chung so với cuối năm 2025 của chính tổ chức đó. Công văn 8509 gọi cùng chỗ là điểm 4, và điều chỉnh cách đưa nhóm nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng vào phép so sánh đó. (Nguồn: nội dung Công văn 8509/NHNN-CSTT; VietNamNet, 17/9/2026)",
+      },
+      {
+        text: "Báo Thanh Tra ngày 29/10/2026 ghi cùng khung ngày 1/1/2026 đến 31/12/2026 và cùng nhóm nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng. Bài viết thêm một câu: phần cho vay tăng thêm này vẫn nằm trong hạn mức tín dụng chung của từng ngân hàng. Bản nội dung Công văn 8509 trên Thư viện pháp luật và dulieuphapluat.vn không có câu tăng hạn mức tín dụng chung của tổ chức tín dụng. Bài này gắn câu «vẫn nằm trong hạn mức tín dụng chung» với Báo Thanh Tra ngày 29/10/2026, và không biến câu đó thành một câu chữ nguyên văn của công văn. (Nguồn: Báo Thanh Tra, 29/10/2026; nội dung Công văn 8509/NHNN-CSTT)",
+      },
+      {
+        text: "Với người mua căn hộ, công văn không nói ba việc. Văn bản không có câu «tự động nới room vay mua căn hộ». Văn bản không có câu «lãi suất vay nhà sẽ giảm». Nhóm được nêu tên là nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng, không phải khoản vay mua nhà ở thương mại của một cá nhân. Việc không tính một phần dư nợ vào phép kiểm soát tăng trưởng cũng không có nghĩa khoản vay được duyệt không cần thẩm định. Báo Thanh Tra ngày 29/10/2026 dẫn ông Nguyễn Quang Huy, CEO Khoa Tài chính - Ngân hàng, Trường Đại học Nguyễn Trãi: việc mở thêm dư địa tạo điều kiện cho thị trường phục hồi khi vốn vào dự án khả thi, có nhu cầu thực và khả năng trả nợ; cơ hội tiếp cận vốn vẫn phụ thuộc kết quả thẩm định và điều kiện cho vay của từng ngân hàng; dự án vẫn cần pháp lý, phương án kinh doanh khả thi và khả năng trả nợ. Ảnh dưới đây là người ngồi đọc hợp đồng, chữ trên giấy không đọc được. Ảnh minh họa tạo bằng AI. (Nguồn: Báo Thanh Tra, 29/10/2026; nội dung Công văn 8509/NHNN-CSTT)",
+        image: "/images/news-room-tin-dung-2910-body-01.webp",
+        imageAlt:
+          "Người ngồi quay lưng đọc một xấp hợp đồng, chữ trên giấy không đọc được. Ảnh minh họa tạo bằng AI, không phải khách hàng của một ngân hàng.",
+      },
+      {
+        heading: "Vì sao «phân loại room» khác với giảm lãi suất",
+        text: "Theo dữ liệu Batdongsan.com mà Báo Thanh Tra dẫn ngày 29/10/2026, 63% môi giới đánh giá người mua vẫn đang quan sát, cân nhắc kỹ trước khi xuống tiền. Cùng bài, rào cản chính được nêu là lãi suất vay cao, lo ngại biến động chính sách và quy hoạch, cùng hạn chế về dòng tiền. Tỷ lệ 63% là đánh giá của môi giới về tâm lý người mua. Tỷ lệ này không phải tỷ lệ hồ sơ vay được ngân hàng duyệt, và không phải một mức lãi suất. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "«Phân loại room» trong bài Báo Thanh Tra ngày 29/10/2026 là cách chuyên gia nói về chỗ dòng vốn được ưu tiên. Cách nói này không phải một thông báo giảm lãi suất. Ông Nguyễn Viết Hùng, chuyên gia tài chính – bất động sản, nói không nên hiểu chính sách mới là nới «room tín dụng riêng» cho tất cả dự án. Dòng vốn sẽ phân hóa theo chất lượng dự án và chất lượng người vay. Ngân hàng thẩm định pháp lý của dự án, khả năng tạo dòng tiền, sản phẩm có phục vụ nhu cầu thật hay không, và năng lực tài chính của chủ đầu tư. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Cùng bài Báo Thanh Tra ngày 29/10/2026, ông Nguyễn Viết Hùng nói giải pháp không phải mở tín dụng bất động sản một cách đại trà. Nếu tín dụng tăng mạnh mà vốn vẫn vào dự án pháp lý chưa hoàn chỉnh hoặc phân khúc mang tính đầu cơ, rủi ro nợ xấu chỉ bị đẩy sang sau. Việc ông gọi là phân loại room ưu tiên hạn mức cho dự án đã hoàn thiện pháp lý, có triển khai thực tế, có năng lực tài chính và có sản phẩm đáp ứng nhu cầu ở thực. Với người mua nhà, bài ghi ý áp dụng chính sách ưu đãi cho người mua để ở, có thu nhập ổn định và tỷ lệ vốn tự có hợp lý. Đó là nhận định được báo dẫn ngày 29/10/2026, chưa phải một gói lãi suất Ngân hàng Nhà nước công bố cùng ngày, và không phải ưu đãi của một dự án căn hộ. Ảnh dưới đây là một tòa căn hộ không tên, không biển hiệu. Ảnh minh họa tạo bằng AI. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+        image: "/images/news-room-tin-dung-2910-body-03.webp",
+        imageAlt:
+          "Tòa căn hộ nhiều tầng, không biển tên, nhìn từ đường phố có cây. Ảnh minh họa tạo bằng AI, không phải một dự án có tên và không phải The Camellia Sơn Trà.",
+      },
+      {
+        text: "Chi phí vay là một lớp khác, và bài này không viết lại chủ đề lãi suất. DXS-FERI, theo Báo Thanh Tra ngày 29/10/2026, cho biết 9 tháng đầu năm 2026 lãi suất vay mua bất động sản ở mức cao, lãi thả nổi phổ biến khoảng 13%–15%/năm; cùng với hạn mức tín dụng còn hạn chế, chi phí vay tiếp tục ảnh hưởng quyết định mua. Bà Võ Nhật Liễu, Tổng Giám đốc Công ty Tư vấn Phát triển dự án BrandLift ASIA, nói mặt bằng lãi cao cùng room tín dụng thắt khiến cả nhà đầu tư lẫn người mua ở thực thận trọng hơn, tỷ lệ khách vay để mua giảm rõ so với trước, và lãi vay hiện cao gấp khoảng 3 lần so với hơn 2 năm trước, lúc đó chỉ tầm 6%. Mức khoảng 13%–15%/năm và mức tầm 6% là bối cảnh chi phí bài báo dẫn. Hai mức này không phải bảng lãi của một ngân hàng trong ngày 29/10, và không phải cam kết lãi sẽ giảm. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Bà Võ Nhật Liễu, theo Báo Thanh Tra ngày 29/10/2026, đề xuất gói tín dụng dài hạn, lãi suất ổn định cho người mua nhà lần đầu, nhà ở xã hội và nhà ở thương mại vừa túi tiền; ưu tiên hạn mức cho dự án có pháp lý đầy đủ, triển khai đúng tiến độ và giá bán vừa túi tiền; và phân biệt tín dụng phục vụ nhu cầu ở thực với vốn đầu cơ. Đây là đề xuất được báo ghi, không phải nội dung Công văn 8509/NHNN-CSTT, và không phải chính sách bán hàng của một dự án. Phân loại room, theo các câu ông Nguyễn Viết Hùng và bà Võ Nhật Liễu, trả lời câu ngân hàng còn room cho nhóm nào. Giảm lãi suất trả lời câu mỗi tháng trả bao nhiêu. Hai câu không thay nhau. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        heading: "Người mua căn hộ nên hỏi gì trước khi ký",
+        text: "Năm câu dưới đây bám các điểm Báo Thanh Tra ngày 29/10/2026 đã nêu, và bám phần Công văn 8509/NHNN-CSTT không nói. Đây là việc hỏi trên hồ sơ của đúng căn và đúng ngân hàng. Bài không kết luận một ngân hàng đã trả lời các câu đó. Bài không gắn The Camellia Sơn Trà với một hạn mức room hay một mức lãi. Ảnh dưới đây là sổ tay với ô checklist trống, không chữ. Ảnh minh họa tạo bằng AI.",
+        image: "/images/news-room-tin-dung-2910-body-02.webp",
+        imageAlt:
+          "Sổ tay mở với các ô checklist trống và bút chì, không chữ. Ảnh minh họa tạo bằng AI.",
+      },
+      {
+        text: "Câu thứ nhất: pháp lý dự án đã được ngân hàng chấp thuận cho vay chưa. Ông Nguyễn Quang Huy, theo Báo Thanh Tra ngày 29/10/2026, nói dự án vẫn cần bảo đảm pháp lý, phương án kinh doanh khả thi và khả năng trả nợ. Ông Nguyễn Viết Hùng, cùng bài, nói ngân hàng thẩm định tính pháp lý của dự án. Người mua hỏi ngân hàng đã có chấp thuận cho vay đối với đúng dự án và đúng giai đoạn hay chưa, hay mới dừng ở tờ giới thiệu của chủ đầu tư. Công văn 8509/NHNN-CSTT không thay cho giấy chấp thuận đó. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Câu thứ hai: room còn cho vay mua nhà ở thương mại không. Công văn 8509/NHNN-CSTT ngày 16/9/2026 nói về cách tính dư nợ nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng khi kiểm soát tăng trưởng tín dụng bất động sản. Báo Thanh Tra ngày 29/10/2026 ghi phần cho vay tăng thêm của nhóm đó vẫn nằm trong hạn mức tín dụng chung của từng ngân hàng. Người mua căn hộ hỏi hạn mức còn lại của chính ngân hàng cho khoản vay mua nhà ở, và không lấy nhóm nghỉ dưỡng trong công văn làm câu trả lời cho căn mình định mua. Ông Nguyễn Viết Hùng nói dòng vốn phân hóa theo chất lượng dự án và người vay, không phải nới room cho mọi dự án. (Nguồn: Báo Thanh Tra, 29/10/2026; nội dung Công văn 8509/NHNN-CSTT)",
+      },
+      {
+        text: "Câu thứ ba: lãi ưu đãi bao lâu, và lãi thả nổi sau ưu đãi là bao nhiêu. DXS-FERI, qua Báo Thanh Tra ngày 29/10/2026, nêu lãi thả nổi phổ biến khoảng 13%–15%/năm trong 9 tháng đầu năm 2026. Đó là mặt bằng được báo dẫn, không phải lãi ghi trên một hợp đồng. Người mua hỏi trên giấy của ngân hàng: thời hạn ưu đãi, lãi trong thời hạn đó, công thức lãi thả nổi sau ưu đãi, và ngày bắt đầu tính thả nổi. Bà Võ Nhật Liễu nói lãi vay hiện cao gấp khoảng 3 lần so với hơn 2 năm trước. Câu đó giải thích vì sao phải hỏi số sau ưu đãi. Câu đó không thay phụ lục lãi của hồ sơ. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Câu thứ tư: vốn tự có tối thiểu là bao nhiêu. Ông Nguyễn Viết Hùng, theo Báo Thanh Tra ngày 29/10/2026, nói người mua để ở được nhắc trong ý ưu đãi là người có thu nhập ổn định và tỷ lệ vốn tự có hợp lý. Người mua hỏi ngân hàng tỷ lệ vốn tự có tối thiểu trên giá căn, khoản nào được tính là vốn tự có, và khoản nào không. Bài này không nêu một tỷ lệ phần trăm, vì Báo Thanh Tra ngày 29/10/2026 không công bố một tỷ lệ vốn tự có bắt buộc cho mọi ngân hàng. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        text: "Câu thứ năm: hồ sơ thu nhập ngân hàng cần những gì. Ông Nguyễn Viết Hùng, theo Báo Thanh Tra ngày 29/10/2026, nói ngân hàng nên đánh giá khả năng trả nợ từ dòng tiền thực tế của khách, thay vì phụ thuộc hoàn toàn vào giá trị tài sản bảo đảm, vì giá trị tài sản có thể giảm thanh khoản khi thị trường khó khăn. Bà Võ Nhật Liễu, cùng bài, nói người mua ở thực cân nhắc kỹ hơn vì sợ áp lực trả nợ. Người mua hỏi danh mục giấy thu nhập, kỳ sao kê ngân hàng yêu cầu, và cách ngân hàng tính nghĩa vụ trả nợ hàng tháng trên lãi sau ưu đãi, không chỉ trên lãi tháng ưu đãi. (Nguồn: Báo Thanh Tra, 29/10/2026)",
+      },
+      {
+        heading: "Cần đọc hồ sơ vay cùng chuyên viên",
+        text: "Anh chị muốn ngồi đọc hồ sơ vay và hồ sơ căn hộ The Camellia Sơn Trà cùng chuyên viên, liên hệ Nhật qua hotline hoặc Zalo 0934 885 108, hoặc ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng. The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà, tựa lưng bán đảo Sơn Trà. Phát triển dự án: MBLAND · Phát triển kinh doanh: WELAND. Buổi gặp để xem giấy tờ đã công bố và để đặt các câu hỏi về chấp thuận cho vay, room còn cho vay mua nhà ở, lãi ưu đãi và lãi thả nổi, vốn tự có, và hồ sơ thu nhập. Buổi gặp không phải thông báo room tín dụng của Ngân hàng Nhà nước, không gắn The Camellia Sơn Trà với một hạn mức room hay một mức lãi ưu đãi, và không thay thẩm định của ngân hàng.",
+        links: [
+          { to: "/lien-he", label: "Liên hệ — hẹn đọc hồ sơ vay" },
+          { to: "/gioi-thieu", label: "Hồ sơ đã công bố" },
+        ],
+      },
+      {
+        heading: "Câu hỏi thường gặp",
+        text: "",
+      },
+      {
+        heading: "Công văn 8509 có phải tự động nới room vay mua căn hộ không?",
+        text: "Không. Công văn 8509/NHNN-CSTT ngày 16/9/2026, theo nội dung đăng trên Thư viện pháp luật và dulieuphapluat.vn, và theo VietNamNet ngày 17/9/2026, điều chỉnh cách tính dư nợ: từ 1/1/2026 đến hết 31/12/2026, tổ chức tín dụng không phải tính phần dư nợ tăng thêm so với cuối năm 2025 của nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng vào dư nợ tín dụng bất động sản khi kiểm soát tăng trưởng tín dụng bất động sản. Văn bản không có câu tự động nới room vay mua căn hộ, không có câu lãi suất vay nhà sẽ giảm, và không miễn thẩm định từng khoản vay. Báo Thanh Tra ngày 29/10/2026 ghi phần cho vay tăng thêm của nhóm này vẫn nằm trong hạn mức tín dụng chung của từng ngân hàng.",
+      },
+      {
+        heading: "Phân loại room có nghĩa là lãi suất vay nhà sẽ giảm không?",
+        text: "Không suy ra điều đó từ các nguồn bài này dẫn. Báo Thanh Tra ngày 29/10/2026 dẫn ông Nguyễn Viết Hùng: dòng vốn phân hóa theo pháp lý, nhu cầu ở thực, thu nhập ổn định và vốn tự có hợp lý, không phải nới room đại trà. Cùng bài, DXS-FERI nêu lãi thả nổi phổ biến khoảng 13%–15%/năm trong 9 tháng đầu năm 2026, và bà Võ Nhật Liễu nói lãi vay hiện cao gấp khoảng 3 lần so với hơn 2 năm trước, lúc đó tầm 6%. Các câu này mô tả mặt bằng chi phí và cách chọn chỗ cho vốn. Các câu này không phải thông báo lãi suất giảm. Lãi của một khoản vay theo giấy từng ngân hàng tại thời điểm vay.",
+      },
+      {
+        heading: "Người mua căn hộ nên hỏi ngân hàng những gì trước khi ký?",
+        text: "Năm việc, theo các điểm Báo Thanh Tra ngày 29/10/2026 và phần Công văn 8509/NHNN-CSTT không nói: pháp lý dự án đã được ngân hàng chấp thuận cho vay chưa; room còn cho khoản vay mua nhà ở thương mại không, tách khỏi nhóm nhà hàng, khách sạn, khu du lịch, sinh thái, nghỉ dưỡng trong công văn; lãi ưu đãi trong bao lâu và lãi thả nổi sau ưu đãi tính thế nào; vốn tự có tối thiểu là bao nhiêu; hồ sơ thu nhập và cách tính khả năng trả nợ trên dòng tiền thực tế. Bài không trả lời thay cho ngân hàng, và không gắn các câu này với một mức ưu đãi của The Camellia Sơn Trà.",
+      },
+      {
+        heading: "Lưu ý",
+        text: "Lưu ý: Bài tóm tắt báo chí, không phải thông báo của Ngân hàng Nhà nước hay của một ngân hàng, và không phải tư vấn tín dụng. Bài không gắn The Camellia Sơn Trà với một hạn mức room hay một mức lãi suất, không cam kết lợi nhuận và không chào giá. Nguồn: Báo Thanh Tra, Kỳ Phương, 08:43 ngày 29/10/2026 — https://thanhtra.com.vn/nha-dat-57A4B2310/phan-loai-room-tin-dung-se-tao-don-bay-cho-thi-truong-bat-dong-san-cce97599e.html ; Công văn 8509/NHNN-CSTT ngày 16/9/2026, nội dung trên Thư viện pháp luật — https://thuvienphapluat.vn/cong-van/Tien-te-Ngan-hang/Cong-van-8509-NHNN-CSTT-2026-tang-truong-tin-dung-726620.aspx ; cùng nội dung trên dulieuphapluat.vn — https://dulieuphapluat.vn/van-ban/tai-chinh-ngan-hang-van-ban/cong-van-8509nhnn-cstt-ve-tang-truong-tin-dung-nam-2026-do-ngan-hang-nha-nuoc-viet-nam-ban-hanh-1908937.html ; VietNamNet, Tuân Nguyễn, 17/9/2026 — https://vietnamnet.vn/tin-dung-khach-san-khu-nghi-duong-duoc-loai-tru-khi-kiem-soat-tang-truong-bds-2556075.html. Ảnh đầu bài, ảnh người đọc hợp đồng, ảnh sổ tay checklist và ảnh tòa căn hộ: Ảnh minh họa tạo bằng AI, không logo, không biển hiệu, không phải ảnh một ngân hàng hay một dự án có tên. Bài không dùng ảnh dự án đăng trên Báo Thanh Tra.",
+      },
+    ],
+  },
+  {
     slug: "son-tra-27-10-duong-30m-cho-moi-chung-cu-cu",
     date: "29.10.2026",
     title: "Phường Sơn Trà: đường 30m, chợ mới, chung cư cũ được ưu tiên",
