@@ -45,6 +45,39 @@ function isNewsArticlePath(path: string): path is `/tin-tuc/${string}` {
   return path.startsWith("/tin-tuc/");
 }
 
+function renderInline(text: string) {
+  if (!text.includes("**")) return text;
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      return (
+        <strong key={i} className="font-semibold text-ink">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+}
+
+function NewsBodyText({ text, italic }: { text: string; italic?: boolean }) {
+  const lines = text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line.length > 0);
+  const isList = lines.length > 1 && lines.every((line) => line.startsWith("- "));
+  if (isList) {
+    return (
+      <ul className="list-disc space-y-2 pl-5">
+        {lines.map((line, i) => (
+          <li key={i}>{renderInline(line.slice(2))}</li>
+        ))}
+      </ul>
+    );
+  }
+  return <p className={italic ? "italic" : undefined}>{renderInline(text)}</p>;
+}
+
 function ArticlePage() {
   const article = Route.useLoaderData();
   const openWith = useRegister((s) => s.openWith);
@@ -166,20 +199,22 @@ function ArticlePage() {
                 {block.heading ? (
                   <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
                 ) : null}
-                {block.text ? <p>{block.text}</p> : null}
+                {block.text ? <NewsBodyText text={block.text} italic={block.italic} /> : null}
                 {bodyDisplay ? (
-                  <SmartImg
-                    slot={bodySlot}
-                    src={block.image!}
-                    alt={block.imageAlt ?? block.heading ?? article.title}
-                    loading="lazy"
-                    decoding="async"
-                    onClick={() => openLightboxAtSrc(bodyDisplay)}
-                    className="mt-4 w-full cursor-zoom-in rounded-xl object-contain shadow-border"
-                  />
-                ) : null}
-                {bodyDisplay && block.imageCaption ? (
-                  <p className="mt-2 text-sm text-muted">{block.imageCaption}</p>
+                  <figure className="mt-4">
+                    <SmartImg
+                      slot={bodySlot}
+                      src={block.image!}
+                      alt={block.imageAlt ?? block.heading ?? article.title}
+                      loading="lazy"
+                      decoding="async"
+                      onClick={() => openLightboxAtSrc(bodyDisplay)}
+                      className="w-full cursor-zoom-in rounded-xl object-contain shadow-border"
+                    />
+                    {block.imageCaption ? (
+                      <figcaption className="mt-2 text-sm text-muted">{block.imageCaption}</figcaption>
+                    ) : null}
+                  </figure>
                 ) : null}
                 {block.links?.length ? (
                   <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">

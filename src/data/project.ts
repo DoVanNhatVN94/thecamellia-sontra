@@ -243,8 +243,10 @@ export type NewsBlock = {
   image?: string;
   /** Alt for body image; falls back to heading or article title. */
   imageAlt?: string;
-  /** Optional caption under a mid-body image. */
+  /** Caption under a mid-body image. */
   imageCaption?: string;
+  /** Render this block's paragraph in italic (disclaimer lines). */
+  italic?: boolean;
   /** Optional internal paths rendered under the block (SEO FAQ articles). */
   links?: readonly {
     to:
@@ -295,6 +297,93 @@ export type NewsArticle = {
 };
 
 export const NEWS: NewsArticle[] = [
+  {
+    slug: "thanh-toan-50-nhan-nha-the-camellia-son-tra",
+    date: "30.10.2026",
+    title: "Thanh toán 50% nhận nhà tại The Camellia Sơn Trà",
+    excerpt:
+      "The Camellia Sơn Trà cho thanh toán 50% đến khi nhận nhà, phần lớn còn lại giãn trong 20 tháng. Kèm kịch bản cho thuê để tham khảo.",
+    image: "/images/news-tt50-3010-og.jpg",
+    imageAlt:
+      "Poster chính sách thanh toán 50% nhận nhà, giãn tiến độ đến 36 tháng tại The Camellia Sơn Trà",
+    poster: "/images/news-tt50-3010-hero.webp",
+    gallery: [
+      "/images/news-tt50-3010-hero.webp",
+      "/images/news-tt50-3010-body-01.webp",
+      "/images/lobby.webp",
+    ],
+    galleryFit: "contain",
+    body: [
+      {
+        text: "Với người mua căn hộ để cho thuê, câu hỏi đầu tiên thường không phải giá bao nhiêu, mà là phải bỏ ra bao nhiêu trước khi căn hộ bắt đầu có thu nhập. Chính sách thanh toán mới của The Camellia Sơn Trà, do MBLAND (phát triển dự án) và WELAND (phát triển kinh doanh) công bố, trả lời đúng câu hỏi đó: người mua thanh toán 50% đến khi nhận nhà, phần còn lại được giãn ra sau khi căn hộ đã có thể đưa vào khai thác.",
+      },
+      {
+        text: "Bài này tóm lại lịch thanh toán, kịch bản cho thuê mà chủ đầu tư đưa ra, và những điểm anh chị nên tự kiểm tra trước khi quyết định.",
+      },
+      {
+        heading: "1. Chính sách mới thay đổi điều gì",
+        text: "Tiến độ thanh toán được giãn tới 36 tháng và chia thành hai giai đoạn rõ ràng: trước nhận nhà và sau nhận nhà. Điểm khác biệt nằm ở chỗ một phần đáng kể tiền mua được dời sang thời điểm căn hộ đã bàn giao. Nếu cho thuê được, tiền thuê có thể góp vào các đợt thanh toán sau, thay vì phải chuẩn bị đủ vốn ngay từ đầu.",
+      },
+      {
+        heading: "2. Lịch thanh toán cụ thể (theo đợt)",
+        text: "**16 tháng đầu:** thanh toán 50% giá trị căn hộ cho đến khi nhận nhà. Thời điểm nhận nhà dự kiến là tháng 3/2028.",
+      },
+      {
+        text: "**20 tháng tiếp theo (sau nhận nhà):** 45% còn lại chia thành 4 đợt, mỗi đợt cách nhau 5 tháng.",
+      },
+      {
+        text: "5% còn lại thanh toán khi nhận sổ. Giá trị từng đợt và mốc thời gian chính xác sẽ ghi trong hợp đồng của từng căn.",
+        image: "/images/news-tt50-3010-body-01.webp",
+        imageAlt:
+          "Sơ đồ timeline: Ký mua, 16 tháng · 50%, Nhận nhà (dự kiến T3/2028), 20 tháng · 45% · 4 đợt, cách 5 tháng.",
+      },
+      {
+        heading: "3. Kịch bản doanh thu cho thuê (tham khảo)",
+        text: "Dự án nằm ở phường Sơn Trà, gần biển và bán đảo Sơn Trà, nên có thể phục vụ cả khách du lịch thuê ngắn ngày lẫn chuyên gia thuê dài hạn. Theo kịch bản chủ đầu tư đưa ra, doanh thu cho thuê kỳ vọng từ 16 triệu đồng/tháng với căn Studio và lên đến 50 triệu đồng/tháng với căn 3PN.",
+      },
+      {
+        text: "Đây là doanh thu kỳ vọng theo kịch bản vận hành dự kiến, không phải cam kết thuê hay cam kết lợi nhuận.",
+        italic: true,
+      },
+      {
+        heading: "4. Kịch bản lợi nhuận sau 20 tháng nhận nhà (tham khảo)",
+        text: "Cũng theo kịch bản này, lợi nhuận tích lũy sau 20 tháng nhận nhà ước tính từ 300 đến 900 triệu đồng, trong đó căn 3PN ở mức cao nhất 900 triệu đồng. Mốc 20 tháng trùng với giai đoạn thanh toán 45% còn lại.",
+      },
+      {
+        text: "Nguồn công bố chưa nêu chi tiết các giả định đằng sau con số, như công suất thuê hay những chi phí nào đã được trừ. Anh chị nên hỏi rõ khi được tư vấn.",
+      },
+      {
+        text: "Số liệu lợi nhuận mang tính chất tham khảo, dựa trên kịch bản vận hành dự kiến.",
+        italic: true,
+        image: "/images/lobby.webp",
+        imageAlt: "Phối cảnh nội thất phòng khách căn hộ The Camellia Sơn Trà",
+        imageCaption: "Ảnh phối cảnh mang tính minh họa",
+      },
+      {
+        heading: "5. Những điều nên cân nhắc trước khi quyết định",
+        text: "Chính sách giãn thanh toán giúp giảm áp lực vốn ban đầu, nhưng kết quả đầu tư thực tế còn phụ thuộc vào nhiều yếu tố:",
+      },
+      {
+        text: "- **Công suất thuê:** cho thuê ngắn ngày thường lên xuống theo mùa du lịch; căn trống tháng nào là doanh thu giảm tháng đó.\n- **Chi phí vận hành:** nội thất, dọn dẹp, bảo trì, phí nền tảng đặt phòng hoặc phí đơn vị vận hành sẽ làm lợi nhuận thực nhận thấp hơn doanh thu.\n- **Phí quản lý tòa nhà và thuế** từ hoạt động cho thuê.\n- **Tiến độ bàn giao:** tháng 3/2028 là mốc dự kiến. Nếu bàn giao lùi lại, thời điểm bắt đầu có tiền thuê cũng lùi theo.\n- **Khả năng tự thanh toán các đợt sau:** nên tính phương án vẫn đóng đủ 45% kể cả khi tiền thuê thấp hơn kỳ vọng.",
+      },
+      {
+        text: "Nếu anh chị mua để ở, chính sách này vẫn hữu ích vì giãn được dòng tiền; nếu mua để cho thuê, nên đề nghị tư vấn viên đưa bảng tính theo đúng loại căn mình quan tâm.",
+      },
+      {
+        heading: "6. Nhận bảng tính theo căn anh chị quan tâm",
+        text: "Mỗi loại căn có giá, lịch đóng và kịch bản cho thuê khác nhau. Liên hệ để được gửi bảng thanh toán chi tiết, hoặc ghé Camellia Gallery để được tư vấn trực tiếp.",
+      },
+      {
+        text: "📞 Nhật – 0934 885 108",
+      },
+      {
+        text: "📍 Camellia Gallery – Tầng 9, Bạch Đằng Complex",
+      },
+      {
+        text: "Nguồn: Chính sách thanh toán do MBLAND/WELAND công bố (poster), cập nhật 30/10/2026. Thông tin bài toán tài chính mang tính chất tham khảo dựa trên kịch bản vận hành dự kiến, không phải cam kết về doanh thu hay lợi nhuận. Chính sách có thể thay đổi theo từng thời điểm; điều khoản chính thức theo hợp đồng mua bán.",
+      },
+    ],
+  },
   {
     slug: "tham-quan-the-camellia-son-tra-tour-360",
     date: "30.10.2026",
