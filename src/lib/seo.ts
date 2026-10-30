@@ -93,6 +93,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-gop-von-nha-o-2810-og.jpg": { width: 1200, height: 630 },
   "/images/news-so-huu-chung-2910-og.jpg": { width: 1200, height: 630 },
   "/images/news-son-tra-uu-tien-2910-og.jpg": { width: 1200, height: 630 },
+  "/images/news-kdt-phia-nam-3010-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
