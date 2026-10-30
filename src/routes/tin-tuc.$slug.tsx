@@ -178,6 +178,9 @@ function ArticlePage() {
                     className="mt-4 w-full cursor-zoom-in rounded-xl object-contain shadow-border"
                   />
                 ) : null}
+                {bodyDisplay && block.imageCaption ? (
+                  <p className="mt-2 text-sm text-muted">{block.imageCaption}</p>
+                ) : null}
                 {block.links?.length ? (
                   <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                     {block.links.map((l) => (
