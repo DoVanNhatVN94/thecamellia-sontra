@@ -300,7 +300,7 @@ export const NEWS: NewsArticle[] = [
     date: "30.10.2026",
     title: "Tham quan The Camellia Sơn Trà qua tour 360 trực tuyến",
     excerpt:
-      "Tour 360 trên website cho phép xoay tòa nhà, vào căn hộ và xem tầm nhìn ra biển, rừng, thành phố của The Camellia Sơn Trà trước khi đến tận nơi.",
+      "Tour 360 trên website cho phép xoay tòa nhà, xem vị trí căn trên mặt bằng và tầm nhìn ra biển, rừng, thành phố của The Camellia Sơn Trà trước khi đến tận nơi.",
     image: "/images/news-tour360-3010-og.jpg",
     imageAlt:
       "Toàn cảnh tòa nhà trong tour 360 The Camellia Sơn Trà, góc Tổng thể, hình ảnh mô phỏng",
@@ -313,7 +313,7 @@ export const NEWS: NewsArticle[] = [
     ],
     body: [
       {
-        text: "Trước khi đi xem một dự án, đa số người mua muốn biết vài điều cơ bản: tòa nhà trông ra sao, căn hộ bên trong bố trí thế nào, đứng từ đó nhìn ra sẽ thấy gì. Với The Camellia Sơn Trà, anh chị có thể xem trước những điều đó qua mục Tour 360 ngay trên website, không cần hẹn lịch hay di chuyển.",
+        text: "Trước khi đi xem một dự án, đa số người mua muốn biết vài điều cơ bản: tòa nhà trông ra sao, căn nằm ở vị trí nào, đứng từ đó nhìn ra sẽ thấy gì. Với The Camellia Sơn Trà, anh chị có thể xem trước những điều đó qua mục Tour 360 ngay trên website, không cần hẹn lịch hay di chuyển.",
       },
       {
         heading: "1. Tour 360 trên website có gì",
@@ -323,7 +323,7 @@ export const NEWS: NewsArticle[] = [
         text: "• Xoay tòa nhà: xem khối công trình từ nhiều phía để hình dung kiến trúc và vị trí tòa nhà trong khu vực.",
       },
       {
-        text: "• Vào căn hộ: đi vào bên trong để xem cách bố trí không gian.",
+        text: "• Mặt bằng: xem vị trí từng căn trên mặt bằng tầng. Phần căn hộ mẫu đang được cập nhật.",
       },
       {
         text: "• Xem tầm view: nhìn ra hướng biển, rừng Sơn Trà và thành phố Đà Nẵng.",
