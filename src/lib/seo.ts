@@ -97,6 +97,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-244-nha-o-tm-3010-og.jpg": { width: 1200, height: 630 },
   "/images/news-tour360-3010-og.jpg": { width: 1200, height: 630 },
   "/images/news-tien-sa-3110-og.jpg": { width: 1200, height: 630 },
+  "/images/news-bien-son-tra-3110-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
