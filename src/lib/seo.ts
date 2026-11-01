@@ -99,6 +99,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-tien-sa-3110-og.jpg": { width: 1200, height: 630 },
   "/images/news-bien-son-tra-3110-og.jpg": { width: 1200, height: 630 },
   "/images/news-dt-dv-bds-3110-og.jpg": { width: 1200, height: 630 },
+  "/images/news-tin-dung-bds-984-0111-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
