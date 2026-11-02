@@ -10,8 +10,10 @@ import {
   isThanhThoiArticleSlug,
 } from "@/components/media/thanh-thoi-article-extras";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
+import { NewsNote, NewsProse } from "@/components/news/article-prose";
 import { Button } from "@/components/ui/button";
 import { NEWS, PROJECT } from "@/data/project";
+import { headingRank, isNoteHeading } from "@/lib/news-prose";
 import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { pageHead, parseDotDate } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
@@ -112,7 +114,9 @@ function ArticlePage() {
         <p className="mt-6 text-xs tracking-[0.16em] uppercase text-terracotta">
           <time dateTime={article.date.split(".").reverse().join("-")}>{article.date}</time>
         </p>
-        <h1 className="mt-3 font-display text-3xl leading-tight sm:text-5xl">{article.title}</h1>
+        <h1 className="mt-3 font-display text-3xl font-medium leading-[1.15] text-ink sm:text-5xl">
+          {article.title}
+        </h1>
         <SmartImg
           slot={heroSlot}
           src={heroSrc}
@@ -155,18 +159,43 @@ function ArticlePage() {
 
         {showLayoutB ? <ThanhThoiLayoutBExtras /> : null}
 
-        <div className="mt-8 space-y-4 text-sm leading-relaxed text-muted sm:text-base">
+        <div className="mt-10 text-base leading-7 text-ink-soft">
           {article.body.map((block, i) => {
             const bodySlot = `${galleryId}:body:${i}`;
             const bodyHidden = block.image ? isHidden(bodySlot) : true;
             const bodyDisplay = block.image && !bodyHidden ? resolve(bodySlot, block.image) : null;
+            const note = isNoteHeading(block.heading);
+            const rank = block.heading ? headingRank(article.body, i) : null;
+            const follows = i > 0;
 
             return (
-              <div key={i}>
-                {block.heading ? (
-                  <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
+              <div
+                key={i}
+                className={cn(
+                  note && "mt-14 rounded-xl border border-stone bg-paper px-5 py-6 sm:px-7 sm:py-8",
+                  !note && rank === 2 && follows && "mt-14 border-t border-stone pt-8",
+                  !note && rank === 3 && "mt-8",
+                  !note && !block.heading && follows && "mt-5",
+                )}
+              >
+                {block.heading && rank === 3 ? (
+                  <h3 className="mb-3 font-sans text-lg font-semibold leading-snug text-ink sm:text-xl">
+                    {block.heading}
+                  </h3>
                 ) : null}
-                {block.text ? <p>{block.text}</p> : null}
+                {block.heading && rank !== 3 ? (
+                  <h2
+                    className={cn(
+                      "mb-4 font-display text-2xl font-semibold leading-snug text-ink sm:text-3xl",
+                      note && "mb-5",
+                    )}
+                  >
+                    {block.heading}
+                  </h2>
+                ) : null}
+                {block.text ? (
+                  note ? <NewsNote text={block.text} /> : <NewsProse text={block.text} />
+                ) : null}
                 {bodyDisplay ? (
                   <SmartImg
                     slot={bodySlot}
