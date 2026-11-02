@@ -102,6 +102,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-tin-dung-bds-984-0111-og.jpg": { width: 1200, height: 630 },
   "/images/news-ton-dong-0111-og.jpg": { width: 1200, height: 630 },
   "/images/news-hdmb-nha-giay-0211-og.jpg": { width: 1200, height: 630 },
+  "/images/news-hatang-0211-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
