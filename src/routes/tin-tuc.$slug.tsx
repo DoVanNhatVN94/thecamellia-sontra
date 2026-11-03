@@ -10,8 +10,10 @@ import {
   isThanhThoiArticleSlug,
 } from "@/components/media/thanh-thoi-article-extras";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
+import { NewsNote, NewsProse } from "@/components/news/article-prose";
 import { Button } from "@/components/ui/button";
 import { NEWS, PROJECT } from "@/data/project";
+import { headingRank, isNoteHeading } from "@/lib/news-prose";
 import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { pageHead, parseDotDate } from "@/lib/seo";
 import { useRegister } from "@/lib/register-store";
@@ -160,13 +162,40 @@ function ArticlePage() {
             const bodySlot = `${galleryId}:body:${i}`;
             const bodyHidden = block.image ? isHidden(bodySlot) : true;
             const bodyDisplay = block.image && !bodyHidden ? resolve(bodySlot, block.image) : null;
+            const note = isNoteHeading(block.heading);
+            const rank = block.heading ? headingRank(article.body, i) : null;
 
             return (
-              <div key={i}>
-                {block.heading ? (
-                  <h2 className="mt-8 mb-3 font-display text-2xl text-ink">{block.heading}</h2>
+              <div
+                key={i}
+                className={cn(
+                  note && "mt-10 rounded-xl border border-stone bg-paper px-5 py-6 sm:px-7",
+                )}
+              >
+                {block.heading && rank === 3 ? (
+                  <h3 className="mt-8 mb-3 font-sans text-lg font-semibold leading-snug text-ink sm:text-xl">
+                    {block.heading}
+                  </h3>
                 ) : null}
-                {block.text ? <p>{block.text}</p> : null}
+                {block.heading && rank !== 3 ? (
+                  <h2
+                    className={cn(
+                      "mt-8 mb-3 font-display text-2xl text-ink",
+                      note && "mt-0 mb-4",
+                    )}
+                  >
+                    {block.heading}
+                  </h2>
+                ) : null}
+                {block.text ? (
+                  note ? (
+                    <NewsNote text={block.text} />
+                  ) : (block.text.match(/•/g) ?? []).length > 1 ? (
+                    <NewsProse text={block.text} />
+                  ) : (
+                    <p>{block.text}</p>
+                  )
+                ) : null}
                 {bodyDisplay ? (
                   <SmartImg
                     slot={bodySlot}
