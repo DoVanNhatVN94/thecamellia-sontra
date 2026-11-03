@@ -321,7 +321,7 @@ export const NEWS: NewsArticle[] = [
         text: "Ngày 02/11/2026, Cổng Thông tin điện tử thành phố Đà Nẵng đưa tin Chủ tịch UBND thành phố đã ban hành Quyết định số 5023/QĐ-UBND, phê duyệt tiếp nhận dự án “Bảo tồn loài Chà vá chân nâu và loài Chà vá chân xám tại thành phố Đà Nẵng và tỉnh Quảng Ngãi”. Dự án do tổ chức Synchronicity Earth (Vương quốc Anh) tài trợ, kinh phí viện trợ hơn 6,5 tỷ đồng, thời gian thực hiện từ tháng 10/2026 đến tháng 9/2029. Phường Sơn Trà là một trong 7 phường của Đà Nẵng có tên trong địa bàn triển khai (Nguồn: Cổng TTĐT TP Đà Nẵng, 02/11/2026).",
       },
       {
-        text: "Bài tóm tắt thông tin từ Cổng TTĐT thành phố và báo chí. Bài không phải văn bản chính thức của cơ quan nhà nước, không phải thông cáo của dự án và không phải thông cáo của The Camellia Sơn Trà. Chi tiết hoạt động cụ thể sẽ do đơn vị thực hiện công bố sau.",
+        text: "Bài tóm tắt thông tin từ Cổng TTĐT thành phố và báo chí. Bài không phải văn bản chính thức của cơ quan nhà nước, không phải thông cáo của dự án và không phải thông cáo của The Camellia Sơn Trà. Các nguồn chưa nêu lịch hay hình thức hoạt động cụ thể tại từng phường.",
       },
       {
         heading: "Dự án gồm những gì",
