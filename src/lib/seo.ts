@@ -107,6 +107,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-to-cong-tac-lan-bien-0211-og.jpg": { width: 1200, height: 630 },
   "/images/news-quy-che-kien-truc-0311-og.jpg": { width: 1200, height: 630 },
   "/images/news-loi-suat-thue-0311-og.jpg": { width: 1200, height: 630 },
+  "/images/news-noxh-sun-home-0411-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
