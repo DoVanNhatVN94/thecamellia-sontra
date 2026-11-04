@@ -300,7 +300,7 @@ export const NEWS: NewsArticle[] = [
     date: "04.11.2026",
     title: "Khu thương mại tự do Đà Nẵng: 5/7 vị trí có nhà đầu tư, nhà ở đọc thế nào?",
     excerpt:
-      "Khu thương mại tự do Đà Nẵng rộng khoảng 1.881 ha, 7 vị trí. Đến giữa tháng 10/2026, 5 vị trí đã được chấp thuận nhà đầu tư; phần lớn hạng mục dự kiến khai thác từ năm 2029.",
+      "Khu thương mại tự do Đà Nẵng rộng khoảng 1.881 ha, 7 vị trí. Đến giữa tháng 10/2026, 5 vị trí đã được chấp thuận nhà đầu tư; vị trí số 6 dự kiến khai thác từng phần từ năm 2029.",
     description:
       "Khu thương mại tự do Đà Nẵng: 5/7 vị trí có nhà đầu tư, vị trí 3 và 4 dự kiến khởi công 12/2026, vị trí 6 hoàn thành quý IV/2029. Người mua căn hộ nên đọc các mốc này thế nào.",
     image: "/images/news-ftz-da-nang-0411-og.jpg",
@@ -328,7 +328,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Bảy vị trí đang ở bước nào",
-        text: "Theo VnExpress (01/11/2026), tháng 6/2026 thành phố trao quyết định chấp thuận chủ trương đầu tư cho ba dự án hạ tầng tại vị trí số 2, 3 và 4, tổng diện tích khoảng 910 ha, vốn hơn 15.025 tỷ đồng. Vị trí số 3 do Công ty cổ phần Đầu tư Phương Trang làm, 500 ha, hơn 8.119 tỷ đồng. Vị trí số 4 do Công ty cổ phần Thanh Bình Phú Mỹ làm, 335 ha, 5.338 tỷ đồng. Vị trí số 2 do Công ty cổ phần Đầu tư Sài Gòn – Đà Nẵng làm, khoảng 75 ha, hơn 1.568 tỷ đồng. Ngày 13/10, thành phố công bố chấp thuận Công ty TNHH FTZ Kita TrungNam làm nhà đầu tư vị trí số 6, khoảng 154 ha tại xã Bà Nà, vốn hơn 3.354 tỷ đồng, thời hạn hoạt động 70 năm kể từ ngày Nhà nước quyết định cho thuê đất.",
+        text: "Theo VnExpress (01/11/2026), trong tháng 6 thành phố trao quyết định chấp thuận chủ trương đầu tư cho ba dự án hạ tầng tại vị trí số 2, 3 và 4, tổng diện tích khoảng 910 ha, vốn hơn 15.025 tỷ đồng. Vị trí số 3 do Công ty cổ phần Đầu tư Phương Trang làm, 500 ha, hơn 8.119 tỷ đồng. Vị trí số 4 do Công ty cổ phần Thanh Bình Phú Mỹ làm, 335 ha, 5.338 tỷ đồng. Vị trí số 2 do Công ty cổ phần Đầu tư Sài Gòn – Đà Nẵng làm, khoảng 75 ha, hơn 1.568 tỷ đồng. Ngày 13/10, thành phố công bố chấp thuận Công ty TNHH FTZ Kita TrungNam làm nhà đầu tư vị trí số 6, khoảng 154 ha tại xã Bà Nà, vốn hơn 3.354 tỷ đồng, thời hạn hoạt động 70 năm kể từ ngày Nhà nước quyết định cho thuê đất.",
         image: "/images/news-ftz-da-nang-0411-body-vi-tri.webp",
         imageAlt:
           "Đồ họa tóm tắt bảy vị trí Khu thương mại tự do Đà Nẵng: nhà đầu tư, diện tích, vốn và mốc của từng vị trí, kèm nguồn báo.",
@@ -353,7 +353,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Người mua căn hộ đọc tin này thế nào",
-        text: "Thứ nhất, đây là động lực trung và dài hạn. Vị trí số 6 dự kiến từng phần khai thác năm 2029; khu tái định cư làm đến năm 2029. Việc làm và người lao động mới, nếu có, chủ yếu đến sau các mốc đó, không phải ngay năm sau. Thứ hai, theo các nguồn, vị trí số 2 ở cửa ngõ phía Bắc gần cảng Liên Chiểu, còn vị trí số 6 và khu tái định cư ở xã Bà Nà, xa bán đảo Sơn Trà. Thứ ba, các nguồn không nêu con số nào về giá nhà hay giá thuê quanh các vị trí này. Bài không suy ra giá căn hộ sẽ tăng hay giảm ở đâu. Khi ai đó nói một khu «hưởng lợi từ khu thương mại tự do», hỏi lại vị trí nào, đã khởi công chưa và mốc lấy từ văn bản nào.",
+        text: "Thứ nhất, đây là động lực trung và dài hạn. Vị trí số 6 dự kiến từng phần khai thác năm 2029; khu tái định cư làm đến năm 2029. Việc làm và người lao động mới, nếu có, chủ yếu đến sau các mốc đó, không phải ngay năm sau. Thứ hai, theo các nguồn, vị trí số 2 ở cửa ngõ phía Bắc, kết nối cảng Liên Chiểu, còn vị trí số 6 và khu tái định cư ở xã Bà Nà, xa bán đảo Sơn Trà. Thứ ba, các nguồn không nêu con số nào về giá nhà hay giá thuê quanh các vị trí này. Bài không suy ra giá căn hộ sẽ tăng hay giảm ở đâu. Khi ai đó nói một khu «hưởng lợi từ khu thương mại tự do», hỏi lại vị trí nào, đã khởi công chưa và mốc lấy từ văn bản nào.",
       },
       {
         text: "Anh chị muốn ngồi đọc hồ sơ đã công bố, liên hệ Nhật qua hotline hoặc Zalo 0934 885 108, hoặc ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng. The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà. Chủ đầu tư là Công ty TNHH Địa ốc Thành Lâm; MBLAND phát triển dự án, WELAND phát triển kinh doanh. Pháp lý đã công bố trên website là sổ hồng sở hữu lâu dài; đủ điều kiện bán nhà ở hình thành trong tương lai từ 13.07.2026; bàn giao dự kiến 2028. Giá sàn website từ 1,98 tỷ; giá và chính sách theo bảng giá và phụ lục tại thời điểm ký. Các bài báo nêu trong bài không nhắc đến dự án này. Bài không cam kết lợi nhuận và không nói giá sẽ tăng.",
@@ -373,7 +373,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Khu thương mại tự do có làm giá căn hộ Sơn Trà tăng không?",
-        text: "Các nguồn trong bài không nêu số liệu nào về giá nhà liên quan đến khu thương mại tự do, nên bài không kết luận giá tăng hay giảm. Theo các nguồn, vị trí số 2 ở cửa ngõ phía Bắc gần cảng Liên Chiểu, vị trí số 6 ở xã Bà Nà; không vị trí nào được báo nêu là ở Sơn Trà. Người mua nên xem khu thương mại tự do là một yếu tố dài hạn của thành phố, cùng với pháp lý, tiến độ của dự án đang xem và khả năng trả nợ.",
+        text: "Các nguồn trong bài không nêu số liệu nào về giá nhà liên quan đến khu thương mại tự do, nên bài không kết luận giá tăng hay giảm. Theo các nguồn, vị trí số 2 ở cửa ngõ phía Bắc, kết nối cảng Liên Chiểu, vị trí số 6 ở xã Bà Nà; không vị trí nào được báo nêu là ở Sơn Trà. Người mua nên xem khu thương mại tự do là một yếu tố dài hạn của thành phố, cùng với pháp lý, tiến độ của dự án đang xem và khả năng trả nợ.",
       },
       {
         heading: "Lưu ý",
