@@ -111,6 +111,7 @@ export const OG_IMAGE_DIMS: Record<string, { width: number; height: number }> = 
   "/images/news-ftz-da-nang-0411-og.jpg": { width: 1200, height: 630 },
   "/images/news-dulich-quocte-0411-og.jpg": { width: 1200, height: 630 },
   "/images/news-nghi-duong-treo-0511-og.jpg": { width: 1200, height: 630 },
+  "/images/news-nang-luc-tai-chinh-0511-og.jpg": { width: 1200, height: 630 },
 };
 
 function ogPathKey(imageUrl: string) {
