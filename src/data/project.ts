@@ -300,7 +300,7 @@ export const NEWS: NewsArticle[] = [
     date: "05.11.2026",
     title: "Phường Sơn Trà đầu tháng 11: âu thuyền Thọ Quang, cảng Tiên Sa và việc của phường",
     excerpt:
-      "Sáng 3/11, hai tàu cá cháy ở âu thuyền Thọ Quang, dập tắt hoàn toàn lúc 9 giờ 50, không thiệt hại về người. Chiều 4/11, phường Sơn Trà giao ban việc tháng 11.",
+      "Sáng 3/11, hai tàu cá cháy ở âu thuyền Thọ Quang, được khống chế lúc 9 giờ 50, không thiệt hại về người. Chiều 4/11, phường Sơn Trà giao ban việc tháng 11.",
     description:
       "Tin phường Sơn Trà 3–5/11/2026: cháy 2 tàu cá ở âu thuyền Thọ Quang và hỗ trợ ngư dân, tàu Azamara Pursuit cập cảng Tiên Sa, số liệu tháng 10 và việc tháng 11 của phường.",
     image: "/images/news-son-tra-tho-quang-0511-og.jpg",
@@ -333,7 +333,7 @@ export const NEWS: NewsArticle[] = [
         text: "Đồn Biên phòng Sơn Trà điều 20 cán bộ, chiến sĩ cùng 2 xuồng cứu hộ tới hiện trường. Thanh Niên ghi đơn vị phối hợp Đội Cảnh sát PCCC và CNCH trên sông (Công an thành phố), Ban Quản lý âu thuyền và cảng cá Đà Nẵng và Hải đội biên phòng 2.",
       },
       {
-        text: "Đến 9 giờ 50 cùng ngày, đám cháy được khống chế và dập tắt hoàn toàn, theo Thanh Niên và SGGP ngày 03/11/2026. Lúc xảy ra cháy, trên cả hai tàu không có người, nên không có thiệt hại về người.",
+        text: "Đến 9 giờ 50, đám cháy được khống chế (Thanh Niên, SGGP ngày 03/11/2026; SGGP ghi đã dập tắt hoàn toàn). Lúc xảy ra cháy, trên cả hai tàu không có người, nên không có thiệt hại về người.",
       },
       {
         text: "Tiền Phong ngày 03/11/2026 ghi lúc đó có hàng trăm tàu thuyền neo đậu trong âu thuyền. Các tàu ở gần được di chuyển ra vị trí an toàn. Cabin tàu thứ nhất cháy hoàn toàn, tàu thứ hai cháy một phần, theo Thanh Niên.",
@@ -345,7 +345,7 @@ export const NEWS: NewsArticle[] = [
         text: "Đồ họa dưới đây tóm tắt các mốc theo báo. Đồ họa tóm tắt do website thiết kế từ các bài báo nêu nguồn, không phải ảnh chụp.",
         image: "/images/news-son-tra-tho-quang-0511-body-dien-bien.webp",
         imageAlt:
-          "Đồ họa tóm tắt vụ cháy 2 tàu cá ở âu thuyền Thọ Quang: 9 giờ 25 nhận tin báo, 20 cán bộ chiến sĩ và 2 xuồng cứu hộ, 9 giờ 50 dập tắt, chiều 4/11 hỗ trợ, thiệt hại ước 1,5 tỷ đồng.",
+          "Đồ họa tóm tắt vụ cháy 2 tàu cá ở âu thuyền Thọ Quang: 9 giờ 25 nhận tin báo, 20 cán bộ chiến sĩ và 2 xuồng cứu hộ, 9 giờ 50 khống chế, chiều 4/11 hỗ trợ, thiệt hại ước 1,5 tỷ đồng.",
         imageCaption: "Đồ họa tóm tắt do website thiết kế. Không phải ảnh chụp.",
       },
       {
@@ -401,7 +401,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Tìm hiểu căn hộ ở phường Sơn Trà",
-        text: "Nếu anh chị đang tìm hiểu căn hộ sở hữu lâu dài ở phường Sơn Trà, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, cách biển Mân Thái khoảng 200 m, giá từ 1,98 tỷ. Anh chị có thể nhắn Nhật qua Zalo 0934 885 108 hoặc ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex.",
+        text: "Nếu anh chị đang tìm hiểu căn hộ sở hữu lâu dài ở phường Sơn Trà, The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, cách biển Mân Thái khoảng 200 m, giá sàn website từ 1,98 tỷ. Anh chị có thể nhắn Nhật qua Zalo 0934 885 108 hoặc ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng.",
       },
       {
         text: "Các tin trong bài không nêu The Camellia Sơn Trà. Bài không nói các tin này làm đổi giá căn hộ và không cam kết lợi nhuận.",
@@ -413,7 +413,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Vụ cháy ở âu thuyền Thọ Quang có ai bị thương không?",
-        text: "Không. Theo Thanh Niên và SGGP ngày 03/11/2026, lúc xảy ra cháy trên cả hai tàu không có người. Đám cháy được khống chế và dập tắt hoàn toàn lúc 9 giờ 50 sáng 3/11. Nguyên nhân đang được cơ quan chức năng xác minh.",
+        text: "Không. Theo Thanh Niên và SGGP ngày 03/11/2026, lúc xảy ra cháy trên cả hai tàu không có người. Đám cháy được khống chế lúc 9 giờ 50 sáng 3/11. Nguyên nhân đang được cơ quan chức năng xác minh.",
       },
       {
         heading: "Các chủ tàu được hỗ trợ thế nào?",
@@ -425,7 +425,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Lưu ý",
-        text: "Thông tin tổng hợp từ báo chí và Cổng TTĐT TP Đà Nẵng, mang tính tham khảo. Bài không phải thông báo chính thức của UBND phường Sơn Trà, của Đồn Biên phòng Sơn Trà hay của The Camellia Sơn Trà. Giờ dập tắt 9 giờ 50 theo Thanh Niên và SGGP; Tiền Phong cùng ngày ghi đám cháy cơ bản được khống chế khoảng 10 giờ 30, bài dùng mốc của Thanh Niên và SGGP. Bài không nêu tên chủ tàu. Nguồn: Thanh Niên (Huy Đạt), 12:17 03/11/2026 — https://thanhnien.vn/chay-2-tau-ca-tai-au-thuyen-tho-quang-1-tau-bi-thieu-rui-cabin-185261103120354958.htm ; SGGP, 13:38 03/11/2026 — https://www.sggp.org.vn/kip-thoi-khong-che-vu-chay-2-tau-ca-tai-au-thuyen-tho-quang-post879803.html ; Tiền Phong (Duy Quốc), 13:39 03/11/2026 — https://tienphong.vn/tau-ca-chay-tro-khung-tai-au-thuyen-o-da-nang-post1891054.tpo ; Đại Đoàn Kết (Nguyễn Tú), 16:08 04/11/2026 — https://daidoanket.vn/da-nang-ho-tro-cac-gia-dinh-co-tau-ca-bi-chay-tai-au-thuyen-tho-quang.html ; Báo Văn hóa (Thùy Dung), 20:20 04/11/2026 — https://baovanhoa.vn/khoang-1-000-khach-quoc-te-den-da-nang-tren-tau-bien-hang-sang.html ; Báo Đà Nẵng (Đắc Mạnh), 04/11/2026, bản đăng lại — https://www.vietnam.vn/dang-uy-phuong-son-tra-tap-trung-thuc-hien-cac-nhiem-vu-trong-tam-thang-11-2026 ; Cổng TTĐT TP Đà Nẵng, Thông tin báo chí sáng 05/11/2026 — https://danang.gov.vn/vi/w/thong-tin-bao-chi-sang-05-11-2026 Ảnh đầu bài và ảnh tàu biển: Ảnh minh họa tạo bằng AI, không phải ảnh chụp âu thuyền Thọ Quang, cảng Tiên Sa hay The Camellia Sơn Trà. Hai đồ họa tóm tắt do website thiết kế, không phải ảnh chụp.",
+        text: "Thông tin tổng hợp từ báo chí và Cổng TTĐT TP Đà Nẵng, mang tính tham khảo. Bài không phải thông báo chính thức của UBND phường Sơn Trà, của Đồn Biên phòng Sơn Trà hay của The Camellia Sơn Trà. Mốc khống chế 9 giờ 50 theo Thanh Niên và SGGP (SGGP ghi đã dập tắt hoàn toàn); Tiền Phong cùng ngày ghi đám cháy cơ bản được khống chế khoảng 10 giờ 30, bài dùng mốc của Thanh Niên và SGGP. Bài không nêu tên chủ tàu. Nguồn: Thanh Niên (Huy Đạt), 12:17 03/11/2026 — https://thanhnien.vn/chay-2-tau-ca-tai-au-thuyen-tho-quang-1-tau-bi-thieu-rui-cabin-185261103120354958.htm ; SGGP, 13:38 03/11/2026 — https://www.sggp.org.vn/kip-thoi-khong-che-vu-chay-2-tau-ca-tai-au-thuyen-tho-quang-post879803.html ; Tiền Phong (Duy Quốc), 13:39 03/11/2026 — https://tienphong.vn/tau-ca-chay-tro-khung-tai-au-thuyen-o-da-nang-post1891054.tpo ; Đại Đoàn Kết (Nguyễn Tú), 16:08 04/11/2026 — https://daidoanket.vn/da-nang-ho-tro-cac-gia-dinh-co-tau-ca-bi-chay-tai-au-thuyen-tho-quang.html ; Báo Văn hóa (Thùy Dung), 20:20 04/11/2026 — https://baovanhoa.vn/khoang-1-000-khach-quoc-te-den-da-nang-tren-tau-bien-hang-sang.html ; Báo Đà Nẵng (Đắc Mạnh), 04/11/2026, bản đăng lại — https://www.vietnam.vn/dang-uy-phuong-son-tra-tap-trung-thuc-hien-cac-nhiem-vu-trong-tam-thang-11-2026 ; Cổng TTĐT TP Đà Nẵng, Thông tin báo chí sáng 05/11/2026 — https://danang.gov.vn/vi/w/thong-tin-bao-chi-sang-05-11-2026 Ảnh đầu bài và ảnh tàu biển: Ảnh minh họa tạo bằng AI, không phải ảnh chụp âu thuyền Thọ Quang, cảng Tiên Sa hay The Camellia Sơn Trà. Hai đồ họa tóm tắt do website thiết kế, không phải ảnh chụp.",
       },
     ],
   },
