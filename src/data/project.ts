@@ -300,13 +300,13 @@ export const NEWS: NewsArticle[] = [
     date: "07.11.2026",
     title: "Phường Sơn Trà kết nghĩa Trà Leng: một năm hơn 2,1 tỷ và hướng đi mới",
     excerpt:
-      "Sáng 6/11/2026, phường Sơn Trà sơ kết một năm kết nghĩa với Trà Leng và Hiệp Đức: hơn 2,1 tỷ đồng nguồn lực, kho cứu trợ bàn giao 16/10, và phân công mới từ Thông báo 189.",
+      "Sáng 6/11/2026, phường Sơn Trà sơ kết một năm kết nghĩa với Trà Leng và Hiệp Đức: riêng phường Sơn Trà huy động hơn 2,1 tỷ đồng hỗ trợ Trà Leng, kho cứu trợ bàn giao 16/10, và phân công mới từ Thông báo 189.",
     description:
-      "Tin phường Sơn Trà 06/11/2026: hội nghị sơ kết một năm kết nghĩa với xã Trà Leng và xã Hiệp Đức — hơn 2,1 tỷ đồng, hơn 22 đoàn công tác, kho cứu trợ 500 triệu, giáo dục và phân công mới theo Thông báo 189/TB-MTTQ-BTT.",
+      "Tin phường Sơn Trà 06/11/2026: hội nghị sơ kết một năm kết nghĩa với xã Trà Leng và xã Hiệp Đức — riêng phường Sơn Trà huy động hơn 2,1 tỷ đồng hỗ trợ Trà Leng, hơn 22 đoàn công tác, kho cứu trợ 500 triệu, giáo dục và phân công mới theo Thông báo 189/TB-MTTQ-BTT.",
     image: "/images/news-son-tra-ket-nghia-0711-og.jpg",
     imageAlt:
       "Ảnh minh họa tạo bằng AI: nhà sinh hoạt cộng đồng ven vịnh, phía xa núi Sơn Trà và mặt nước. Không phải ảnh chụp hội nghị và không phải The Camellia Sơn Trà.",
-    imageCaption: "Ảnh minh họa tạo bằng AI",
+    imageCaption: "Ảnh minh họa tạo bằng AI. Không phải địa điểm hội nghị hay công trình được chương trình hỗ trợ.",
     poster: "/images/news-son-tra-ket-nghia-0711-hero.webp",
     imageObjectClass: "object-top",
     gallery: [
