@@ -374,7 +374,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Người mua căn hộ nên và không nên suy gì",
-        text: "Đề án nhắm vào NOXH cho thuê cho công nhân, người lao động, người thu nhập thấp, phần lớn gắn khu công nghiệp. Đây là phân khúc khác căn hộ thương mại: đối tượng, giá và điều kiện thuê theo quy định NOXH. Các nguồn không nêu tác động của đề án tới giá bán hay giá thuê căn hộ thương mại, nên bài không suy ra điều đó.",
+        text: "Đề án nhắm vào NOXH cho thuê cho công nhân, người lao động, người thu nhập thấp, phần lớn gắn khu công nghiệp. Đây là phân khúc khác căn hộ thương mại: đối tượng và điều kiện thuê NOXH theo quy định riêng. Các nguồn không nêu tác động của đề án tới giá bán hay giá thuê căn hộ thương mại, nên bài không suy ra điều đó.",
       },
       {
         text: "Điều người mua có thể theo dõi: tiến độ thực tế của từng dự án được nêu tên, việc bố trí vốn sau thẩm định, và nhà ở cho thuê có được đặt gần nơi làm việc, giao thông công cộng như đề án định hướng hay không. Nếu anh chị mua căn hộ để ở lâu dài, tiêu chí vẫn là pháp lý, vị trí, tiến độ và khả năng thanh toán của chính mình; nếu tính chuyện cho thuê, nên đọc lợi suất trên giá rao là số tham khảo, không phải lợi nhuận một căn.",
@@ -391,7 +391,7 @@ export const NEWS: NewsArticle[] = [
       },
       {
         heading: "Hỏi hồ sơ trước khi quyết định",
-        text: "Anh chị đang tìm căn hộ sở hữu lâu dài để ở hoặc giữ lâu dài tại phường Sơn Trà, có thể nhắn Nhật qua hotline hoặc Zalo 0934 885 108 để xem hồ sơ đã công bố của đúng căn. Có thể ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng.",
+        text: "Anh chị đang tìm căn hộ sở hữu lâu dài để ở tại phường Sơn Trà, có thể nhắn Nhật qua hotline hoặc Zalo 0934 885 108 để xem hồ sơ đã công bố của đúng căn. Có thể ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng.",
       },
       {
         text: "The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà, cách biển Mân Thái khoảng 200 m. Chủ đầu tư là Công ty TNHH Địa ốc Thành Lâm. MBLAND phát triển dự án, WELAND phát triển kinh doanh. Pháp lý đã công bố trên website là sổ hồng sở hữu lâu dài. Giá từ 1,98 tỷ. Dự án đủ điều kiện bán nhà ở hình thành trong tương lai từ ngày 13.07.2026. Bàn giao dự kiến năm 2028.",
