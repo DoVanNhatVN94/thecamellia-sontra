@@ -348,15 +348,15 @@ export const NEWS: NewsArticle[] = [
         text: "Với vốn doanh nghiệp, Cổng TTĐT liệt kê 6 dự án đang triển khai, tổng cộng 1.103 căn, gồm NOXH tại khu đất B4-1, B4-2 Khu tái định cư Hòa Hiệp 4 (280 căn), chung cư số 3 Khu B – Khu dân cư Nam cầu Cẩm Lệ (135 căn), chung cư số 5 cùng khu, Khu nhà ở công nhân xã Núi Thành (106 căn), Khu đô thị Cồn Tiến (68 căn) và Khu NOXH tập trung tại phường Ngũ Hành Sơn (323 căn). Thành phố còn dự kiến kêu gọi thêm dự án NOXH, nhà ở cho thuê và nhà lưu trú công nhân khu công nghiệp.",
       },
       {
-        heading: "Hiện trạng và cách tính nhu cầu",
-        text: "Theo đề án được Cổng TTĐT dẫn, toàn thành phố có khoảng 70.920 căn/phòng cho thuê đang khai thác, đáp ứng khoảng 159.640 người. Trong đó NOXH cho thuê có 12.152 căn (khoảng 36.456 người); nhà cho thuê do người dân đầu tư có 58.768 căn/phòng (khoảng 123.184 người). Riêng NOXH cho thuê do doanh nghiệp đầu tư có 415 căn, đã cho thuê 269 căn (65%). Thành phố chưa có dự án nhà lưu trú công nhân trong khu công nghiệp.",
+        heading: "Hiện trạng và nhu cầu theo đề án",
+        text: "Theo số liệu đề án được nguồn công bố (Cổng TTĐT TP Đà Nẵng dẫn), toàn thành phố có khoảng 70.920 căn/phòng cho thuê đang khai thác, đáp ứng khoảng 159.640 người. Trong đó NOXH cho thuê có 12.152 căn (khoảng 36.456 người); nhà cho thuê do người dân đầu tư có 58.768 căn/phòng (khoảng 123.184 người). Riêng NOXH cho thuê do doanh nghiệp đầu tư có 415 căn, đã cho thuê 269 căn (65%). Thành phố chưa có dự án nhà lưu trú công nhân trong khu công nghiệp.",
         image: "/images/news-nha-o-cho-thue-0911-body-hien-trang.webp",
         imageAlt:
-          "Đồ họa tóm tắt hiện trạng nhà ở cho thuê Đà Nẵng: 70.920 căn/phòng đang khai thác, 12.152 căn NOXH cho thuê, tỷ lệ chọn thuê 16,3% qua khảo sát, nhu cầu phát sinh mới khoảng 8.800 căn. Không phải ảnh chụp.",
+          "Đồ họa tóm tắt hiện trạng nhà ở cho thuê Đà Nẵng: 70.920 căn/phòng đang khai thác, 12.152 căn NOXH cho thuê, 16,3% số người tham gia khảo sát nhu cầu thuê, mua NOXH có nhu cầu thuê (1.615/9.922 lượt), theo đề án nhu cầu phát sinh mới khoảng 8.800 căn. Không phải ảnh chụp.",
         imageCaption: "Đồ họa tóm tắt do website thiết kế. Không phải ảnh chụp.",
       },
       {
-        text: "Cách đề án ra con số: đợt khảo sát nhu cầu thuê, mua NOXH từ 01/6 đến 15/7/2026 ghi nhận 9.922 lượt, trong đó 1.615 người có nhu cầu thuê (16,3%). Dân số thành phố năm 2025 là 2.856.383 người, sơ bộ năm 2026 là 2.893.321 người; với tốc độ tăng khoảng 1,7%/năm, năm 2030 ước khoảng 3.095.141 người. Đề án ước khoảng 107.974 người trong nhóm tăng thêm có khả năng hình thành nhu cầu nhà ở độc lập giai đoạn 2027–2030; áp tỷ lệ chọn thuê 16,3%, nhu cầu nhà ở cho thuê phát sinh mới khoảng 8.800 căn. (Nguồn: Cổng TTĐT TP Đà Nẵng, 04/11/2026)",
+        text: "Cách đề án ra con số: theo Cổng TTĐT, đợt khảo sát nhu cầu thuê, mua NOXH từ 01/6 đến 15/7/2026 ghi nhận 9.922 lượt, trong đó 1.615 người có nhu cầu thuê (16,3%). Đây là tỷ lệ trong số người tham gia khảo sát nhu cầu thuê, mua NOXH, không phải tỷ lệ của toàn bộ dân số. Dân số thành phố năm 2025 là 2.856.383 người, sơ bộ năm 2026 là 2.893.321 người; với tốc độ tăng khoảng 1,7%/năm, năm 2030 ước khoảng 3.095.141 người. Đề án ước khoảng 107.974 người trong nhóm tăng thêm có khả năng hình thành nhu cầu nhà ở độc lập giai đoạn 2027–2030, và nhu cầu nhà ở cho thuê phát sinh mới khoảng 8.800 căn. Con số 8.800 căn là ước tính của đề án được nguồn công bố; nguồn không nêu chi tiết cách quy đổi từ số người sang số căn, nên bài không tự tính lại hay thêm giả định. (Nguồn: Cổng TTĐT TP Đà Nẵng, 04/11/2026)",
       },
       {
         heading: "Giải pháp: quỹ đất, 20% sàn cho thuê",
@@ -394,10 +394,10 @@ export const NEWS: NewsArticle[] = [
         text: "Anh chị đang tìm căn hộ sở hữu lâu dài để ở tại phường Sơn Trà, có thể nhắn Nhật qua hotline hoặc Zalo 0934 885 108 để xem hồ sơ đã công bố của đúng căn. Có thể ghé Camellia Gallery – Tầng 9, Bạch Đằng Complex, 50 Bạch Đằng, Đà Nẵng.",
       },
       {
-        text: "The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà, cách biển Mân Thái khoảng 200 m. Chủ đầu tư là Công ty TNHH Địa ốc Thành Lâm. MBLAND phát triển dự án, WELAND phát triển kinh doanh. Pháp lý đã công bố trên website là sổ hồng sở hữu lâu dài. Giá từ 1,98 tỷ. Dự án đủ điều kiện bán nhà ở hình thành trong tương lai từ ngày 13.07.2026. Bàn giao dự kiến năm 2028.",
+        text: "The Camellia Sơn Trà nằm tại giao lộ Lê Văn Lương – Lê Đức Thọ, phường Sơn Trà, cách biển Mân Thái khoảng 200 m. Chủ đầu tư là Công ty TNHH Địa ốc Thành Lâm. MBLAND phát triển dự án, WELAND phát triển kinh doanh. Pháp lý đã công bố trên website là sổ hồng sở hữu lâu dài. Giá sàn website từ 1,98 tỷ. Dự án đủ điều kiện bán nhà ở hình thành trong tương lai từ ngày 13.07.2026. Bàn giao dự kiến năm 2028.",
       },
       {
-        text: "Cổng TTĐT TP Đà Nẵng, VietTimes và Tiền Phong không nêu The Camellia Sơn Trà. The Camellia Sơn Trà là dự án nhà ở thương mại, không thuộc danh mục đề án. Bài không kết luận đề án làm tăng hay giảm giá căn hộ và không cam kết lợi nhuận.",
+        text: "Các bài nguồn (Cổng TTĐT TP Đà Nẵng, VietTimes, Tiền Phong) không nêu The Camellia Sơn Trà. The Camellia Sơn Trà là căn hộ thương mại, khác phân khúc nhà ở xã hội (NOXH) cho thuê mà đề án hướng tới. Bài không kết luận đề án làm tăng hay giảm giá căn hộ và không cam kết lợi nhuận.",
         links: [{ to: "/lien-he", label: "Liên hệ — để lại nhu cầu" }],
       },
       {
