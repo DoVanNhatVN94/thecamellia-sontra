@@ -1,4 +1,5 @@
-import { AMENITY_LAYERS, GALLERIES, NEWS, UNIT_TYPES, VIEW_FLOORS } from "@/data/project";
+import { NEWS_MEDIA } from "@/data/news/media";
+import { AMENITY_LAYERS, GALLERIES, UNIT_TYPES, VIEW_FLOORS } from "@/data/project";
 
 export type MediaSlot = {
   id: string;
@@ -58,7 +59,7 @@ export const MEDIA_SLOTS: MediaSlot[] = [
       slot(`unit:${u.id}:${i}`, "Căn hộ", `${u.name} ${l.code}`, l.src),
     ),
   ]),
-  ...NEWS.flatMap((n) => [
+  ...NEWS_MEDIA.flatMap((n) => [
     slot(`news:${n.slug}`, "Tin tức", n.title, n.image),
     ...(n.poster ? [slot(`news:${n.slug}:poster`, "Tin tức", `${n.title} — poster`, n.poster)] : []),
     ...n.gallery.map((src, i) => slot(`news:${n.slug}:${i}`, "Tin tức", `${n.title} — ảnh ${i + 1}`, src)),

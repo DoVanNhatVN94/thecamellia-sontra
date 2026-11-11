@@ -2,7 +2,7 @@
 
 > **Đọc file này trước** khi làm bất kỳ việc dev / SEO / lead / DNS nào trên site.
 > Cập nhật lần cuối: **11.11.2026** (Asia/Bangkok). Repo: `DoVanNhatVN94/thecamellia-sontra`.
-> Bản 06.10.2026 dừng danh sách bài ở ngày đó. Danh sách bài bên dưới lấy từ `NEWS` trên `main` tại thời điểm cập nhật.
+> Bản 06.10.2026 dừng danh sách bài ở ngày đó. Danh sách bài mục 6 lấy từ `src/data/news/articles/` trên `main` tại thời điểm cập nhật (sau PR #128, không còn mảng `NEWS` trong `project.ts`).
 
 ---
 
@@ -64,7 +64,8 @@ Trên homepage, `POLICIES` trong `project.ts` còn dòng riêng **「Thanh toán
 
 Nguồn code:
 
-- Fact / loại căn / tin / gallery / tour: `src/data/project.ts`
+- Fact / loại căn / gallery / tour: `src/data/project.ts`
+- Tin: `src/data/news/articles/<slug>.ts` — **một file một bài** (slug = tên file). Thứ tự trên `/tin-tuc`: `listRank` nhỏ đứng trước; bỏ `listRank` để bài mới lên đầu. Danh sách chỉ nhận tiêu đề/excerpt/ảnh; trang bài chỉ tải đúng file đó.
 - 4 phương án thanh toán chi tiết: `src/data/sales-plans.ts`
 - SEO meta / JSON-LD / `SITEMAP_PATHS`: `src/lib/seo.ts`
 
@@ -99,9 +100,11 @@ Nguồn code:
 ### Bản đồ thư mục / file quan trọng
 
 ```
-src/data/project.ts          # Fact, NEWS, UNIT_TYPES, galleries, VIRTUAL_TOUR
+src/data/project.ts          # Fact, UNIT_TYPES, galleries, VIRTUAL_TOUR
+src/data/news/articles/      # Một file .ts mỗi slug tin tức
 src/data/sales-plans.ts      # 4 PA thanh toán + meta
-src/lib/seo.ts               # meta, JSON-LD, SITEMAP_PATHS, SAME_AS
+src/lib/seo.ts               # meta, JSON-LD, SAME_AS
+src/lib/sitemap-paths.ts     # SITEMAP_PATHS (+ slug tin qua virtual:news-cards)
 src/lib/leads.ts             # client: POST /api/leads, honeypot, dwell, rate
 src/lib/meta-pixel.ts        # Meta Pixel ID (public) + PageView / Lead / Contact
 src/lib/leads.server.ts      # server: Resend, IP rate limit, validate
@@ -132,7 +135,7 @@ npm run sitemap      # regenerate public/sitemap.xml
 npm test
 ```
 
-**Cảnh báo drift sitemap:** `SITEMAP_PATHS` trong `src/lib/seo.ts` và danh sách `STATIC` + parse NEWS trong `scripts/generate-sitemap.mjs` phải khớp. Sau khi thêm trang/bài → cập nhật cả hai (hoặc chạy `npm run sitemap` và diff) rồi commit `public/sitemap.xml`.
+**Cảnh báo drift sitemap:** `SITEMAP_PATHS` trong `src/lib/sitemap-paths.ts` (re-export từ `src/lib/seo.ts`) và danh sách `STATIC` trong `scripts/generate-sitemap.mjs` phải khớp. Slug tin lấy từ `src/data/news/articles/`. Thêm bài = thêm một file `articles/<slug>.ts`, rồi `npm run sitemap` và commit `public/sitemap.xml` nếu diff. `public/llms.txt` vẫn sửa tay khi muốn crawler AI thấy bài mới.
 
 ---
 
@@ -195,7 +198,7 @@ Client: `VITE_SITE_URL` (apex). Thiếu 3 biến server → `/api/leads` trả *
 
 **Keyword map (rút gọn):** brand → `/`; giá/loại căn → `/can-ho` → CTA `/lien-he`; sở hữu lâu dài / Mân Thái / tiến độ → bài tin + fact sheet.
 
-**Lịch nội dung 90 ngày** (snapshot STRATEGY ngoài repo, như bản handover 06.10 — repo không có checklist đóng từng tuần). Từ 06.10 đến 11.11.2026 `NEWS` đã thêm nhiều bài; danh sách thật nằm ở mục 6. Không đánh dấu Tháng 2 W8 hay Tháng 3 là xong chỉ vì có bài mới. Bài `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` (29.09.2026) đã có từ trước bản 06.10, và bản đó vẫn ghi W8 là «Tiếp theo».
+**Lịch nội dung 90 ngày** (snapshot STRATEGY ngoài repo, như bản handover 06.10 — repo không có checklist đóng từng tuần). Từ 06.10 đến 11.11.2026 đã thêm nhiều file trong `src/data/news/articles/`; danh sách thật nằm ở mục 6. Không đánh dấu Tháng 2 W8 hay Tháng 3 là xong chỉ vì có bài mới. Bài `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` (29.09.2026) đã có từ trước bản 06.10, và bản đó vẫn ghi W8 là «Tiếp theo».
 
 | Giai đoạn | Nội dung | Trạng thái |
 |-----------|----------|------------|
@@ -225,7 +228,7 @@ Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiế
 | `/gioi-thieu` | Fact sheet |
 | `/lien-he` | Conversion / form |
 
-**Bài tin** (`/tin-tuc/<slug>`) — **89 bài**, đúng thứ tự mảng `NEWS` trong `src/data/project.ts` (không sắp lại theo ngày). Bài mới nhất theo field `date`: **11.11.2026**. Slug `son-tra-ket-nghia-tra-leng-06-11-2026` có `date` **07.11.2026** — lấy field, không lấy số trong slug.
+**Bài tin** (`/tin-tuc/<slug>`) — **89 bài**, mỗi bài một file `src/data/news/articles/<slug>.ts` (không gộp trong `project.ts`). Thứ tự hiển thị `/tin-tuc`: `listRank` nhỏ trước; không có `listRank` thì ghim lên đầu; hòa theo `date` (mới trước) rồi slug. Bảng dưới theo thứ tự đó (không theo ngày đơn thuần). Bài mới nhất theo field `date`: **11.11.2026**. Slug `son-tra-ket-nghia-tra-leng-06-11-2026` có `date` **07.11.2026** — lấy field, không lấy số trong slug. Thêm bài xong: `npm run sitemap` + commit `public/sitemap.xml` nếu diff; `public/llms.txt` vẫn sửa tay khi muốn crawler AI thấy bài mới.
 
 | Ngày | Slug |
 |------|------|
@@ -416,7 +419,7 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 | Exit runbook rời Vercel | Cloudflare Pages / Netlify + Nitro, DNS cutover — **chưa ghi** trong repo |
 | GSC indexing | Request indexing **3 bài Month 2** + `/kham-pha`. Repo không có bằng chứng việc này đã xong |
 | Month 2 W8 | Bản 06.10 vẫn ghi «Tiếp theo». Bài `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` đã có từ 29.09.2026. Không đánh dấu xong |
-| Month 3 | Lịch STRATEGY ngoài repo. `NEWS` đã có bài đến 11.11.2026; không có checklist đóng tháng 3 trong repo |
+| Month 3 | Lịch STRATEGY ngoài repo. `articles/` đã có bài đến 11.11.2026; không có checklist đóng tháng 3 trong repo |
 | Caption Facebook | Mặc định **1,98 tỷ**; **1,72 tỷ** chỉ khi chủ dự án yêu cầu và là tổng giá sau chiết khấu |
 | UX residual nhỏ | Ghi chú 06.10 (filter fade, CountUp dưới fold, nav desktop). PR dọn 11.11 không kiểm lại các mục này |
 | Offer schema | Chỉ khi có **bảng giá có ngày** |

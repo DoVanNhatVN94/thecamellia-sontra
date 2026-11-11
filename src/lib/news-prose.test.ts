@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
-import { NEWS } from "../data/project.ts";
+import { fileURLToPath } from "node:url";
+import type { NewsArticle } from "../data/news/types";
+import { loadNewsArticles, sortNewsItems } from "../../scripts/news-files.mjs";
 import {
   findLinkHits,
   formatNote,
@@ -10,6 +12,10 @@ import {
   segmentPlainText,
   splitSentences,
 } from "./news-prose.ts";
+
+const NEWS = sortNewsItems(
+  loadNewsArticles(fileURLToPath(new URL("../data/news/articles/", import.meta.url))),
+).map((item) => item.article) as NewsArticle[];
 
 function normWords(value: string): string[] {
   return value
@@ -45,7 +51,8 @@ describe("news prose", () => {
     assert.equal(parts.length, 1);
     assert.match(parts[0] ?? "", /TP\. Hồ Chí Minh/);
 
-    const decree = "Theo Nghị định số 357/2025/NĐ-CP. Cùng bài, Nghị định số 339/2026/NĐ-CP ngày 26/8/2026.";
+    const decree =
+      "Theo Nghị định số 357/2025/NĐ-CP. Cùng bài, Nghị định số 339/2026/NĐ-CP ngày 26/8/2026.";
     assert.equal(splitSentences(decree).length, 2);
   });
 
@@ -81,7 +88,11 @@ describe("news prose", () => {
         const note = isNoteHeading(block.heading);
         const segments = note ? formatNote(block.text, true) : formatProse(block.text);
         const visible = segmentPlainText(segments);
-        assert.equal(visible.includes("http://") || visible.includes("https://"), false, article.slug);
+        assert.equal(
+          visible.includes("http://") || visible.includes("https://"),
+          false,
+          article.slug,
+        );
 
         const expectedSource = note ? block.text.replace(/^Lưu ý:\s*/u, "") : block.text;
         assert.deepEqual(
@@ -112,9 +123,7 @@ describe("news prose", () => {
   });
 
   it("formats the hạ tầng note as a source list plus a small credit", () => {
-    const article = NEWS.find((item) =>
-      item.slug.startsWith("ha-tang-da-nang-dau-thang-11"),
-    );
+    const article = NEWS.find((item) => item.slug.startsWith("ha-tang-da-nang-dau-thang-11"));
     assert.ok(article);
     const block = article.body.find((item) => item.heading === "Lưu ý");
     assert.ok(block);

@@ -1,5 +1,5 @@
 import { useRouterState } from "@tanstack/react-router";
-import { NEWS } from "@/data/project";
+import type { NewsArticle } from "@/data/news/types";
 import {
   SITE_ORIGIN,
   apartmentComplexLd,
@@ -12,7 +12,15 @@ import {
 
 export function SeoJsonLd() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const loadedArticle = useRouterState({
+    select: (s) => {
+      const match = s.matches.find((item) => item.routeId === "/tin-tuc/$slug");
+      return (match?.loaderData as NewsArticle | undefined) ?? undefined;
+    },
+  });
   const origin = SITE_ORIGIN;
+  const articleSlug = pathname.startsWith("/tin-tuc/") ? pathname.slice("/tin-tuc/".length) : "";
+  const article = loadedArticle?.slug === articleSlug ? loadedArticle : undefined;
   const nodes: object[] = [];
 
   if (pathname === "/") {
@@ -59,8 +67,6 @@ export function SeoJsonLd() {
       ),
     );
   } else if (pathname.startsWith("/tin-tuc/")) {
-    const slug = pathname.replace("/tin-tuc/", "");
-    const article = NEWS.find((n) => n.slug === slug);
     nodes.push(
       breadcrumbLd(
         [

@@ -20,9 +20,12 @@ Không có tài khoản người dùng, không có database cho site marketing.
 ## Cấu trúc thư mục
 
 ```
-src/data/project.ts          Fact, NEWS, loại căn, gallery
+src/data/project.ts          Fact dự án, loại căn, gallery (không chứa tin tức)
+src/data/news/articles/      Một file .ts mỗi slug bài tin
+src/data/news/types.ts       Kiểu dữ liệu + hướng dẫn thêm bài
 src/data/sales-plans.ts      4 phương án thanh toán
-src/lib/seo.ts               Meta, JSON-LD, SITEMAP_PATHS
+src/lib/seo.ts               Meta, JSON-LD (re-export SITEMAP_PATHS)
+src/lib/sitemap-paths.ts     Danh sách URL public + slug tin (virtual:news-cards)
 src/lib/leads.ts             Client form (honeypot, dwell, rate mềm)
 src/lib/leads.server.ts      Server: validate, rate limit, Resend
 src/routes/                  Trang marketing + src/routes/api/leads.ts
@@ -30,10 +33,21 @@ src/components/              UI, form, section
 public/                      Ảnh, sitemap.xml, robots.txt, llms.txt
 docs/                        Handover, runbook Vercel, lead email, AI smoke
 scripts/generate-sitemap.mjs Sinh public/sitemap.xml
+scripts/news-virtual-plugin.mjs  Module ảo virtual:news-cards / virtual:news-media
 vercel.json                  Redirect host + cache header
 ```
 
 Không có thư mục `server/`. Route server nằm trong `src/routes/`.
+
+### Thêm bài tin tức
+
+1. Tạo `src/data/news/articles/<slug>.ts` (tên file = `slug`, không `.ts` trong slug).
+2. Export `article` (`satisfies NewsArticle` — xem `src/data/news/types.ts`). Tuỳ chọn export `listRank` (số nhỏ hiện trước trên `/tin-tuc`; bỏ `listRank` để bài mới ghim đầu danh sách).
+3. File bài chỉ là dữ liệu thuần (không `import` runtime). Trang danh sách lấy tóm tắt qua `virtual:news-cards` lúc build; trang `/tin-tuc/$slug` chỉ tải đúng một file.
+4. Chạy `npm run sitemap`, commit `public/sitemap.xml` nếu có diff.
+5. Cập nhật tay `public/llms.txt` khi muốn crawler AI thấy bài mới (không tự sinh).
+
+Thêm trang marketing tĩnh: cập nhật `src/lib/sitemap-paths.ts` **và** mảng `STATIC` trong `scripts/generate-sitemap.mjs`.
 
 ## Chạy và build local
 

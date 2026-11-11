@@ -1,6 +1,6 @@
 /**
  * Render-only shaping for news body copy.
- * The strings in `NEWS` stay unchanged; this module only decides where
+ * Article copy stays in `src/data/news/articles`; this module only decides where
  * paragraphs, lists, headings and source links break.
  */
 

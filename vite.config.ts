@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { mediaCachePlugin } from "./scripts/media-cache-plugin.mjs";
+// @ts-expect-error JS plugin alongside the TS vite config
+import { newsVirtualPlugin } from "./scripts/news-virtual-plugin.mjs";
 
 // `npm run dev` binds 0.0.0.0:8080 (package.json). Production deploy is Vercel,
 // preset `vercel` below — do not point the live site at this port.
@@ -22,6 +24,7 @@ export default defineConfig(({ command, isPreview }) => ({
   resolve: { tsconfigPaths: true },
   plugins: [
     mediaCachePlugin(),
+    newsVirtualPlugin(),
     tailwindcss(),
     tanstackStart(),
     ...(command === "build" || isPreview
