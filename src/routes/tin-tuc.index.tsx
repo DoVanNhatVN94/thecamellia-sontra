@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { PageHero } from "@/components/sections/hero";
-import { NEWS } from "@/data/project";
+import { NEWS_CARDS } from "@/data/news/cards";
 import { SmartImg } from "@/lib/image-src";
 import { PAGES, pageHead } from "@/lib/seo";
 
@@ -18,14 +18,14 @@ function NewsIndex() {
         kicker="Tin tức"
         title="Tin tức The Camellia Sơn Trà"
         crumbs={[{ label: "Tin tức" }]}
-        slides={NEWS.slice(0, 3).map((n) => ({ src: n.image, alt: n.title }))}
+        slides={NEWS_CARDS.slice(0, 3).map((n) => ({ src: n.image, alt: n.title }))}
       >
         Sự kiện ra mắt, tiến độ pháp lý và những câu chuyện sống tại Sơn Trà.
       </PageHero>
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <div className="grid gap-6 md:grid-cols-2">
-            {NEWS.map((n, i) => (
+            {NEWS_CARDS.map((n, i) => (
               <Reveal key={n.slug} delay={i * 80}>
                 <Link
                   to="/tin-tuc/$slug"

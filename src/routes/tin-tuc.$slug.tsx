@@ -12,7 +12,9 @@ import {
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { NewsNote, NewsProse } from "@/components/news/article-prose";
 import { Button } from "@/components/ui/button";
-import { NEWS, PROJECT } from "@/data/project";
+import { NEWS_CARDS } from "@/data/news/cards";
+import { loadArticle } from "@/data/news/load-article";
+import { PROJECT } from "@/data/project";
 import { headingRank, isNoteHeading } from "@/lib/news-prose";
 import { SmartImg, useImageSrc } from "@/lib/image-src";
 import { pageHead, parseDotDate } from "@/lib/seo";
@@ -20,8 +22,8 @@ import { useRegister } from "@/lib/register-store";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/tin-tuc/$slug")({
-  loader: ({ params }) => {
-    const article = NEWS.find((n) => n.slug === params.slug);
+  loader: async ({ params }) => {
+    const article = await loadArticle(params.slug);
     if (!article) throw notFound();
     return article;
   },
@@ -50,7 +52,7 @@ function isNewsArticlePath(path: string): path is `/tin-tuc/${string}` {
 function ArticlePage() {
   const article = Route.useLoaderData();
   const openWith = useRegister((s) => s.openWith);
-  const others = NEWS.filter((n) => n.slug !== article.slug);
+  const others = NEWS_CARDS.filter((n) => n.slug !== article.slug);
   const { resolve, isHidden } = useImageSrc();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
