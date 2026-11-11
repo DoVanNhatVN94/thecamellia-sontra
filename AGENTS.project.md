@@ -35,6 +35,6 @@ Nhánh `main` đã bật branch protection: không push thẳng được, phải
 - Cần rollback: mở PR revert (`git revert`) theo đúng quy trình trên.
 
 ## Không làm
-- Không chạy theo các mục cổng `8080`, `startup.sh`, preview proxy, "Grok Build" trong `AGENTS.md` — không áp dụng ngoài sandbox Grok Build.
+- Không dựng lại hợp đồng sandbox Grok Build (cổng `8080` như quy tắc deploy, `startup.sh`, preview proxy). `AGENTS.md` chỉ còn pointer tới file này. `npm run dev` vẫn bind cổng 8080 vì đó là script local trong `package.json`.
 - Không đổi domain/DNS, biến môi trường Vercel, hay cấu hình Resend nếu chưa được yêu cầu rõ.
 - Không thêm lại branding Grok PWA (`grokPwaPlugin`, `public/__grok/`).

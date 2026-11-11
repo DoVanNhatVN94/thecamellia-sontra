@@ -1,7 +1,8 @@
 # The Camellia Sơn Trà — Tài liệu bàn giao (HANDOVER)
 
 > **Đọc file này trước** khi làm bất kỳ việc dev / SEO / lead / DNS nào trên site.
-> Cập nhật lần cuối: **06.10.2026** (Asia/Bangkok). Repo: `DoVanNhatVN94/thecamellia-sontra`.
+> Cập nhật lần cuối: **11.11.2026** (Asia/Bangkok). Repo: `DoVanNhatVN94/thecamellia-sontra`.
+> Bản 06.10.2026 dừng danh sách bài ở ngày đó. Danh sách bài bên dưới lấy từ `NEWS` trên `main` tại thời điểm cập nhật.
 
 ---
 
@@ -54,10 +55,12 @@ Tài liệu liên quan trong repo:
 |-----------|----------------|
 | HTLS | Vay đến **70%** · hỗ trợ lãi **0% trong 18 tháng** (theo đợt/NH) |
 | Chuẩn | Chiết khấu **4%** |
-| TTS 95% | Thanh toán sớm 95% · CK đến **13%** |
+| TTS 95% | Thanh toán sớm 95% · CK **13%** (`sales-plans.ts`) |
 | Thảnh thơi | Thanh toán **50%** nhận nhà · CK **2%** |
 | Early Bird | CK **3%** · tối đa **100 căn** (khi còn suất) |
 | Phí quản lý | **Miễn 12 tháng** (theo chính sách khi ký) |
+
+Trên homepage, `POLICIES` trong `project.ts` còn dòng riêng **「Thanh toán nhanh — Ưu đãi đến 16%」**. Đó không phải chiết khấu của phương án TTS 95% (13%). Không gộp hai mức.
 
 Nguồn code:
 
@@ -77,9 +80,9 @@ Nguồn code:
 | App framework | **TanStack Start** (`@tanstack/react-start`) + TanStack Router / Query |
 | Bundler / SSR | **Vite 8** + plugin React |
 | Server / deploy | **Nitro** (`nitro` beta, preset `vercel`) |
-| Analytics | `@vercel/analytics` + `@vercel/speed-insights` + Meta Pixel `1046573188388695` (stub inline trong `<head>`, `src/lib/meta-pixel.ts`) |
+| Analytics | `@vercel/analytics` + `@vercel/speed-insights` + Meta Pixel `1046573188388695` (stub inline trong `<head>`, `src/lib/meta-pixel.ts`; gắn site ở PR #79, sửa PageView/Contact ở PR #80) |
 | Form / validate | react-hook-form · Zod |
-| Khác | better-auth, PGLite/pg (app-data nội bộ — không phải CMS marketing) |
+| Auth / database | **Không dùng.** better-auth, PGLite, Kysely, `pg` và `src/lib/auth`, `src/lib/db`, `src/lib/app-data`, `src/lib/multiplayer` đã gỡ vì không có route marketing hay `/api/leads` import chúng |
 
 ### Hosting & domain
 
@@ -102,23 +105,27 @@ src/lib/seo.ts               # meta, JSON-LD, SITEMAP_PATHS, SAME_AS
 src/lib/leads.ts             # client: POST /api/leads, honeypot, dwell, rate
 src/lib/meta-pixel.ts        # Meta Pixel ID (public) + PageView / Lead / Contact
 src/lib/leads.server.ts      # server: Resend, IP rate limit, validate
-src/routes/api/leads.ts      # route handler TanStack Start
+src/routes/api/leads.ts      # route handler TanStack Start — không có thư mục server/
 src/components/lead-form.tsx # UX form compact
+src/components/preview-host-bridge.tsx  # mount ở __root; noop ngoài iframe Grok
 src/components/sections/     # homepage sections + answer-capsule
 src/routes/*.tsx             # trang marketing
 public/sitemap.xml           # sinh bằng npm run sitemap
 public/robots.txt            # Allow AI bots + Sitemap
 public/llms.txt              # GEO / AI crawlers
 docs/                        # runbook, leads, AI smoke, HANDOVER
+README.md                    # cách chạy, env (tên), deploy, rate limit
 scripts/generate-sitemap.mjs # giữ sync với SITEMAP_PATHS (có rủi ro drift)
+scripts/with-app-env.mjs     # wrapper của npm run build / npm run dev
 vercel.json                  # redirects host + cache headers
+.grok/app-env.json           # build đọc file này; không xoá trong đợt dọn 11.11
 ```
 
 ### Lệnh thường dùng
 
 ```bash
-npm run dev          # Vite dev :8080
-npm run build        # vite build (+ migrate-on-build nếu có)
+npm run dev          # Vite, 0.0.0.0:8080 (script package.json — local, không phải host production)
+npm run build        # node scripts/with-app-env.mjs vite build  (đúng lệnh Vercel)
 npm run typecheck
 npm run lint
 npm run sitemap      # regenerate public/sitemap.xml
@@ -143,7 +150,7 @@ npm test
 
 - Honeypot (company / website / honey) → silent `200 { ok: true }`, không gửi mail
 - Dwell time: form phải mở ≥ ~2,5s (`openedAt`)
-- Rate limit IP in-memory trên server (không distributed giữa các instance Vercel)
+- Rate limit IP in-memory trên server: 5 POST / 10 phút, `Map` trên `globalThis` trong `src/lib/leads.server.ts`. **Không chia sẻ giữa các instance Vercel** và mất khi instance lạnh. Phanh mềm, không phải giới hạn toàn cục. Không thêm database hay vendor mới cho việc này. Cách siết chung mà không cần secret trong repo: rate limit Vercel Firewall cho `POST /api/leads` (cài trên project, chưa bật).
 - Rate limit mềm phía client (sessionStorage)
 - Origin allowlist + Zod validate SĐT VN
 
@@ -188,7 +195,7 @@ Client: `VITE_SITE_URL` (apex). Thiếu 3 biến server → `/api/leads` trả *
 
 **Keyword map (rút gọn):** brand → `/`; giá/loại căn → `/can-ho` → CTA `/lien-he`; sở hữu lâu dài / Mân Thái / tiến độ → bài tin + fact sheet.
 
-**Lịch nội dung 90 ngày:**
+**Lịch nội dung 90 ngày** (snapshot STRATEGY ngoài repo, như bản handover 06.10 — repo không có checklist đóng từng tuần). Từ 06.10 đến 11.11.2026 `NEWS` đã thêm nhiều bài; danh sách thật nằm ở mục 6. Không đánh dấu Tháng 2 W8 hay Tháng 3 là xong chỉ vì có bài mới. Bài `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` (29.09.2026) đã có từ trước bản 06.10, và bản đó vẫn ghi W8 là «Tiếp theo».
 
 | Giai đoạn | Nội dung | Trạng thái |
 |-----------|----------|------------|
@@ -218,10 +225,72 @@ Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiế
 | `/gioi-thieu` | Fact sheet |
 | `/lien-he` | Conversion / form |
 
-**Bài tin** (`/tin-tuc/<slug>`) — theo `NEWS` trong `project.ts` / sitemap:
+**Bài tin** (`/tin-tuc/<slug>`) — **89 bài**, đúng thứ tự mảng `NEWS` trong `src/data/project.ts` (không sắp lại theo ngày). Bài mới nhất theo field `date`: **11.11.2026**. Slug `son-tra-ket-nghia-tra-leng-06-11-2026` có `date` **07.11.2026** — lấy field, không lấy số trong slug.
 
 | Ngày | Slug |
 |------|------|
+| 11.11.2026 | `noxh-da-nang-113-khu-dat-26279-can-2030` |
+| 10.11.2026 | `ban-dao-son-tra-mua-lon-tam-hoan-trekking-10-11-2026` |
+| 09.11.2026 | `de-an-nha-o-cho-thue-da-nang-10400-can-2030` |
+| 07.11.2026 | `son-tra-ket-nghia-tra-leng-06-11-2026` |
+| 06.11.2026 | `fdi-da-nang-10-thang-2026-khu-cong-nghiep-wha-vsip` |
+| 05.11.2026 | `nang-luc-tai-chinh-chu-dau-tu-da-nang-05-11-2026` |
+| 05.11.2026 | `son-tra-dau-thang-11-au-thuyen-tho-quang-cang-tien-sa` |
+| 05.11.2026 | `du-an-nghi-duong-treo-hoa-trung-05-11-2026` |
+| 04.11.2026 | `du-lich-da-nang-8-3-trieu-khach-quoc-te-04-11-2026` |
+| 04.11.2026 | `khu-thuong-mai-tu-do-da-nang-5-7-vi-tri-co-nha-dau-tu` |
+| 04.11.2026 | `noxh-sun-home-son-tra-104-can-04-11-2026` |
+| 03.11.2026 | `loi-suat-thue-can-ho-da-nang-4-5-03-11-2026` |
+| 03.11.2026 | `son-tra-du-an-bao-ton-vooc-cha-va-chan-nau-2026-2029` |
+| 03.11.2026 | `quy-che-quan-ly-kien-truc-da-nang-03-11-2026` |
+| 02.11.2026 | `da-nang-lap-to-cong-tac-do-thi-lan-bien-02-11-2026` |
+| 02.11.2026 | `ha-tang-da-nang-dau-thang-11-nut-giao-hoa-xuan-3-tuyen-phia-nam` |
+| 02.11.2026 | `de-xuat-cam-chuyen-nhuong-hdmb-nha-tren-giay-02-11-2026` |
+| 01.11.2026 | `tin-du-an-ton-dong-da-nang-01-11-2026` |
+| 01.11.2026 | `tin-dung-bds-tang-9-84-nguoi-vay-mua-nha-luu-y` |
+| 31.10.2026 | `doanh-thu-dich-vu-bds-da-nang-thang-10-2026` |
+| 31.10.2026 | `bien-son-tra-cuoi-thang-10-gio-dong-bac-gio-cuu-ho` |
+| 31.10.2026 | `dieu-chinh-quy-hoach-khu-du-lich-tien-sa` |
+| 30.10.2026 | `tham-quan-the-camellia-son-tra-tour-360` |
+| 30.10.2026 | `da-nang-ra-soat-244-khu-nha-o-thuong-mai` |
+| 30.10.2026 | `hai-khu-do-thi-phia-nam-da-nang-co-nha-dau-tu-noxh` |
+| 29.10.2026 | `son-tra-27-10-duong-30m-cho-moi-chung-cu-cu` |
+| 29.10.2026 | `so-huu-chung-quy-bao-tri-2-nguoi-mua-can-ho-can-hoi` |
+| 28.10.2026 | `gop-von-nha-o-da-nang-nguoi-mua-can-ho-phan-biet` |
+| 28.10.2026 | `kinh-te-dem-my-khe-nguoi-mua-can-ho-ven-bien` |
+| 27.10.2026 | `da-nang-duyet-khu-tai-dinh-cu-duong-sat-toc-do-cao` |
+| 27.10.2026 | `noxh-sau-5-nam-khong-ban-tu-do-nguoi-mua-can-ho` |
+| 26.10.2026 | `lai-suat-ha-nhiet-vay-mua-nha-chua-giam-sau` |
+| 25.10.2026 | `de-xuat-thue-02-dat-bo-hoang-nguoi-mua-nha` |
+| 24.10.2026 | `nhnn-khach-hang-bi-mat-kiem-tra-giam-lai-suat` |
+| 24.10.2026 | `dkra-quy-iii-2026-can-ho-da-nang-giam-thanh-khoan` |
+| 23.10.2026 | `sua-doi-3-luat-dat-dai-nha-o-kinh-doanh-bds-nguoi-mua-luu-y` |
+| 23.10.2026 | `da-nang-chap-thuan-thi-diem-2-du-an-nha-o-thuong-mai` |
+| 22.10.2026 | `chuyen-camellia-01-qua-3-chi-vang-24-26-10-2026` |
+| 22.10.2026 | `nhnn-yeu-cau-giam-lai-suat-nguoi-vay-mua-nha-luu-y` |
+| 22.10.2026 | `da-nang-phe-duyet-quy-hoach-chung-den-2050` |
+| 21.10.2026 | `lai-vay-mua-nha-tha-noi-13-16-sau-uu-dai` |
+| 21.10.2026 | `15-ngan-hang-giam-lai-vay-vay-mua-nha-co-duoc-giam` |
+| 20.10.2026 | `thi-truong-bds-da-nang-q3-2026-dat-nen-ha-nhiet-nha-pho` |
+| 20.10.2026 | `chuc-mung-20-10-gui-nhung-nguoi-phu-nu-giu-lua-to-am` |
+| 20.10.2026 | `da-nang-chuan-bi-cong-bo-quy-hoach-chung-2050` |
+| 19.10.2026 | `bst-can-ho-tang-3-the-camellia-3-diem-khac-biet` |
+| 19.10.2026 | `da-nang-lay-y-kien-sua-he-so-k-gia-dat-2026` |
+| 19.10.2026 | `nhip-song-thu-thai-the-camellia-son-tra` |
+| 19.10.2026 | `ton-kho-bat-dong-san-quy-iii-2026-nguoi-mua-luu-y` |
+| 18.10.2026 | `da-nang-chap-thuan-du-an-the-han-1200-ty` |
+| 18.10.2026 | `nhnn-yeu-cau-giam-lai-suat-nguoi-mua-nha-luu-y` |
+| 15.10.2026 | `ban-dao-son-tra-mo-lai-tham-quan-14-10-2026` |
+| 14.10.2026 | `chinh-sach-ban-hang-the-camellia-tu-07-10-2026` |
+| 14.10.2026 | `lien-tho-da-nang-giam-gia-thu-cap-q3-2026` |
+| 13.10.2026 | `van-tai-duong-thuy-ban-dao-son-tra-2030` |
+| 12.10.2026 | `nha-o-xa-hoi-da-nang-q4-2026-hoa-hiep-277-can` |
+| 10.10.2026 | `khai-truong-camellia-gallery-cham-noi-dang-song` |
+| 10.10.2026 | `tam-dung-tham-quan-ban-dao-son-tra-mua-lon-10-2026` |
+| 09.10.2026 | `thanh-khoan-phan-hoa-can-ho-dat-nen-da-nang-2026` |
+| 08.10.2026 | `khong-gian-5-4m-can-ho-tang-3-the-camellia` |
+| 08.10.2026 | `son-tra-phuong-do-thi-so-2030-doi-moi-sang-tao` |
+| 07.10.2026 | `da-nang-9-thang-2026-du-lich-fdi-thi-truong-can-ho` |
 | 06.10.2026 | `bst-can-ho-tang-3-the-camellia-11-can` |
 | 06.10.2026 | `luu-y-len-ban-dao-son-tra-thang-10-2026` |
 | 05.10.2026 | `lai-suat-vay-mua-nha-tren-10-can-ho-da-nang-2026` |
@@ -242,13 +311,13 @@ Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiế
 | 18.09.2026 | `vi-sao-son-tra-man-thai` |
 | 17.09.2026 | `tien-do-thi-cong-minh-chung-cam-ket` |
 | 17.09.2026 | `gio-hang-studio-1pn-2pn-phu-hop-ai` |
-| 17.09.2026 | `can-ho-son-tra-so-huu-lau-dai` |
 | 12.09.2026 | `su-kien-mo-ban-chinh-thuc-12-09-2026` |
+| 17.09.2026 | `can-ho-son-tra-so-huu-lau-dai` |
 | 09.09.2026 | `gio-hang-chinh-thuc-mo-09-09-2026` |
 | 08.09.2026 | `chinh-thuc-ra-hang-09-09-2026` |
-| 12.08.2026 | `can-ho-bien-so-huu-lau-dai-son-tra` |
 | 31.07.2026 | `mbland-ra-mat-du-an-dau-tien-tai-da-nang` |
 | 08.07.2026 | `ceo-meeting-the-camellia-son-tra` |
+| 12.08.2026 | `can-ho-bien-so-huu-lau-dai-son-tra` |
 
 Không index: `/sua-anh`, `/embed`, `/api/*`.
 
@@ -283,6 +352,20 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 | #13 | 16.09.2026 11:17 | Redirect www + vercel.app → apex |
 | #12 | 16.09.2026 10:33 | Canonical SEO → thecamellia-sontra.com |
 | #11–#1 | 15.09.2026 | Perf, a11y, gallery, tin tiến độ, Speed Insights, UX P0/P1 |
+
+### PR không phải bài tin sau #34
+
+Đối chiếu PR đã merge trên GitHub (giờ ICT = UTC+7). Ngoài bảng dưới, các PR merged từ #38 đến #126 là bài tin hoặc ảnh bài; slug nằm ở mục 6, không liệt kê lại từng số PR.
+
+| PR | Ngày merge (ICT) | Mục đích |
+|----|------------------|----------|
+| **#80** | 20.10.2026 11:29 | Sửa PageView và Contact của Meta Pixel |
+| **#79** | 20.10.2026 11:11 | Gắn Meta Pixel toàn site |
+| **#46** | 30.09.2026 13:48 | Mặt bằng điển hình trên `/can-ho` mở Lightbox |
+| **#40** | 25.09.2026 18:10 | SEO cụm giá 1,98 tỷ + bài sở hữu lâu dài |
+| **#37** | 24.09.2026 13:43 | Docs quy trình PR → preview → merge |
+| **#36** | 24.09.2026 11:33 | Docs `AGENTS.project.md` |
+| **#35** | 24.09.2026 10:50 | Docs HANDOVER (bản bàn giao) |
 
 ---
 
@@ -331,15 +414,17 @@ Thời gian **Asia/Bangkok (ICT = UTC+7)**. Ưu tiên #22–#34.
 | Hạng mục | Ghi chú |
 |----------|---------|
 | Exit runbook rời Vercel | Cloudflare Pages / Netlify + Nitro, DNS cutover — **chưa ghi** trong repo |
-| GSC indexing | Request indexing **3 bài Month 2** + `/kham-pha` |
-| Month 2 W8 | Bài so sánh khu vực trung lập |
-| Month 3 | Theo calendar STRATEGY (recap, pháp lý Q&A, video+transcript, retune meta) |
+| GSC indexing | Request indexing **3 bài Month 2** + `/kham-pha`. Repo không có bằng chứng việc này đã xong |
+| Month 2 W8 | Bản 06.10 vẫn ghi «Tiếp theo». Bài `chon-khu-o-da-nang-son-tra-hai-chau-ngu-hanh-son` đã có từ 29.09.2026. Không đánh dấu xong |
+| Month 3 | Lịch STRATEGY ngoài repo. `NEWS` đã có bài đến 11.11.2026; không có checklist đóng tháng 3 trong repo |
 | Caption Facebook | Mặc định **1,98 tỷ**; **1,72 tỷ** chỉ khi chủ dự án yêu cầu và là tổng giá sau chiết khấu |
-| UX residual nhỏ | Filter fade luôn hiện; CountUp dưới fold; nav desktop dày |
+| UX residual nhỏ | Ghi chú 06.10 (filter fade, CountUp dưới fold, nav desktop). PR dọn 11.11 không kiểm lại các mục này |
 | Offer schema | Chỉ khi có **bảng giá có ngày** |
 | Google Business Profile | Chỉ nếu xác minh được; NAP khớp site; không tạo listing giả |
 | AI smoke | Chạy định kỳ `docs/ai-smoke-prompts.md` |
 | Sync sitemap | Sau mọi bài/trang mới: `npm run sitemap` + commit |
+| Rate limit lead | In-memory, không chung giữa instance Vercel. Chưa bật Firewall. Xem `README.md` |
+| Sandbox còn giữ | `.grok/`, PreviewHostBridge, cổng 8080 của `npm run dev`, `scripts/with-app-env.mjs`, allowlist `*.grok-sandbox.com` trên `/api/leads`. Lý do: `README.md` |
 
 ---
 
