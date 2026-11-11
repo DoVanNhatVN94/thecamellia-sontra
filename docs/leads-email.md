@@ -42,7 +42,7 @@ Server (`src/lib/leads.server.ts`):
 
 - Honeypot (`honey` / `website` / `company`) → silent `200 { ok: true }`, no email
 - Dwell: `openedAt` required; reject if < 2.5s
-- Soft IP rate limit: 5 POSTs / 10 min (in-memory Map — **not** distributed across Vercel instances)
+- Soft IP rate limit: 5 POSTs / 10 min (in-memory `Map` on `globalThis` — **not** shared across Vercel instances, and it resets when an instance goes cold). This is a soft brake next to honeypot, dwell, origin allowlist, and Zod. A shared limit without a new vendor or a new secret would be a Vercel Firewall rate limit on `POST /api/leads` (project setting, not app code). That firewall rule is **not** enabled by this repo.
 - Zod validation (VN phone, optional email, strip HTML)
 - Origin allowlist (site + vercel + local/preview)
 - Handler never throws — always JSON 2xx/4xx/503

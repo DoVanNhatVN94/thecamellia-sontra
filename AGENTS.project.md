@@ -20,7 +20,7 @@
 - Thay đổi rủi ro: tạo nhánh backup trước. Chạy `npm run build` (và typecheck) phải pass trước khi đề nghị merge.
 - **Không bịa số liệu.** Mọi fact phải khớp mục "Fact dự án chuẩn" trong `docs/HANDOVER.md` và `src/data/project.ts`. Giá sàn công bố **từ 1,98 tỷ** (mặc định). **1,72 tỷ** chỉ khi chủ dự án yêu cầu, và chỉ là tổng giá sau chiết khấu theo phương thức thanh toán (ví dụ BST căn hộ tầng 3) — không thay `fromPrice`.
 - Ảnh: tối ưu trước khi đưa lên (WebP cho ảnh trang; ảnh OG là JPEG 1200×630). Ưu tiên khung ngang 16:9, không cắt mất nội dung chính của poster.
-- File dùng chung cần cẩn thận, báo trước khi sửa: `src/data/project.ts`, `src/lib/seo.ts`, sitemap, `public/llms.txt`, form/`/api/leads`, redirect.
+- File dùng chung cần cẩn thận, báo trước khi sửa: `src/data/project.ts`, `src/data/news/articles/*`, `src/lib/seo.ts`, `src/lib/sitemap-paths.ts`, sitemap, `public/llms.txt`, form/`/api/leads`, redirect.
 - Sau khi ship: kiểm tra trang live (desktop + mobile) và báo lại kèm ảnh chụp.
 
 ## Quy trình PR → preview → merge (bắt buộc)
@@ -35,6 +35,6 @@ Nhánh `main` đã bật branch protection: không push thẳng được, phải
 - Cần rollback: mở PR revert (`git revert`) theo đúng quy trình trên.
 
 ## Không làm
-- Không chạy theo các mục cổng `8080`, `startup.sh`, preview proxy, "Grok Build" trong `AGENTS.md` — không áp dụng ngoài sandbox Grok Build.
+- Không dựng lại hợp đồng sandbox Grok Build (cổng `8080` như quy tắc deploy, `startup.sh`, preview proxy). `AGENTS.md` chỉ còn pointer tới file này. `npm run dev` vẫn bind cổng 8080 vì đó là script local trong `package.json`.
 - Không đổi domain/DNS, biến môi trường Vercel, hay cấu hình Resend nếu chưa được yêu cầu rõ.
 - Không thêm lại branding Grok PWA (`grokPwaPlugin`, `public/__grok/`).
