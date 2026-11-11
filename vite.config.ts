@@ -10,6 +10,8 @@ import { nitro } from "nitro/vite";
 import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { mediaCachePlugin } from "./scripts/media-cache-plugin.mjs";
+// @ts-expect-error JS plugin alongside the TS vite config
+import { newsVirtualPlugin } from "./scripts/news-virtual-plugin.mjs";
 import { isMigrationFile } from "./scripts/migration-plan.mjs";
 
 /** The files `src/lib/db.ts` globs — same directory, same non-recursive scope. */
@@ -164,6 +166,7 @@ export default defineConfig(({ command, isPreview }) => ({
     // Dev-only /__app-env, read by scripts/check-auth-invariant.mjs.
     appEnvPlugin(),
     mediaCachePlugin(),
+    newsVirtualPlugin(),
     tailwindcss(),
     tanstackStart(),
     ...(command === "build" || isPreview

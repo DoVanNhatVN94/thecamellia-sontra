@@ -1,12 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { NewsArticle } from "@/data/project";
+import type { NewsCard } from "@/data/news/types";
 import { SmartImg } from "@/lib/image-src";
 import { cn } from "@/lib/utils";
 
 type Props = {
-  articles: NewsArticle[];
+  articles: readonly NewsCard[];
   className?: string;
 };
 

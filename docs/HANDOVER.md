@@ -61,7 +61,8 @@ Tài liệu liên quan trong repo:
 
 Nguồn code:
 
-- Fact / loại căn / tin / gallery / tour: `src/data/project.ts`
+- Fact / loại căn / gallery / tour: `src/data/project.ts`
+- Tin: `src/data/news/articles/<slug>.ts` — **một file một bài** (slug = tên file). Thứ tự trên `/tin-tuc`: `listRank` nhỏ đứng trước; bỏ `listRank` để bài mới lên đầu. Danh sách chỉ nhận tiêu đề/excerpt/ảnh; trang bài chỉ tải đúng file đó.
 - 4 phương án thanh toán chi tiết: `src/data/sales-plans.ts`
 - SEO meta / JSON-LD / `SITEMAP_PATHS`: `src/lib/seo.ts`
 
@@ -96,7 +97,8 @@ Nguồn code:
 ### Bản đồ thư mục / file quan trọng
 
 ```
-src/data/project.ts          # Fact, NEWS, UNIT_TYPES, galleries, VIRTUAL_TOUR
+src/data/project.ts          # Fact, UNIT_TYPES, galleries, VIRTUAL_TOUR
+src/data/news/articles/      # Một file .ts mỗi slug tin tức
 src/data/sales-plans.ts      # 4 PA thanh toán + meta
 src/lib/seo.ts               # meta, JSON-LD, SITEMAP_PATHS, SAME_AS
 src/lib/leads.ts             # client: POST /api/leads, honeypot, dwell, rate
@@ -125,7 +127,7 @@ npm run sitemap      # regenerate public/sitemap.xml
 npm test
 ```
 
-**Cảnh báo drift sitemap:** `SITEMAP_PATHS` trong `src/lib/seo.ts` và danh sách `STATIC` + parse NEWS trong `scripts/generate-sitemap.mjs` phải khớp. Sau khi thêm trang/bài → cập nhật cả hai (hoặc chạy `npm run sitemap` và diff) rồi commit `public/sitemap.xml`.
+**Cảnh báo drift sitemap:** `SITEMAP_PATHS` trong `src/lib/sitemap-paths.ts` (re-export từ `src/lib/seo.ts`) và danh sách `STATIC` trong `scripts/generate-sitemap.mjs` phải khớp. Slug tin lấy từ `src/data/news/articles/`. Thêm bài = thêm một file `articles/<slug>.ts`, rồi `npm run sitemap` và commit `public/sitemap.xml` nếu diff. `public/llms.txt` vẫn sửa tay khi muốn crawler AI thấy bài mới.
 
 ---
 
@@ -218,7 +220,7 @@ Cadence ops gợi ý trong STRATEGY: thứ Hai GSC+Analytics+www; biweekly tiế
 | `/gioi-thieu` | Fact sheet |
 | `/lien-he` | Conversion / form |
 
-**Bài tin** (`/tin-tuc/<slug>`) — theo `NEWS` trong `project.ts` / sitemap:
+**Bài tin** (`/tin-tuc/<slug>`) — mỗi bài là `src/data/news/articles/<slug>.ts` (không gộp trong `project.ts`). Sitemap và `llms.txt`:
 
 | Ngày | Slug |
 |------|------|

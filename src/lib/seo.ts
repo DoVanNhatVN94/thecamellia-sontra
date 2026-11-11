@@ -1,4 +1,5 @@
-import { NEWS, PROJECT, UNIT_TYPES } from "@/data/project";
+import type { NewsArticle } from "@/data/news/types";
+import { PROJECT, UNIT_TYPES } from "@/data/project";
 
 /** Public origin. Override with VITE_SITE_URL when needed. */
 export const SITE_ORIGIN = String(
@@ -370,10 +371,7 @@ export function breadcrumbLd(items: { name: string; path: string }[], origin = S
 }
 
 /** NewsArticle JSON-LD — dates from article.date only (no invented fields). */
-export function articleLd(
-  article: (typeof NEWS)[number],
-  origin = SITE_ORIGIN,
-) {
+export function articleLd(article: NewsArticle, origin = SITE_ORIGIN) {
   const url = absUrl(`/tin-tuc/${article.slug}`, origin);
   const published = parseDotDate(article.date);
   const imagePath = article.image;
@@ -419,10 +417,7 @@ export function articleLd(
  * FAQPage from real on-page Q&As only (headings ending with "?").
  * Returns null when the article has no question headings.
  */
-export function articleFaqLd(
-  article: (typeof NEWS)[number],
-  _origin = SITE_ORIGIN,
-) {
+export function articleFaqLd(article: NewsArticle, _origin = SITE_ORIGIN) {
   const faqs: { q: string; a: string }[] = [];
   let cur: { q: string; parts: string[] } | null = null;
   for (const block of article.body) {
@@ -458,14 +453,4 @@ export function jsonLdGraph(nodes: object[], origin = SITE_ORIGIN) {
   };
 }
 
-/** Canonical public URL list — keep `public/sitemap.xml` in sync via `npm run sitemap`. */
-export const SITEMAP_PATHS = [
-  { path: "/", priority: "1.0", changefreq: "weekly" },
-  { path: "/can-ho", priority: "0.9", changefreq: "weekly" },
-  { path: "/tien-ich", priority: "0.8", changefreq: "monthly" },
-  { path: "/kham-pha", priority: "0.8", changefreq: "monthly" },
-  { path: "/tin-tuc", priority: "0.8", changefreq: "weekly" },
-  { path: "/gioi-thieu", priority: "0.85", changefreq: "monthly" },
-  { path: "/lien-he", priority: "0.7", changefreq: "monthly" },
-  ...NEWS.map((n) => ({ path: `/tin-tuc/${n.slug}`, priority: "0.6", changefreq: "monthly" })),
-] as const;
+export { SITEMAP_PATHS } from "./sitemap-paths";

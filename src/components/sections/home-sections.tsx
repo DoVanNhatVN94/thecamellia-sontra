@@ -9,12 +9,12 @@ import { TourEmbed } from "@/components/media/tour-embed";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { SmartImg } from "@/lib/image-src";
+import { NEWS_CARDS } from "@/data/news/cards";
 import {
   AMENITY_LAYERS,
   DISTANCES,
   FACTS,
   GALLERIES,
-  NEWS,
   PARTNERS,
   PROJECT,
   UNIT_TYPES,
@@ -609,7 +609,7 @@ export function NewsPreview() {
           </div>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {NEWS.map((n, i) => (
+          {NEWS_CARDS.map((n, i) => (
             <Reveal key={n.slug} delay={i * 80}>
               <Link
                 to="/tin-tuc/$slug"
