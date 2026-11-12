@@ -5,9 +5,9 @@ export const article = {
   date: "12.11.2026",
   title: "Bán đảo Sơn Trà tạm dừng tham quan từ 10/11: đường ra Bãi Cát Vàng nứt, sụt lún",
   excerpt:
-    "Từ 15h30 ngày 10/11/2026, Ban Quản lý bán đảo Sơn Trà tạm dừng hoạt động tham quan bán đảo, chưa xác định ngày mở lại. Cùng chiều, đường ra Bãi Cát Vàng bị nứt, sụt lún và đã được rào chắn. Ven biển Mân Thái sóng lớn, triều cường.",
+    "Từ 15h30 ngày 10/11/2026, Ban Quản lý bán đảo Sơn Trà tạm dừng hoạt động tham quan bán đảo, chưa xác định ngày mở lại. Cùng chiều, đường ra Bãi Cát Vàng bị nứt, sụt lún và đã được rào chắn. Ven biển sóng lớn, trạm Sơn Trà dự báo triều cường tối 11/11.",
   description:
-    "Tin phường Sơn Trà 10–12/11/2026: bán đảo Sơn Trà tạm dừng tham quan từ 15h30 ngày 10/11 vì mưa lớn, nguy cơ sạt lở, lũ quét; đường ra Bãi Cát Vàng nứt, sụt lún, đã đổ đất cát chặn và rào chắn; trạm Sơn Trà dự báo nước lớn 1,85–1,95 m tối 11/11; ven biển Mân Thái sóng lớn, khuyến cáo không tắm biển.",
+    "Tin phường Sơn Trà 10–12/11/2026: bán đảo Sơn Trà tạm dừng tham quan từ 15h30 ngày 10/11 vì mưa lớn, nguy cơ sạt lở, lũ quét; đường ra Bãi Cát Vàng nứt, sụt lún, đã đổ đất cát chặn và rào chắn; trạm Sơn Trà dự báo nước lớn 1,85–1,95 m tối 11/11; ven biển sóng lớn, khuyến cáo không tắm biển.",
   image: "/images/news-son-tra-tam-dung-1211-og.jpg",
   imageAlt:
     "Ảnh minh họa tạo bằng AI: đường núi ven biển ướt mưa có vết nứt, hàng rào chắn nhựa cam trắng và ụ đất chặn đường, rừng và biển xám phía sau. Không phải ảnh chụp đường ra Bãi Cát Vàng.",
@@ -54,7 +54,7 @@ export const article = {
       text: "Người dân, du khách được khuyến cáo tuyệt đối không đi vào đoạn đường đã rào chắn; không tự ý tháo dỡ rào chắn, vượt dây cảnh báo hay tìm cách đi qua chỗ sụt lún; hạn chế đến khu vực đèo dốc, ven núi, ven suối trong thời gian mưa lớn. Theo Tiền Phong, chỉ trở lại tuyến đường khi có thông báo cho phép lưu thông. Các nguồn chưa nêu thời gian sửa chữa.",
     },
     {
-      heading: "Ven biển Mân Thái: sóng lớn, triều cường",
+      heading: "Ven biển Sơn Trà: sóng lớn, triều cường",
       text: "Theo Tuổi Trẻ ngày 10/11/2026, ven biển Đà Nẵng gió giật liên hồi, từng đợt sóng lớn bạc đầu liên tục xô vào bờ (báo có ảnh sóng bạc đầu nhìn từ bãi biển Mân Thái); ở ven biển đường Hoàng Sa, có lúc nước biển tràn qua toàn bộ bãi cát, dâng sát bờ tường. Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng cho biết đã thông báo khuyến cáo người dân, du khách không tắm biển khi thời tiết không thuận lợi.",
     },
     {
