@@ -5,7 +5,7 @@ export const article = {
   date: "13.11.2026",
   title: "VSIP nhận vị trí số 7 Khu thương mại tự do Đà Nẵng: 3.525 tỷ, 6/7 vị trí có nhà đầu tư",
   excerpt:
-    "Ngày 12/11/2026, UBND TP Đà Nẵng chấp thuận VSIP làm nhà đầu tư hạ tầng vị trí số 7 Khu thương mại tự do tại xã Hòa Vang, vốn 3.525 tỷ đồng. Theo kế hoạch, giải phóng mặt bằng đến quý III/2029, hạ tầng hoàn thành quý I/2032. Đến nay 6/7 vị trí đã có nhà đầu tư.",
+    "Ngày 12/11/2026, UBND TP Đà Nẵng chấp thuận VSIP làm nhà đầu tư hạ tầng vị trí số 7 Khu thương mại tự do tại xã Hòa Vang, vốn 3.525 tỷ đồng. Theo kế hoạch, giải phóng mặt bằng đến quý III/2029, xây dựng hạ tầng kéo dài đến quý I/2032. Đến nay 6/7 vị trí đã có nhà đầu tư.",
   description:
     "Quyết định 5202/QĐ-UBND ngày 12/11/2026: VSIP làm nhà đầu tư dự án hạ tầng vị trí số 7 Khu thương mại tự do Đà Nẵng (xã Hòa Vang), vốn 3.525 tỷ đồng (705 tỷ vốn góp, 2.820 tỷ vốn huy động), GPMB quý I/2027–quý III/2029, xây dựng quý IV/2027–quý I/2032. 6/7 vị trí đã có nhà đầu tư. Bài đọc cho người mua căn hộ, không kết luận giá.",
   image: "/images/news-ftz-vi-tri-7-1311-og.jpg",
@@ -63,7 +63,7 @@ export const article = {
     },
     {
       heading: "Người mua căn hộ nên đọc tin này thế nào",
-      text: "Thứ nhất, đây là động lực dài hạn. Vị trí số 7 theo kế hoạch mới bắt đầu thu hút nhà đầu tư thứ cấp từ quý IV/2028 và hoàn thành hạ tầng quý I/2032; các vị trí khác cũng còn ở bước giải phóng mặt bằng, chuẩn bị hoặc khởi công. Thứ hai, các nguồn không nêu số liệu nào về giá nhà hay giá thuê nhà gắn với khu thương mại tự do, nên bài không kết luận giá căn hộ tăng hay giảm. Thứ ba, các vị trí được báo nêu nằm ở Hải Vân, Bà Nà và Hòa Vang; không vị trí nào ở phường Sơn Trà.",
+      text: "Thứ nhất, đây là động lực dài hạn. Vị trí số 7 theo kế hoạch mới bắt đầu thu hút nhà đầu tư thứ cấp từ quý IV/2028, còn giai đoạn xây dựng hạ tầng kéo dài đến quý I/2032; các vị trí khác cũng còn ở bước giải phóng mặt bằng, chuẩn bị hoặc khởi công. Thứ hai, các nguồn không nêu số liệu nào về giá nhà hay giá thuê nhà gắn với khu thương mại tự do, nên bài không kết luận giá căn hộ tăng hay giảm. Thứ ba, các vị trí được báo nêu nằm ở Hải Vân, Bà Nà và Hòa Vang; không vị trí nào ở phường Sơn Trà.",
     },
     {
       text: "Điều có thể theo dõi: tiến độ giải phóng mặt bằng thực tế của từng vị trí so với mốc kế hoạch; việc thành phố chốt phương án cho vị trí số 1; và khi nào các khu chức năng thật sự có nhà máy, kho bãi, việc làm. Nếu anh chị mua căn hộ để ở lâu dài, tiêu chí vẫn là pháp lý, vị trí, tiến độ của dự án đang xem và khả năng thanh toán của chính mình. Lưu ý: bài FDI ngày 06/11 trên website nhắc dự án khu công nghiệp VSIP Đà Nẵng khoảng 250 ha ở phường Điện Bàn Bắc; đó là dự án khác, không phải vị trí số 7 của Khu thương mại tự do.",
@@ -108,7 +108,7 @@ export const article = {
     },
     {
       heading: "Tin này có làm giá căn hộ Sơn Trà tăng không?",
-      text: "Các nguồn không nói. Bài không kết luận giá tăng hay giảm. Các vị trí được báo nêu ở Hải Vân, Bà Nà và Hòa Vang, không ở phường Sơn Trà; hạ tầng vị trí số 7 theo kế hoạch hoàn thành quý I/2032.",
+      text: "Các nguồn không nói. Bài không kết luận giá tăng hay giảm. Các vị trí được báo nêu ở Hải Vân, Bà Nà và Hòa Vang, không ở phường Sơn Trà; giai đoạn xây dựng hạ tầng vị trí số 7 theo kế hoạch kéo dài đến quý I/2032.",
     },
     {
       heading: "Lưu ý",
