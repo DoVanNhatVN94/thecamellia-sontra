@@ -5,7 +5,7 @@ export const article = {
   date: "16.11.2026",
   title: "Đất sân vận động Chi Lăng đấu giá lần 8, khởi điểm 8.190 tỷ: người mua căn hộ đọc sao?",
   excerpt:
-    "Ngày 13/11/2026, Đà Nẵng thông báo đấu giá lần thứ 8 khu đất sân vận động Chi Lăng (phường Hải Châu), giá khởi điểm 8.190 tỷ đồng, thấp hơn hơn 1.516 tỷ so với lần đầu hồi tháng 4. Phiên dự kiến sáng 27/11. Cùng tuần, Cocobay được đưa vào danh mục dự án gỡ vướng theo cơ chế đặc thù.",
+    "Ngày 13/11/2026, Đà Nẵng thông báo đấu giá lần thứ 8 khu đất sân vận động Chi Lăng (phường Hải Châu), giá khởi điểm 8.190 tỷ đồng, giảm hơn 1.516 tỷ so với lần đầu hồi tháng 4. Phiên dự kiến sáng 27/11. Cùng tuần, Cocobay được đưa vào danh mục dự án gỡ vướng theo cơ chế đặc thù.",
   description:
     "Khu đất sân vận động Chi Lăng 55.061 m² ở phường Hải Châu đấu giá lần 8: khởi điểm 8.190 tỷ đồng (lần 7: 8.550 tỷ; lần đầu tháng 4/2026: hơn 9.706 tỷ), đặt cọc 850 tỷ/hồ sơ, phiên trực tuyến sáng 27/11/2026; 7 lần trước không có người đăng ký. Thêm: Quyết định 5121/QĐ-UBND đưa Cocobay vào cơ chế đặc thù. Bài đọc cho người mua căn hộ, không kết luận giá.",
   image: "/images/news-chi-lang-1611-og.jpg",
@@ -51,7 +51,7 @@ export const article = {
     },
     {
       heading: "Cùng tuần: Cocobay vào danh mục cơ chế đặc thù",
-      text: "Một tài sản lớn khác cũng có tin mới. Theo Cổng Thông tin điện tử TP Đà Nẵng (09/11/2026), UBND thành phố ban hành Quyết định 5121/QĐ-UBND ngày 06/11/2026 công bố danh mục dự án, đất đai áp dụng cơ chế, chính sách đặc thù theo Nghị quyết 170/2024/QH15 và Nghị quyết 29/2026/QH16 (đợt 6), bổ sung 4 dự án tại phường Ngũ Hành Sơn: DAP, DAP1, DAP2 và Khu nghỉ dưỡng và nhà ở cao cấp The Empire của Công ty CP Đầu tư phát triển và xây dựng Thành Đô. Theo Dân trí (10/11/2026), The Empire là dự án có tên thương mại Cocobay Đà Nẵng, vốn khoảng 11.000 tỷ đồng, xây dựng từ năm 2016, ngừng chi trả cam kết lợi nhuận condotel từ đầu năm 2020 và dừng thi công từ đầu năm 2022. Được vào danh mục là bước để tiếp tục tháo gỡ vướng mắc; các nguồn chưa nêu mốc thi công lại cụ thể.",
+      text: "Một tài sản lớn khác cũng có tin mới. Theo Cổng Thông tin điện tử TP Đà Nẵng (09/11/2026), UBND thành phố ban hành Quyết định 5121/QĐ-UBND ngày 06/11/2026 công bố danh mục dự án, đất đai áp dụng cơ chế, chính sách đặc thù theo Nghị quyết 170/2024/QH15 và Nghị quyết 29/2026/QH16 (đợt 6), bổ sung 4 dự án tại phường Ngũ Hành Sơn: DAP, DAP1, DAP2 và Khu nghỉ dưỡng và nhà ở cao cấp The Empire của Công ty CP Đầu tư phát triển và xây dựng Thành Đô. Theo Dân trí (10/11/2026), The Empire là dự án có tên thương mại Cocobay Đà Nẵng, vốn khoảng 11.000 tỷ đồng, xây dựng từ năm 2016, ngừng chi trả cam kết lợi nhuận condotel từ đầu năm 2020 và dừng thi công từ đầu năm 2022. Dân trí nhắc lại kế hoạch doanh nghiệp báo cáo hồi tháng 5/2024: thi công trở lại từ đầu tháng 5/2024 và hoàn thành vào tháng 1/2029. Được vào danh mục là bước để tiếp tục tháo gỡ vướng mắc; các nguồn ngày 09–10/11 không nêu mốc thi công lại mới.",
       links: [
         {
           to: "/tin-tuc/tin-du-an-ton-dong-da-nang-01-11-2026",
@@ -61,7 +61,7 @@ export const article = {
     },
     {
       heading: "Người mua căn hộ nên đọc tin này thế nào",
-      text: "Thứ nhất, đây là thị trường khác. Khu đất Chi Lăng là đất thương mại, dịch vụ trị giá hàng nghìn tỷ, đặt cọc 850 tỷ một hồ sơ; người tham gia là doanh nghiệp lớn, không phải người mua nhà để ở. Việc nhiều lần không có người đăng ký cho thấy khẩu vị với tài sản quy mô lớn, kèm nghĩa vụ tài chính và pháp lý riêng, nhưng các nguồn không nêu số liệu nào về giá căn hộ, nên bài không kết luận giá căn hộ tăng hay giảm. Thứ hai, cả hai tin đều cho thấy pháp lý quyết định tốc độ: khu đất phải xử lý truy thu, điều chỉnh quy hoạch và thời hạn đất trước khi đấu giá; Cocobay cần cơ chế đặc thù sau nhiều năm dừng. Thứ ba, giá khởi điểm hạ không có nghĩa tài sản «rẻ» hay «đắt»; đó là mức của thủ tục thi hành án.",
+      text: "Thứ nhất, đây là thị trường khác. Khu đất Chi Lăng là đất thương mại, dịch vụ với giá khởi điểm hàng nghìn tỷ và tiền đặt cọc 850 tỷ một hồ sơ; đây là tài sản dành cho nhà đầu tư có năng lực tài chính lớn, không phải sản phẩm cho người mua nhà để ở. Việc 7 lần không có người đăng ký là tín hiệu riêng của loại tài sản quy mô lớn, kèm nghĩa vụ tài chính và pháp lý riêng. Các nguồn không nêu số liệu nào về giá căn hộ, nên bài không kết luận giá căn hộ tăng hay giảm. Thứ hai, cả hai tin đều cho thấy pháp lý quyết định tốc độ: khu đất kèm khoản truy thu tiền sử dụng đất, đã phải điều chỉnh quy hoạch và thời hạn đất trước khi đấu giá; Cocobay cần cơ chế đặc thù sau nhiều năm dừng. Thứ ba, giá khởi điểm hạ không có nghĩa tài sản «rẻ» hay «đắt»; đó là mức của thủ tục thi hành án.",
     },
     {
       text: "Điều có thể theo dõi: phiên ngày 27/11/2026 có người đăng ký hay không, và nếu có thì giá trúng bao nhiêu; các bước tiếp theo với Cocobay sau khi vào danh mục cơ chế đặc thù. Nếu anh chị mua căn hộ để ở lâu dài, câu hỏi vẫn là: dự án đã đủ điều kiện bán chưa, giấy tờ đất là sở hữu lâu dài hay có thời hạn, chủ đầu tư là ai, tiến độ ra sao, và khả năng thanh toán của chính mình.",
