@@ -11,7 +11,7 @@ export const article = {
   image: "/images/news-da-phuoc-1811-og.jpg",
   imageAlt:
     "Ảnh minh họa tạo bằng AI: khu đất lấn biển ven vịnh với kè đá, đường nội bộ dang dở, vài khung nhà thấp tầng và máy xúc bắt đầu làm việc; phía xa là thành phố, cầu dây văng và núi. Không phải ảnh chụp Khu đô thị quốc tế Đa Phước.",
-  imageCaption: "Ảnh minh họa tạo bằng AI. Không phải ảnh chụp Khu đô thị quốc tế Đa Phước.",
+  imageCaption: "Ảnh minh họa tạo bằng AI. Không phải ảnh chụp Khu đô thị quốc tế Đa Phước; cầu dây văng chỉ mang tính minh họa, không phải một cây cầu cụ thể tại Đà Nẵng.",
   poster: "/images/news-da-phuoc-1811-hero.webp",
   imageObjectClass: "object-top",
   gallery: [
@@ -21,7 +21,7 @@ export const article = {
   ],
   body: [
     {
-      text: "Sáng 17/11/2026, UBND TP Đà Nẵng phối hợp các đơn vị liên quan tổ chức Lễ tái khởi động Dự án Khu đô thị quốc tế Đa Phước, chủ đề «Đánh thức kỳ quan – Viết tiếp giấc mơ đô thị». Dự án có quy mô khoảng 170,7 ha ven vịnh Đà Nẵng, tổng vốn đầu tư gần 54.788 tỷ đồng, được tái khởi động sau nhiều năm gián đoạn vì vướng mắc pháp lý. (Nguồn: Báo Chính phủ, Tuổi Trẻ, CAND, VietnamPlus, 17/11/2026)",
+      text: "Sáng 17/11/2026, UBND TP Đà Nẵng phối hợp các đơn vị liên quan tổ chức Lễ tái khởi động Dự án Khu đô thị quốc tế Đa Phước, chủ đề «Đánh thức kỳ quan – Viết tiếp giấc mơ đô thị». Dự án có quy mô khoảng 170,7 ha ven vịnh Đà Nẵng, tổng vốn đầu tư gần 54.788 tỷ đồng (CAND, VietnamPlus), được tái khởi động sau nhiều năm gián đoạn vì vướng mắc pháp lý. (Nguồn: Báo Chính phủ, Tuổi Trẻ, CAND, VietnamPlus, 17/11/2026)",
     },
     {
       text: "Đây là bài tổng hợp báo chí, không phải văn bản của UBND TP Đà Nẵng, không phải thông tin bán hàng của dự án Đa Phước và không phải thông cáo của The Camellia Sơn Trà. Bài đọc tin này cho người đang tìm hiểu nhà ở Đà Nẵng: một dự án tồn đọng lớn được khởi động lại nói gì, và chưa nói gì, với người mua.",
@@ -61,7 +61,7 @@ export const article = {
       text: "Một tin khác cũng về pháp lý. Theo Tuổi Trẻ (16/11/2026), trả lời kiến nghị cử tri, Sở Nông nghiệp và Môi trường Đà Nẵng cho biết năm 2021, khi làm thủ tục cấp giấy chứng nhận, cơ quan chức năng phát hiện nhà đầu tư dự án Monarchy chưa hoàn thành nghĩa vụ tài chính phát sinh do điều chỉnh quy hoạch. Việc xác định giá đất gặp nhiều vướng mắc; đơn vị thẩm định giá đầu tiên đề nghị dừng hợp đồng, đến tháng 9/2025 Sở ký với đơn vị khác.",
     },
     {
-      text: "Theo Tuổi Trẻ, chủ đầu tư (Công ty CP Đầu tư phát triển nhà Đà Nẵng) không cung cấp được thông tin diện tích xây dựng, diện tích sàn theo quy hoạch năm 2012 và nhiều lần không dự các buổi làm việc. Hiện dự thảo chứng thư đã được trình hội đồng thẩm định; sau đó mới trình Chủ tịch UBND TP phê duyệt và chuyển cơ quan thuế tính nghĩa vụ tài chính. Tuổi Trẻ nhắc lại chủ đầu tư từng bị xử phạt vì bàn giao căn hộ khi chưa nghiệm thu (năm 2021) và ký hợp đồng mua bán khi chưa có văn bản đủ điều kiện bán nhà ở hình thành trong tương lai (năm 2018). Nguồn không nêu thời hạn cấp sổ.",
+      text: "Theo Tuổi Trẻ, đến nay nghĩa vụ tài chính phát sinh do điều chỉnh quy hoạch vẫn chưa được chốt: dự thảo chứng thư định giá đã được trình hội đồng thẩm định; sau khi có kết luận, Sở sẽ trình Chủ tịch UBND TP phê duyệt rồi chuyển cơ quan thuế tính nghĩa vụ tài chính. Nguồn không nêu thời hạn cấp sổ.",
       links: [
         {
           to: "/tin-tuc/nang-luc-tai-chinh-chu-dau-tu-da-nang-05-11-2026",
@@ -71,7 +71,7 @@ export const article = {
     },
     {
       heading: "Người mua nhà nên đọc hai tin này thế nào",
-      text: "Thứ nhất, Đa Phước là dự án nhà thấp tầng (liền kề, biệt thự) quy mô lớn, không phải nguồn cung căn hộ chung cư; theo chủ trương, nhà ở chỉ hình thành dần qua nhiều năm đến 2033. Các nguồn không nêu giá bán, thời điểm mở bán hay số liệu về giá nhà xung quanh, nên bài không kết luận giá tăng hay giảm. Thứ hai, lễ tái khởi động là tín hiệu thành phố quyết xử lý dự án tồn đọng, nhưng chính lãnh đạo thành phố nói thủ tục và nghĩa vụ chưa xong. Thứ ba, cả hai tin cùng một bài học: tiền đã nộp theo hợp đồng đặt cọc, hay căn hộ đã nhận nhà, vẫn có thể phải chờ nhiều năm nếu dự án còn vướng pháp lý hoặc nghĩa vụ tài chính về đất.",
+      text: "Thứ nhất, theo các nguồn, sản phẩm nhà ở được nêu là nhà liền kề và biệt thự (nhà thấp tầng); theo chủ trương, nhà ở chỉ hình thành dần qua nhiều năm đến 2033. Các nguồn không nêu giá bán, thời điểm mở bán hay số liệu về giá nhà xung quanh, nên bài không kết luận giá tăng hay giảm. Thứ hai, lễ tái khởi động là tín hiệu thành phố quyết xử lý dự án tồn đọng, nhưng chính lãnh đạo thành phố nói thủ tục và nghĩa vụ chưa xong. Thứ ba, cả hai tin cùng một bài học: tiền đã nộp theo hợp đồng đặt cọc, hay căn hộ đã nhận nhà, vẫn có thể phải chờ nhiều năm nếu dự án còn vướng pháp lý hoặc nghĩa vụ tài chính về đất.",
       links: [
         {
           to: "/tin-tuc/de-xuat-cam-chuyen-nhuong-hdmb-nha-tren-giay-02-11-2026",
