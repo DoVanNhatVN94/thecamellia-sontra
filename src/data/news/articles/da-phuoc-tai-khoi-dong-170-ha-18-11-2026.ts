@@ -58,7 +58,10 @@ export const article = {
     },
     {
       heading: "Cùng tuần: vì sao Monarchy block B nhiều năm chưa có sổ hồng",
-      text: "Một tin khác cũng về pháp lý. Theo Tuổi Trẻ (16/11/2026), trả lời kiến nghị cử tri, Sở Nông nghiệp và Môi trường Đà Nẵng cho biết năm 2021, khi làm thủ tục cấp giấy chứng nhận, cơ quan chức năng phát hiện nhà đầu tư dự án Monarchy chưa hoàn thành nghĩa vụ tài chính phát sinh do điều chỉnh quy hoạch. Việc xác định giá đất gặp nhiều vướng mắc; đơn vị thẩm định giá đầu tiên đề nghị dừng hợp đồng, đến tháng 9/2025 Sở ký với đơn vị khác. Chủ đầu tư (Công ty CP Đầu tư phát triển nhà Đà Nẵng) không cung cấp được thông tin diện tích xây dựng, diện tích sàn theo quy hoạch năm 2012 và nhiều lần không dự các buổi làm việc. Hiện dự thảo chứng thư đã được trình hội đồng thẩm định; sau đó mới trình Chủ tịch UBND TP phê duyệt và chuyển cơ quan thuế tính nghĩa vụ tài chính. Tuổi Trẻ nhắc lại chủ đầu tư từng bị xử phạt vì bàn giao căn hộ khi chưa nghiệm thu (năm 2021) và ký hợp đồng mua bán khi chưa có văn bản đủ điều kiện bán nhà ở hình thành trong tương lai (năm 2018). Nguồn không nêu thời hạn cấp sổ.",
+      text: "Một tin khác cũng về pháp lý. Theo Tuổi Trẻ (16/11/2026), trả lời kiến nghị cử tri, Sở Nông nghiệp và Môi trường Đà Nẵng cho biết năm 2021, khi làm thủ tục cấp giấy chứng nhận, cơ quan chức năng phát hiện nhà đầu tư dự án Monarchy chưa hoàn thành nghĩa vụ tài chính phát sinh do điều chỉnh quy hoạch. Việc xác định giá đất gặp nhiều vướng mắc; đơn vị thẩm định giá đầu tiên đề nghị dừng hợp đồng, đến tháng 9/2025 Sở ký với đơn vị khác.",
+    },
+    {
+      text: "Theo Tuổi Trẻ, chủ đầu tư (Công ty CP Đầu tư phát triển nhà Đà Nẵng) không cung cấp được thông tin diện tích xây dựng, diện tích sàn theo quy hoạch năm 2012 và nhiều lần không dự các buổi làm việc. Hiện dự thảo chứng thư đã được trình hội đồng thẩm định; sau đó mới trình Chủ tịch UBND TP phê duyệt và chuyển cơ quan thuế tính nghĩa vụ tài chính. Tuổi Trẻ nhắc lại chủ đầu tư từng bị xử phạt vì bàn giao căn hộ khi chưa nghiệm thu (năm 2021) và ký hợp đồng mua bán khi chưa có văn bản đủ điều kiện bán nhà ở hình thành trong tương lai (năm 2018). Nguồn không nêu thời hạn cấp sổ.",
       links: [
         {
           to: "/tin-tuc/nang-luc-tai-chinh-chu-dau-tu-da-nang-05-11-2026",
