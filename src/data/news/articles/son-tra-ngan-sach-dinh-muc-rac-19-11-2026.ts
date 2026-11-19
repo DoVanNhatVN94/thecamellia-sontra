@@ -4,7 +4,7 @@ export const article = {
   slug: "son-tra-ngan-sach-dinh-muc-rac-19-11-2026",
   date: "19.11.2026",
   title:
-    "Phường Sơn Trà 17–19/11: HĐND giám sát ngân sách, tăng trưởng ước 11,36%; dự thảo định mức thu gom rác tăng chi phí, chưa phải mức thu",
+    "Phường Sơn Trà 17-19/11: HĐND giám sát ngân sách; dự thảo định mức rác chưa phải mức thu",
   excerpt:
     "Sáng 18/11/2026, Ban Kinh tế – Ngân sách HĐND TP Đà Nẵng giám sát ngân sách tại phường Sơn Trà: tốc độ tăng tổng giá trị sản phẩm trên địa bàn cả năm 2026 ước 11,36%, thu ngân sách đến 31/10 đạt 1.451 tỷ đồng (86% dự toán). Dự thảo định mức thu gom rác mới tính chi phí dịch vụ cho hộ gia đình ở nhóm phường trung tâm, trong đó có Sơn Trà, tăng khoảng 79–112%, nhưng đây chưa phải mức thu người dân.",
   description:
@@ -49,10 +49,10 @@ export const article = {
       text: "Theo Tuổi Trẻ (19/11/2026), Sở Nông nghiệp và Môi trường TP Đà Nẵng vừa có báo cáo giải trình, bổ sung các nội dung phản biện xã hội về dự thảo định mức kinh tế – kỹ thuật thu gom, vận chuyển, xử lý rác sinh hoạt và vệ sinh công cộng. Từ dự thảo, Sở tính chi phí dịch vụ đối với hộ gia đình có thể tăng 41–244% so với mức hiện hành, bình quân khoảng 142%. Các phường trung tâm như Hải Châu, Hòa Cường, Sơn Trà, Hòa Xuân có mức tăng thấp hơn, khoảng 79–112%; mức tăng cao ở phường Hải Vân (244%), Liên Chiểu (218%), Hòa Khánh (193%), thấp nhất là xã Tân Hiệp (41%).",
     },
     {
-      text: "Sở nhấn mạnh mức giá dự kiến mới là chi phí tính theo dự thảo định mức, chưa phải mức thu áp dụng với người dân, và việc ban hành định mức không làm thay đổi ngay mức giá người dân đang trả. UBND các phường, xã, đặc khu sẽ xây dựng, thẩm định và quyết định mức giá cụ thể với hộ gia đình, cá nhân, bảo đảm khả năng thanh toán và có lộ trình, tránh tăng đột biến (Tuổi Trẻ, 19/11/2026). Theo VOV (16/11/2026), mức giá thu gom rác người dân đang trả là 25.000–30.000 đồng/hộ/tháng, áp dụng theo các quyết định ban hành năm 2017; chiều 16/11, Ủy ban MTTQ Việt Nam thành phố tổ chức hội nghị phản biện xã hội dự thảo này. Cổng thông tin điện tử TP Đà Nẵng (30/09/2026) cho biết kế hoạch phấn đấu tham mưu UBND thành phố phê duyệt định mức trong tháng 11/2026. Đồ họa dưới đây do website vẽ lại từ bài Tuổi Trẻ.",
+      text: "Sở nhấn mạnh mức giá dự kiến mới là chi phí tính theo dự thảo định mức, chưa phải mức thu áp dụng với người dân, và việc ban hành định mức không làm thay đổi ngay mức giá người dân đang trả. UBND các phường, xã, đặc khu sẽ xây dựng, thẩm định và quyết định mức giá cụ thể với hộ gia đình, cá nhân, bảo đảm khả năng thanh toán và có lộ trình, tránh tăng đột biến (Tuổi Trẻ, 19/11/2026). Theo VOV (16/11/2026), mức giá thu gom rác người dân trên địa bàn thành phố đang trả là 25.000-30.000 đồng/hộ/tháng, áp dụng theo Quyết định số 33/2017 của UBND TP Đà Nẵng (cũ) và Quyết định số 22/2017 của UBND tỉnh Quảng Nam (cũ); bài VOV không nêu mức riêng của phường Sơn Trà. Chiều 16/11, Ủy ban MTTQ Việt Nam thành phố tổ chức hội nghị phản biện xã hội dự thảo này. Cổng thông tin điện tử TP Đà Nẵng (30/09/2026) cho biết kế hoạch phấn đấu tham mưu UBND thành phố phê duyệt định mức trong tháng 11/2026. Đồ họa dưới đây do website vẽ lại từ bài Tuổi Trẻ.",
       image: "/images/news-son-tra-1911-body-dinh-muc-rac.webp",
       imageAlt:
-        "Biểu đồ mức tăng chi phí dịch vụ thu gom rác đối với hộ gia đình theo dự thảo định mức của Đà Nẵng: phường Hải Vân 244%, Liên Chiểu 218%, Hòa Khánh 193%, bình quân 142%, nhóm phường trung tâm Hải Châu, Hòa Cường, Sơn Trà, Hòa Xuân khoảng 79–112%, xã Tân Hiệp 41%. Ghi chú: đây là chi phí tính theo dự thảo, chưa phải mức thu người dân; giá cụ thể do UBND phường, xã quyết định; mức đang thu 25.000–30.000 đồng/hộ/tháng theo VOV.",
+        "Biểu đồ mức tăng chi phí dịch vụ thu gom rác đối với hộ gia đình theo dự thảo định mức của Đà Nẵng: phường Hải Vân 244%, Liên Chiểu 218%, Hòa Khánh 193%, bình quân 142%, nhóm phường trung tâm Hải Châu, Hòa Cường, Sơn Trà, Hòa Xuân khoảng 79–112%, xã Tân Hiệp 41%. Ghi chú: đây là chi phí tính theo dự thảo, chưa phải mức thu người dân; giá cụ thể do UBND phường, xã quyết định; Mức đang thu chung toàn thành phố: 25.000-30.000 đồng/hộ/tháng (VOV, không nêu riêng phường Sơn Trà).",
     },
     {
       heading: "Chương trình vùng Sơn Trà ra mắt Ban Phát triển 22 tổ dân phố",
@@ -70,7 +70,7 @@ export const article = {
       ],
     },
     {
-      text: "Theo Tiền Phong (18/11/2026), Ban Chỉ huy Phòng thủ dân sự TP Đà Nẵng đã ban hành Công văn số 94, yêu cầu các địa phương rà soát khu vực trũng thấp, nguy cơ sạt lở, kiểm tra hệ thống thoát nước, khơi thông dòng chảy; vùng biển từ Nam Quảng Trị đến Quảng Ngãi từ chiều và đêm 19/11 có gió mạnh cấp 6, giật cấp 7–8. Về bán đảo Sơn Trà, tạm dừng tham quan từ 15h30 ngày 10/11/2026 (VietNamNet, 10/11/2026); đến sáng 19/11, website chưa tìm thấy nguồn báo chí nào đưa thông báo mở lại của Ban Quản lý. Anh chị nên theo dõi bản tin mới nhất và thông báo của Ban Quản lý trước khi lên bán đảo.",
+      text: "Cũng theo Tiền Phong, Ban Chỉ huy Phòng thủ dân sự TP Đà Nẵng đã ban hành Công văn số 94, yêu cầu các địa phương rà soát khu vực trũng thấp, nguy cơ sạt lở, kiểm tra hệ thống thoát nước, khơi thông dòng chảy. Về bán đảo Sơn Trà, tạm dừng tham quan từ 15h30 ngày 10/11/2026 (VietNamNet, 10/11/2026); đến sáng 19/11, website chưa tìm thấy nguồn báo chí nào đưa thông báo mở lại của Ban Quản lý. Anh chị nên theo dõi bản tin mới nhất và thông báo của Ban Quản lý trước khi lên bán đảo.",
     },
     {
       heading: "Tìm hiểu căn hộ ở phường Sơn Trà",
