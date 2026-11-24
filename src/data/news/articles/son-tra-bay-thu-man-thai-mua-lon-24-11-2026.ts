@@ -4,7 +4,7 @@ export const article = {
   slug: "son-tra-bay-thu-man-thai-mua-lon-24-11-2026",
   date: "24.11.2026",
   title:
-    "Sơn Trà 21–24/11: 1.571 bẫy thú thu giữ ở rừng Sơn Trà sau 11 tháng, ngày hội ở Mân Thái, mưa lớn trở lại",
+    "Sơn Trà 21–24/11: 1.571 bẫy thú thu giữ trong 11 tháng, ngày hội Mân Thái, mưa lớn trở lại",
   excerpt:
     "Ngày 23/11/2026, Ban Quản lý rừng phòng hộ và đặc dụng TP Đà Nẵng cho biết trong 11 tháng năm 2026, lực lượng chức năng thu giữ 1.571 bẫy thú ở rừng Sơn Trà, trong tổng số 1.854 bẫy ở hai khu rừng Sơn Trà và Hải Vân. Tổ dân phố Mân Thái tổ chức Ngày hội Đại đoàn kết chiều 21/11. Không khí lạnh gây mưa vừa, rải rác mưa to đến rất to từ đêm 24 đến 26/11; bán đảo Sơn Trà chưa có tin mở lại tham quan.",
   description:
@@ -53,7 +53,7 @@ export const article = {
     },
     {
       heading: "Ngày hội Đại đoàn kết ở tổ dân phố Mân Thái",
-      text: "Chiều 21/11/2026, tổ dân phố Mân Thái, phường Sơn Trà tổ chức Ngày hội Đại đoàn kết toàn dân tộc tại Nhà sinh hoạt cộng đồng. Phiên chợ 0 đồng trao 50 suất quà, tổng trị giá 12,5 triệu đồng, cho hộ nghèo, cận nghèo và gia đình khó khăn; ngày hội trao thêm 8 suất quà khuyến học, mỗi suất 300.000 đồng. Tính cả các suất trao từ đầu năm học 2026–2027, Ban Công tác Mặt trận tổ dân phố đã dành 86 suất quà và học bổng, tổng trị giá 18,2 triệu đồng, cho học sinh. Ngày hội cũng biểu dương 10 hộ gia đình văn hóa tiêu biểu, trao 20 lá cờ Tổ quốc, có 6 gian hàng ẩm thực miễn phí và bữa cơm đại đoàn kết khoảng 150 người. (Nguồn: Tạp chí Công dân & Khuyến học, 22/11/2026)",
+      text: "Chiều 21/11/2026, tổ dân phố Mân Thái, phường Sơn Trà tổ chức Ngày hội Đại đoàn kết toàn dân tộc tại Nhà sinh hoạt cộng đồng. Phiên chợ 0 đồng trao 50 suất quà, tổng trị giá 12,5 triệu đồng, cho hộ nghèo, cận nghèo và gia đình khó khăn; ngày hội trao thêm 8 suất quà khuyến học, mỗi suất 300.000 đồng. Tính cả các suất trao từ đầu năm học 2026–2027, Ban Công tác Mặt trận tổ dân phố đã dành 86 suất quà và học bổng, tổng trị giá 18,2 triệu đồng, cho học sinh. Ngày hội cũng biểu dương 10 hộ gia đình văn hóa tiêu biểu, trao cờ Tổ quốc và tổ chức bữa cơm đại đoàn kết khoảng 150 người. (Nguồn: Tạp chí Công dân & Khuyến học, 22/11/2026)",
     },
     {
       text: "Cũng trong hai ngày 21 và 22/11, Giải cờ tướng, cờ vua phường Sơn Trà năm 2026 diễn ra (Báo Đà Nẵng, 23/11/2026).",
@@ -67,14 +67,14 @@ export const article = {
       text: "Theo tin gió mùa Đông Bắc KKLR-128 của Đài Khí tượng thủy văn Trung Bộ phát 15h30 ngày 23/11/2026, khoảng đêm 24 và ngày 25/11, không khí lạnh ảnh hưởng đến Đà Nẵng; trên đất liền gió Bắc đến Đông Bắc cấp 3, ven biển cấp 4, giật cấp 5; nhóm điểm dự báo gồm Sơn Trà có nhiệt độ thấp nhất 22–24°C. Từ đêm 24 đến ngày 26/11, thành phố có khả năng mưa vừa, rải rác mưa to đến rất to và dông. Từ chiều tối và đêm 24/11, vùng biển Đà Nẵng gió Đông Bắc mạnh dần lên cấp 6, giật cấp 7–8, biển động, sóng cao 2,5–3,5 m.",
       image: "/images/news-son-tra-2411-body-mua.webp",
       imageAlt:
-        "Đồ họa không khí lạnh và mưa lớn theo bản tin KKLR-128 và DIEM-654 của Đài KTTV Trung Bộ lúc 15h30 ngày 23/11/2026: không khí lạnh đêm 24–25/11, gió Bắc đến Đông Bắc cấp 3, ven biển cấp 4, giật cấp 5, nhiệt độ thấp nhất 22–24°C ở nhóm điểm gồm Sơn Trà; từ đêm 24 đến ngày 26/11 mưa vừa, rải rác mưa to đến rất to và dông; vùng biển Đà Nẵng gió cấp 6, giật cấp 7–8, sóng 2,5–3,5 m từ chiều tối và đêm 24/11. Điểm Sơn Trà (phường Sơn Trà, An Hải) tổng mưa dự báo 24/11–03/12 là 280 mm, xác suất mưa 90% các ngày 25–27/11. VnExpress 23/11: đợt mưa 27–30/11, từ Huế đến phía đông Đà Nẵng có thể 200–300 mm, cục bộ trên 500 mm. Bán đảo Sơn Trà tạm dừng tham quan từ 15h30 ngày 10/11, đến sáng 24/11 website chưa thấy thông báo mở lại.",
+        "Đồ họa không khí lạnh và mưa lớn theo bản tin KKLR-128 và DIEM-654 của Đài KTTV Trung Bộ lúc 15h30 ngày 23/11/2026: không khí lạnh đêm 24 – ngày 25/11, gió Bắc đến Đông Bắc cấp 3, ven biển cấp 4, giật cấp 5, nhiệt độ thấp nhất 22–24°C ở nhóm điểm gồm Sơn Trà; từ đêm 24 đến ngày 26/11 mưa vừa, rải rác mưa to đến rất to và dông; vùng biển Đà Nẵng gió cấp 6, giật cấp 7–8, sóng 2,5–3,5 m từ chiều tối và đêm 24/11. Điểm Sơn Trà (phường Sơn Trà, An Hải) tổng mưa dự báo 24/11–03/12 là 280 mm, xác suất mưa 90% các ngày 25–27/11. VnExpress 23/11: đợt mưa 27–30/11, từ Huế đến phía đông Đà Nẵng có thể 200–300 mm, cục bộ trên 500 mm. Bán đảo Sơn Trà tạm dừng tham quan từ 15h30 ngày 10/11, đến sáng 24/11 website chưa thấy thông báo mở lại.",
     },
     {
       text: "Bản tin dự báo điểm 10 ngày DIEM-654 cùng thời điểm cho điểm Sơn Trà (đại diện phường Sơn Trà và phường An Hải) tổng lượng mưa dự báo từ 24/11 đến 03/12 là 280 mm, xác suất mưa 90% các ngày 25, 26 và 27/11. VnExpress (23/11/2026) dẫn Trung tâm Dự báo khí tượng thủy văn quốc gia: đợt mưa thứ hai từ 27 đến 30/11, khu vực từ Huế đến phía đông Đà Nẵng có thể mưa 200–300 mm, cục bộ trên 500 mm; mưa tập trung từ đêm 27 đến sáng 29/11 rồi giảm dần.",
     },
     {
-      heading: "Bán đảo Sơn Trà vẫn tạm dừng tham quan",
-      text: "Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng tạm dừng hoạt động tham quan bán đảo từ 15h30 ngày 10/11/2026, thời điểm mở lại chưa được xác định (VietNamNet, 10/11/2026). Đến sáng 24/11, website chưa tìm thấy nguồn báo chí nào đưa thông báo mở lại. Với dự báo mưa lớn trong những ngày tới, anh chị nên theo dõi thông báo chính thức của Ban Quản lý trước khi lên bán đảo.",
+      heading: "Bán đảo Sơn Trà chưa có thông báo mở lại tham quan",
+      text: "Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng tạm dừng hoạt động tham quan bán đảo từ 15h30 ngày 10/11/2026, thời điểm mở lại chưa được xác định (VietNamNet, 10/11/2026). Đến sáng 24/11/2026, chưa có thông báo mở lại tham quan được báo chí đưa tin. Với dự báo mưa lớn trong những ngày tới, anh chị nên theo dõi thông báo chính thức của Ban Quản lý trước khi lên bán đảo.",
       links: [
         {
           to: "/tin-tuc/son-tra-tam-dung-tham-quan-bai-cat-vang-12-11-2026",
@@ -114,7 +114,7 @@ export const article = {
     },
     {
       heading: "Bán đảo Sơn Trà đã mở lại tham quan chưa?",
-      text: "Bán đảo tạm dừng tham quan từ 15h30 ngày 10/11/2026. Đến sáng 24/11, website chưa tìm thấy thông báo mở lại của Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng; anh chị nên theo dõi thông báo chính thức trước khi lên bán đảo.",
+      text: "Bán đảo tạm dừng tham quan từ 15h30 ngày 10/11/2026 cho đến khi có thông báo mới. Đến sáng 24/11 chưa có thông báo mở lại của Ban Quản lý bán đảo Sơn Trà và các bãi biển du lịch Đà Nẵng; anh chị nên theo dõi thông báo chính thức trước khi lên bán đảo.",
     },
     {
       heading: "Lưu ý",
