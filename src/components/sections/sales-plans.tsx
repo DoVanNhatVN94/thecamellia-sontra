@@ -278,6 +278,14 @@ export function SalesPlansSection() {
         </Reveal>
 
         <p className="mt-6 text-sm leading-relaxed text-muted">{meta.disclaimer}</p>
+        <p className="mt-3 text-sm leading-relaxed">
+          <a
+            href="#tinh-gia"
+            className="font-medium text-terracotta underline decoration-terracotta/40 underline-offset-4"
+          >
+            Tính giá & lịch thanh toán
+          </a>
+        </p>
       </div>
     </section>
   );
