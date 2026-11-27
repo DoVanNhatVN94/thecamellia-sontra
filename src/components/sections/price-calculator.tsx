@@ -434,7 +434,9 @@ export function PriceCalculatorSection() {
                   />
                 </div>
                 {early == null || special == null ? (
-                  <p className="text-xs text-terracotta">Nhập mức từ 0 đến 100.</p>
+                  <p className="text-xs text-terracotta">
+                    Chiết khấu khác phải từ 0 đến 100. Không nhập số âm.
+                  </p>
                 ) : null}
               </div>
             </details>
