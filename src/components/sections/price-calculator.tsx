@@ -105,6 +105,13 @@ export function PriceCalculatorSection() {
     });
   }, [code, gross, area, early, special, agency, anchorOk, policyId, anchorDate, handoverDate]);
 
+  const finiteQuote =
+    quote &&
+    Number.isFinite(quote.breakdown.total) &&
+    quote.rows.every((row) => Number.isFinite(row.amount))
+      ? quote
+      : null;
+
   function selectUnit(next: PriceSheetUnit) {
     const changed = next.code !== unitCode;
     setUnitCode(next.code);
@@ -138,7 +145,7 @@ export function PriceCalculatorSection() {
     setUnitQuery(next);
   }
 
-  const groups = quote ? groupRows(quote.rows) : [];
+  const groups = finiteQuote ? groupRows(finiteQuote.rows) : [];
   const listboxId = "tinh-gia-units";
 
   return (
@@ -280,7 +287,9 @@ export function PriceCalculatorSection() {
                 onChange={(event) => setAreaText(event.target.value)}
               />
               {area == null && areaText.trim() ? (
-                <p className="mt-1.5 text-xs text-terracotta">Nhập diện tích lớn hơn 0.</p>
+                <p className="mt-1.5 text-xs text-terracotta">
+                  Diện tích thông thủy phải là số lớn hơn 0.
+                </p>
               ) : null}
             </div>
 
@@ -302,6 +311,9 @@ export function PriceCalculatorSection() {
                   ? "Phiếu mẫu ghi sẵn tổng giá căn này."
                   : "Bảng giá mẫu chưa ghi tổng giá căn này. Ô này trên phiếu là thông tin điền tay."}
               </p>
+              {grossDigits && gross == null ? (
+                <p className="mt-1.5 text-xs text-terracotta">Tổng giá phải là số lớn hơn 0.</p>
+              ) : null}
             </div>
 
             <div>
@@ -311,12 +323,16 @@ export function PriceCalculatorSection() {
                 className="mt-1.5 w-full min-w-0"
                 type="date"
                 value={anchorDate}
+                suppressHydrationWarning
                 onChange={(event) => setAnchorDate(event.target.value)}
               />
               <p className="mt-1.5 text-xs leading-relaxed text-muted">
                 Mốc của các đợt sau. Mặc định là hôm nay theo giờ Việt Nam; đổi nếu ngày vào đủ cọc
                 khác.
               </p>
+              {anchorOk ? null : (
+                <p className="mt-1.5 text-xs text-terracotta">Chọn ngày đặt cọc. Không để trống.</p>
+              )}
             </div>
 
             <fieldset role="radiogroup">
@@ -368,7 +384,9 @@ export function PriceCalculatorSection() {
                 sách chung của chủ đầu tư, và cần được xác nhận khi tư vấn.
               </p>
               {agency == null ? (
-                <p className="mt-1.5 text-xs text-terracotta">Nhập mức từ 0 đến 100.</p>
+                <p className="mt-1.5 text-xs text-terracotta">
+                  Chiết khấu thêm phải từ 0 đến 100. Không nhập số âm.
+                </p>
               ) : null}
             </div>
 
@@ -435,7 +453,7 @@ export function PriceCalculatorSection() {
           </form>
 
           <div className="min-w-0">
-            {quote ? (
+            {finiteQuote ? (
               <div className="rounded-xl border border-stone bg-cream shadow-border">
                 <div className="border-b border-stone px-4 py-5 sm:px-6">
                   <div className="flex flex-wrap items-start justify-between gap-3">
@@ -444,7 +462,7 @@ export function PriceCalculatorSection() {
                         {PRICE_SHEET.title}
                       </p>
                       <h3 className="mt-2 font-display text-2xl leading-tight sm:text-3xl">
-                        {quote.policy.title}
+                        {finiteQuote.policy.title}
                       </h3>
                       <p className="mt-2 text-sm text-muted">
                         {code}
@@ -468,56 +486,56 @@ export function PriceCalculatorSection() {
                 <dl className="px-4 sm:px-6">
                   <BreakdownRow
                     label="Giá niêm yết (gồm VAT và KPBT)"
-                    value={formatVnd(quote.enteredListGross)}
+                    value={formatVnd(finiteQuote.enteredListGross)}
                   />
-                  {quote.agencyDiscount > 0 ? (
+                  {finiteQuote.agencyDiscount > 0 ? (
                     <>
                       <BreakdownRow
-                        label={`Chiết khấu thêm (sàn/đặc biệt) ${formatPercent(quote.agencyDiscount)}`}
-                        value={formatVnd(quote.agencyAmount)}
+                        label={`Chiết khấu thêm (sàn/đặc biệt) ${formatPercent(finiteQuote.agencyDiscount)}`}
+                        value={formatVnd(finiteQuote.agencyAmount)}
                         hint="Trừ trên giá niêm yết trước chiết khấu của chủ đầu tư: giá sau mức này = giá niêm yết / (1 + mức %)."
                         emphasize
                       />
                       <BreakdownRow
                         label="Giá niêm yết sau chiết khấu sàn"
-                        value={formatVnd(quote.listGrossAfterAgency)}
+                        value={formatVnd(finiteQuote.listGrossAfterAgency)}
                       />
                     </>
                   ) : null}
                   <BreakdownRow
                     label="Giá trị căn hộ (chưa VAT, chưa KPBT)"
-                    value={formatVnd(quote.breakdown.listPreVatRounded)}
-                    hint={`Đơn giá thông thủy ${formatVnd(quote.breakdown.unitPrice)}/m²`}
+                    value={formatVnd(finiteQuote.breakdown.listPreVatRounded)}
+                    hint={`Đơn giá thông thủy ${formatVnd(finiteQuote.breakdown.unitPrice)}/m²`}
                   />
                   <BreakdownRow
                     label="Chiết khấu thanh toán"
-                    value={formatVnd(quote.breakdown.discountAmount)}
-                    hint={`Thanh toán ${formatPercent(quote.breakdown.paymentDiscount)}${
-                      quote.breakdown.earlyDiscount
-                        ? ` · Early ${formatPercent(quote.breakdown.earlyDiscount)}`
+                    value={formatVnd(finiteQuote.breakdown.discountAmount)}
+                    hint={`Thanh toán ${formatPercent(finiteQuote.breakdown.paymentDiscount)}${
+                      finiteQuote.breakdown.earlyDiscount
+                        ? ` · Early ${formatPercent(finiteQuote.breakdown.earlyDiscount)}`
                         : ""
                     }${
-                      quote.breakdown.specialDiscount
-                        ? ` · Ngoại giao ${formatPercent(quote.breakdown.specialDiscount)}`
+                      finiteQuote.breakdown.specialDiscount
+                        ? ` · Ngoại giao ${formatPercent(finiteQuote.breakdown.specialDiscount)}`
                         : ""
                     }. Các mức nhân lần lượt trên giá chưa VAT.`}
-                    emphasize={quote.breakdown.discountAmount > 0}
+                    emphasize={finiteQuote.breakdown.discountAmount > 0}
                   />
                   <BreakdownRow
                     label="Giá sau chiết khấu"
-                    value={formatVnd(quote.breakdown.preVat)}
-                    hint={`Đơn giá sau chiết khấu ${formatVnd(quote.breakdown.unitPriceAfter)}/m²`}
+                    value={formatVnd(finiteQuote.breakdown.preVat)}
+                    hint={`Đơn giá sau chiết khấu ${formatVnd(finiteQuote.breakdown.unitPriceAfter)}/m²`}
                   />
-                  <BreakdownRow label="VAT" value={formatVnd(quote.breakdown.vat)} />
+                  <BreakdownRow label="VAT" value={formatVnd(finiteQuote.breakdown.vat)} />
                   <BreakdownRow
                     label="Phí bảo trì (KPBT)"
-                    value={formatVnd(quote.breakdown.maintenance)}
+                    value={formatVnd(finiteQuote.breakdown.maintenance)}
                   />
                 </dl>
                 <div className="mx-4 mb-5 flex items-end justify-between gap-4 rounded-xl bg-ink px-4 py-4 text-paper sm:mx-6">
                   <p className="text-sm">Tổng giá</p>
                   <p className="font-num text-xl sm:text-2xl" aria-live="polite">
-                    {formatVnd(quote.breakdown.total)}
+                    {formatVnd(finiteQuote.breakdown.total)}
                   </p>
                 </div>
 
@@ -527,31 +545,32 @@ export function PriceCalculatorSection() {
                     VAT bằng 10% phần giá sau chiết khấu sau khi trừ quyền sử dụng đất{" "}
                     {formatVnd(PRICE_SHEET.landDeductionPerM2)}/m² thông thủy.
                   </p>
-                  {quote.policy.id === "htls-45" ? (
+                  {finiteQuote.policy.id === "htls-45" ? (
                     <p>
                       Trên phiếu, ngân hàng giải ngân 50% giá gồm VAT (chưa gồm phí bảo trì). Tên
                       phương án vẫn là Vay HTLS 45%.
                     </p>
                   ) : null}
-                  {quote.policy.id === "htls-70" || quote.policy.id === "htls-45" ? (
+                  {finiteQuote.policy.id === "htls-70" || finiteQuote.policy.id === "htls-45" ? (
                     <p>
                       Phiếu không tính số tiền hỗ trợ lãi. Dòng ngân hàng là khoản giải ngân theo tỷ
                       lệ.
                     </p>
                   ) : null}
-                  {quote.breakdown.maintenanceFromGross && quote.breakdown.specialDiscount > 0 ? (
+                  {finiteQuote.breakdown.maintenanceFromGross &&
+                  finiteQuote.breakdown.specialDiscount > 0 ? (
                     <p>
                       Khi chưa có chiết khấu Early và chiết khấu thanh toán, phiếu lấy phí bảo trì
                       bằng phần còn lại để tổng giá vẫn bằng giá niêm yết. Chiết khấu đặc biệt một
                       mình không làm giảm tổng đó.
                     </p>
                   ) : null}
-                  {quote.hasNegative ? (
+                  {finiteQuote.hasNegative ? (
                     <p className="text-terracotta">
                       Có đợt âm. Kiểm tra lại tổng giá — tiền cọc trên phiếu là 100 triệu.
                     </p>
                   ) : null}
-                  {quote.agencyDiscount > 0 ? (
+                  {finiteQuote.agencyDiscount > 0 ? (
                     <p>
                       Chiết khấu thêm (sàn/đặc biệt) chỉ mang tính chất tham khảo. Mức này tùy từng
                       căn và từng sàn, không phải chính sách chung của chủ đầu tư, và cần được xác
@@ -614,7 +633,7 @@ export function PriceCalculatorSection() {
                 <div className="overflow-x-auto border-t border-stone">
                   <table className="w-full min-w-[40rem] text-left text-sm">
                     <caption className="sr-only">
-                      Các đợt thanh toán của {quote.policy.sheetName}
+                      Các đợt thanh toán của {finiteQuote.policy.sheetName}
                     </caption>
                     <thead className="text-xs tracking-wide text-muted uppercase">
                       <tr className="border-b border-stone">
@@ -626,7 +645,7 @@ export function PriceCalculatorSection() {
                       </tr>
                     </thead>
                     <tbody>
-                      {quote.rows.map((row) => (
+                      {finiteQuote.rows.map((row) => (
                         <tr key={row.id} className="border-b border-stone/80">
                           <td className="px-4 py-3 font-medium sm:px-6">{row.batch}</td>
                           <td className="px-3 py-3 text-muted">
@@ -646,7 +665,9 @@ export function PriceCalculatorSection() {
                         <td className="px-4 py-3 font-medium sm:px-6" colSpan={3}>
                           Tổng cộng
                         </td>
-                        <td className="px-3 py-3 text-right font-num">{formatVnd(quote.paid)}</td>
+                        <td className="px-3 py-3 text-right font-num">
+                          {formatVnd(finiteQuote.paid)}
+                        </td>
                         <td className="px-4 sm:px-6" />
                       </tr>
                     </tbody>
@@ -658,12 +679,14 @@ export function PriceCalculatorSection() {
                 {!code
                   ? "Nhập mã căn. Mã ngoài bảng giá, như C-06-12, vẫn tính được."
                   : area == null
-                    ? "Nhập diện tích thông thủy."
+                    ? "Diện tích thông thủy phải là số lớn hơn 0."
                     : !anchorOk
-                      ? "Chọn ngày đặt cọc 100 triệu."
+                      ? "Chọn ngày đặt cọc. Không để trống."
                       : early == null || special == null || agency == null
-                        ? "Mức chiết khấu cần là số từ 0 đến 100."
-                        : "Nhập tổng giá niêm yết gồm VAT và KPBT để xem lịch thanh toán."}
+                        ? "Chiết khấu phải từ 0 đến 100. Không nhập số âm hay lớn hơn 100."
+                        : gross == null
+                          ? "Tổng giá niêm yết phải là số lớn hơn 0."
+                          : "Không tính được với số vừa nhập. Kiểm tra lại giá và diện tích."}
               </div>
             )}
 

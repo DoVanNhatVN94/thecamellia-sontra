@@ -130,6 +130,7 @@ export function formatPercent(rate: number): string {
 }
 
 export function formatVnd(value: number): string {
+  if (!Number.isFinite(value)) return "—";
   const rounded = excelRound(value);
   const sign = rounded < 0 ? "-" : "";
   const body = Math.abs(rounded)
