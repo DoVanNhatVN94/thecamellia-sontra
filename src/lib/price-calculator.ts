@@ -143,6 +143,19 @@ export function formatViDate(iso: string): string {
   return `${day}/${month}/${year}`;
 }
 
+/** IANA link for Asia/Ho_Chi_Minh. Deposit dates follow the Vietnam calendar. */
+export const SAIGON_TIME_ZONE = "Asia/Saigon";
+
+/** YYYY-MM-DD for `now` in Vietnam. Tests pass `now`; the page calls it with no arguments. */
+export function todayIso(now: Date = new Date(), timeZone = SAIGON_TIME_ZONE): string {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
+}
+
 export function addDays(iso: string, days: number): string {
   const [year, month, day] = iso.split("-").map(Number);
   const date = new Date(Date.UTC(year, month - 1, day + days));

@@ -10,6 +10,7 @@ import {
   parseAreaInput,
   parsePercentInput,
   parseVndInput,
+  todayIso,
   type ScheduleRow,
 } from "./price-calculator.ts";
 
@@ -260,6 +261,12 @@ describe("phiếu tính giá — dates and the KPBT branch", () => {
     assert.equal(parseAreaInput("47,2"), 47.2);
     assert.equal(parseAreaInput("47.2"), 47.2);
     assert.equal(parseAreaInput(""), null);
+  });
+
+  it("deposit default follows the Vietnam calendar, including across UTC midnight", () => {
+    assert.equal(todayIso(new Date("2026-11-26T17:30:00Z")), "2026-11-27");
+    assert.equal(todayIso(new Date("2026-11-27T16:59:00Z")), "2026-11-27");
+    assert.equal(todayIso(new Date("2026-11-27T17:30:00Z")), "2026-11-28");
   });
 });
 

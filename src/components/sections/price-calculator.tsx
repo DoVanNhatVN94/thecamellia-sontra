@@ -18,6 +18,7 @@ import {
   parseAreaInput,
   parsePercentInput,
   parseVndInput,
+  todayIso,
   type ScheduleRow,
 } from "@/lib/price-calculator";
 import { cn } from "@/lib/utils";
@@ -64,7 +65,7 @@ export function PriceCalculatorSection() {
   const [areaText, setAreaText] = useState(SAMPLE ? String(SAMPLE.netArea) : "");
   const [agencyText, setAgencyText] = useState("");
   const [policyId, setPolicyId] = useState<PaymentPolicyId>("thong-thuong");
-  const [anchorDate, setAnchorDate] = useState<string>(PRICE_SHEET.sampleAnchorDate);
+  const [anchorDate, setAnchorDate] = useState<string>(() => todayIso());
   const [handoverDate, setHandoverDate] = useState("");
   const [customerName, setCustomerName] = useState("");
   const [earlyText, setEarlyText] = useState("");
@@ -313,8 +314,8 @@ export function PriceCalculatorSection() {
                 onChange={(event) => setAnchorDate(event.target.value)}
               />
               <p className="mt-1.5 text-xs leading-relaxed text-muted">
-                Mốc của các đợt sau. Phiếu mẫu đang để{" "}
-                {PRICE_SHEET.sampleAnchorDate.split("-").reverse().join("/")}.
+                Mốc của các đợt sau. Mặc định là hôm nay theo giờ Việt Nam; đổi nếu ngày vào đủ cọc
+                khác.
               </p>
             </div>
 
