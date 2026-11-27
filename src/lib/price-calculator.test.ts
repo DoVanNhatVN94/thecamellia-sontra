@@ -6,6 +6,8 @@ import {
   calculatePrice,
   deriveListPreVat,
   excelRound,
+  listGrossAfterAgency,
+  parseAreaInput,
   parsePercentInput,
   parseVndInput,
   type ScheduleRow,
@@ -255,5 +257,42 @@ describe("phiếu tính giá — dates and the KPBT branch", () => {
     assert.equal(parsePercentInput("2,5"), 0.025);
     assert.equal(parsePercentInput(""), 0);
     assert.equal(parsePercentInput("101"), null);
+    assert.equal(parseAreaInput("47,2"), 47.2);
+    assert.equal(parseAreaInput("47.2"), 47.2);
+    assert.equal(parseAreaInput(""), null);
+  });
+});
+
+/** Poster rounds to 0.001 tỷ. */
+function posterTy(amount: number): number {
+  return Math.round(amount / 1e6) / 1000;
+}
+
+describe("C-06-12 poster with 3% agency discount", () => {
+  const unit = {
+    listGross: 3_365_000_000,
+    netArea: 47.2,
+    agencyDiscount: 0.03,
+    anchorDate: ANCHOR,
+  };
+
+  it("takes the extra 3% as list / 1.03 before the developer policy", () => {
+    const after = listGrossAfterAgency(unit.listGross, 0.03);
+    assert.equal(after, excelRound(unit.listGross / 1.03));
+    assert.notEqual(after, excelRound(unit.listGross * 0.97));
+
+    const vay = calculatePrice({ ...unit, policyId: "htls-70" });
+    const pace = calculatePrice({ ...unit, policyId: "thong-thuong" });
+    const early = calculatePrice({ ...unit, policyId: "tts-95" });
+
+    assert.equal(vay.breakdown.total, after);
+    assert.equal(posterTy(vay.breakdown.total), 3.267);
+    assert.equal(posterTy(pace.breakdown.total), 3.136);
+    assert.equal(posterTy(early.breakdown.total), 2.842);
+    assert.equal(vay.agencyAmount, unit.listGross - after);
+    assert.equal(pace.paid, pace.breakdown.total);
+    assert.equal(early.paid, early.breakdown.total);
+    assert.equal(pace.rows[0].amount, 100_000_000);
+    assert.equal(early.rows[0].amount, 100_000_000);
   });
 });

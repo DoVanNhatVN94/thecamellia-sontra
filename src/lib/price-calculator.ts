@@ -26,6 +26,17 @@ export function deriveListPreVat(listGross: number, netArea: number): number {
   );
 }
 
+/**
+ * Per-unit agency discount, applied to the all-in list price before any
+ * developer policy. Poster C-06-12 (full 3,365 tỷ, extra 3%) matches
+ * list / (1 + rate), not list × (1 − rate): 3.365 / 1.03 ≈ 3.267 tỷ,
+ * then the 4% and 13% policies land on ~3.136 and ~2.842 tỷ.
+ */
+export function listGrossAfterAgency(listGross: number, agencyDiscount: number): number {
+  if (!agencyDiscount) return listGross;
+  return excelRound(listGross / (1 + agencyDiscount));
+}
+
 export type PriceBreakdown = {
   listPreVat: number;
   listPreVatRounded: number;
@@ -276,6 +287,12 @@ export type PriceQuote = {
   rows: ScheduleRow[];
   paid: number;
   hasNegative: boolean;
+  /** All-in list price the user typed, before the agency discount. */
+  enteredListGross: number;
+  agencyDiscount: number;
+  /** F20 after the agency discount. Developer policies run on this price. */
+  listGrossAfterAgency: number;
+  agencyAmount: number;
 };
 
 export function calculatePrice(input: {
@@ -288,15 +305,19 @@ export function calculatePrice(input: {
   /** Defaults to the policy rate on sheet Ẩn. Pass 0 to replay a block at the saved discount. */
   paymentDiscount?: number;
   specialDiscount?: number;
+  /** Optional per-unit agency discount. 0.03 means list / 1.03, before the policy. */
+  agencyDiscount?: number;
   anchorDate: string;
   handoverDate?: string;
 }): PriceQuote {
   const policy = findPaymentPolicy(input.policyId);
   if (!policy) throw new Error(`Không có phương án ${input.policyId}`);
+  const agencyDiscount = input.agencyDiscount ?? 0;
+  const pricedListGross = listGrossAfterAgency(input.listGross, agencyDiscount);
   const breakdown = priceBreakdown({
-    listGross: input.listGross,
+    listGross: pricedListGross,
     netArea: input.netArea,
-    listPreVat: input.listPreVat,
+    listPreVat: agencyDiscount ? undefined : input.listPreVat,
     earlyDiscount: input.earlyDiscount,
     paymentDiscount: input.paymentDiscount ?? policy.discount,
     specialDiscount: input.specialDiscount,
@@ -312,6 +333,10 @@ export function calculatePrice(input: {
     rows,
     paid,
     hasNegative: rows.some((row) => row.amount < 0),
+    enteredListGross: input.listGross,
+    agencyDiscount,
+    listGrossAfterAgency: pricedListGross,
+    agencyAmount: input.listGross - pricedListGross,
   };
 }
 
@@ -320,6 +345,15 @@ export function parseVndInput(raw: string): number | null {
   if (!digits) return null;
   const value = Number(digits);
   if (!Number.isSafeInteger(value) || value <= 0) return null;
+  return value;
+}
+
+export function parseAreaInput(raw: string): number | null {
+  const text = raw.trim().replace(",", ".");
+  if (text === "") return null;
+  if (!/^\d+(\.\d+)?$/.test(text)) return null;
+  const value = Number(text);
+  if (!Number.isFinite(value) || value <= 0 || value > 1000) return null;
   return value;
 }
 
