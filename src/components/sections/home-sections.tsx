@@ -489,9 +489,12 @@ export function PolicySection() {
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
             {copy.sub}
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button size="lg" asChild>
               <a href={copy.ctaHref}>{copy.cta}</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild>
+              <a href="#tinh-gia">Tính giá & lịch thanh toán</a>
             </Button>
           </div>
         </Reveal>

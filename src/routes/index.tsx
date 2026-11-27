@@ -19,6 +19,7 @@ import {
   UnderstandSection,
   UnitsPreview,
 } from "@/components/sections/home-sections";
+import { PriceCalculatorSection } from "@/components/sections/price-calculator";
 import { SalesPlansSection } from "@/components/sections/sales-plans";
 import { PAGES, pageHead } from "@/lib/seo";
 
@@ -34,8 +35,7 @@ export const Route = createFileRoute("/")({
           as: "image",
           href: "/images/hero-aerial.webp",
           type: "image/webp",
-          imageSrcSet:
-            "/images/hero-aerial-640.webp 640w, /images/hero-aerial.webp 1080w",
+          imageSrcSet: "/images/hero-aerial-640.webp 640w, /images/hero-aerial.webp 1080w",
           imageSizes: "100vw",
         },
       ],
@@ -60,6 +60,7 @@ function Home() {
       <UnitsPreview />
       <PolicySection />
       <SalesPlansSection />
+      <PriceCalculatorSection />
       <LegalSection />
       <FaqSection />
       <NewsPreview />

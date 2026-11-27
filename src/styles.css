@@ -801,3 +801,38 @@
     transition: none;
   }
 }
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  header,
+  footer,
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .main-pad-cta {
+    padding-bottom: 0 !important;
+  }
+
+  main > :not(#tinh-gia) {
+    display: none !important;
+  }
+
+  #tinh-gia {
+    background: var(--color-paper) !important;
+  }
+
+  .reveal-block {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
